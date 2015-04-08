@@ -1,0 +1,10 @@
+---
+---
+#what
+  .content
+    %ul.bullets
+      - current_page.data.what.each do |what|
+        %li.bullet.three-col-bullet
+          .bullet-content
+            %h2= what.title
+            %p= what.content
