@@ -3,8 +3,6 @@
 #what
   .content
     %ul.bullets
-      - current_page.data.what.each do |what|
-        %li.bullet.three-col-bullet
-          .bullet-content
-            %h2= what.title
-            %p= what.content
+      = partial "partials/bullets", locals: { title: t("what.consultancy.title"), content: t("what.consultancy.content"), sub_content: t("what.consultancy.sub_content") }
+      = partial "partials/bullets", locals: { title: t("what.visualization.title"), content: t("what.visualization.content"), sub_content: t("what.visualization.sub_content") }
+      = partial "partials/bullets", locals: { title: t("what.trainings.title"), content: t("what.trainings.content"), sub_content: t("what.trainings.sub_content") }
