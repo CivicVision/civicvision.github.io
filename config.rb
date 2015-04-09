@@ -1,12 +1,4 @@
-###
-# Compass
-###
-
-# Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
-
+activate :i18n, :mount_at_root => :de
 ###
 # Page options, layouts, aliases and proxies
 ###
