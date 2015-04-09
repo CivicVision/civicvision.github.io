@@ -16,3 +16,11 @@ de:
       sub_content: "Civic Vision hilft Ihnen dabei mit individuellen Datentrainings und Workshops"
   about_us:
     title: Über uns
+  portfolio:
+    title: Portfolio
+    geosure:
+      title: GeoSure Global
+      content: "Reise App"
+    bicc:
+      title: BICC
+      content: "Waffenexport Karte"

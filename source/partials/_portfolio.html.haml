@@ -1,0 +1,28 @@
+---
+---
+#portfolio
+  .content
+    %h3= t('portfolio.title')
+    .cards
+      - data.portfolio.signature.each do |project|
+        .card
+          - if project.year
+            .ribbon-wrapper
+              .ribbon= project.year
+          .card-header
+            %a(href="= project.url")= t(project.title)
+          .card-image
+            -  if project.image
+              %img(src="= project.image")
+          .card-copy
+            %p= project.copy
+          .card-link
+            %a.octicon.octicon-octoface(href="http://github.com/#{project.github}")
+              GitHub
+            %a.octicon.octicon-globe(href="= project.url")
+              Site
+          .card-year
+            .badges
+              - if project.technologies
+                - project.technologies.each do |technology|
+                  .badge(class="= technology.class")= technology.name
