@@ -1,0 +1,29 @@
+#footer
+  .content
+    %ul#items
+      %li.item
+        %h4= t('footer.company.title')
+        %p 
+          Civic Vision UG
+          %br
+          = "#{t('footer.company.tax_number')} DE296100763"
+          %br
+          Hansaring 3a
+          %br
+          48155 Münster
+      %li.item
+        %h4= t('footer.get_in_touch.title')
+        %ul
+          %li
+            = link_to "Twitter", "http://twitter.com/civicvision"
+          %li
+            = link_to "GitHub", "http://github.com/civicvision"
+          %li
+            = link_to "Mail", "mailto:mila.frerichs@civisivision.de"
+      %li.item
+        %h4= t('footer.legal.title')
+        %ul
+          %li
+            = link_to "Legal", "/legal/index.html"
+          %li
+            = link_to "Data Policy", "/legal/privacy/index.html"

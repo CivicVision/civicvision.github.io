@@ -26,3 +26,11 @@ de:
       content: "Waffenexport Karte"
   contact:
     title: Kontakt
+  footer:
+    company:
+      title: Firma
+      tax_number: UstId
+    get_in_touch:
+      title: Bleib in Kontakt
+    legal:
+      title: "Impressum & Datenschutz"
