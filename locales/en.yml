@@ -25,3 +25,10 @@ en:
     bicc:
       title: BICC
       content: "Waffenexport Karte"
+  contact:
+    title: Contact Us
+    submit: Submit
+    email:
+      placeholder: Your email address
+    name:
+      placeholder: Your name

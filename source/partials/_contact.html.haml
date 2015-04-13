@@ -1,0 +1,10 @@
+#contact
+  .content
+    %h3= t('contact.title')
+    .contact-form
+      %form{"accept-charset" => "UTF-8", :action => "https://formkeep.com/f/7f09f0c3f824", :method => "POST"}
+        %input{:name => "utf8", :type => "hidden", :value => "✓"}
+        %input{:name => "name", :type => "text", :placeholder => t('contact.name.placeholder') }
+        %input{:name => "email", :type => "email", :placeholder => t('contact.email.placeholder') }
+        %textarea{:name => "inquiry", :placeholder => "How can we help you?"}
+        %button{:type => "submit"}= t('contact.submit')
