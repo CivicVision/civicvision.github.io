@@ -25,3 +25,11 @@ en:
     bicc:
       title: BICC
       content: "Waffenexport Karte"
+  footer:
+    company:
+      title: Company
+      tax_number: "Tax Id:"
+    get_in_touch:
+      title: Get in touch
+    legal:
+      title: Legal

@@ -24,3 +24,11 @@ de:
     bicc:
       title: BICC
       content: "Waffenexport Karte"
+  footer:
+    company:
+      title: Firma
+      tax_number: UstId
+    get_in_touch:
+      title: Bleib in Kontakt
+    legal:
+      title: "Impressum & Datenschutz"
