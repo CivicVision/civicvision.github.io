@@ -4,16 +4,17 @@ en:
   what:
     consultancy:
       title: Consultancy
-      content:  "Sie wollen Ihre Daten veröffentlichen oder Entwicklern und der Öffentlichkeit einfach zur Verfügung stellen?"
-      sub_content: "Civic Vision hilft Ihnen dabei mit individuellen Lösungen und baut dabei ganz auf die Stärke von Open Source Software. "
+      content:  "You want to open up your Data? You want to make it more accessible? You are searching for an easy way to publish your Datasets?
+        "
+      sub_content: "Civic Vision helps you with custom solutions built on top of the strength of open source. "
     visualization:
       title: Visualization
-      content: "Sie wollen Ihre Daten einer breiteren Öffentlichkeit verständlich machen? Sie wollen Einblicke in Ihren Daten gewinnen?"
-      sub_content: "Civic Vision hilft Ihnen dabei mit interaktiven Visualiserungen und Karten-basierten Anwendungen."
+      content: "Do you want to show your data to a broader audience? Do you want to find insights in your data? "
+      sub_content: "Civic Vision helps you with custom visualizations and map-based applications."
     trainings:
       title: Trainings
-      content: "Sie wollen Ihre Fähigkeiten beim verstehen von Daten verbessern. Sie wollen Ihrem Team helfen besser mit Daten umzugehen?"
-      sub_content: "Civic Vision hilft Ihnen dabei mit individuellen Datentrainings und Workshops"
+      content: "You want to be more literate with data? Do you want your team to be more literate?"
+      sub_content: "Civic Vision helps you with data trainings and workshops"
   about_us:
     title: About us
   portfolio:
