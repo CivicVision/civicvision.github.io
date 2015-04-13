@@ -1,6 +1,11 @@
 #footer
-  padding-top: 2em
+  $base-spacing: 1.5em !default
+  a
+    color: #9DC9CF
+    &:hover
+      text-decoration: underline
   #items
+    padding: ($base-spacing * 2) $gutter
     @include span-columns(12)
     li.item
       @include span-columns(4 of 12)
