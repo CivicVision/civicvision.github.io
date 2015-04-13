@@ -33,11 +33,18 @@ configure :development do
 end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
+helpers do
+  def nav_active(path)
+    current_page.path == path ? { class: "active "} : {}
+  end
+
+  def locale_active(locale)
+    I18n.locale == locale.to_sym ? { class: "active" } : {}
+  end
 #   def some_helper
 #     "Helping"
 #   end
-# end
+end
 
 set :css_dir, 'stylesheets'
 
