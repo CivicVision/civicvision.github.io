@@ -32,6 +32,8 @@ en:
       placeholder: Your email address
     name:
       placeholder: Your name
+    inquiry:
+      placeholder: How can we help you?
   footer:
     company:
       title: Company

@@ -26,6 +26,13 @@ de:
       content: "Waffenexport Karte"
   contact:
     title: Kontakt
+    submit: Kontaktieren
+    email:
+      placeholder: Ihre E-Mail Adresse
+    name:
+      placeholder: Ihr Name
+    inquiry:
+      placeholder: Wie können wir behilflich sein?
   footer:
     company:
       title: Firma
