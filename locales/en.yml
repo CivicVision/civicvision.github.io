@@ -10,11 +10,11 @@ en:
     visualization:
       title: Visualization
       content: "Do you want to show your data to a broader audience? Do you want to find insights in your data? "
-      sub_content: "Civic Vision helps you with custom visualizations and map-based applications."
+      sub_content: "Civic Vision helps you with interactive visualizations and map-based applications."
     trainings:
       title: Trainings
-      content: "You want to be more literate with data? Do you want your team to be more literate?"
-      sub_content: "Civic Vision helps you with data trainings and workshops"
+      content: "You want to improve your and your team’s data literacy?"
+      sub_content: "Civic Vision helps you with data trainings and workshops."
   about_us:
     title: About us
   portfolio:
