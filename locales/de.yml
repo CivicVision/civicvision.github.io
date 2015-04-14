@@ -36,7 +36,7 @@ de:
   footer:
     company:
       title: Firma
-      tax_number: UstId
+      tax_number: "USt-IdNr:"
     get_in_touch:
       title: Bleib in Kontakt
     legal:
