@@ -547,7 +547,13 @@ h3 {
     text-align: center;
     font-size: 1.2em;
     padding: 0.5em; }
-  /* line 11, /Development/work/civicvision/civicvision.github.io/source/stylesheets/_us.sass */
+    /* line 11, /Development/work/civicvision/civicvision.github.io/source/stylesheets/_us.sass */
+    #us .personas li h4 a {
+      color: #fff; }
+      /* line 13, /Development/work/civicvision/civicvision.github.io/source/stylesheets/_us.sass */
+      #us .personas li h4 a:hover {
+        color: #333; }
+  /* line 15, /Development/work/civicvision/civicvision.github.io/source/stylesheets/_us.sass */
   #us .personas li img.me {
     width: 8em;
     margin: 0 auto;
