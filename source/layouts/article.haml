@@ -3,7 +3,7 @@
   %head
     %title= current_page.data.title || "Civic Vision"
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
-    = stylesheet_link_tag "normalize", "all"
+    = stylesheet_link_tag "normalize", "code", "all"
   %body
     = partial "partials/navigation"
     .blog-content
@@ -12,7 +12,8 @@
         .details
           %span.date= current_article.date.strftime(locale_dateformat)
       .content
-        = yield
+        = preserve do
+          = yield
     = partial "partials/footer"
   = javascript_include_tag  "all"
   :javascript
