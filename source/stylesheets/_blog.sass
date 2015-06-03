@@ -1,0 +1,35 @@
+.blog-content
+  @include outer-container()
+  background: #fff
+  color: #333
+  .header
+    h1
+      margin-bottom: 10px
+    .details
+      text-align: center
+      color: #777
+
+  .content
+    @include span-columns(10)
+    @include shift(1)
+    h2
+      text-align: left
+    ul
+      @extend %default-ul
+.blog
+  @include outer-container()
+  article
+    background: #fff
+    @include span-columns(10)
+    @include shift(1)
+    color: #333
+    padding: 1em
+    h2
+      text-align: left
+      time
+        float: right
+        font-size: 0.6em
+        color: #777
+    .summary
+      color: #777
+
