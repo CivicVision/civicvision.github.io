@@ -1,14 +1,18 @@
 ---
-title: Mapping with d3
+title: Creating maps with d3
 date: 2015-06-02 11:43 UTC
 tags: d3, mapping
 author: Mila
 ---
-I held a workshop about *"mapping in d3"* at the last FOSSGIS 2015 in Münster.  
+Creating maps with d3 is really simple and it only takes a few lines of code.  
+[d3.js](http://d3js.org/), created by [Mike Bostock](http://bost.ocks.org/mike/), is awesome for visualizations and makes creating beautiful and customized maps as easy as it gets.  
+In this workshop I’ll guide you through the most important steps for creating maps in d3.
+READMORE
 
-The workshop consisted of three main challenges and two extra challenges.  
+The workshop consist of three main challenges and two extra challenges.
 
-__The topics covered were:__  
+__The topics are:__  
+
 
   - Creating a simple map from both geojson and topojson  
   - Changing the projection of the map  
@@ -18,7 +22,6 @@ __The topics covered were:__
   - Creating a choroplet map  
   - adding labels  
 
-Creating maps with d3 is really simple and only a few lines of code.
 Here is one example of a simple map from a geojson:
 
 ```js
@@ -37,6 +40,10 @@ Here is one example of a simple map from a geojson:
   });
 ```
 
-D3 takes care of all the calculations for you. It has predefined projections (mercator in this example) and calculates the d of the svg path for you.
+D3 takes care of all the calculations for you. It has predefined projections (mercator in this example) and calculates the svg path for you.
 
 You can find all the challenges and solutions [here](https://github.com/CivicVision/mapping_in_d3/tree/master/challenges) and the presentation is available [here](http://civicvision.de/mapping_in_d3).
+
+Go thorugh them yourself and try it out. If you find anything that's wrong just write me. Or if you have any questions dont' hesitate to get in touch.
+
+I held this workshop about “mapping in d3” at the last [FOSSGIS 2015](http://www.fossgis.de/konferenz/2015/) in Münster.
