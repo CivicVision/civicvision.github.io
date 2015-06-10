@@ -43,14 +43,14 @@ The [path generator](https://github.com/mbostock/d3/wiki/Geo-Paths) takes the pr
   countries.selectAll('.country')
   .data(data.features)
 ```
-We now select all elements inside the created svg which havbe the class `country` and bind them to the GeoJSON features.
+We now select all elements inside the created svg which have the class `country` and bind them to the GeoJSON features.
 
 ```js
   .enter()
   .append('path')
   .attr('class', 'country').attr('d', path);
 ```
-We "enter" the [selection](https://github.com/mbostock/d3/wiki/Selections#enter) and add new elements of type `path` to it, add the class `country` and set the [d](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d) attr to the path generator outpur for that feature.  
+We select all the [elements](https://github.com/mbostock/d3/wiki/Selections#enter) for the data and add new elements of type `path` the `group`, add the class `country` and set the [d](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d) attr to the path generator output for that feature.  
 You can learn more about selection [here](http://bost.ocks.org/mike/selection/) and in the [presentation](http://civicvision.de/mapping_in_d3) of this workshop.
 #### Result
 The result would look something like this:
@@ -66,7 +66,7 @@ These were the topics I covered in the workshop:
   - Adding interaction to the map  
     - Creating a tooltip  
     - Adding mouseover effect  
-  - Creating a choroplet map  
+  - Creating a choropleth map  
   - adding labels  
 
 
