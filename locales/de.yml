@@ -1,6 +1,10 @@
 ---
 de:
   tagline: "Datenberatung"
+  nav:
+    contact: "Kontakt"
+    us: "Über uns"
+    blog: "Blog"
   what:
     consultancy:
       title: Beratung

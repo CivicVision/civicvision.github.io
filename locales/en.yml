@@ -1,6 +1,10 @@
 ---
 en:
   tagline: "Data Consultancy"
+  nav:
+    contact: "Contact Us"
+    us: "About Us"
+    blog: "Blog"
   what:
     consultancy:
       title: Consultancy

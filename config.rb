@@ -69,6 +69,14 @@ helpers do
     I18n.locale == locale.to_sym ? { class: "active" } : {}
   end
 
+  def locale_path(path)
+    if I18n.locale == :de
+      path
+    else
+      "/#{I18n.locale.to_s}#{path}"
+    end
+  end
+
   def locale_dateformat
     case I18n.locale
     when :de then '%e. %b %Y'
