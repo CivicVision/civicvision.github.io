@@ -13,6 +13,7 @@
           %span.date= current_article.date.strftime(locale_dateformat)
       .content
         = yield
+    = partial "partials/newsletter_big"
     = partial "partials/footer"
   = javascript_include_tag  "all"
   :javascript
