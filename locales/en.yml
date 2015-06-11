@@ -45,3 +45,13 @@ en:
   blog:
     title: Insights
     more: Read more
+  newsletter:
+    headlines:
+      enjoy: Enjoyed this?
+      content: Want more content?
+    text:
+      normal: Join and get our newsletter with content about data and visualizations.
+    subscribe: "Join CivicVision"
+    placeholder:
+      email: "Email Address"
+      name: "First Name"
