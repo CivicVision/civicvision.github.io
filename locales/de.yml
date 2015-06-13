@@ -1,6 +1,10 @@
 ---
 de:
   tagline: "Datenberatung"
+  nav:
+    contact: "Kontakt"
+    us: "Über uns"
+    blog: "Blog"
   what:
     consultancy:
       title: Beratung
@@ -42,4 +46,15 @@ de:
     legal:
       title: "Impressum & Datenschutz"
   blog:
+    title: Insights
     more: Mehr
+  newsletter:
+    headlines:
+      enjoy: Hat Ihnen das gefallen? 
+      content: Wollen Sie mehr Inhalte?
+    text:
+      normal: Abbonieren Sie unseren Newsletter mit Inhalten zu Visualisierung und den Umgang mit Daten.
+    subscribe: "Bleib auf dem laufenden."
+    placeholder:
+      email: "E-Mail Adresse"
+      name: "Vorname"
