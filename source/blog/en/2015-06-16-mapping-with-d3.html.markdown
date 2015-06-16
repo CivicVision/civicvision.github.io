@@ -1,6 +1,6 @@
 ---
 title: Creating maps with d3
-date: 2015-06-02 11:43 UTC
+date: 2015-06-16 11:43 UTC
 tags: d3, mapping
 author: Mila
 ---
@@ -52,7 +52,7 @@ We now select all elements inside the created svg which have the class `country`
   .attr('class', 'country').attr('d', path);
 ```
 We select all the [elements](https://github.com/mbostock/d3/wiki/Selections#enter) for the data and add new elements of type `path` to the `group`, add the class `country` and set the [d](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d) attr to the path generator output for that feature.  
-You can learn more about selections work in D3 [here](http://bost.ocks.org/mike/selection/) and in the [presentation](http://civicvision.de/mapping_in_d3) of this workshop.
+You can learn more about how selections work in D3 [here](http://bost.ocks.org/mike/selection/) and in the [presentation](http://civicvision.de/mapping_in_d3) of this workshop.
 #### Result
 The result would look something like this:
 
