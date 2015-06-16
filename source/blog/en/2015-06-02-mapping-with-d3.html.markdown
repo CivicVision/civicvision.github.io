@@ -14,7 +14,7 @@ This is the most basic example of a map based on geojson data:
 ```js
   width = 300;
   height = 400;
-  projection = d3.geo.mercator().scale(600).translate([width / 2, 0]).center([5, 70]);
+  projection = d3.geo.mercator().scale(600).translate([width / 2, height / 2]).center([5, 70]);
   path = d3.geo.path().projection(projection);
   svg = d3.select("#map").append("svg").attr("height", height).attr("width", width);
   countries = svg.append("g");
@@ -30,9 +30,10 @@ This is the most basic example of a map based on geojson data:
 D3 takes care of all the calculations for you. It has predefined projections (mercator in this example) and calculates the svg path for you.
 
 ```js
-  projection = d3.geo.mercator().scale(600).translate([width / 2, 0]).center([5, 70]);
+  projection = d3.geo.mercator().scale(600).translate([width / 2, height / 2]).center([5, 70]);
 ```
-This line creates a new mercator projection for us. It is good practice to set the [translate](https://github.com/mbostock/d3/wiki/Geo-Projections#translate) attr to half the width of you map. The [scale](https://github.com/mbostock/d3/wiki/Geo-Projections#scale) factor corresponds linearly to the distance between projected points.
+This line creates a new mercator projection for us. To center the map inside the bounds of the element we set the [translate](https://github.com/mbostock/d3/wiki/Geo-Projections#translate) to half the width and half the height, otherwise the center will be in the bottom right corner.
+ The [scale](https://github.com/mbostock/d3/wiki/Geo-Projections#scale) factor corresponds linearly to the distance between projected points. The default scale value is 1,000 anything smaller will shrink the map, anything larger will expand it.
 
 ```js
   path = d3.geo.path().projection(projection);
