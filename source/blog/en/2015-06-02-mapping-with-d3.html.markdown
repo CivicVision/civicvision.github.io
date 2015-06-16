@@ -5,7 +5,7 @@ tags: d3, mapping
 author: Mila
 ---
 Creating maps with d3 is really simple and it only takes a few lines of code.  
-[d3.js](http://d3js.org/), created by [Mike Bostock](http://bost.ocks.org/mike/), is awesome for visualizations and makes creating beautiful and customized maps as easy as it gets.  
+[d3.js](http://d3js.org/), created by [Mike Bostock](http://bost.ocks.org/mike/), is awesome for visualizations and it makes creating beautiful and customized maps as easy as it gets.  
 This post teases some of the introductory steps I taught in a workshop at FOSSGIS 2015.
 READMORE
 
@@ -50,8 +50,8 @@ We now select all elements inside the created svg which have the class `country`
   .append('path')
   .attr('class', 'country').attr('d', path);
 ```
-We select all the [elements](https://github.com/mbostock/d3/wiki/Selections#enter) for the data and add new elements of type `path` the `group`, add the class `country` and set the [d](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d) attr to the path generator output for that feature.  
-You can learn more about selection [here](http://bost.ocks.org/mike/selection/) and in the [presentation](http://civicvision.de/mapping_in_d3) of this workshop.
+We select all the [elements](https://github.com/mbostock/d3/wiki/Selections#enter) for the data and add new elements of type `path` to the `group`, add the class `country` and set the [d](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d) attr to the path generator output for that feature.  
+You can learn more about selections work in D3 [here](http://bost.ocks.org/mike/selection/) and in the [presentation](http://civicvision.de/mapping_in_d3) of this workshop.
 #### Result
 The result would look something like this:
 
