@@ -1,0 +1,13 @@
+---
+title: Idea Collection
+layout: blog
+---
+%h1= t("blog.title")
+.content
+  - blog.local_articles[0..5].each do |article|
+    %article
+      %h2
+        %a(href="#{article.url}")= article.title
+        %time= article.date.strftime(locale_dateformat)
+      .summary= article.summary
+      %a(href="#{article.url}")= t('blog.more')

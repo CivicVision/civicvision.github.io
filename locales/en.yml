@@ -1,6 +1,10 @@
 ---
 en:
   tagline: "Data Consultancy"
+  nav:
+    contact: "Contact Us"
+    us: "About Us"
+    blog: "Blog"
   what:
     consultancy:
       title: Consultancy
@@ -42,3 +46,16 @@ en:
       title: Get in touch
     legal:
       title: Legal
+  blog:
+    title: Insights
+    more: Read more
+  newsletter:
+    headlines:
+      enjoy: Enjoyed this?
+      content: Want more content?
+    text:
+      normal: Join and get our newsletter with content about data and visualizations.
+    subscribe: "Join CivicVision"
+    placeholder:
+      email: "Email Address"
+      name: "First Name"
