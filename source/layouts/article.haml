@@ -11,6 +11,8 @@
         %h1= current_article.title
         .details
           %span.date= current_article.date.strftime(locale_dateformat)
+          —
+          %span.author= "written by " + current_article.data.author
       .content
         = preserve do
           = yield
