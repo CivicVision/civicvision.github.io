@@ -3,10 +3,11 @@
   %head
     %title= current_page.data.title || "Civic Vision"
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     = stylesheet_link_tag "normalize", "code", "all"
   %body
     = partial "partials/navigation"
-    .blog-content
+    .blog-content.article
       .header
         %h1= current_article.title
         .details
