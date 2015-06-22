@@ -7,6 +7,12 @@
   #items
     padding: ($base-spacing * 2) $gutter
     @include span-columns(12)
+    @include media($mobile)
+      @include span-columns(4)
     li.item
       @include span-columns(4 of 12)
+      @include media($mobile)
+        @include span-columns(4)
+        margin-left: 2em
+        margin-bottom: 2em
 
