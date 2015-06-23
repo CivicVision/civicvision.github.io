@@ -49,7 +49,7 @@ vNorm = (v) -> Math.sqrt(_.reduce(_.map(v, (e) -> e**2), _.add))
 vNormalized = (v) -> vScale(1/vNorm(v), v)
 ```
 
-Now the basic idea for offsetting convex polygons is to duplicate every vertex and move it into the direction of the edge's normal vector. If the vertices are sorted clock-wise we obtain the normals by simply rotating the edge counter-clockwise by 90 degrees and then scaling the resulting vector to length 1. We obtain the rounded corners by drawing an arc with a radius equal to the offset using standart [SVG path features](http://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands). The desired behavior can be implemented by creating a custom interpolation function for d3's standart path generator `d3.svg.line`. This is what it will look like:
+Now the basic idea for offsetting convex polygons is to duplicate every vertex and move it into the direction of the edge's normal vector. If the vertices are sorted clock-wise we obtain the normals by simply rotating the edge counter-clockwise by 90 degrees and then scaling the resulting vector to length 1. We obtain the rounded corners by drawing an arc with a radius equal to the offset using standard [SVG path features](http://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands). The desired behavior can be implemented by creating a custom interpolation function for d3's standard path generator `d3.svg.line`. This is what it will look like:
 
 <svg id='three' width=400 height=400>
   <defs>
