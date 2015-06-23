@@ -10,4 +10,4 @@ layout: blog
         %a(href="#{article.url}")= article.title
         %time= article.date.strftime(locale_dateformat)
       .summary= article.summary
-      %a(href="#{article.url}")= t('blog.more')
+      %a.more(href="#{article.url}")= t('blog.more')
