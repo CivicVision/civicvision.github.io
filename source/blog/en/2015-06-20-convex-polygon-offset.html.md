@@ -3,6 +3,7 @@ title: Offsetting convex polygons for fancy cluster labels
 date: 2015-06-20
 tags: d3, linear algebra
 author: Daniel
+published: false
 ---
 <link rel='stylesheet' href="convex-polygon-offset/style.css"></link>
 
