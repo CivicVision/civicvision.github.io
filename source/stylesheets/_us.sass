@@ -6,10 +6,13 @@
       @include span-columns(6)
       @include media($mobile)
         @include span-columns(4)
+      margin-bottom: 2em
+      &:last-child
+        margin-bottom: 0
       h4
         text-align: center
         font-size: 1.2em
-        padding: 0.5em
+        margin: 0.5em
         a
           color: #fff
           &:hover
@@ -19,3 +22,7 @@
         margin: 0 auto
         display: block
         border-radius: 5em
+      .person--short-intro
+        text-align: center
+        max-width: 25em
+        margin: auto
