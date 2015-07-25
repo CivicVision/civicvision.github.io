@@ -88,6 +88,11 @@ helpers do
     end
   end
 
+  def invoice_date(invoice)
+    date = Date.strptime(invoice.date, '%Y-%m-%d')
+    date.strftime(locale_dateformat)
+  end
+
 #   def some_helper
 #     "Helping"
 #   end
@@ -98,6 +103,10 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
+
+data.invoices.each do |invoice|
+  proxy "/en/pay/#{invoice.code}", "pay.html", locals: { invoice: invoice }, lang: :en, ignore: true
+end
 
 # Build-specific configuration
 configure :build do

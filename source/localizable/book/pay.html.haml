@@ -1,0 +1,18 @@
+#book-us.pay
+  %h1 Pay us
+  = content_tag 'div', '', id: 'amount', data: {amount: invoice.amount.to_i * 100, number: invoice.number}
+
+  %h2= "Invoice ##{invoice.number}"
+  .date= "Invoice date: #{invoice_date(invoice)}"
+  %p.description= invoice.description
+  %br
+  %p Thank you for using our services.
+
+
+  .get-in-touch
+    .book-us
+      %a.get-in-touch-button#pay-us-amount
+        = "Pay #{invoice.amount} €"
+
+  #thank-you
+    %p Thank you for using our services.

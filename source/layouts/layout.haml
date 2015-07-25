@@ -4,6 +4,9 @@
     %title= current_page.data.title || "Civic Vision"
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    - if content_for?(:no_follow)
+      %meta(name="robots" content="noindex")
+      %meta(name="robots" content="nofollow")
     = stylesheet_link_tag "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", "normalize", "all"
   %body
     = partial "partials/navigation"

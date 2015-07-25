@@ -31,6 +31,19 @@
     .book-us
       @include span-columns(3)
       @include shift(2)
+  &.pay
+    text-align: left
+    h2
+      float: left
+      text-align: left
+    .date
+      float: right
+    .description
+      clear: both
+    .book-us
+      text-align: center
+      @include span-columns(12)
+      @include shift(0)
 
   #thank-you
     @include span-columns(4)
