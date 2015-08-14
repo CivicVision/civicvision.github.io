@@ -105,8 +105,11 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
 data.invoices.each do |invoice|
-  proxy "/en/pay/#{invoice.code}", "pay.html", locals: { invoice: invoice }, lang: :en, ignore: true
+  proxy "/en/pay/#{invoice.code}/index.html", "pay.html", locals: { invoice: invoice }, lang: :en, ignore: true
 end
+
+ignore "/book/pay.html"
+ignore "/en/book/pay.html"
 
 # Build-specific configuration
 configure :build do
