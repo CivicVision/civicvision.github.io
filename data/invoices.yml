@@ -1,5 +1,7 @@
-- code: 'RG02013'
-  amount: 5000
-  number: '100013'
+- code: 'RG02020'
+  amount: 399
+  number: '100020'
   date: '2015-07-25'
-  description: Two weeks of development.
+  description: 18f micro-purchase. Display upcoming auction start time in micro-purchase
+  currency: 'USD'
+  currency_symbol: '$'
