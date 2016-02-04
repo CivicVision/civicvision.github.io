@@ -27,9 +27,14 @@ if $('#book-us').length > 0
     })
   $('#pay-us-amount').click (e) ->
     e.preventDefault()
-    amount = $('#book-us #amount').data('amount')
-    invoiceNumber = $('#book-us #amount').data('number')
+    $amount = $('#book-us #amount')
+    amount = $amount.data('amount')
+    invoiceNumber = $amount.data('number')
     description = "Invoice #{invoiceNumber} from Civic Vision"
+    currency = 'EUR'
+    if($amount.data('currency') == 'USD')
+      currency = 'USD'
+
     success = (token) ->
       $('#thank-you').show()
     handler = payMe(amount, description, success)
@@ -37,5 +42,5 @@ if $('#book-us').length > 0
       name: 'Civic Vision UG',
       description: description,
       amount: amount,
-      currency: 'EUR'
+      currency: currency
     })
