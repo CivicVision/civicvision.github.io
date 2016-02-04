@@ -40,6 +40,14 @@ en:
       placeholder: Your name
     phone:
       placeholder: Your phone number
+    thankyou:
+      headline: Thank you for getting in touch
+      text: |
+        Thanks for reaching out.  
+
+        You will receive an email from us shortly.  
+
+        In the meantime why not subscribe to our newsletter
   footer:
     company:
       title: Company
@@ -58,7 +66,10 @@ en:
       content: Want more content?
     text:
       normal: Join and get our newsletter with content about data and visualizations.
-    subscribe: "Join CivicVision"
+    subscribe: "Get more content"
     placeholder:
       email: "Email Address"
-      name: "First Name"
+      name: "Name"
+    thankyou:
+      headline: Thanks for signin up to our newsletter
+      text: Please check your email and click the link provided to confirm your subscription.
