@@ -32,14 +32,14 @@ en:
       title: BICC
       content: "Waffenexport Karte"
   contact:
-    title: Contact Us
-    submit: Submit
+    title: Get in touch
+    submit: Get in touch
     email:
       placeholder: Your email address
     name:
       placeholder: Your name
-    inquiry:
-      placeholder: How can we help you?
+    phone:
+      placeholder: Your phone number
   footer:
     company:
       title: Company
