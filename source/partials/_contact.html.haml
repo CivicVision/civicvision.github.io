@@ -2,9 +2,9 @@
   .content
     %h3= t('contact.title')
     .contact-form
-      %form{"accept-charset" => "UTF-8", :action => "https://formkeep.com/f/7f09f0c3f824", :method => "POST"}
+      %form{"accept-charset" => "UTF-8", "data-drip-embedded-form" => "8856204", :action => "https://www.getdrip.com/forms/8856204/submissions", :method => "POST"}
         %input{:name => "utf8", :type => "hidden", :value => "✓"}
-        %input{:name => "name", :type => "text", :placeholder => t('contact.name.placeholder') }
-        %input{:name => "email", :type => "email", :placeholder => t('contact.email.placeholder') }
-        %textarea{:name => "inquiry", :placeholder => t('contact.inquiry.placeholder') }
+        %input{:name => "fields[name]", :type => "text", :placeholder => t('contact.name.placeholder') }
+        %input{:name => "fields[email]", :type => "email", :placeholder => t('contact.email.placeholder') }
+        %input{:name => "fields[phone_number]", :type => "text", :placeholder => t('contact.phone.placeholder') }
         %button{:type => "submit"}= t('contact.submit')

@@ -5,6 +5,8 @@ de:
     contact: "Kontakt"
     us: "Über uns"
     blog: "Blog"
+  about:
+    title: Civic Vision ist eine Datenberatung die bürgernahen NGOs und Verwaltungen hilft Ihre Datenprozesse zu optimieren und effektive und ansprechende Visualisierungen zu erstellen.
   what:
     consultancy:
       title: Beratung
@@ -30,13 +32,13 @@ de:
       content: "Waffenexport Karte"
   contact:
     title: Kontakt
-    submit: Kontaktieren
+    submit: Kontaktieren Sie uns
     email:
       placeholder: Ihre E-Mail Adresse
     name:
       placeholder: Ihr Name
-    inquiry:
-      placeholder: Wie können wir behilflich sein?
+    phone:
+      placeholder: Ihre Telefonnummer
   footer:
     company:
       title: Firma
