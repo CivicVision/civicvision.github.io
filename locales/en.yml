@@ -21,6 +21,13 @@ en:
       sub_content: "Civic Vision helps you with data trainings and workshops."
   about_us:
     title: About us
+    short_intros:
+      mila: >
+        TODO
+      daniel: >
+        studied mathematics at WWU Münster.
+        He has many years of experience with modern web technologies,
+        interactive data visualization, data pipelines and machine learning.
   portfolio:
     title: Portfolio
     geosure:
