@@ -1,10 +1,5 @@
-!!!
-%html
-  %head
-    %title= current_page.data.title || "Civic Vision"
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
-    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    = stylesheet_link_tag "normalize", "code", "all"
+= wrap_layout :base do
+  = stylesheet_link_tag "code"
   %body
     = partial "partials/navigation"
     .blog-content.article
@@ -20,5 +15,3 @@
           = yield
     = partial "partials/newsletter_big"
     = partial "partials/footer"
-  = javascript_include_tag  "all"
-  = partial "partials/analytics"
