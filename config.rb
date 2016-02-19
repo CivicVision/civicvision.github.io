@@ -113,6 +113,7 @@ ignore "/en/book/pay.html"
 
 # Build-specific configuration
 configure :build do
+  ignore '*.swp'
   # For example, change the Compass output style for deployment
   # activate :minify_css
 
