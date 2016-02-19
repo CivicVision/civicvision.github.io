@@ -56,7 +56,7 @@ You can learn more about how selections work in D3 [here](http://bost.ocks.org/m
 #### Result
 The result would look something like this:
 
-![Result](mapping-with-d3/result.png)
+![Result](/blog/en/2015-06-16-mapping-with-d3/result.png)
 #### Workshop
 At [FOSSGIS 2015](http://www.fossgis.de/konferenz/2015/) in Münster I gave a workshop going a little deeper into what's possible.
 

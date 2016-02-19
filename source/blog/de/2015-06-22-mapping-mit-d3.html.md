@@ -55,7 +55,7 @@ You can learn more about selection [here](http://bost.ocks.org/mike/selection/) 
 #### Result
 Das Ergebnis sieht zum Beispiel so aus:
 
-![Result](2015-06-16-mapping-mit-d3/result.png)
+![Result](/blog/de/2015-06-16-mapping-mit-d3/result.png)
 #### Workshop
 Der Workshop bestand aus drei Hauptaufgaben und zwei zusätzlichen Aufgaben.
 

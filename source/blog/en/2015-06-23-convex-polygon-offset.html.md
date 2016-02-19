@@ -4,7 +4,7 @@ date: 2015-06-23
 tags: d3, linear algebra
 author: Daniel
 ---
-<link rel='stylesheet' href="convex-polygon-offset/style.css"/>
+<link rel='stylesheet' href="/blog/en/2015/06/23/convex-polygon-offset/style.css"/>
 
 I was playing with force graphs and clusterings and I wanted to give my clusters a nice convex hull background with rounded corners.
 That is commonly achived with some CSS-Tricks using a thick `stroke-width` and `stroke-linejoin: round`. Here I will introduce
