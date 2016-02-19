@@ -1,0 +1,4 @@
+test:
+  post:
+    - bundle exec middleman build
+    - bundle exec htmlproof ./build --only-4xx --check-favicon --check-html
