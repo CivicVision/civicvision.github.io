@@ -10,11 +10,9 @@ ORIGIN_URL=`git config --get remote.origin.url`
 
 echo "Started deploying"
 
-bundle exec middleman build
-
 # Push to gh-pages.
-git config user.name "$USER_NAME"
-git config user.email "$USER_EMAIL"
+git config --global user.name "$USER_NAME"
+git config --global user.email "$USER_EMAIL"
 
 bundle exec middleman deploy
 echo "Deployed Successfully!"
