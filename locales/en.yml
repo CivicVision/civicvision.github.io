@@ -73,3 +73,8 @@ en:
     thankyou:
       headline: Thanks for signin up to our newsletter
       text: Please check your email and click the link provided to confirm your subscription.
+  datapipeline:
+    placeholder:
+      email: Your Email Address
+      name: Your Name
+    subscribe: I'm interested!

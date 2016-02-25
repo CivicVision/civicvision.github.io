@@ -1,0 +1,31 @@
+---
+title: Data Pipeline Crash Course
+layout: landingpage
+---
+- I18n.locale = :en
+#landingpage.data-pipeline
+  %h1 Do you want to use your data more efficiently?
+  %h2.sub-header A repeatable Data Pipeline is the answer.
+  .content
+    .course-content
+      %p.intro Creating a repeatable and consistent way of Collecting, Cleaning, Transforming and Updating your data will increase the time you can spend getting insights from your data.
+      %h3 In This 6-Day Email Course, You'll Learn:
+      %ul.course
+        %li
+          %h4 Lesson 1: Benefits of a Data Pipeline.
+        %li
+          %h4 Lesson 2: Collecting your data.
+        %li
+          %h4 Lesson 3: Cleaning your data.
+        %li
+          %h4 Lesson 4: Transforming your data.
+        %li
+          %h4 Lesson 5: Updating your data.
+        %li
+          %h4 Lesson 6: Automating your Pipeline.
+      %p Start improve your data handling TODAY! Sign up now!
+    .course-signup
+      .box
+        %h5 I want to learn how to create a repeatable Data Pipeline.
+        %p We're completing the course, and you will be the first to know once it's finished.
+        = partial "partials/subscribe_form", locals: { action: "https://www.getdrip.com/forms/2950925/submissions", drip_id: 2950925, name: "datapipeline", show_name: true }
