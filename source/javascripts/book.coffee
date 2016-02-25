@@ -1,13 +1,14 @@
-payMe = (amount, description, success) ->
+payMe = (amount, description, currency, success) ->
   StripeCheckout.configure({
     key: 'pk_live_4W08g0QnXjtV2SZW2BCKOyex',
     token: (token) ->
-      success(token)
-      data = {amount: amount, description: description, stripeToken: token.id}
+      data = {amount: amount, currency: currency, description: description, stripeToken: token.id}
       $.ajax({
         url: 'http://civicvision-payment.herokuapp.com/pay',
         method: 'post'
         data: data
+        success: (response) ->
+          success(token)
       })
     })
 
@@ -18,7 +19,7 @@ if $('#book-us').length > 0
     description = "A work week of Civic Vision"
     success = (token) ->
       $('#thank-you').show()
-    handler = payMe(amount, description, success)
+    handler = payMe(amount, description,'EUR', success)
     handler.open({
       name: 'Civic Vision UG',
       description: description,
@@ -37,7 +38,7 @@ if $('#book-us').length > 0
 
     success = (token) ->
       $('#thank-you').show()
-    handler = payMe(amount, description, success)
+    handler = payMe(amount, description, currency, success)
     handler.open({
       name: 'Civic Vision UG',
       description: description,

@@ -10,7 +10,13 @@ gem "nokogiri"
 gem "redcarpet"
 
 # Live-reloading plugin
-gem "middleman-livereload", "~> 3.1.0"
+group :development do
+  gem "middleman-livereload", "~> 3.1.0"
+end
+
+group :test do
+  gem 'html-proofer'
+end
 
 # For faster file watcher updates on Windows:
 gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
