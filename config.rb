@@ -1,4 +1,4 @@
-activate :i18n, mount_at_root: :en
+activate :i18n, mount_at_root: false
 
 activate :syntax
 set :markdown_engine, :redcarpet
@@ -110,6 +110,10 @@ end
 
 ignore "/book/pay.html"
 ignore "/en/book/pay.html"
+
+redirect "index.html", to: "en/index.html"
+redirect "blog/index.html", to: "de/blog/index.html"
+redirect "blog/index.html", to: "de/blog/index.html"
 
 # Build-specific configuration
 configure :build do
