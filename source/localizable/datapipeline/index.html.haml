@@ -1,32 +1,40 @@
 ---
 title: Data Pipeline Crash Course
 layout: landingpage
+headline: "I want to learn how to create a repeatable Data Pipeline."
+content: "We're completing the course, and you will be the first to know once it's finished."
+name: datapipeline
+drip_id: 2950925
 ---
 - content_for(:analytics_code, "UA-367775-19")
 - I18n.locale = :en
 #landingpage.data-pipeline
-  %h1 Do you want to use your data more efficiently?
+  %h1 Want to stop spending hours getting your data into shape?
   %h2.sub-header A repeatable Data Pipeline is the answer.
   .content
+    %h3 A free, 5-Day Email Course for NGOs on how to stop wasting valuable time before you can analyse and visualize your data.
+    .course-signup
+      = partial "partials/course_signup", locals: { headline: current_page.data.headline, content: current_page.data.content, drip_id: current_page.data.drip_id, name: current_page.data.name }
     .course-content
-      %p.intro Creating a repeatable and consistent way of Collecting, Cleaning, Transforming and Updating your data will increase the time you can spend getting insights from your data.
-      %h3 In This 6-Day Email Course, You'll Learn:
+      %p.intro Do you spend yout time trying to get your data into a format that you can use for analyzing and visualizing your data? Is it frustrating that you have to do it every time all over again? Creating a repeatable and consistent way of Collecting, Cleaning, Transforming and Updating your data will help you increase the time you can spend getting insights from your data.
+      %p.intro Since most people spend up to 30% of their time getting, cleaning and transforming the data, imagine how much you can save by creating a repeatable process. Once you created a Data Pipeline you could even delegate the tasks and save even more.
+      %h3 In This 5-Day Email Course, You'll Learn:
       %ul.course
         %li
-          %h4 Lesson 1: Benefits of a Data Pipeline.
+          %h4 Lesson 1: Why most NGOs are burning through their data analysis budgets.
+          %p Most common mistakes.
         %li
-          %h4 Lesson 2: Collecting your data.
+          %h4 Lesson 2: The biggest time savers when creating a Data Pipeline.
+          %p Where to focus to save you time.
         %li
-          %h4 Lesson 3: Cleaning your data.
+          %h4 Lesson 3: How to create your first Data Piepline.
+          %p The good and the bad.
         %li
-          %h4 Lesson 4: Transforming your data.
+          %h4 Lesson 4: How not to get stuck.
+          %p Tips &amp; Tricks.
         %li
-          %h4 Lesson 5: Updating your data.
-        %li
-          %h4 Lesson 6: Automating your Pipeline.
+          %h4 Lesson 5: You want even more savings?
+          %p Automation is the answer.
       %p Start improve your data handling TODAY! Sign up now!
     .course-signup
-      .box
-        %h5 I want to learn how to create a repeatable Data Pipeline.
-        %p We're completing the course, and you will be the first to know once it's finished.
-        = partial "partials/subscribe_form", locals: { action: "https://www.getdrip.com/forms/2950925/submissions", drip_id: 2950925, name: "datapipeline", show_name: true }
+      = partial "partials/course_signup", locals: { headline: current_page.data.headline, content: current_page.data.content, drip_id: current_page.data.drip_id, name: current_page.data.name }

@@ -1,0 +1,6 @@
+.box
+  .headline
+    %h5= headline
+  .signup-content
+    %p= content
+    = partial "partials/subscribe_form", locals: { action: "https://www.getdrip.com/forms/#{drip_id}/submissions", drip_id: drip_id, name: name, show_name: true }
