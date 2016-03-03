@@ -1,4 +1,4 @@
-activate :i18n, :mount_at_root => :de
+activate :i18n, mount_at_root: :en
 
 activate :syntax
 set :markdown_engine, :redcarpet
@@ -75,9 +75,9 @@ helpers do
 
   def locale_path(path)
     if I18n.locale == :de
-      path
-    else
       "/#{I18n.locale.to_s}#{path}"
+    else
+      path
     end
   end
 
