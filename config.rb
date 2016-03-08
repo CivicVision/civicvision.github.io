@@ -108,12 +108,19 @@ data.invoices.each do |invoice|
   proxy "/en/pay/#{invoice.code}/index.html", "pay.html", locals: { invoice: invoice }, lang: :en, ignore: true
 end
 
-ignore "/book/pay.html"
+ignore "/de/book/pay.html"
 ignore "/en/book/pay.html"
 
 redirect "index.html", to: "en/index.html"
 redirect "blog/index.html", to: "de/blog/index.html"
 redirect "blog/index.html", to: "de/blog/index.html"
+redirect "legal/index.html", to: "/de/legal/index.html"
+redirect "legal/privacy/index.html", to: "/de/legal/privacy/index.html"
+redirect "contact/index.html", to: "/de/contact/index.html"
+redirect "contact/thank-you/index.html", to: "/de/contact/thank-you/index.html"
+redirect "newsletter/index.html", to: "/de/newsletter/index.html"
+redirect "newsletter/thank-you/index.html", to: "/de/newsletter/thank-you/index.html"
+redirect "book/index.html", to: "/de/book/index.html"
 
 # Build-specific configuration
 configure :build do
