@@ -6,4 +6,4 @@ author: Mila
 ---
 Bisher gibt es unsere Blog Einträge nur auf Englisch. Wir arbeiten daran diese so schnell wie möglich auch auf Deutsch zur Verfügung stellen zu können.  
 
-Bis dahin gehts [hier](/en/blog/) zum englischen [Blog](/en/blog/).
+Bis dahin gehts [hier](/blog/) zum englischen [Blog](/blog/).
