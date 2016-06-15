@@ -59,11 +59,6 @@ helpers do
     end
   end
 
-  def invoice_date(invoice)
-    date = Date.strptime(invoice.date, '%Y-%m-%d')
-    date.strftime(locale_dateformat)
-  end
-
 end
 
 set :css_dir, 'stylesheets'
@@ -71,14 +66,6 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
-
-data.invoices.each do |invoice|
-  proxy "/en/pay/#{invoice.code}/index.html", "pay.html", locals: { invoice: invoice }, lang: :en, ignore: true
-end
-
-ignore "/de/book/pay.html"
-ignore "/en/book/pay.html"
-
 
 configure :build do
   ignore '*.swp'
