@@ -45,3 +45,28 @@ if $('#book-us').length > 0
       amount: amount,
       currency: currency
     })
+if $('#qualifying').length > 0
+	$('#qualifying .email').val($.querystring['email'])
+	$('#qualifying .name').val($.querystring['name'])
+	$('#qualifying .start').change((d) ->
+    start = $(@).val()
+    unless start == "six"
+      $('#qualifying .why-start').show()
+      $('#qualifying .start-begin').text($("#qualifying .start .#{start}").text())
+    else
+      $('#qualifying .why-start').hide()
+	)
+
+$(document).on('focus.textarea', '.auto-expand', ->
+  savedValue = @value
+  @value = ''
+  @baseScrollHeight = @scrollHeight
+  @value = savedValue
+  return
+).on 'input.textarea', '.auto-expand', ->
+  minRows = @getAttribute('data-min-rows') | 0
+  rows = undefined
+  @rows = minRows
+  rows = Math.ceil((@scrollHeight - (@baseScrollHeight)) / 17)
+  @rows = minRows + rows
+  return

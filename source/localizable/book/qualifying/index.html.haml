@@ -1,0 +1,34 @@
+---
+---
+#qualifying.content
+  %h1 Work with us
+  %form{:action => "https://www.getdrip.com/forms/59185606/submissions", "data-drip-embedded-form" => "59185606", :method => "post"}
+    %input.email{:name => "fields[email]", :type => "hidden", :value => ""}
+    %input.name{:name => "fields[name]", :type => "hidden", :value => ""}
+    %h3{"data-drip-attribute" => "headline"} Thank you for taking the time to fill out this short survey. It will take only a few minutes.
+    %div
+      %label{:for => "fields[project]"} Tell me more about yourself and the project. What (business) goals do you have in mind? Why are you looking to start this project?
+      %textarea.auto-expand(name="fields[project]" rows=3 data-min-rows=3)
+    %div
+      %label{:for => "fields[project]"} When are you looking to start?
+      %select.start(name="fields[start]")
+        %option.six(value="six" selected="selected") Six Month from today
+        %option.today(value="today") Now
+        %option.yesterday(value="yesterday") Yesterday
+    %div.hidden.why-start
+      %label{:for => "fields[why_start]"} 
+        Why start 
+        %span.start-begin now 
+        vs. six month from now?
+      %textarea.auto-expand(name="fields[why_start]" rows=2 data-min-rows=2)
+    %div
+      %label{:for => "fields[budget]"} Do you have a budget for this project? And it is at least 10.000€/$11.000?
+      %input{:name => "fields[budget]", :type => "text", :value => ""}
+    %div
+      %label{:for => "fields[why_me]"} Why do you want to work with us?
+      %textarea.auto-expand(name="fields[why_me]" rows=2 data-min-rows=2)
+    %div
+      %label{:for => "fields[new]"} Is this a new type of project for you, or have you done something like this before?
+      %textarea.auto-expand(name="fields[new]" rows=2 data-min-rows=2)
+    %div
+      %input{"data-drip-attribute" => "sign-up-button", :name => "submit", :type => "submit", :value => "Work with us"}
