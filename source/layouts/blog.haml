@@ -1,9 +1,9 @@
 = wrap_layout :base do
   %body
+    = partial "partials/analytics"
     = partial "partials/navigation"
     .blog
       = yield
       = partial "partials/newsletter_overview"
     = partial "partials/footer"
   = javascript_include_tag  "all"
-  = partial "partials/analytics"
