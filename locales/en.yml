@@ -74,6 +74,13 @@ en:
     thankyou:
       headline: Thanks for signin up to our newsletter
       text: Please check your email and click the link provided to confirm your subscription.
+  pdf_report:
+    placeholder:
+      email: Your Email Address
+    subscribe: Download the Report
+    thankyou:
+      headline: Thanks for your interest in the Data Pipeline Course.
+      text: Please check your email and click the link provided to confirm your interest.
   datapipeline:
     placeholder:
       email: Your Email Address

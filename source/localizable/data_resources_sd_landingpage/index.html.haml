@@ -1,0 +1,11 @@
+---
+title: 10 Free Open Data Resources
+layout: cta
+name: pdf_report
+drip_id: 2950925
+---
+- content_for(:analytics_code, "")
+- I18n.locale = :en
+#landingpage.data-pipeline
+  %section.content-box
+    = partial "partials/cta/form", locals: { headline: current_page.data.title, drip_id: current_page.data.drip_id, name: current_page.data.name }
