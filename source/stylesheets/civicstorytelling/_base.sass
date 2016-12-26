@@ -1,0 +1,139 @@
+@import "civicstorytelling/fonts"
+@import "civicstorytelling/color"
+@import "civicstorytelling/nav"
+@import "civicstorytelling/banner"
+@import "civicstorytelling/footer"
+@import "civicstorytelling/sub-heading"
+@import "civicstorytelling/cta-btn"
+@import "civicstorytelling/testimonials"
+@import "civicstorytelling/media-queries"
+@import "civicstorytelling/modal"
+
+@mixin transition($transition-base)
+  -webkit-transition: $transition-base
+  -moz-transition: $transition-base
+  -ms-transition: $transition-base
+  -o-transition: $transition-base
+  transition: $transition-base
+
+/* Button
+ *---------------------------------------------
+button
+  @include transition(all 0.1s ease-in-out)
+
+/* Forms
+ *---------------------------------------------
+
+input
+  &:focus, &[type="button"], &[type="reset"], &[type="submit"]
+    @include transition(all 0.1s ease-in-out)
+
+textarea:focus, .button
+  @include transition(all 0.1s ease-in-out)
+
+/* Typography
+ *---------------------------------------------
+
+*, *::after, *::before
+  box-sizing: initial
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary
+  display: block
+
+*
+  margin: 0
+  padding: 0
+  outline: 0
+
+body, html
+  font-family: $lead-pages-base-font-family
+  height: auto
+  width: 100%
+  word-wrap: break-word
+
+h1, h2, h3, p
+  -webkit-user-modify: read-write
+  word-wrap: break-word
+  -webkit-line-break: after-white-space
+
+h1, p
+  margin: 0 auto
+  text-align: center
+  -webkit-margin-before: 0
+  -webkit-margin-after: 0
+
+h2
+  font-size: 44px
+  line-height: 60px
+  text-transform: uppercase
+
+p, h3
+  font-size: 24px
+  line-height: 36px
+
+p
+  text-align: left
+
+a
+  &:link, &:visited
+    color: #1fa2ed
+    text-decoration: none
+  &:hover
+    color: #e05b49
+  @include transition(all 0.1s ease-in-out)
+
+/* Container
+ *---------------------------------------------
+
+#landingpage section
+  @include outer-container(100%)
+
+.content-wrapper
+  @include outer-container()
+  text-align: center
+
+/* Float Clearing
+ *---------------------------------------------
+
+.clearfix:before, .footer-widgets:before, .nav-primary:before, .nav-secondary:before, .site-container:before, .site-footer:before, .site-header:before, .site-inner:before, .wrap:before
+  content: " "
+  display: table
+
+.clearfix:after, .footer-widgets:after, .nav-primary:after, .nav-secondary:after, .site-container:after, .site-footer:after, .site-header:after, .site-inner:after, .wrap:after
+  clear: both
+  content: " "
+  display: table
+
+.clear
+  clear: both
+
+/* Site Containers
+ *---------------------------------------------
+
+.wrap
+  margin: 0 auto
+  max-width: 1160px
+
+/* Site Header
+ *----------------------------------------------------------------------------------------------------
+
+.site-header
+  .wrap
+    max-width: 1320px
+  .widget-area
+    float: right
+    text-align: right
+    width: 1080px
+  .widget_nav_menu
+    margin-top: 17px
+
+/* Widget Area
+ *---------------------------------------------
+
+.site-header
+  .widget-area
+    float: right
+    text-align: right
+    width: 1080px
+  .widget_nav_menu
+    margin-top: 17px

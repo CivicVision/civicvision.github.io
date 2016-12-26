@@ -1,0 +1,71 @@
+/* Banner Section
+ *---------------------------------------------
+
+#banner
+  height: auto
+  min-height: 400px
+  margin: 0 auto
+  padding: 40px 0
+  position: relative
+  text-align: center
+  z-index: 0
+  background: rgb(43, 76, 126)
+  &:after
+    border-top: solid 38px rgb(43, 76, 126)
+    border-left: solid 42px transparent
+    border-right: solid 42px transparent
+    content: ''
+    height: 0
+    margin: 0 auto
+    position: absolute
+    top: 100%
+    left: 0
+    right: 0
+    width: 0
+    z-index: -1
+  #img-caret
+    bottom: -5px
+    left: 49.3%
+    right: 50%
+    position: absolute
+    display: none
+    background: rgb(43, 76, 126)
+  h1
+    z-index: 2
+    position: relative
+    z-index: 1
+    color: $color-white
+    font-family: 'Lato', sans-serif
+    font-weight: 400
+    letter-spacing: .03em
+    @include font-size($headline-font-size, $headline-font-size*1.25)
+
+    #accent
+      color: $orange-accent
+      letter-spacing: 0
+
+#my-banner-img
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  height: 100%
+  width: 100%
+  z-index: -1
+
+
+#my-banner-p, #my-banner-img-caret
+  z-index: 2
+  position: relative
+  z-index: 1
+
+#my-banner
+  p
+    color: $color-white
+    font-weight: 700
+    letter-spacing: .05em
+    margin-bottom: 56px
+    text-transform: uppercase
+
+#my-banner-img-caret
+  bottom: 15px
