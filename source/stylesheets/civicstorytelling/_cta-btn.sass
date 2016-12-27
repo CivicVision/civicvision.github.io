@@ -9,7 +9,9 @@
   margin: 0 auto
   padding: 30px 45px
   text-transform: uppercase
-  width: 750px
+  @include span-columns(8)
+  @include shift(2)
+  +clearfix
   &:hover
     background: #ffcc01
   span
