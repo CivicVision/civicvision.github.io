@@ -1,7 +1,7 @@
 = wrap_layout :base do
   = stylesheet_link_tag "code"
   %body
-    = partial "partials/analytics"
+    = partial "partials/analytics", locals: { drip_id: '4828671', gtm_id: 'GTM-MTT6KM'}
     = partial "partials/navigation"
     .blog-content.article
       .header

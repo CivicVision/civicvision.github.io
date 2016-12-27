@@ -1,6 +1,6 @@
 = wrap_layout :base do
   %body
-    = partial "partials/analytics"
+    = partial "partials/analytics", locals: { drip_id: '4828671', gtm_id: 'GTM-MTT6KM'}
     = partial "partials/navigation"
     .blog
       = yield
