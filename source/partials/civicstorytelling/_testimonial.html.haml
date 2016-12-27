@@ -1,0 +1,9 @@
+- testemonial = data.testemonials[testemonial_id]
+%section.testimonial
+  .content-wrapper
+    = image_tag testemonial[:img][:src], alt: testemonial[:img][:src], class: 'testimonial-img'
+    .testimonial-copy
+      :markdown
+        #{testemonial.text}
+    %h4.testimonial-author= testemonial.author
+    %span.testimonial-title= testemonial.title
