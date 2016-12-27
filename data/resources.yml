@@ -11,8 +11,6 @@ books:
 blogs:
   - name: Code for America
     link: https://medium.com/code-for-america
-  - name: Sunlight Foundation
-    link: http://sunlightfoundation.com/blog/series/todayinopengov/
 
 podcasts:
   - name: GovEx
