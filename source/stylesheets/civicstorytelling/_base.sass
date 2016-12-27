@@ -1,12 +1,12 @@
 @import "civicstorytelling/fonts"
 @import "civicstorytelling/color"
+@import "civicstorytelling/media-queries"
 @import "civicstorytelling/nav"
 @import "civicstorytelling/banner"
 @import "civicstorytelling/footer"
 @import "civicstorytelling/sub-heading"
 @import "civicstorytelling/cta-btn"
 @import "civicstorytelling/testimonials"
-@import "civicstorytelling/media-queries"
 @import "civicstorytelling/modal"
 
 @mixin transition($transition-base)
@@ -68,8 +68,14 @@ h2
   text-transform: uppercase
 
 p, h3
-  font-size: 24px
+  @include font-size($lead-pages-text-font-size)
   line-height: 36px
+  @include media($smaller-screen)
+    @include font-size($lead-pages-text-font-size*0.7)
+  @include media($small-screen)
+    @include font-size($lead-pages-text-font-size*0.6)
+  @include media($large-tablet)
+    @include font-size($lead-pages-text-font-size*0.5)
 
 p
   text-align: left
@@ -85,12 +91,12 @@ a
 /* Container
  *---------------------------------------------
 
-#landingpage section
-  //@include outer-container(100%)
-
 .content-wrapper
   @include outer-container()
   text-align: center
+  @include media($large-screen)
+    padding-left: 1em
+    padding-right: 1em
 
 /* Float Clearing
  *---------------------------------------------

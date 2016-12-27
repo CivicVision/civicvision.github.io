@@ -3,7 +3,6 @@
 
 #banner
   height: auto
-  min-height: 400px
   margin: 0 auto
   padding: 40px 0
   position: relative
@@ -38,7 +37,18 @@
     font-family: 'Lato', sans-serif
     font-weight: 400
     letter-spacing: .03em
+    margin-bottom: 1em
     @include font-size($headline-font-size, $headline-font-size*1.25)
+
+    @include media($smaller-screen)
+      @include font-size($headline-font-size*0.7)
+    @include media($small-screen)
+      @include font-size($headline-font-size*0.6)
+    @include media($large-tablet)
+      @include font-size($headline-font-size*0.5)
+    @include media($normal-phone)
+      @include font-size($headline-font-size*0.3)
+
 
     #accent
       color: $orange-accent
