@@ -1,5 +1,7 @@
+- unless locals[:action]
+  - action = "https://www.getdrip.com/forms/#{drip_form_id}/submissions"
 .signup
-  %form(action="#{action}" method="post" data-drip-embedded-form="#{drip_id}" target="_blank")
+  %form(action="#{action}" method="post" data-drip-embedded-form="#{drip_form_id}" target="_blank")
     - if show_name
       %input(name="fields[name]" type="text" value="" placeholder="#{t("#{name}.placeholder.name")}")
     %input.required.email(name="fields[email]" type="email" value="" placeholder="#{t("#{name}.placeholder.email")}")
