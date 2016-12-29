@@ -37,27 +37,13 @@ $sub-heading-font-size: 40
   a.cta-btn
     color: $color-white
   ul
-    text-align: left
-    font-weight: 300
-    margin-left: 30px
-    margin-bottom: 1.5em
-    @include font-size($lead-pages-text-font-size)
     list-style: none
-    padding: 0
-    @include media($smaller-screen)
-      @include font-size($lead-pages-text-font-size*0.7)
-    @include media($small-screen)
-      @include font-size($lead-pages-text-font-size*0.6)
-    @include media($large-tablet)
-      @include font-size($lead-pages-text-font-size*0.5)
-      margin-left: 0px
-
-  li
-    padding-left: 1.3em
-    &:before
-      content: "\f00c"
-      color: $green-dark-bg
-      font-family: FontAwesome
-      display: inline-block
-      margin-left: -1.3em
-      width: 1.3em
+    li
+      padding-left: 1.3em
+      &:before
+        content: "\f00c"
+        color: $green-dark-bg
+        font-family: FontAwesome
+        display: inline-block
+        margin-left: -1.3em
+        width: 1.3em

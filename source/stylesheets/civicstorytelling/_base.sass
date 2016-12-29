@@ -8,6 +8,7 @@
 @import "civicstorytelling/cta-btn"
 @import "civicstorytelling/testimonials"
 @import "civicstorytelling/modal"
+@import "civicstorytelling/ready_to_talk"
 
 @mixin transition($transition-base)
   -webkit-transition: $transition-base
@@ -143,3 +144,22 @@ a
     width: 1080px
   .widget_nav_menu
     margin-top: 17px
+
+.content-wrapper
+  ul
+    text-align: left
+    font-weight: 300
+    margin-left: 30px
+    margin-bottom: 1.5em
+    @include font-size($lead-pages-text-font-size)
+    padding: 0
+    @include media($smaller-screen)
+      @include font-size($lead-pages-text-font-size*0.7)
+    @include media($small-screen)
+      @include font-size($lead-pages-text-font-size*0.6)
+    @include media($large-tablet)
+      @include font-size($lead-pages-text-font-size*0.5)
+      margin-left: 0px
+
+  li
+    padding-left: 1.3em

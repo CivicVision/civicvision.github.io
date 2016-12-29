@@ -82,3 +82,11 @@ en:
     thankyou:
       headline: Thanks for your interest in the Data Pipeline Course.
       text: Please check your email and click the link provided to confirm your interest.
+  civicstorytelling_talk:
+    placeholder:
+      email: Your Email Address
+      name: Your Name
+    subscribe: Let's talk
+    thankyou:
+      headline: Thanks for your 
+      text: Please check your email and click the link provided to confirm your interest.
