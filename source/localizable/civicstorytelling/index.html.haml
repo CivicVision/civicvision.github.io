@@ -34,5 +34,5 @@ drip_form_id: 62178597
   %section.sub-heading#ready-to-talk
     .content-wrapper
       = partial "localizable/civicstorytelling/ready_to_talk"
-      = partial "partials/subscribe_form", locals: { action: "https://www.getdrip.com/forms/#{current_page.data.drip_form_id}/submissions", drip_id: current_page.data.drip_form_id, name: 'civicstorytelling_talk', show_name: true }
+      = partial "partials/subscribe_form", locals: { drip_form_id: current_page.data.drip_form_id, name: 'civicstorytelling_talk', show_name: true }
   = partial "partials/civicstorytelling/footer_new_landing"
