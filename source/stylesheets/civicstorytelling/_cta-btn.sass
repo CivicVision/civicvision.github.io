@@ -1,15 +1,16 @@
-.cta-btn
-  background: $lead-pages-color-link
-  color: $color-white
+@mixin cta-button($background, $color, $font-size: 24)
+  background: $background
+  color: $color
   display: block
-  font-size: 24px
+  @include font-size($font-size)
   font-weight: 700
   letter-spacing: .05em
-  line-height: $lead-pages-base-line-height * 20px
-  margin: 0 auto
   padding: 30px 45px
   text-transform: uppercase
+.cta-btn
+  @include cta-button($lead-pages-color-link,$color-white)
   @include span-columns(8)
+  margin: 0 auto
   @include shift(2)
   +clearfix
   @include media($smaller-screen)
