@@ -2,7 +2,7 @@
 ---
 ### **Ready to talk?**
 
-Are you ready to discuss a project?  
+Are you ready to discuss a specific project?  
 Get in touch and we will find out if there is a fit.  
 Just to be sure. You are 
 
