@@ -6,6 +6,11 @@ drip_form_id: 95382048
 ---
 - content_for(:analytics_code, "")
 - I18n.locale = :en
+= javascript_include_tag "https://code.jquery.com/jquery-2.1.4.min.js", "https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js","sd-map"
+= stylesheet_link_tag "https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css"
+#map-background
+  #map
+#background-map
 #landingpage.data-pipeline
   %section.content-box
     = partial "partials/cta_form", locals: { headline: current_page.data.title, drip_id: current_page.data.drip_id, name: current_page.data.name }
