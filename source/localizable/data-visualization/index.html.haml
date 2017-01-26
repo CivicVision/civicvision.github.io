@@ -1,0 +1,38 @@
+---
+title: Data Visualization
+layout: lead_pages
+name: pdf_report
+drip_form_id: 62888169
+gtm_id: 'GTM-TTWW7N'
+---
+- I18n.locale = :en
+%div(id="landingpage")
+  = partial "partials/help", locals: { clients: "civic advocacy groups and small social sector NGOs", tagline: "increase their audience engagement and effectiveness in communication by creating beautiful and engaging data visualizations."}
+  %section.sub-heading
+    .content-wrapper
+      = partial "localizable/data-visualization/story"
+  %section.sub-heading
+    .content-wrapper
+      = partial "localizable/data-visualization/results"
+  %section.sub-heading-alternate
+    .content-wrapper
+      = partial "localizable/data-visualization/data_research"
+      .modal
+        %label{for: "free-call-modal"}
+          #free-call.cta-btn
+            %u Schedule a free Call
+            %span »
+        %input#free-call-modal.modal-state{type: "checkbox"}/
+        .modal-fade-screen#free-call-modal-calendly
+          .modal-inner
+            .modal-close{for: "free-call-modal"}
+            %h1 Schedule Free Call
+            <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/civicvision/data-source-research-30-minute-call" style="min-width:320px;height:580px;"></div>
+            <script type="text/javascript" src="https://calendly.com/assets/external/widget.js"></script>
+            <!-- Calendly inline widget end -->
+  %section.sub-heading#ready-to-talk
+    .content-wrapper
+      = partial "localizable/data-visualization/ready_to_talk"
+      = partial "partials/subscribe_form", locals: { drip_form_id: current_page.data.drip_form_id, name: 'datavisualization_talk', show_name: true }
+  = partial "partials/footer_landingpage"
