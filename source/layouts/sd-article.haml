@@ -4,12 +4,12 @@ drip_form_id: 69033879
 = wrap_layout :base do
   = stylesheet_link_tag "code", "http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css", "sandiegomaps"
   - if current_page.data.card
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@milafrerichs" />
     <meta name="twitter:title" content="#{current_page.title}" />
     <meta name="twitter:description" content="#{current_page.data.card.description}" />
     - if current_page.data.image
-      <meta name="twitter:image" content="#{asset_url(current_page.data.image)}" />
+      <meta name="twitter:image" content="https://civicvision.de#{asset_url(current_page.data.image)}" />
   %body
     = partial "partials/analytics", locals: { drip_id: '4828671', gtm_id: 'GTM-MTT6KM'}
     = partial "partials/sandiego-maps/navigation"
