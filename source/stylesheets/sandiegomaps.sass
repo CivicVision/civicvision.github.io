@@ -1,4 +1,17 @@
+@import 'bourbon/bourbon'
+@import 'base/grid-settings'
+@import 'neat/neat'
+@import 'base/base'
 
 #sdmaps-tract-9511, #sdmaps-housing-income
   width: 100%
   height: 500px
+.nav.sd-maps
+  left: 40%
+  margin-bottom: 1em
+  @include media($mobile)
+    left: 0
+  a
+    font-size: 2em
+.blog-content
+  margin-top: 4em

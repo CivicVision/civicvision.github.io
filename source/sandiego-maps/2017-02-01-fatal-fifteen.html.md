@@ -1,5 +1,8 @@
 ---
 title: The fatal fifteen
+image: 2017-02-01-fatal-fifteen/chart.png
+card:
+  description: The press release from @CirculateSD visualized.
 ---
 A press release from [CirculateSD](http://www.circulatesd.org/press_release_circulate_sd_calls_for_city_to_fix_15_deadliest_intersections) had an interesting dataset included which caught my eye immediately.  
 The location of the fifteen most dangerous intersections for people walking in San Diego.

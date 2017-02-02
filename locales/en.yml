@@ -61,6 +61,12 @@ en:
     title: San Diego Maps
     more: Read more
     written_by: written by
+    nav:
+      home: San Diego Maps
+    headlines:
+      enjoy: Did you enjoyed this post?
+    text:
+      normal: I will send you updates about new maps and how to create your own.
   blog:
     title: Insights
     more: Read more

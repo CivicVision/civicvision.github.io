@@ -1,5 +1,8 @@
 ---
 title: Percentage of income used for housing
+image: 2017-01-31-housing-income/map.png
+card:
+  description: Maps displaying the percentage people pay from their income for housing
 ---
 Maps displaying the percentage of their income people use for housing.
 It is shocking how many people use more than 30% of their income for housing.
