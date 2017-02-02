@@ -1,5 +1,6 @@
 ---
 title: The fatal fifteen
+image: 2017-02-01-fatal-fifteen/chart.png
 card:
   description: The press release from @CirculateSD visualized.
 ---

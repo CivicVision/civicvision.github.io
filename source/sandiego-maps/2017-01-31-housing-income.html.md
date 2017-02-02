@@ -1,5 +1,6 @@
 ---
 title: Percentage of income used for housing
+image: 2017-01-31-housing-income/map.png
 card:
   description: Maps displaying the percentage people pay from their income for housing
 ---
