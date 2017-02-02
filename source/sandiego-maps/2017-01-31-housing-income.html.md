@@ -15,8 +15,12 @@ I will post the intermediate results here and will update these posts with more 
 I will need to look at trends here and compare with older data and maybe other cities to find out if this is specific to San Diego or America.
 I'm surprised by the number of 16 tracts where > 70% of the people use 30% of their income for housing. 
 
-### Highest number of people spending > 30% of their income for housing
-#### Census Tract 95.11, San Diego, CA
+## Highest number of people spending > 30% of their income for housing
+
+The highest percentage people spending more than 30 % of their income for housing live in Census Tract 95.11.
+Here are more details about it.
+
+### Census Tract 95.11, San Diego, CA
 
 This tract has the highest percentage of people spending more than 30% of their income for housing.  
 Unbelievable **82 %**
@@ -39,11 +43,14 @@ A few facts about this tract:
 
 <div id="sdmaps-tract-9511"></div>
 
-### Lowest number of people spending > 30% of their income for housing
+## Lowest number of people spending > 30% of their income for housing
 
-#### Census Tract 63, San Diego, CA
+The lowest percentage of people spending more than 30 % of their income for housing live in Census Tract 63.
+Here are more details about it.
 
-Compare the two tracts
+### Census Tract 63, San Diego, CA
+
+Comparing the two tracts to find interesting patterns.
 
 || Tract 95.11 | Tract 63 | San Diego
 ---------------------------|----------------------------|---------------------------|-------------|
