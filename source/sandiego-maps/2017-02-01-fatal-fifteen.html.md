@@ -1,7 +1,7 @@
 ---
 title: The fatal fifteen
 ---
-A press release from [CirculateSD](http://www.circulatesd.org/press_release_fatal15sd) had an interesting dataset included which caught my eye immediately.  
+A press release from [CirculateSD](http://www.circulatesd.org/press_release_circulate_sd_calls_for_city_to_fix_15_deadliest_intersections) had an interesting dataset included which caught my eye immediately.  
 The location of the fifteen most dangerous intersections for people walking in San Diego.
 I jumped on it to create a map.
 READMORE
