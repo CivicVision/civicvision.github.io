@@ -1,7 +1,11 @@
+---
+drip_form_id: 69033879
+---
 = wrap_layout :base do
   = stylesheet_link_tag "code", "http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css", "sandiegomaps"
   %body
     = partial "partials/analytics", locals: { drip_id: '4828671', gtm_id: 'GTM-MTT6KM'}
+    = partial "partials/sandiego-maps/navigation"
     .blog-content.article
       .header
         %h1= current_article.title
@@ -13,4 +17,5 @@
       .content
         = preserve do
           = yield
+    = partial "partials/newsletter_big", locals: { form_name: 'sdmaps', show_name: false }
   = javascript_include_tag  "http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"
