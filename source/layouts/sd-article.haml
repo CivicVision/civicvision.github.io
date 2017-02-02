@@ -1,5 +1,5 @@
 = wrap_layout :base do
-  = stylesheet_link_tag "code"
+  = stylesheet_link_tag "code", "http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css", "sandiegomaps"
   %body
     = partial "partials/analytics", locals: { drip_id: '4828671', gtm_id: 'GTM-MTT6KM'}
     .blog-content.article
@@ -13,3 +13,4 @@
       .content
         = preserve do
           = yield
+  = javascript_include_tag  "http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"
