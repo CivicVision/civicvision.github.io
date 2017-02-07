@@ -9,7 +9,7 @@ drip_form_id: 69033879
     <meta name="twitter:title" content="#{current_page.title}" />
     <meta name="twitter:description" content="#{current_page.data.card.description}" />
     - if current_page.data.image
-      <meta name="twitter:image" content="https://civicvision.de#{asset_url(current_page.data.image)}" />
+      <meta name="twitter:image" content="#{url_root+image_path(current_page.data.image)}" />
   %body
     = partial "partials/analytics", locals: { drip_id: '4828671', gtm_id: 'GTM-MTT6KM'}
     = partial "partials/sandiego-maps/navigation"
