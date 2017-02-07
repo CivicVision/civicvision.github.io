@@ -2,6 +2,10 @@
 ---
 %li.bullet.three-col-bullet
   .bullet-content
-    %h2= title
+    - if locals[:link]
+      %a(href=link)
+        %h2= title
+    - else
+      %h2= title
     %p= content
     %p= sub_content

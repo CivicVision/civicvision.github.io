@@ -7,7 +7,7 @@ en:
     blog: "Blog"
     resources: Resources I love
   about:
-    title: "Civic Vision is a data consultancy who helps civic NGOs and governments to update their data processes. We specialize in creating data pipelines (getting, cleaning, transforming data) and creating engaging and beatiful visualizations."
+    title: "Civic Vision is a data consultancy who helps civic advocacy groups and small social sector NGOs increase their audience engagement and effectiveness in communication by creating beautiful and engaging data visualizations and telling stories with data."
   what:
     consultancy:
       title: Consultancy
@@ -15,13 +15,13 @@ en:
         "
       sub_content: "Civic Vision helps you with custom solutions built on top of the strength of open source. "
     visualization:
-      title: Visualization
+      title: Data Visualization
       content: "Do you want to show your data to a broader audience? Do you want to find insights in your data? "
       sub_content: "Civic Vision helps you with interactive visualizations and map-based applications."
-    trainings:
-      title: Trainings
-      content: "You want to improve your and your team’s data literacy?"
-      sub_content: "Civic Vision helps you with data trainings and workshops."
+    storytelling:
+      title: Data Storytelling
+      content: "Dou you want to effectively communicate your story?"
+      sub_content: "Civic Vision helps you increase your audience engagement with telling stories with data."
   about_us:
     title: About us
   portfolio:
@@ -96,6 +96,14 @@ en:
     placeholder:
       email: Your Email Address
     subscribe: Download the Report
+    thankyou:
+      headline: Thanks for your 
+      text: Please check your email and click the link provided to confirm your interest.
+  datavisualization_talk:
+    placeholder:
+      email: Your Email Address
+      name: Your Name
+    subscribe: Let's talk
     thankyou:
       headline: Thanks for your 
       text: Please check your email and click the link provided to confirm your interest.
