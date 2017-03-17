@@ -1,0 +1,91 @@
+.prices {
+  margin-top: 100px;
+  @include span-columns(10);
+  @include shift(2);
+  .silver, .plat {
+    float: left;
+    width: 250px;
+    background: rgba(255,255,255,1);
+    text-align: center;
+  }
+
+  .gold {
+    float: left;
+    position: relative;
+    width: 250px;
+    top: -50px;
+    padding: 50px 0;
+    background: rgba(52, 152, 219,1.0);
+    text-align: center;
+    border-radius: 5px;
+
+		.price {
+			color: #fff;
+		}
+    & > h1, & > h2, & > p, & > span {
+      color: rgba(255,255,255,1);
+    }
+  }
+
+  h1 {
+    margin: 20px 0 10px 0;
+    font-size: 1.25em;
+    color: rgba(0,0,0,0.8);
+  }
+
+  h2 {
+    font-size: .75em;
+    color: rgba(0,0,0,1);
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  p {
+    color: rgba(0,0,0,.4);
+    margin: 10px 0;
+    font-weight: 100;
+    font-size: .75em;
+  }
+
+  span {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 125px;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: rgba(0,0,0,.5);
+    border-bottom: 1px solid rgba(0,0,0,.1);
+  }
+
+  .price {
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    line-height: 100px;
+    color: #000;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin: 20px auto;
+  }
+
+  button {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    height: 35px;
+    border-bottom: 5px solid rgba(192, 57, 43,1.0);
+    background: rgba(231, 76, 60,1.0);
+    border: none;
+    border-radius: 5px;
+    color: rgba(255,255,255,1);
+    font-size: .75em;
+    font-weight: 100;
+    transition: all ease-in-out .2s;
+    
+    &:hover {
+      background: rgba(192, 57, 43,1.0); 
+    }
+  }
+}

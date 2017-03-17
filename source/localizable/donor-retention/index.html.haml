@@ -1,0 +1,49 @@
+---
+title: Donor Retention
+layout: lead_pages
+name: pdf_report
+clients: "civic advocacy groups and small social sector NGOs"
+tagline: "increase their donations by engaging their donors through email automation."
+drip_id: 7087022
+gtm_id: ''
+include_drift: true
+---
+- content_for :assets do
+  = stylesheet_link_tag 'donor-retention'
+- I18n.locale = :en
+%div(id="landingpage")
+  %section#banner.second-headline
+    .content-wrapper
+      %h1
+        You could be loosing out on at least 
+        %span#accent $14,000
+        in donations.
+      %h2
+        I help
+        %span#accent= current_page.data.clients
+        = current_page.data.tagline
+      = image_tag 'civicstorytelling/down-arrow.png', alt: 'down arrow', id: 'img-caret'
+  %section.sub-heading
+    .content-wrapper
+      = partial "localizable/donor-retention/story"
+  %section.sub-heading-alternate
+    .content-wrapper
+      = partial "localizable/donor-retention/example"
+  %section.sub-heading
+    .content-wrapper
+      = partial "localizable/donor-retention/solution"
+  = partial "partials/testimonial", locals: { testemonial_id: 'charity_water', classes: 'multiple' }
+  = partial "partials/testimonial", locals: { testemonial_id: 'american_heart', classes: 'multiple last' }
+  %section.sub-heading
+    .content-wrapper
+      = partial "localizable/donor-retention/calculate_lost"
+  %section.sub-heading-alternate
+    .content-wrapper
+      %h2 Packages
+      = partial "localizable/donor-retention/packages"
+  %section.sub-heading#ready-to-talk
+    .content-wrapper
+      %h2 FAQ
+      = partial "partials/subscribe_form", locals: { drip_form_id: current_page.data.drip_form_id, name: 'civicstorytelling_talk', show_name: true }
+  = partial "partials/civicstorytelling/footer_new_landing"
+  =javascript_include_tag "https://d3js.org/d3.v4.min.js", "donor-retention", "donor-increase-chart"
