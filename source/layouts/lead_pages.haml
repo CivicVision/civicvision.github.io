@@ -1,14 +1,18 @@
 !!!
 %html
-    %head
-        %title= current_page.data.title || "Civic Vision"
-        %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
-        %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        - if content_for?(:no_follow)
-            %meta(name="robots" content="noindex")
-            %meta(name="robots" content="nofollow")
-        = stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", "https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Montserrat:400,700", "civicstorytelling"
-        %link(rel="icon" href="/images/favicon.ico")
-        = javascript_include_tag  "https://code.jquery.com/jquery-2.1.4.min.js", "landingpage"
-    = partial "partials/analytics", locals: { drip_id: '4828671', gtm_id: current_page.data.gtm_id || 'GTM-MTT6KM'}
-    = yield
+  %head
+    %title= current_page.data.title || "Civic Vision"
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    - if content_for?(:no_follow)
+      %meta(name="robots" content="noindex")
+      %meta(name="robots" content="nofollow")
+    = stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", "https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Montserrat:400,700"
+    - if content_for?(:assets)
+      = yield_content :assets
+    - else
+      = stylesheet_link_tag 'civicstorytelling'
+    %link(rel="icon" href="/images/favicon.ico")
+    = javascript_include_tag  "https://code.jquery.com/jquery-2.1.4.min.js", "landingpage"
+    = partial "partials/analytics", locals: { drip_id: current_page.data.drip_id || '4828671', gtm_id: current_page.data.gtm_id || 'GTM-MTT6KM'}
+  = yield
