@@ -1,0 +1,64 @@
+$viz-gray: #C0BEC0
+$sub-headline-font-size: 35
+#banner
+  h2
+    color: #fff
+    @include font-size($sub-headline-font-size)
+    text-transform: none
+    @include media($smaller-screen)
+      @include font-size($sub-headline-font-size*0.7)
+    @include media($small-screen)
+      @include font-size($sub-headline-font-size*0.6)
+    @include media($large-tablet)
+      @include font-size($sub-headline-font-size*0.5)
+    @include media($normal-phone)
+      @include font-size($sub-headline-font-size*0.3)
+    #accent
+      color: $orange-accent
+      letter-spacing: 0
+#dollars-saved
+  .button
+    background: #1fa2ed
+    padding: 0.2em
+    font-size: 1.5rem
+    line-height: 2.25rem
+    color: #fff
+    &.active
+      background: #c7850c
+  .explanation
+    @include span-columns(3)
+    @include media($smaller-screen)
+      @include row()
+      @include span-columns(12)
+    @include media($small-screen)
+      @include row()
+      @include span-columns(12)
+    @include media($large-tablet)
+      @include row()
+      @include span-columns(12)
+    @include media($normal-phone)
+      @include span-columns(12)
+      @include row()
+  .viz
+    @include span-columns(8)
+    @include omega()
+    @include media($smaller-screen)
+      @include row()
+      @include span-columns(12)
+    @include media($small-screen)
+      @include row()
+      @include span-columns(12)
+    @include media($large-tablet)
+      @include row()
+      @include span-columns(12)
+    @include media($normal-phone)
+      @include span-columns(12)
+      @include row()
+  .rest
+    @include row()
+    @include span-columns(12)
+  .axis
+    text
+      fill: $viz-gray
+    path,line
+      stroke: $viz-gray

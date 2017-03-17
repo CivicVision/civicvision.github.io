@@ -1,7 +1,9 @@
 - testemonial = data.testemonials[testemonial_id]
-%section.testimonial
+- section_classes = locals.key?(:classes) ? classes : ''
+%section.testimonial(class="#{section_classes}")
   .content-wrapper
-    = image_tag testemonial[:img][:src], alt: testemonial[:img][:src], class: 'testimonial-img'
+    - if testemonial.img
+      = image_tag testemonial[:img][:src], alt: testemonial[:img][:src], class: 'testimonial-img'
     .testimonial-copy
       :markdown
         #{testemonial.text}
