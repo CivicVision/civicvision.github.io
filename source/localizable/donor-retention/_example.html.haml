@@ -2,27 +2,36 @@
 ---
 %h1 Example Results
 
-%p Amount you can save with an average donation of $100, Retention Rate of 46% and 2000 donors in Year 1.
+%h5
+  Dollars generated with a
+  %span.headline-value 20
+  Increase in retained donors, an average donation of
+  %span.avg-donations $100
+  and
+  %span.donors 2000
+  donors in Year 1.
 
 %div#dollars-saved
   %h5
     %span.headline-value 20
     ="% retention increase"
-  %div.viz
-  %div.explanation
-    %dl
-      %dt After 1 Year:
-      %dd
-        %span.amount-1
-        generated
-    %dl
-      %dt After 4 Years:
-      %dd
-        %span.amount-4
-        generated
-    %b Retention Rate increase:
-    %button.button.active(data-value="1") 1%
-    %button.button(data-value="5") 5%
-    %button.button(data-value="10") 10%
-    %button.button(data-value="20") 20%
-  %div.rest
+  .viz-container
+    %ul.viz-nav
+      %li
+        %button.button.active(data-value="1") 1%
+      %li
+        %button.button(data-value="5") 5%
+      %li
+        %button.button(data-value="10") 10%
+      %li
+        %button.button(data-value="20") 20%    
+    .viz
+    .explanation
+      %dl 
+        %dt
+          %span.amount-1
+        %dd after 1 Year
+      %dl
+        %dt
+          %span.amount-4
+        %dd after 4 Years
