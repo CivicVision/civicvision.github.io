@@ -1,0 +1,90 @@
+$viz-gray: #C0BEC0
+$viz-active: #c7850c
+#dollars-saved
+  margin-top: 2em
+  h4
+    font-size: 1.34rem
+    span.highlight
+      font-style: italic
+      border-bottom: 1px dotted $viz-gray
+      color: $viz-gray
+  .explanation
+    @include span-columns(3)
+    @include media($smaller-screen)
+      @include row()
+      @include span-columns(12)
+    @include media($small-screen)
+      @include row()
+      @include span-columns(12)
+    @include media($large-tablet)
+      @include row()
+      @include span-columns(12)
+    @include media($normal-phone)
+      @include span-columns(12)
+      @include row()
+  .viz
+    @include span-columns(8)
+    @include omega()
+    @include media($smaller-screen)
+      @include row()
+      @include span-columns(12)
+    @include media($small-screen)
+      @include row()
+      @include span-columns(12)
+    @include media($large-tablet)
+      @include row()
+      @include span-columns(12)
+    @include media($normal-phone)
+      @include span-columns(12)
+      @include row()
+  .rest
+    @include row()
+    @include span-columns(12)
+  .axis
+    text
+      fill: $viz-gray
+    path,line
+      stroke: $viz-gray
+  ul.viz-nav
+    list-style: none
+    margin: 0
+    li
+      list-style: none
+      float: left
+      margin: 0 0.8em 0
+      padding: 0
+      &:before
+        content: ''
+        margin: 0
+        display: inline
+        width: 0
+      .button
+        background: none
+        padding: 0.2em 0.8em
+        font-size: 1.5rem
+        line-height: 2.25rem
+        color: #fff
+        border: 1px solid #979797
+        border-radius: 0.5em
+        cursor: pointer
+        &.active
+          background: #c7850c
+  .explanation
+    margin-top: 2em
+    h5
+      font-size: 1.6em
+      margin-bottom: 1.5em
+      color: $viz-gray
+    dl
+      border-bottom: 1px solid #979797
+      margin-bottom: 2em
+      dt
+        font-size: 3.5em
+        color: $viz-active
+        @include media($laptop-screen-down)
+          font-size: 2.9em
+      dd
+        font-size: 0.8em
+        color: $viz-gray
+        padding-bottom: 2em
+        margin-top: 1em

@@ -1,20 +1,22 @@
 ---
 ---
-%h1 Example Results
+%h3 How much are you loosing out on?
 
-%h5
-  Dollars generated with a
-  %span.headline-value 20
-  Increase in retained donors, an average donation of
-  %span.avg-donations $100
-  and
-  %span.donors 2000
-  donors in Year 1.
 
-%div#dollars-saved
-  %h5
-    %span.headline-value 20
-    ="% retention increase"
+#dollars-saved
+  %h4
+    Dollars generated with a
+    %span.highlight
+      %span.headline-value 20
+      &#37;
+    increase in retained donors, an average donation of
+    %span.highlight
+      $
+      %span.avg-donations 100
+    and
+    %span.highlight
+      %span.donors 2000
+    donors in year 1.
   .viz-container
     %ul.viz-nav
       %li
@@ -27,6 +29,7 @@
         %button.button(data-value="20") 20%    
     .viz
     .explanation
+      %h5 Additional Donations
       %dl 
         %dt
           %span.amount-1
