@@ -1,9 +1,9 @@
 $viz-gray: #C0BEC0
-$viz-active: #c7850c
+$viz-active: $accent-color
 #dollars-saved
   margin-top: 2em
   h4
-    font-size: 1.34rem
+    font-size: 1.3rem
     span.highlight
       font-style: italic
       border-bottom: 1px dotted $viz-gray
@@ -67,8 +67,13 @@ $viz-active: #c7850c
         border: 1px solid #979797
         border-radius: 0.5em
         cursor: pointer
+        &:hover
+          background: #eee
+          color: $viz-active
         &.active
-          background: #c7850c
+          background: $viz-active
+          &:hover
+            color: #000
   .explanation
     margin-top: 2em
     h5
@@ -79,10 +84,10 @@ $viz-active: #c7850c
       border-bottom: 1px solid #979797
       margin-bottom: 2em
       dt
-        font-size: 3.5em
+        font-size: 3em
         color: $viz-active
         @include media($laptop-screen-down)
-          font-size: 2.9em
+          font-size: 2.5em
       dd
         font-size: 0.8em
         color: $viz-gray

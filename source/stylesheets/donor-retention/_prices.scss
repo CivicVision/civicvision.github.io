@@ -1,23 +1,50 @@
 .prices {
-  margin-top: 100px;
+  margin: 5em 0 2em;
   @include span-columns(10);
-  @include shift(2);
+  @include shift(1);
+  @include media($laptop-screen-down) {
+    @include shift(1);
+  }
   .silver, .plat {
     float: left;
-    width: 250px;
+    @include span-columns(4);
+    @include omega();
     background: rgba(255,255,255,1);
     text-align: center;
+    position: relative;
+    @include media($smaller-screen) {
+      @include shift(1);
+      margin-top: 1em;
+      @include span-columns(10);
+      @include omega();
+    }
+    @include media($normal-phone) {
+      @include shift(0);
+      @include span-columns(12);
+    }
   }
 
   .gold {
     float: left;
     position: relative;
-    width: 250px;
+    @include span-columns(4);
+    @include omega();
     top: -50px;
     padding: 50px 0;
     background: rgba(52, 152, 219,1.0);
     text-align: center;
     border-radius: 5px;
+    @include media($smaller-screen) {
+      @include shift(1);
+      @include span-columns(10);
+      @include omega();
+      margin-top: 1em;
+      top: 0;
+    }
+    @include media($normal-phone) {
+      @include shift(0);
+      @include span-columns(12);
+    }
 
 		.price {
 			color: #fff;
@@ -51,7 +78,8 @@
     margin-bottom: 20px;
     padding-bottom: 10px;
     display: inline-block;
-    width: 125px;
+    @include span-columns(2 of 4);
+    @include shift(1);
     font-size: 1em;
     font-weight: 700;
     letter-spacing: 1px;
@@ -65,9 +93,15 @@
     text-align: center;
     line-height: 100px;
     color: #000;
-    font-size: 1.5em;
-    font-weight: 300;
+    font-size: 1.4em;
+    font-weight: 400;
     margin: 20px auto;
+    @include media($normal-phone) {
+      margin: 1em auto;
+      width: auto;
+      height: auto;
+      line-height: 1.5em;
+    }
   }
 
   button {
