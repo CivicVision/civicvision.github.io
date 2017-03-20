@@ -10,4 +10,4 @@ In 2015 the percentage of donors giving again this year is, on average across no
 
 On average a 1% increase in repeated donations results in a __$14,029__ added donation value. 
 
-What if we could help you increase your repeated donations by 5%? This is actually a very conservative estimate of how much you could increase donations. When an e-commerce business applies these same retention techniques to their customers, sales usually increase by 20 to 30%. If the average nonprofit saw the same improvement, their donations would increase by __$40,000__.
+What if we could help you increase your repeated donations by 5%? This is actually a very conservative estimate of how much you could increase donations. When an e-commerce business applies these same retention techniques to their customers, sales usually increase by 20 to 30%. If the average nonprofit saw the same improvement, their donations would increase by __$450,000__.
