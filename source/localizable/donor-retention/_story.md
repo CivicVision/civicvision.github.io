@@ -2,7 +2,7 @@
 ---
 ### On average only __23% of new donors__ renew their donation or donate a second time. And only __60% of current donors__ donate again.
 
-On donations below $100 the numbers drop even further. Only 18% of new donors donate again and 52% of repeat donors donate again.
+On donations below $100 the numbers drop even further. Only 18% of new donors donate again and 52% of repeat donors give a second time.
 
 ### The majority of your donors last year, will not give again this year.
 

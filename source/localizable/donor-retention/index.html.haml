@@ -14,16 +14,8 @@ include_drift: true
 %div(id="landingpage")
   %section#banner.second-headline
     .content-wrapper
-      %h1
-        You could be loosing out on at least 
-        %span#accent $14,000
-        in donations.
-      %h2
-        I help
-        %span#accent= current_page.data.clients
-        = current_page.data.tagline
-      = image_tag 'civicstorytelling/down-arrow.png', alt: 'down arrow', id: 'img-caret'
-  %section.sub-heading
+      = partial "localizable/donor-retention/headline"
+ %section.sub-heading
     .content-wrapper
       = partial "localizable/donor-retention/story"
   %section.sub-heading-alternate
@@ -39,11 +31,9 @@ include_drift: true
       = partial "localizable/donor-retention/calculate_lost"
   %section.sub-heading-alternate
     .content-wrapper
-      %h2 Packages
       = partial "localizable/donor-retention/packages"
   %section.sub-heading#ready-to-talk
     .content-wrapper
-      %h2 FAQ
-      = partial "partials/subscribe_form", locals: { drip_form_id: current_page.data.drip_form_id, name: 'civicstorytelling_talk', show_name: true }
+      = partial "localizable/donor-retention/faq"
   = partial "partials/civicstorytelling/footer_new_landing"
   =javascript_include_tag "https://d3js.org/d3.v4.min.js", "donor-retention", "donor-increase-chart"
