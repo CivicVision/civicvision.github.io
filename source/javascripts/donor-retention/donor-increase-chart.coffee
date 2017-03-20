@@ -2,10 +2,10 @@ dollarsSaved = ->
   width = 720
   height = 400
   margin =
-    top: 20
+    top: 40
     right: 40
     bottom: 30
-    left: 50
+    left: 60
   xDomain = [1,5]
   yDomain = [0,160000]
   yMax = 160000
@@ -36,6 +36,7 @@ dollarsSaved = ->
 
   color = d3.scaleOrdinal().domain(["0","1","5","10","20"]).range(["#ccc","#ff7f0e","#ccc","#ccc","#2ca02c"])
   vizGrey = "#C0BEC0"
+  vizHighlight = '#FF8271'
   chart = (selection) ->
     selection.each((data) ->
       data = data.map((d, i) ->
@@ -58,7 +59,7 @@ dollarsSaved = ->
       gEnter.append('g').attr 'class', 'y axis'
 
       g = svg.merge(gEnter)
-      g.select('.line').transition().attr('d', line).attr('fill', 'none').attr('stroke', '#c7850c').attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round').attr('stroke-width', 2.5)
+      g.select('.line').transition().attr('d', line).attr('fill', 'none').attr('stroke', vizHighlight).attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round').attr('stroke-width', 2.5)
 
       xAxis = g.select('g.x.axis').attr('transform', 'translate(0,' + yScale.range()[0]+ ')').call(d3.axisBottom(xScale).ticks(5))
       axisText = xAxis.selectAll('text.axis-label').data([1])
@@ -75,7 +76,7 @@ dollarsSaved = ->
       .attr('r', 5)
       .attr('cx', (d) -> xScale(d[0]))
       .attr('cy', (d) -> yScale(d[1]))
-      .attr('stroke', '#c7850c')
+      .attr('stroke', vizHighlight)
       .attr('stroke-width', '2.5')
       .attr('fill', '#25364c')
 
@@ -133,27 +134,26 @@ dollarsSaved = ->
     chart
   chart
 
-chart = dollarsSaved().x((d) -> d.Year).y((d) -> d["Sum Saved"]).yMax(160000).labelValue((d) -> d["Sum Saved"])
+donors = new Donors()
+donorData = donors.calculate()
+donorMax = parseInt(d3.format(".2r")(d3.max(donorData[donorData.length-1], (d) -> d.additional_sum)))
+chart = dollarsSaved().x((d) -> d.year).y((d) -> d.additional_sum).yMax(donorMax).labelValue((d) -> d.additional_sum)
+groups = ["1","5","10","20"]
 window.visualizeDollarsSaved = (group) ->
-  d3.csv '/data/retention_grouped.csv', ((d) ->
-    if d.Group is group
-      d
-  ),(error, data) ->
-    if error
-      throw error
-    renderChart = ->
-      width = parseInt(d3.select('#dollars-saved .viz').style('width'), 10)
-      height = .7 * width
-      chart.width(width).height(height)
-      d3.select('#dollars-saved .viz').datum(data).call(chart)
-    renderChart()
-    d3.select('#dollars-saved .amount-1')
-    .text(d3.format("($,.2r")(data[1]["Sum Saved"]))
-    d3.select('#dollars-saved .amount-4')
-    .text(d3.format("($,.2r")(data[data.length-1]["Sum Saved"]))
-    d3.select('#dollars-saved .headline-value').text(group)
-    window.addEventListener('resize', renderChart)
-    return
+  data = donorData[groups.indexOf(group)]
+  renderChart = ->
+    width = parseInt(d3.select('#dollars-saved .viz').style('width'), 10)
+    height = .7 * width
+    chart.width(width).height(height)
+    d3.select('#dollars-saved .viz').datum(data).call(chart)
+  renderChart()
+  d3.select('#dollars-saved .amount-1')
+  .text(d3.format("($,.2r")(data[1].additional_sum))
+  d3.select('#dollars-saved .amount-4')
+  .text(d3.format("($,.2r")(data[data.length-1].additional_sum))
+  d3.select('#dollars-saved .headline-value').text(group)
+  window.addEventListener('resize', renderChart)
+  return
 window.visualizeDollarsSaved("1")
 d3.selectAll('#dollars-saved button').on('click', (d) ->
   d3.selectAll('#dollars-saved button').classed('active', false)
