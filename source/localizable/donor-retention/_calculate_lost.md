@@ -23,5 +23,5 @@ To know your organization's exact numbers, fill out this form:
   <br/>
   <button id="calculate-form">Calculate</button>
 </form>
-You could be loosing out on <span id="lost-dollars">$14,000</span> .
+You could be losing out on <span id="lost-dollars">$14,000</span> .
 Your Retention rate is: <span id="retention-rate"></span>%

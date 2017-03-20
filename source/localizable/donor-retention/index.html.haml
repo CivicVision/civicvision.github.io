@@ -2,7 +2,7 @@
 title: Donor Retention
 layout: lead_pages
 name: pdf_report
-clients: "civic advocacy groups and small social sector NGOs"
+clients: "civic advocacy groups and social sector NGOs"
 tagline: "increase their donations by engaging their donors through email automation."
 drip_id: 7087022
 gtm_id: ''
@@ -26,9 +26,6 @@ include_drift: true
       = partial "localizable/donor-retention/solution"
   = partial "partials/testimonial", locals: { testemonial_id: 'charity_water', classes: 'multiple' }
   = partial "partials/testimonial", locals: { testemonial_id: 'american_heart', classes: 'multiple last' }
-  %section.sub-heading
-    .content-wrapper
-      = partial "localizable/donor-retention/calculate_lost"
   %section.sub-heading-alternate
     .content-wrapper
       = partial "localizable/donor-retention/packages"
@@ -36,4 +33,4 @@ include_drift: true
     .content-wrapper
       = partial "localizable/donor-retention/faq"
   = partial "partials/civicstorytelling/footer_new_landing"
-  =javascript_include_tag "https://d3js.org/d3.v4.min.js", "donor-retention", "donor-increase-chart"
+  =javascript_include_tag "https://d3js.org/d3.v4.min.js", "retention"
