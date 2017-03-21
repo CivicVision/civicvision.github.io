@@ -104,22 +104,32 @@
     }
   }
 
-  button {
+  button, .price-btn {
     display: block;
     margin: 20px auto;
-    width: 150px;
+    @include span-columns(6);
+    @include shift(3);
     height: 35px;
+    line-height: 35px;
     border-bottom: 5px solid rgba(192, 57, 43,1.0);
     background: rgba(231, 76, 60,1.0);
     border: none;
     border-radius: 5px;
     color: rgba(255,255,255,1);
     font-size: .75em;
-    font-weight: 100;
+    font-weight: 300;
     transition: all ease-in-out .2s;
     
     &:hover {
       background: rgba(192, 57, 43,1.0); 
     }
   }
+  .modal {
+    .modal-inner {
+      form {
+        
+      }
+    }
+  }
+
 }

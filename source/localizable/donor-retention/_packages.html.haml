@@ -8,7 +8,24 @@
     %h2 Free during NTC 17
     .price.strikethrough.red $1,000
     %span Retention Assessment Report
-    %button Get your free report
+    .modal.email-signup
+      %label{for: "free-report-modal"}
+        .price-btn
+          Get your free report
+      %input#free-report-modal.modal-state{type: "checkbox"}/
+      .modal-fade-screen#free-report-modal
+        .modal-inner
+          .modal-close{for: "free-report-modal"}
+          %p You're almost there. 
+          - content_for(:retention_free_report_col_content) do
+            .explanation-content
+              = image_tag "donor-retention-book.png", height: 200
+              %h5 Free during NTC. Expires on March 31st, 2017.
+          - content_for(:retention_free_report_form_content) do
+            %h3 Get your free Retention Assessment Report.
+          - content_for(:retention_free_report_form_footer) do
+            %p We hate SPAM and promise to keep your email address safe.
+          = partial "partials/subscribe_form", locals: { drip_form_id: current_page.data.assessment_report_form_id, name: 'retention.free_report.form', show_name: true, classNames: 'free-report', cols: :retention_free_report_col_content, form_content: :retention_free_report_form_content, form_footer: :retention_free_report_form_footer }
   .gold
     %h1 Standard
     %h2 &nbsp;
@@ -17,7 +34,7 @@
     %span Initial Setup
     %span Donor Import
     %span &raquo;Thank you&laquo; Campaign
-    %button Buy
+    %button#buy-standard-package Buy
   .plat
     %h1 Complete
     %h2 Custom Package
@@ -28,7 +45,19 @@
     %span &raquo;Thank you&laquo; Campaign
     %span &raquo;Your Organisation&laquo; Campaign
     %span &raquo;Where is the money spent&laquo; Campaign
-    %button Get in touch!
+    .modal.email-signup
+      %label{for: "complete-package-modal"}
+        .price-btn
+          Get in touch!
+      %input#complete-package-modal.modal-state{type: "checkbox"}/
+      .modal-fade-screen#complete-package-m-modal
+        .modal-inner
+          .modal-close{for: "complete-package-modal"}
+          - content_for(:retention_complete_package_report_form_content) do
+            %h3 Please provide us with more information so we can get in touch about the Complete Package.
+          - content_for(:retention_complete_package_form_footer) do
+            %p We hate SPAM and promise to keep your email address safe.
+          = partial "partials/subscribe_form", locals: { drip_form_id: current_page.data.complete_package_form_id, name: 'retention.complete_package.form', show_name: true, classNames: 'complete-package', form_content: :retention_complete_package_report_form_content, form_footer: :retention_complete_package_form_footer}
 
 .campaigns
   %h4 Retention Assessment Report

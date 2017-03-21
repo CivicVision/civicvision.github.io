@@ -115,3 +115,28 @@ en:
     thankyou:
       headline: Thanks for your 
       text: Please check your email and click the link provided to confirm your interest.
+  retention:
+    questions:
+      form:
+        placeholder:
+          email: Your Email Address
+          name: Your Name
+        subscribe: "Let's talk!"
+    complete_package:
+      form:
+        placeholder:
+          email: Your Email Address
+          name: Your Name
+        subscribe: Request more information.
+    free_report:
+      form:
+        label:
+          email: "Email address:"
+          name: "Name:"
+        placeholder:
+          email: Your Email Address
+          name: Your Name
+        subscribe: Get your free report.
+      thankyou:
+        headline: Thank you
+        text: Please check your email for more details.

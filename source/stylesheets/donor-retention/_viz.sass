@@ -53,6 +53,8 @@ $viz-active: $accent-color
       float: left
       margin: 0 0.8em 0
       padding: 0
+      @include media($normal-phone)
+        margin: 0 0.2em 0
       &:before
         content: ''
         margin: 0
@@ -67,6 +69,8 @@ $viz-active: $accent-color
         border: 1px solid #979797
         border-radius: 0.5em
         cursor: pointer
+        @include media($normal-phone)
+          @include font-size(16)
         &:hover
           background: #eee
           color: $viz-active
