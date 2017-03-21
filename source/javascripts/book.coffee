@@ -12,6 +12,21 @@ payMe = (amount, description, currency, success) ->
       })
     })
 
+if $('#landingpage .prices').length > 0
+  $('#buy-standard-package').click (e) ->
+    e.preventDefault()
+    amount = 2000*100
+    description = "The Standard Package for Donor Retention Automation."
+    success = (token) ->
+      $('#thank-you').show()
+    handler = payMe(amount, description,'USD', success)
+    handler.open({
+      name: 'Civic Vision UG',
+      description: description,
+      amount: amount,
+      zipCode: true,
+      currency: 'USD'
+    })
 if $('#book-us').length > 0
   $('#book-us-week').click (e) ->
     e.preventDefault()
