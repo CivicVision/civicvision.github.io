@@ -122,6 +122,12 @@ en:
           email: Your Email Address
           name: Your Name
         subscribe: "Let's talk!"
+    standard_package:
+      form:
+        placeholder:
+          email: Your Email Address
+          name: Your Name
+        subscribe: Request more information.
     complete_package:
       form:
         placeholder:
