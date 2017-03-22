@@ -121,4 +121,4 @@ thoroughly.
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.9.3/lodash.js"></script>
-<script src="convex-polygon-offset/script.js"></script>
+<script src="script.js"></script>
