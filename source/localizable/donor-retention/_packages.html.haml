@@ -1,81 +1,102 @@
-%h2 Packages
-.prices
-  .silver
-    .ribbon-wrapper.left
-      .ribbon.red.left
-        %b Free
-    %h1 Base
-    %h2 Free during NTC 17
-    .price.strikethrough.red $1,000
-    %span Retention Assessment Report
-    .modal.email-signup
-      %label{for: "free-report-modal"}
-        .price-btn
-          Get your free report
-      %input#free-report-modal.modal-state{type: "checkbox"}/
-      .modal-fade-screen#free-report-modal
-        .modal-inner
-          .modal-close{for: "free-report-modal"}
-          %p You're almost there. 
-          - content_for(:retention_free_report_col_content) do
-            .explanation-content
-              = image_tag "donor-retention-book.png", height: 200
-              %h5 Free during NTC. Expires on March 31st, 2017.
-          - content_for(:retention_free_report_form_content) do
-            %h3 Get your free Retention Assessment Report.
-          - content_for(:retention_free_report_form_footer) do
-            %p We hate SPAM and promise to keep your email address safe.
-          = partial "partials/subscribe_form", locals: { drip_form_id: current_page.data.assessment_report_form_id, name: 'retention.free_report.form', show_name: true, classNames: 'free-report', cols: :retention_free_report_col_content, form_content: :retention_free_report_form_content, form_footer: :retention_free_report_form_footer }
-  .gold
-    %h1 Standard
-    %h2 &nbsp;
-    .price $2,000
-    %span Retention Assessment Report
-    %span Initial Setup
-    %span Donor Import
-    %span &raquo;Thank you&laquo; Campaign
-    %button#buy-standard-package Buy
-  .plat
-    %h1 Complete
-    %h2 Custom Package
-    .price &gt;$10,000
-    %span Retention Assessment Report
-    %span Initial Setup
-    %span Donor Import
-    %span &raquo;Thank you&laquo; Campaign
-    %span &raquo;Your Organisation&laquo; Campaign
-    %span &raquo;Where is the money spent&laquo; Campaign
-    .modal.email-signup
-      %label{for: "complete-package-modal"}
-        .price-btn
-          Get in touch!
-      %input#complete-package-modal.modal-state{type: "checkbox"}/
-      .modal-fade-screen#complete-package-m-modal
-        .modal-inner
-          .modal-close{for: "complete-package-modal"}
-          - content_for(:retention_complete_package_report_form_content) do
-            %h3 Please provide us with more information so we can get in touch about the Complete Package.
-          - content_for(:retention_complete_package_form_footer) do
-            %p We hate SPAM and promise to keep your email address safe.
-          = partial "partials/subscribe_form", locals: { drip_form_id: current_page.data.complete_package_form_id, name: 'retention.complete_package.form', show_name: true, classNames: 'complete-package', form_content: :retention_complete_package_report_form_content, form_footer: :retention_complete_package_form_footer}
+.packages
+  %a(name="packages")
+  %h3 Packages
+  .prices
+    .silver
+      .ribbon-wrapper.left
+        .ribbon.red.left
+          %b Free
+      %h1 Base
+      %h2 Free during NTC 17
+      .price.strikethrough.red $1,000
+      %span Retention Assessment Report
+      .modal.email-signup
+        %label{for: "free-report-modal"}
+          .price-btn
+            Get your free report
+        %input#free-report-modal.modal-state{type: "checkbox"}/
+        .modal-fade-screen#free-report-modal
+          .modal-inner
+            .modal-close{for: "free-report-modal"}
+            %p You're almost there. 
+            - content_for(:retention_free_report_col_content) do
+              .explanation-content
+                = image_tag "donor-retention-book.png", height: 200
+                %h5 Free during NTC. Expires on March 31st, 2017.
+            - content_for(:retention_free_report_form_content) do
+              %h3 Get your free Retention Assessment Report.
+            - content_for(:retention_free_report_form_footer) do
+              %p We hate SPAM and promise to keep your email address safe.
+            = partial "partials/subscribe_form", locals: { drip_form_id: current_page.data.assessment_report_form_id, name: 'retention.free_report.form', show_name: true, classNames: 'free-report', cols: :retention_free_report_col_content, form_content: :retention_free_report_form_content, form_footer: :retention_free_report_form_footer }
+    .gold
+      %h1 Standard
+      %h2 &nbsp;
+      .price $2,000
+      %span Retention Assessment Report
+      %span Initial Setup
+      %span &raquo;Thank you&laquo; Campaign
+      %span 6-month support
+      .modal.email-signup
+        %label{for: "standard-package-modal"}
+          .price-btn
+            Apply Now!
+        %input#standard-package-modal.modal-state{type: "checkbox"}/
+        .modal-fade-screen#standardc-package-m-modal
+          .modal-inner
+            .modal-close{for: "standard-package-modal"}
+            - content_for(:retention_standard_package_report_form_content) do
+              %h3 Please provide us with more information so we can get in touch about the Standard Package.
+            - content_for(:retention_standard_package_form_footer) do
+              %p We hate SPAM and promise to keep your email address safe.
+            = partial "partials/subscribe_form", locals: { drip_form_id: current_page.data.standard_package_form_id, name: 'retention.standard_package.form', show_name: true, classNames: 'standard-package', form_content: :retention_standard_package_report_form_content, form_footer: :retention_standard_package_form_footer}
+    .plat
+      %h1 Complete
+      %h2 Custom Package
+      .price &gt;$10,000
+      %span Retention Assessment Report
+      %span Initial Setup
+      %span &raquo;Thank you&laquo; Campaign
+      %span &raquo;Your Organisation&laquo; Campaign
+      %span &raquo;Where is the money spent&laquo; Campaign
+      %span 12-month support
+      .modal.email-signup
+        %label{for: "complete-package-modal"}
+          .price-btn
+            Apply Now!
+        %input#complete-package-modal.modal-state{type: "checkbox"}/
+        .modal-fade-screen#complete-package-m-modal
+          .modal-inner
+            .modal-close{for: "complete-package-modal"}
+            - content_for(:retention_complete_package_report_form_content) do
+              %h3 Please provide us with more information so we can get in touch about the Complete Package.
+            - content_for(:retention_complete_package_form_footer) do
+              %p We hate SPAM and promise to keep your email address safe.
+            = partial "partials/subscribe_form", locals: { drip_form_id: current_page.data.complete_package_form_id, name: 'retention.complete_package.form', show_name: true, classNames: 'complete-package', form_content: :retention_complete_package_report_form_content, form_footer: :retention_complete_package_form_footer}
 
-.campaigns
-  %h4 Retention Assessment Report
-  %p
-    The
-    %i Retention Assessment Report
-    is a detailed report about your donor base. We calculate your retention rate and analyse how much you can increase your donations with specific campaigns.
-  %h4 &raquo;Thank you&laquo; Campaign
-  %p
-    The
-    %i &raquo;Thank you&laquo; Campaign
-    is our base campaign. It is a campaign that runs for forever and will send your donors emails in regular intervals. They will receive an immediate thank your after a donation and will remind them to either increase their donation or convert to a monthly subscription. It will sent out emails on holidays and if known their birthday.
-  %h4 &raquo;Your Organisation&laquo; Campaign
-  %p
-    The
-    %i &raquo;Your Organisation&laquo; Campaign
-    is our first individual campaign. We will work together to present your Organisation to your donors to help them identify with your cause. Research shows that sending your donors more information about your Organisation and the work you do will result in more donations. 
-  %h4 &raquo;Where is the money spent&laquo; Campaign
-  %p
-    The
-    %i &raquo;Where is the money spent&laquo; Campaign
+  .campaigns
+    %h4 Retention Assessment Report
+    %p
+      The
+      %i Retention Assessment Report
+      is a detailed report about your donor base. We calculate your retention rate and analyse how much you can increase your donations with specific campaigns.
+    %h4
+      %i &raquo;Thank you&laquo;
+      Campaign
+    %p
+      The
+      %i &raquo;Thank you&laquo; Campaign
+      is our base campaign. It is a campaign that runs for forever and will send your donors emails in regular intervals. They will receive an immediate thank your after a donation and will remind them to either increase their donation or convert to a monthly subscription. It will sent out emails on holidays and if known their birthday.
+    %h4
+      %i &raquo;Your Organisation&laquo;
+      Campaign
+    %p
+      The
+      %i &raquo;Your Organisation&laquo; Campaign
+      is our first individual campaign. We will work together to present your Organisation to your donors to help them identify with your cause. Research shows that sending your donors more information about your Organisation and the work you do will result in more donations. 
+    %h4
+      %i &raquo;Where is the money spent&laquo;
+      Campaign
+    %p
+      The
+      %i &raquo;Where is the money spent&laquo; Campaign
+      is our second individual cmpaign. We will work on at least one campaign to show the donor where his/her money is spent. Update with progress and write stories.
