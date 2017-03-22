@@ -5,8 +5,10 @@ name: pdf_report
 clients: "civic advocacy groups and social sector NGOs"
 tagline: "increase their donations by engaging their donors through email automation."
 include_drift: true
+gtm_id: GTM-N67RB5T
 assessment_report_form_id: 64176156
 complete_package_form_id: 80152715
+standard_package_form_id: 42529497
 question_form_id: 43404604
 ---
 - content_for :assets do
@@ -33,5 +35,11 @@ question_form_id: 43404604
   %section.sub-heading#ready-to-talk
     .content-wrapper
       = partial "localizable/donor-retention/faq"
+  %section.sub-heading-alternate
+    .content-wrapper
+      = partial "localizable/donor-retention/lets_talk"
+  %section.sub-heading
+    .content-wrapper
+      = partial "localizable/donor-retention/resources"
   = partial "partials/civicstorytelling/footer_new_landing"
   =javascript_include_tag "https://d3js.org/d3.v4.min.js", "https://checkout.stripe.com/checkout.js", "retention"
