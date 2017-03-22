@@ -1,2 +1,3 @@
 //= require urlParams
-//= require_tree .
+//= require drip
+//= require book
