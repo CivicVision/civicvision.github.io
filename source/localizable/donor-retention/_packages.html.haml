@@ -15,13 +15,13 @@
           .price-btn
             Get your free report
         %input#free-report-modal.modal-state{type: "checkbox"}/
-        .modal-fade-screen#free-report-modal
+        .modal-fade-screen#free-report-m
           .modal-inner
             .modal-close{for: "free-report-modal"}
-            %p You're almost there. 
+            %p You're almost there.
             - content_for(:retention_free_report_col_content) do
               .explanation-content
-                = image_tag "donor-retention-book.png", height: 200
+                = image_tag "donor-retention-book.png", height: 200, alt: "Retention Assessment Report"
                 %h5 Free during NTC. Expires on March 31st, 2017.
             - content_for(:retention_free_report_form_content) do
               %h3 Get your free Retention Assessment Report.
