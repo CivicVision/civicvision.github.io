@@ -28,10 +28,6 @@ class @Drip
 
   dripResponse: (payload) ->
     if payload.success
-      ga (tracker) ->
-        console.log(tracker)
-        console.log(tracker.get('campaignId'))
-
       @isAnonymous = payload.anonymous
       unless @isAnonymous
         @currentVisitor.email = payload.email
