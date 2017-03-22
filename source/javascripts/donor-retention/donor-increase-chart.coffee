@@ -140,6 +140,8 @@ donorMax = parseInt(d3.format(".2r")(d3.max(donorData[donorData.length-1], (d) -
 chart = dollarsSaved().x((d) -> d.year).y((d) -> d.additional_sum).yMax(donorMax).labelValue((d) -> d.additional_sum)
 groups = ["1","5","10","20"]
 window.visualizeDollarsSaved = (group) ->
+  if window.hasOwnProperty('mixpanel')
+    mixpanel.track("retention-rate-change", { rate: group})
   data = donorData[groups.indexOf(group)]
   renderChart = ->
     width = parseInt(d3.select('#dollars-saved .viz').style('width'), 10)
@@ -154,11 +156,12 @@ window.visualizeDollarsSaved = (group) ->
   d3.select('#dollars-saved .headline-value').text(group)
   window.addEventListener('resize', renderChart)
   return
-window.visualizeDollarsSaved("1")
-d3.selectAll('#dollars-saved button').on('click', (d) ->
-  d3.selectAll('#dollars-saved button').classed('active', false)
-  button = d3.select(this)
-  button.classed('active', true)
-  value = button.attr('data-value')
-  window.visualizeDollarsSaved(value)
-)
+$(document).ready () ->
+  window.visualizeDollarsSaved("1")
+  d3.selectAll('#dollars-saved button').on('click', (d) ->
+    d3.selectAll('#dollars-saved button').classed('active', false)
+    button = d3.select(this)
+    button.classed('active', true)
+    value = button.attr('data-value')
+    window.visualizeDollarsSaved(value)
+  )
