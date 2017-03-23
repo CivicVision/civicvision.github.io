@@ -40,9 +40,14 @@ $sub-headline-font-size: 35
     transform: rotate(-5deg)
 
 .lets-talk
+  +media($mobile)
+    +outer-container()
   .cta-btn
     +span-columns(5)
     +shift(3)
+    +media($mobile)
+      +shift(1)
+      +span-columns(2)
 #footer
   color: #5a5a5a
   .content-wrapper

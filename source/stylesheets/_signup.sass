@@ -3,6 +3,8 @@
     $large-screen-signup: 53.75em
     .modal-inner
       width: 50%
+      +media($mobile)
+        width: 90%
     .modal-fade-screen
       +media($large-screen-signup)
         padding-top: 10em
@@ -11,6 +13,9 @@
     .form-content
       @include span-columns(10)
       @include shift(1)
+      +media($mobile)
+        +shift(0)
+        width: 90%
     h3,h4,h5
       color: #000
       margin: 0 0 1em
@@ -22,7 +27,10 @@
       +span-columns(10 of 10)
       padding: 0.3em
       margin: 0.5em 0
+      border: 1px solid
+      border-color: rgb(238, 238, 238)
       +font-size(18)
+      white-space: normal
     .subscribe.button
       +cta-button($lead-pages-color-link,$color-white)
       padding: 0.5em
@@ -35,6 +43,8 @@
         img
           float: left
           margin-right: 1em
+          +media($mobile)
+            display: none
         h5
           text-align: justify
         +media($large-screen)
