@@ -1,0 +1,15 @@
+---
+layout: cta
+title: Be a donor yourself
+content: Experience a Thank You campaign as a donor. This 6-day email course let's you experience how a donor would receive a Thank you campaign in a compressed way.
+name: be_a_donor
+drip_form_id: 35399093
+---
+- content_for :assets do
+  = stylesheet_link_tag 'be-a-donor'
+#bg.be-a-donor
+#landingpage.be-a-donor
+  %section.content-box
+    = partial "partials/cta_form", locals: { headline: current_page.data.title, content: current_page.data.content, show_name: true, drip_id: current_page.data.drip_form_id, name: current_page.data.name }
+#footer
+  Photo by Jon Ashcroft https://www.flickr.com/photos/theilluminated/5386099858

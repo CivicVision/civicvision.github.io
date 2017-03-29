@@ -8,6 +8,8 @@
       %meta(name="robots" content="noindex")
       %meta(name="robots" content="nofollow")
     = stylesheet_link_tag "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", "normalize", "cta"
+    - if content_for?(:assets)
+      = yield_content :assets
     %link(rel="icon" href="/images/favicon.ico")
   = yield
   = javascript_include_tag  "https://code.jquery.com/jquery-2.1.4.min.js", "cta"
