@@ -32,3 +32,13 @@ submitForm = (event) ->
 d3.select('#calculate-form').on('click', () ->
   submitForm(d3.event)
 )
+d3.selectAll('#retained input').on('change', () ->
+  switch this.value
+    when "1"
+      d3.select('.retained').style('display', 'block')
+      d3.select('.non-retained').style('display', 'none')
+    when "2"
+      d3.select('.retained').style('display', 'none')
+      d3.select('.non-retained').style('display', 'block')
+
+)

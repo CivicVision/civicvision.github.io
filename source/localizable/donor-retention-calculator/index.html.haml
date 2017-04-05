@@ -8,44 +8,54 @@ layout: lead_pages
     .content-wrapper
       %h1
         Donor Retention Calculator
+        %h3 Do you know what percentage of your donors came back?
 
   %section.sub-heading
     .content-wrapper
-      %h3 To know your organization's exact numbers, fill out this form:
-
       %form#retention-form
         %fieldset
           .row
-            %label{:for => "last_year_dononor"} Number of Donors last year
-            %input#last-year-donors{:name => "last_year_donors", :placeholder => "Donors last year", :type => "text"}/
-          %br/
+            %label.normal{:for => "last_year_dononor"}
+              Number of Donors
+              %span.last-year 2015
+            %input.normal#last-year-donors{:name => "last_year_donors", :placeholder => "Donors last year", :type => "text"}/
           .row
-            .three-columns
-              %label{:for => "retained-donors"} Number of retained donors
-              %input#retained-donors{:name => "this_year_donors", :placeholder => "Retained donors", :type => "text"}/
-            .middle-column
-              %p -- or --
-            .three-columns
-              %label{:for => "this_year_dononor"} Number of Donors this year
-              %input#this-year-donors{:name => "this_year_donors", :placeholder => "Donors this year", :type => "text"}/
-              %label{:for => "this_year_new_donors"} New donors this year
-              %input#this-year-new-donors{:name => "this_year_new_donors", :placeholder => "New donors this year", :type => "text"}/
-          %br/
+            %label.normal{:for => "last_year_dononor"}
+              Do you know how many came back in
+              %span.this-year 2016
+              ?
+            .button-group#retained
+              %label
+                %input(type="radio" name="retained-switch" value="1" checked)
+                %span.button-group-item Yes
+              %label
+                %input(type="radio" name="retained-switch" value="2")
+                %span.button-group-item No
+          .row
+            .retained
+              %label.normal{:for => "retained-donors"} Number of retained donors
+              %input.normal#retained-donors{:name => "this_year_donors", :placeholder => "Retained donors", :type => "text"}/
+            .non-retained.hidden
+              %label.normal{:for => "this_year_dononor"}
+                Number of Donors
+                %span.this-year 2016
+              %input.last.normal#this-year-donors{:name => "this_year_donors", :placeholder => "Donors this year", :type => "text"}/
+              .clear
+              %label.normal{:for => "this_year_new_donors"}
+                New donors
+                %span.this-year 2016
+              %input.normal#this-year-new-donors{:name => "this_year_new_donors", :placeholder => "New donors this year", :type => "text"}/
+          .row
+            %button.cta-btn#calculate-form Calculate your Retention Rate
           .row.hidden
-            .three-columns
-              %label{:for => "last_year_donations"} Lasrt year total donation amount or average donation
-              %input#donations{:name => "last_year_donations", :placeholder => "Total donations", :type => "text"}/
-            .middle-column
-              %p -- or --
-            .three-columns
-              %input#avg-donations{:name => "avg_last_year_donations", :placeholder => "Average donation", :type => "text"}/
-          .row
-            %button.cta-btn#calculate-form Calculate
+            %label{:for => "last_year_donations"} Lasrt year total donation amount or average donation
+            %input#donations{:name => "last_year_donations", :placeholder => "Total donations", :type => "text"}/
+            %input#avg-donations{:name => "avg_last_year_donations", :placeholder => "Average donation", :type => "text"}/
       .box
         .stat-explanation
           Retention Rate
         .stat-number
-          %span#retention-rate
+          %span#retention-rate 46
           &#37;
         .stat-footnote
           National avg.

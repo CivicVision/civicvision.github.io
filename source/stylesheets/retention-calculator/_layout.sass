@@ -1,0 +1,25 @@
+#retention-form
+  fieldset
+    padding: 0
+  .row
+    background: #ccc
+    &:nth-child(even)
+      background: #eee
+    label.normal
+      +media($large-screen-up)
+        +span-columns(5)
+        float: left
+    input.normal
+      +media($large-screen-up)
+        +span-columns(3)
+        float: right
+        &.last
+          +omega()
+    .button-group
+      +media($large-screen-up)
+        float: left
+    .clear
+      +row()
+.box
+  +span-columns(3)
+  +shift(4)
