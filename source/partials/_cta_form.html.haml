@@ -2,7 +2,7 @@
 ---
 %section.cta-form.box
   %h2= headline
-  %p= content
+  %p= locals[:form_content]
   - unless locals[:show_name]
     - show_name = false
   - unless locals[:drip_id]
