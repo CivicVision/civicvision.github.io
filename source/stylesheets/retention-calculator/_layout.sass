@@ -1,10 +1,12 @@
-#retention-form
+$background-odd: #ccc
+$background-even: #eee
+.retention-calculator
   fieldset
     padding: 0
   .row
-    background: #ccc
+    background: $background-odd
     &:nth-child(even)
-      background: #eee
+      background: $background-even
     label.normal
       +media($large-screen-up)
         +span-columns(5)
@@ -20,6 +22,22 @@
         float: left
     .clear
       +row()
+    &.donation-type
+      text-align: center
+      label.normal
+        +span-columns(12)
+        text-align: center
+      .center
+        position: relative
+        display: inline-block
+        vertical-align: middle
+        float: none
+    &.avg-donation, &.total-amount
+      background: $background-even
 .box
   +span-columns(3)
   +shift(4)
+.explanation
+  +row()
+  +span-columns(10)
+  display: none
