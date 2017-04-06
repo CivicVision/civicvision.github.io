@@ -20,12 +20,23 @@ drip_form_id: 35399093
   %section.sub-heading-alternate
     .content-wrapper
       %h3 What's included
-      %p You receive daily emails for 6 days as a donor would receive them after making a donation. 
-      %p You'll receive them in a compressed way, the donor would not. With each email comes an explanation on hoew the email was construcuted and why it is important.
+      %ul
+        %li Daily real world emails a donor would receive
+        %li Compressed into 6 days
+        %li Explanation why the emails are constructed in this specific way
+        %li Helpful Tips for your own Thank you campaign
+  %section.sub-heading
+    .content-wrapper
+      %h3 What will you learn?
+      %ul
+        %li How engaging your donors will increase the likelihood of renewed donations
+        %li Why personalisation is so important
+        %li Tips &amp; tricks for your emails
+
       = partial "partials/testimonial", locals: { testemonial_id: 'charity_water', classes: 'multiple' }
       = partial "partials/testimonial", locals: { testemonial_id: 'american_heart', classes: 'multiple last' }
   %section.sub-heading
     .content-wrapper
       .second-cta
         %h3 Ready to sign up?
-        %a(href="#course-signup") Send me the first thank you!
+        %a(href="#course-signup") Send me the first thank you email to my inbox!
