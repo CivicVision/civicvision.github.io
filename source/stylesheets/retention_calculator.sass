@@ -8,42 +8,48 @@
 @import 'signup'
 @import "button_group"
 @import "retention-calculator/layout"
-.row
-  +row()
-  padding: 1em
-  label.normal
-    text-align: left
-    float: left
-    +font-size(24)
-.hidden
-  display: none
-.middle-column
-  @include span-columns(2 of 8)
-  p
-    text-align: center
-.three-columns
-  @include span-columns(3 of 8)
 
-.box
-  border: 1px solid #ccc
-  font-size: 3em
-  text-align: center
-  padding: 0.5em
-  .stat-explanation
-    font-size: 0.5em
-    color: #ccc
-  .stat-number
-    span
-      font-size: 1.5em
-    color: green
-  .stat-footnote
-    font-size: 0.3em
-    color: #ccc
-#calculate-form
-  width: auto
-  border: none
-  text-transform: none
-  float: none
-  padding: 1em
-  margin: 0 auto
-  +font-size(20)
+#retention-calculator
+  #banner
+    h3
+      color: #fff
+      +font-size(30)
+  .row
+    +row()
+    padding: 1em
+    label.normal
+      text-align: left
+      float: left
+      +font-size(24)
+  .hidden
+    display: none
+  .middle-column
+    @include span-columns(2 of 8)
+    p
+      text-align: center
+  .three-columns
+    @include span-columns(3 of 8)
+
+  .box
+    border: 1px solid #ccc
+    font-size: 3em
+    text-align: center
+    padding: 0.5em
+    .stat-explanation
+      font-size: 0.5em
+      color: #ccc
+    .stat-number
+      span
+        font-size: 1.5em
+      color: green
+    .stat-footnote
+      font-size: 0.3em
+      color: #ccc
+  .cta-btn
+    width: auto
+    border: none
+    text-transform: none
+    float: none
+    padding: 1em
+    margin: 0 auto
+    +font-size(20)
