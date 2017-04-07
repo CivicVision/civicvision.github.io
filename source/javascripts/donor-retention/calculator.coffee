@@ -11,6 +11,10 @@ calculate_dollar_increase = (increase, avg_donation) ->
   #(this_year_retention - last_year_retention) * avg donations
   increase * avg_donation
 
+standardRetentionRates = (retentionRate) ->
+  standardRates = [0,1,5,10,20]
+  rate + retentionRate for rate in standardRates
+
 retentionForm = (event) ->
   event.preventDefault()
   window.lastYearDonors = document.getElementById('last-year-donors').value
@@ -24,12 +28,20 @@ retentionForm = (event) ->
     alert('Please add your Donors')
     return
   window.retentionRate = calculate_retention_percentage(window.retainedDonors,window.lastYearDonors)
+  window.donorsObj = new @Donors({years: 6, base_rate: window.retentionRate, retention_rates: standardRetentionRates(window.retentionRate), donors: window.lastYearDonors})
+  window.donationForecast = window.donorsObj.calculate()
+  window.year0 = window.donationForecast.shift()
   avgIndicator = if window.retentionRate > 46 then 'above' else 'below'
   d3.selectAll('.retention-rate').text(d3.format(".2")(window.retentionRate))
   d3.select('#donor-count-last-year').text(window.lastYearDonors)
   d3.select('#avg-indicator').text(avgIndicator)
   d3.select('.donors-five-years').text(Math.floor(Math.pow(window.retentionRate/100,5)*window.lastYearDonors))
   d3.select('#explanation').transition().style('display', 'block')
+  d3.select('#field-retention-rate').attr('value',window.retentionRate)
+  d3.select('#field-donors').attr('value',window.lastYearDonors)
+  d3.select('#field-retained-donors').attr('value',window.retainedDonors)
+  d3.selectAll('.lost-dollars').text(d3.format("($,.2r")(window.donationForecast[0][1].additional_sum))
+  # create visualizatiob
   return
 
 increaseForm = (event) ->
@@ -38,10 +50,19 @@ increaseForm = (event) ->
   window.avgDonations = document.getElementById('avg-donations').value
   if(window.donations is not "" && window.avgDonations is "")
     window.avgDonations = window.donations / window.thisYearDonors
-  window.dollarIncrease = calculate_dollar_increase(calculate_increase(window.retentionRate+1,window.lastYearDonors, window.retainedDonors),window.avgDonations)
-  d3.select('#lost-dollars').text(d3.format("($,.2r")(window.dollarIncrease))
+  window.donorsObj.setAverageDonation(window.avgDonations)
+  window.donationForecast = window.donorsObj.calculate()
+  window.year0 = window.donationForecast.shift()
+  d3.selectAll('.lost-dollars').text(d3.format("($,.2r")(window.donationForecast[0][1].additional_sum))
+  d3.select('#lost-dollars-five').text(d3.format("($,.2r")(window.donationForecast[0][5].additional_sum))
   d3.select('#average-donation').text(d3.format("($,.2r")(window.avgDonations))
   d3.select('.increase-explanation').transition().style('display', 'block')
+  d3.select('#field-avg-donation').attr('value',window.avgDonations)
+  d3.select('#field-donation-increase-1-1').attr('value',window.donationForecast[0][1].additional_sum)
+  d3.select('#field-donation-increase-1-5').attr('value',window.donationForecast[0][5].additional_sum)
+  d3.select('#field-donation-increase-20-1').attr('value',window.donationForecast[3][1].additional_sum)
+  d3.select('#field-donation-increase-20-5').attr('value',window.donationForecast[3][5].additional_sum)
+  # update visualizatiob with exact numbers
 
 d3.select('#calculate-form').on('click', () ->
   retentionForm(d3.event)

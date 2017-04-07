@@ -1,5 +1,7 @@
 ---
 layout: lead_pages
+report_drip_form_id: 78144431
+name: retention_calculator.report
 ---
 - content_for :assets do
   = stylesheet_link_tag 'retention_calculator'
@@ -69,7 +71,10 @@ layout: lead_pages
           will be there in
           %span.five-years 2020
           &#46;
-        %h3 Did you know that a 1% increase in donor retention results in an average $14,000 added donation value?
+        %h3
+          Did you know that a 1% increase in donor retention results in an average
+          %span.lost-dollars$14,000
+          added donation value?
         %p
           Want to know your exact numbers?
           Fill out these fields to calculate how much you could generate in one year.
@@ -96,7 +101,7 @@ layout: lead_pages
               .row
                 %button.cta-btn#calculate-increase-form Calculate your donation increase
         .graph
-        .row.increase-explanation
+        .row.increase-explanation.hidden
           %p
             You had
             %b#donor-count-last-year
@@ -107,10 +112,38 @@ layout: lead_pages
             %b#average-donation
             &#46;
             A 1% increase will generate additional
-            %b#lost-dollars
-            in the first year.
+            %b.lost-dollars
+            in the first year and
+            %b#lost-dollars-five
+            in five years.
 
-          %button.cta-btn#calculate-increase-form Send me the results per email!
+          .modal.email-signup
+            %label{for: "retention-results-modal"}
+              .cta-btn
+                Send me the results per email
+            %input#retention-results-modal.modal-state{type: "checkbox"}/
+            .modal-fade-screen#retention-results-m
+              .modal-inner
+                .modal-close{for: "retention-results-modal"}
+                %p You're almost there.
+                .signup
+                  .form-content
+                    %h3 Get your numbers via email
+                    - action = "https://www.getdrip.com/forms/#{current_page.data.report_drip_form_id}/submissions"
+                    %form(action="#{action}" method="post" data-drip-embedded-form="#{current_page.data.report_drip_form_id}" target="_blank")
+                      %input(name="fields[name]" type="text" value="" placeholder="#{t("#{current_page.data.name}.placeholder.name")}")
+                      %input#field-donors(name="fields[donors]" type="text" type="hidden")
+                      %input#field-avg-donation(name="fields[avgDonation]" type="text" type="hidden")
+                      %input#field-retained-donors(name="fields[retainedDonors]" type="text" type="hidden")
+                      %input#field-retention-rate(name="fields[retentionRate]" type="text" type="hidden")
+                      %input#field-donation-increase-1-1(name="fields[donationIncrease1value1]" type="text" type="hidden")
+                      %input#field-donation-increase-1-5(name="fields[donationIncrease1value5]" type="text" type="hidden")
+                      %input#field-donation-increase-20-1(name="fields[donationIncrease20value1]" type="text" type="hidden")
+                      %input#field-donation-increase-20-5(name="fields[donationIncrease20value5]" type="text" type="hidden")
+                      %input.required.email(name="fields[email]" type="email" value="" placeholder="#{t("#{current_page.data.name}.placeholder.email")}")
+                      %input.subscribe.button(name="subscribe" type="submit" value="#{t("#{current_page.data.name}.subscribe")}")/
+                  .form-footer
+                  %p We hate SPAM and promise to keep your email address safe.
 
 
 

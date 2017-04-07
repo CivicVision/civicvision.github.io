@@ -154,3 +154,9 @@ en:
       email: Your Email Address
       name: Your Name
     subscribe: Send me the first thank you email to my inbox!
+  retention_calculator:
+    report:
+      placeholder:
+        email: Your Email Address
+        name: Your Name
+      subscribe: Send me the Retention Report
