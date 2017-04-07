@@ -2,6 +2,10 @@
 ---
 %section.cta-form.box
   %h2= headline
-  %p Please enter your email address to get this free report
-  = partial 'partials/subscribe_form', locals: { show_name: false, drip_form_id: current_page.data.drip_form_id, name: 'pdf_report' }
+  %p= locals[:form_content]
+  - unless locals[:show_name]
+    - show_name = false
+  - unless locals[:drip_id]
+    - drip_id = current_page.data.drip_form_id
+  = partial 'partials/subscribe_form', locals: { show_name: show_name, drip_form_id: drip_id, name: name }
   %p Your information will *never* be shared or sold to a 3rd party.

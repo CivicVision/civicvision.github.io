@@ -1,11 +1,12 @@
 class @Donors
   #constructor: (@years, @retention_rates, @average_donation)
-  constructor: ->
-    @years = 5
-    @base_rate = 46
-    @retention_rates = [47,51,66,78]
-    @average_donation = 104
-    @donors = 13500
+  constructor: (options={}) ->
+    {@years, @base_rate, @retention_rates, @average_donation, @donors} = options
+    @years = options.years ? 5
+    @base_rate = options.base_rate ? 46
+    @retention_rates = options.retention_rates ? [47,51,56,66]
+    @average_donation = options.average_donation ? 104
+    @donors = options.donors ? 13500
   calculate_donors: (year,retention_rate) ->
     Math.floor(Math.pow(retention_rate/100,year-1)*@donors)
 

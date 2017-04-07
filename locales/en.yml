@@ -146,3 +146,11 @@ en:
       thankyou:
         headline: Thank you
         text: Please check your email for more details.
+  be_a_donor:
+    label:
+      email: "Email address:"
+      name: "Name:"
+    placeholder:
+      email: Your Email Address
+      name: Your Name
+    subscribe: Send me the first thank you email to my inbox!
