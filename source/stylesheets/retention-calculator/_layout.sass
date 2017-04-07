@@ -34,10 +34,17 @@ $background-even: #eee
         float: none
     &.avg-donation, &.total-amount
       background: $background-even
-.box
-  +span-columns(3)
-  +shift(4)
-.explanation
-  +row()
-  display: none
-  +span-columns(12)
+
+#retention-calculator
+  .box
+    +span-columns(4)
+    +shift(0)
+    padding: 0.5em 0
+    +media($large-screen-up)
+      +span-columns(3)
+      +shift(4)
+      padding: 0.5em
+  .explanation
+    +row()
+    +span-columns(12)
+    display: none
