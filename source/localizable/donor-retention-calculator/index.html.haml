@@ -3,12 +3,12 @@ layout: lead_pages
 ---
 - content_for :assets do
   = stylesheet_link_tag 'retention_calculator'
-%div(id="landingpage")
+%div#landingpage#retention-calculator
   %section#banner.second-headline
     .content-wrapper
       %h1
         Donor Retention Calculator
-        %h3 Do you know what percentage of your donors give again?
+      %h3 Do you know what percentage of your donors give again?
 
   %section.sub-heading
     .content-wrapper
@@ -96,7 +96,7 @@ layout: lead_pages
               .row
                 %button.cta-btn#calculate-increase-form Calculate your donation increase
         .graph
-        .row.increase-explanation.hidden
+        .row.increase-explanation
           %p
             You had
             %b#donor-count-last-year
@@ -110,9 +110,7 @@ layout: lead_pages
             %b#lost-dollars
             in the first year.
 
-          %h3 How can I increase my donor retention rate?
-
-          %h3 The solution is surprisingly simple and we can help you with that.
+          %button.cta-btn#calculate-increase-form Send me the results per email!
 
 
 
