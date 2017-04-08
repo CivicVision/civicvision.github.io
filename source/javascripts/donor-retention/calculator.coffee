@@ -15,6 +15,10 @@ standardRetentionRates = (retentionRate) ->
   standardRates = [0,1,5,10,20]
   rate + retentionRate for rate in standardRates
 
+scrollTopTween = (scrollTop) ->
+  return () ->
+    i = d3.interpolateNumber(window.pageYOffset || document.documentElement.scrollTop, scrollTop)
+    return (t) -> scrollTo(0, i(t))
 retentionForm = (event) ->
   event.preventDefault()
   window.lastYearDonors = document.getElementById('last-year-donors').value
@@ -41,6 +45,10 @@ retentionForm = (event) ->
   d3.select('#field-donors').attr('value',window.lastYearDonors)
   d3.select('#field-retained-donors').attr('value',window.retainedDonors)
   d3.selectAll('.lost-dollars').text(d3.format("($,.2r")(window.donationForecast[0][1].additional_sum))
+  top = d3.select("#retention-rate-explanation").node().getBoundingClientRect().top
+  pos = window.pageYOffset+top
+  d3.transition().duration(1000)
+  .tween("uniquetweenname", scrollTopTween(pos))
   # create visualizatiob
   return
 
@@ -62,6 +70,10 @@ increaseForm = (event) ->
   d3.select('#field-donation-increase-1-5').attr('value',window.donationForecast[0][5].additional_sum)
   d3.select('#field-donation-increase-20-1').attr('value',window.donationForecast[3][1].additional_sum)
   d3.select('#field-donation-increase-20-5').attr('value',window.donationForecast[3][5].additional_sum)
+  top = d3.select("#increase-rate-explanation").node().getBoundingClientRect().top
+  pos = window.pageYOffset+top
+  d3.transition().duration(1000)
+  .tween("increasetween", scrollTopTween(pos))
   # update visualizatiob with exact numbers
 
 d3.select('#calculate-form').on('click', () ->
