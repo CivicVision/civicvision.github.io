@@ -28,21 +28,29 @@ $background-even: #eee
         +span-columns(12)
         text-align: center
       .center
-        position: relative
-        display: inline-block
-        vertical-align: middle
-        float: none
+        +media($large-screen-up)
+          position: relative
+          display: inline-block
+          vertical-align: middle
+          float: none
     &.avg-donation, &.total-amount
       background: $background-even
 
 #retention-calculator
   .box
-    +span-columns(4)
-    +shift(0)
+    +span-columns(8)
+    float: none
+    margin: 0 auto
     padding: 0.5em 0
+    +media($medium-screen-up)
+      +span-columns(2)
+      float: none
+      margin: 0 auto
+      margin: 0 auto
     +media($large-screen-up)
-      +span-columns(3)
-      +shift(4)
+      +span-columns(2)
+      float: none
+      margin: 0 auto
       padding: 0.5em
   .explanation
     +row()
