@@ -33,6 +33,7 @@ name: retention_calculator.report
               %label
                 %input(type="radio" name="retained-switch" value="2")
                 %span.button-group-item No
+          %a#retention-rate-explanation(name='retention-rate-explanation')
           .row
             .retained
               %label.normal{:for => "retained-donors"} Number of retained donors
@@ -100,6 +101,7 @@ name: retention_calculator.report
                 %input.normal#donations{:name => "last_year_donations", :placeholder => "Total donations", :type => "text"}/
               .row
                 %button.cta-btn#calculate-increase-form Calculate your donation increase
+        %a#increase-rate-explanation(name='increase-rate-explanation')
         .graph
         .row.increase-explanation.hidden
           %p
