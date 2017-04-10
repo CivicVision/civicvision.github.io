@@ -19,6 +19,8 @@
       +font-size(24)
   .hidden
     display: none
+  .hide
+    visibility: hidden
   .middle-column
     +span-columns(2 of 8)
     p
@@ -48,3 +50,29 @@
     padding: 1em
     margin: 0 auto
     +font-size(20)
+  .viz-explanation
+    margin-top: 2em
+    h5
+      font-size: 1.6em
+      margin-bottom: 1.5em
+      color: $viz-gray
+    dl
+      border-bottom: 1px solid #979797
+      margin-bottom: 2em
+      dt
+        font-size: 3em
+        color: $viz-active
+        @include media($laptop-screen-down)
+          font-size: 2.5em
+      dd
+        font-size: 0.8em
+        color: $viz-gray
+        padding-bottom: 2em
+        margin-top: 1em
+  .viz-nav
+    button
+      background: #f7f7f7
+      color: #000
+      &.active
+        background: $viz-active
+        color: #fff

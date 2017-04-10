@@ -1,4 +1,4 @@
-dollarsSaved = ->
+window.dollarsSaved = ->
   width = 720
   height = 400
   margin =
@@ -9,6 +9,7 @@ dollarsSaved = ->
   xDomain = [1,5]
   yDomain = [0,160000]
   yMax = 160000
+  hideLabelIndicies = [0,3]
   xScale = d3.scaleLinear().rangeRound([
     0
     width
@@ -65,8 +66,22 @@ dollarsSaved = ->
       axisText = xAxis.selectAll('text.axis-label').data([1])
       t = axisText.enter().append('text').attr('class', 'axis-label')
       t.merge(axisText)
-        .attr('fill', vizGrey).attr('x', width-margin.left-margin.right).attr('dy', '0.71em').attr('dx', '1em').attr('text-anchor', 'start').text 'Year'
-      g.select('g.y.axis').call(d3.axisLeft(yScale).ticks(2)).append('text').attr('fill', vizGrey).attr('transform', 'rotate(-90)').attr('y', 6).attr('dy', '0.71em').attr('text-anchor', 'end').text 'Donations Generated ($)'
+        .attr('fill', vizGrey)
+        .attr('x', width-margin.left-margin.right)
+        .attr('dy', '0.71em')
+        .attr('dx', '1em')
+        .attr('text-anchor', 'start')
+        .text 'Year'
+      g.select('g.y.axis')
+        .call(d3.axisLeft(yScale)
+        .ticks(2))
+        .append('text')
+        .attr('fill', vizGrey)
+        .attr('transform', 'rotate(-90)')
+        .attr('y', 6)
+        .attr('dy', '0.71em')
+        .attr('text-anchor', 'end')
+        .text 'Donations Generated ($)'
 
       points = g.selectAll('.points').data(data)
       points.exit().remove()
@@ -92,13 +107,11 @@ dollarsSaved = ->
       .attr('dx', '-0.2em')
       .attr('text-anchor', 'middle')
       .style("font", "12px sans-serif")
-      .attr('fill', (d,i) -> 
-        if i == 0 or i == 3
-          '#fff'
-        else
-          vizGrey
+      .attr('fill', (d,i) -> vizGrey)
+      .text((d,i) ->
+        if hideLabelIndicies.indexOf(i) == -1
+          d3.format("($,.2r")(d[2])
       )
-      .text((d) -> d3.format("($,.2r")(d[2]))
       return
     )
 
@@ -132,36 +145,9 @@ dollarsSaved = ->
       return labelValue
     labelValue = _
     chart
+  chart.hideLabelIndicies = (_) ->
+    if !arguments.length
+      return hideLabelIndicies
+    hideLabelIndicies = _
+    chart
   chart
-
-donors = new Donors()
-donorData = donors.calculate()
-donorMax = parseInt(d3.format(".2r")(d3.max(donorData[donorData.length-1], (d) -> d.additional_sum)))
-chart = dollarsSaved().x((d) -> d.year).y((d) -> d.additional_sum).yMax(donorMax).labelValue((d) -> d.additional_sum)
-groups = ["1","5","10","20"]
-window.visualizeDollarsSaved = (group) ->
-  if window.hasOwnProperty('mixpanel')
-    mixpanel.track("retention-rate-change", { rate: group})
-  data = donorData[groups.indexOf(group)]
-  renderChart = ->
-    width = parseInt(d3.select('#dollars-saved .viz').style('width'), 10)
-    height = .7 * width
-    chart.width(width).height(height)
-    d3.select('#dollars-saved .viz').datum(data).call(chart)
-  renderChart()
-  d3.select('#dollars-saved .amount-1')
-  .text(d3.format("($,.2r")(data[1].additional_sum))
-  d3.select('#dollars-saved .amount-4')
-  .text(d3.format("($,.2r")(data[data.length-1].additional_sum))
-  d3.select('#dollars-saved .headline-value').text(group)
-  window.addEventListener('resize', renderChart)
-  return
-$(document).ready () ->
-  window.visualizeDollarsSaved("1")
-  d3.selectAll('#dollars-saved button').on('click', (d) ->
-    d3.selectAll('#dollars-saved button').classed('active', false)
-    button = d3.select(this)
-    button.classed('active', true)
-    value = button.attr('data-value')
-    window.visualizeDollarsSaved(value)
-  )
