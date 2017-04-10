@@ -40,44 +40,6 @@ $viz-active: $accent-color
   .rest
     @include row()
     @include span-columns(12)
-  .axis
-    text
-      fill: $viz-gray
-    path,line
-      stroke: $viz-gray
-  ul.viz-nav
-    list-style: none
-    margin: 0
-    li
-      list-style: none
-      float: left
-      margin: 0 0.8em 0
-      padding: 0
-      @include media($normal-phone)
-        margin: 0 0.2em 0
-      &:before
-        content: ''
-        margin: 0
-        display: inline
-        width: 0
-      .button
-        background: none
-        padding: 0.2em 0.8em
-        font-size: 1.5rem
-        line-height: 2.25rem
-        color: #fff
-        border: 1px solid #979797
-        border-radius: 0.5em
-        cursor: pointer
-        @include media($normal-phone)
-          @include font-size(16)
-        &:hover
-          background: #eee
-          color: $viz-active
-        &.active
-          background: $viz-active
-          &:hover
-            color: #000
   .explanation
     margin-top: 2em
     h5
