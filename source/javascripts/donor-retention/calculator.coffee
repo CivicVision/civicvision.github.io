@@ -59,7 +59,7 @@ retentionForm = (event) ->
   d3.select('.donors-five-years').text(Math.floor(Math.pow(window.retentionRate/100,5)*window.lastYearDonors))
   d3.select('#explanation').transition().style('display', 'block')
   updateNumbers()
-  top = d3.select("#retention-rate-explanation").node().getBoundingClientRect().top
+  top = d3.select("#retention-rate-explanation-scroll").node().getBoundingClientRect().top
   pos = window.pageYOffset+top
   d3.transition().duration(1000)
   .tween("uniquetweenname", scrollTopTween(pos))
@@ -83,7 +83,7 @@ increaseForm = (event) ->
   d3.select('.viz-container').transition().style('visibility', 'visible')
   d3.select('#field-avg-donation').attr('value',window.avgDonations)
   updateNumbers()
-  top = d3.select("#increase-rate-explanation").node().getBoundingClientRect().top
+  top = d3.select("#increase-rate-explanation-scroll").node().getBoundingClientRect().top
   pos = window.pageYOffset+top
   d3.transition().duration(1000)
   .tween("increasetween", scrollTopTween(pos))
