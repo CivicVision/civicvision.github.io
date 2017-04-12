@@ -147,7 +147,7 @@ name: retention_calculator.report
           .modal.email-signup
             %label{for: "retention-results-modal"}
               .cta-btn
-                Send me the results per email
+                Email me the results
             %input#retention-results-modal.modal-state{type: "checkbox"}/
             .modal-fade-screen#retention-results-m
               .modal-inner
@@ -171,7 +171,8 @@ name: retention_calculator.report
                       %input.subscribe.button(name="subscribe" type="submit" value="#{t("#{current_page.data.name}.subscribe")}")/
                   .form-footer
                   %p We hate SPAM and promise to keep your email address safe.
-
+            %p
+              %i You will get an email with the results you put into the calculator. Additional you will get the results for how much you could generate in one and five years with 1% and 20% increase in your donor retention rate.
 
 
 = javascript_include_tag  "https://d3js.org/d3.v4.min.js", "retention_calculator"

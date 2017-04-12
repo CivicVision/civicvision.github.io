@@ -40,17 +40,16 @@ $background-even: #eee
   .box
     +span-columns(8)
     float: none
-    margin: 0 auto
+    margin: 0.5em auto
     padding: 0.5em 0
     +media($medium-screen-up)
       +span-columns(2)
       float: none
-      margin: 0 auto
-      margin: 0 auto
+      margin: 1em  auto
     +media($large-screen-up)
       +span-columns(2)
       float: none
-      margin: 0 auto
+      margin: 1em  auto
       padding: 0.5em
   .explanation
     +row()
@@ -58,6 +57,7 @@ $background-even: #eee
     display: none
   .viz-container
     +row()
+    margin: 1.5em 0
   .viz-explanation
     +span-columns(3)
     +media($smaller-screen)
