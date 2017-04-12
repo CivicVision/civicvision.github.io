@@ -67,6 +67,10 @@ retentionForm = (event) ->
   window.calculatorChart = window.dollarsSaved().x((d) -> d.year).y((d) -> d.additional_sum).yMax(donorMax).labelValue((d) -> d.additional_sum).hideLabelIndicies([0,4])
   data = window.donationForecast[0]
   d3.select('.graph').datum(data).call(window.calculatorChart)
+  window.trackEvent("retention-calculator-calculate", {retention_rate: window.retentionRate, donors: window.lastYearDonors, retainedDonors: window.retainedDonors})
+  window.trackEvent("retention-rate", {retention_rate: window.retentionRate})
+  window.trackEvent("retained-donors", {retainedDonors: window.retainedDonors})
+  window.trackEvent("donors", {donors: window.lastYearDonors})
   return
 
 increaseForm = (event) ->
@@ -96,7 +100,8 @@ increaseForm = (event) ->
   .text(d3.format("($,.2r")(data[1].additional_sum))
   d3.selectAll('.viz-explanation .amount-4,.increase-explanation .lost-dollars-five')
   .text(d3.format("($,.2r")(data[data.length-1].additional_sum))
-  d3.select('.increase-explanation .percent').text(group)
+  window.trackEvent("retention-calculator-increase", {avg_donation: window.avgDonations, total: window.donations})
+  window.trackEvent("average-donation", {avg_donation: window.avgDonations})
 
 d3.select('#calculate-form').on('click', () ->
   retentionForm(d3.event)
@@ -105,6 +110,7 @@ d3.select('#calculate-increase-form').on('click', () ->
   increaseForm(d3.event)
 )
 d3.selectAll('#retained input').on('change', () ->
+  window.trackEvent("retention-calculator-retained", {retained: this.value is "1" ? true : false })
   switch this.value
     when "1"
       d3.select('.retained').style('display', 'block')
@@ -114,6 +120,7 @@ d3.selectAll('#retained input').on('change', () ->
       d3.select('.non-retained').style('display', 'block')
 )
 d3.selectAll('#donation-type input').on('change', () ->
+  window.trackEvent("retention-calculator-avgDonation", {avgDonationKnown: this.value is "1" ? true : false })
   switch this.value
     when "1"
       d3.select('.avg-donation').style('display', 'block')
@@ -124,8 +131,7 @@ d3.selectAll('#donation-type input').on('change', () ->
 )
 groups = ["1","5","10","20"]
 window.visualizeDollarsSaved = (group) ->
-  #if window.hasOwnProperty('mixpanel')
-    #mixpanel.track("retention-rate-change", { rate: group})
+  window.trackEvent("calculator-retention-rate-change", { rate: group})
   data = window.donationForecast[groups.indexOf(group)]
   renderChart = ->
     window.resizeChart()
