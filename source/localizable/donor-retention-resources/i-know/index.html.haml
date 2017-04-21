@@ -1,0 +1,16 @@
+---
+title: Donor Retention Resource
+layout: lead_pages
+name: pdf_report
+gtm_id: GTM-N67RB5T
+question_form_id: 43404604
+order: 'known'
+---
+- content_for :assets do
+  = stylesheet_link_tag 'donor-retention'
+- I18n.locale = :en
+%div.retention-resources(id="landingpage")
+  = partial "localizable/donor-retention-resources/title", locals: { knows: true }
+  = partial "localizable/donor-retention-resources/resources", locals: { order: current_page.data.order }
+  = partial "partials/civicstorytelling/footer_new_landing"
+  =javascript_include_tag "https://d3js.org/d3.v4.min.js", "https://checkout.stripe.com/checkout.js", "retention"

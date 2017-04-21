@@ -1,0 +1,8 @@
+@mixin signup-button($background, $color, $font-size: 24)
+  +cta-button($background,$color, $font-size)
+  padding: 1em
+  border: none
+  text-transform: none
+  &:hover
+    background: $accent-color
+    cursor: pointer
