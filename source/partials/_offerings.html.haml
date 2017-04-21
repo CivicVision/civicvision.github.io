@@ -1,0 +1,3 @@
+.offerings.flex-boxes
+  - data['donor-retention'].offers[order].each do |offer|
+    = partial "partials/donor-retention/offer", locals: { offer: offer}

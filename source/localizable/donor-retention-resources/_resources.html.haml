@@ -1,0 +1,19 @@
+%section.sub-heading
+  .content-wrapper
+    %h3 Resources
+    = partial "partials/offerings", locals: { order: order }
+%section.sub-heading-alternate
+  .content-wrapper
+    %h3 Articles on Donor Retention
+    %ul
+      - data['donor-retention'].resources.retention_rate.each do |resource|
+        %li
+          %a(href="#{resource.url}" target="_blank")= resource.title
+%section.sub-heading
+  .content-wrapper
+    %h3 About Mila Frerichs
+    .about-me
+      .img
+        = image_tag "mf.jpeg", class: "me", alt: "Mila Frerichs"
+      .position
+        %p I help non-profits increase their donations from existing donors through email automation. I use the power of thank you, email and automation to make that happen.
