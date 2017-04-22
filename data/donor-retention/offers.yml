@@ -27,6 +27,11 @@ normal:
   - *service
   - *course
   - *report
+unknown:
+  - *calculator
+  - *course
+  - *report
+  - *service
 known:
   - *course
   - *service

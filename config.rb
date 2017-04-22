@@ -85,6 +85,10 @@ configure :build do
   activate :relative_assets
 end
 
+data['donor-retention'].answers.each do |answer|
+  proxy "/donor-retention-resources/#{answer.url}/index.html", "/donor-retention-resources.html", locals: { order: answer.order, knows:  answer.knows}, ignore: true
+end
+
 activate :deploy do |deploy|
   deploy.build_before = true
   deploy.method = :git

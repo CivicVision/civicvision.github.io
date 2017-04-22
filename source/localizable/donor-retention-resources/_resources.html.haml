@@ -1,5 +1,7 @@
 %section.sub-heading
   .content-wrapper
+    - unless order == 'normal'
+      = partial "localizable/donor-retention-resources/thank_you"
     %h3 Resources
     = partial "partials/offerings", locals: { order: order }
 %section.sub-heading-alternate
