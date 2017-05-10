@@ -1,0 +1,9 @@
+!!!
+%html
+  %head
+    %title= current_page.data.title || "Civic Vision"
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %link(rel="icon" href="/images/favicon.ico")
+    = javascript_include_tag  "https://code.jquery.com/jquery-2.1.4.min.js", "redirect"
+  = yield
