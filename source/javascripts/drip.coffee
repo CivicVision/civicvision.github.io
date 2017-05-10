@@ -34,6 +34,7 @@ class @Drip
         @currentVisitor.tags = payload.tags
         @currentVisitor.customFields = payload.custom_fields
         @visitorUpdated()
+    window.redirect()
 
 class ReplaceContent
   replace: (cssPath, content) ->
@@ -44,9 +45,19 @@ class SanDiego extends ReplaceContent
     if window.drip.hasTag('NGO') and window.drip.attr('Location') == 'San Diego'
       @replace('#welcome h2', 'Data Consultancy for Social Good in San Diego')
 
+window.redirect = () ->
+  if window.redirectToNewLocation
+    window.location = window.redirectToNewLocation
+
+identify = () ->
+  query = $.querystring
+  if query.email
+    _dcq.push(["identify", {email: query.email, success: window.drip.dripResponse.bind(window.drip)}])
+  else
+    _dcq.push(["identify", {success: window.drip.dripResponse.bind(window.drip)}])
 
 $ ->
   window.drip = new Drip()
   #sd = new SanDiego()
   #window.drip.setCallbacks([sd.update])
-  _dcq.push(["identify", {success: window.drip.dripResponse.bind(window.drip)}])
+  identify()
