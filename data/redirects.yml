@@ -7,4 +7,9 @@ urls:
     url: http://civicvision.de/be-a-donor-yourself
   - short: calc
     url: http://civicvision.de/donor-retention-calculator
-
+  - short: dr-ik
+    url: http://drip.la/c/eyJhY2NvdW50X2lkIjoiNDgyODY3MSIsInRyaWdnZXJfaWQiOiI3MzUxOTkzIiwidXJsIjoiaHR0cDovL2NpdmljdmlzaW9uLmRlL2Rvbm9yLXJldGVudGlvbi1yZXNvdXJjZXMvaS1rbm93LyJ9
+  - short: dr-dk
+    url: http://drip.la/c/eyJhY2NvdW50X2lkIjoiNDgyODY3MSIsInRyaWdnZXJfaWQiOiI0NDAzNjc2MCIsInVybCI6Imh0dHA6Ly9jaXZpY3Zpc2lvbi5kZS9kb25vci1yZXRlbnRpb24tcmVzb3VyY2VzL2ktZG9udC1rbm93LyJ9
+  - short: dr-dknt
+    url: http://drip.la/c/eyJhY2NvdW50X2lkIjoiNDgyODY3MSIsInRyaWdnZXJfaWQiOiI3MjAyMTg1MCIsInVybCI6Imh0dHA6Ly9jaXZpY3Zpc2lvbi5kZS9kb25vci1yZXRlbnRpb24tcmVzb3VyY2VzL2ktZG9udC1rbm93LyNuby10aW1lIn0

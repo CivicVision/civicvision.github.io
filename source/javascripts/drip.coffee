@@ -51,7 +51,7 @@ window.redirect = () ->
 
 identify = () ->
   query = $.querystring
-  if query.email
+  if query && query.email
     _dcq.push(["identify", {email: query.email, success: window.drip.dripResponse.bind(window.drip)}])
   else
     _dcq.push(["identify", {success: window.drip.dripResponse.bind(window.drip)}])
