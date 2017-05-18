@@ -3,4 +3,8 @@ urls:
     url: http://donorretention.com
   - short: drrsrc
     url: http://civicvision.de/donor-retention-resources
+  - short: tyd
+    url: http://civicvision.de/be-a-donor-yourself
+  - short: calc
+    url: http://civicvision.de/donor-retention-calculator
 
