@@ -14,17 +14,17 @@ drip_form_id: 35399093
       %h3 A free 6-day email course where you experience how a donor would receive a Thank You campaign.
   %section.sub-heading
     .content-wrapper
-      %a(name="course-signup")
-      %h3 Get the free course
-      = partial "partials/subscribe_form", locals: { drip_form_id: current_page.data.drip_form_id, name: current_page.data.name, show_name: true}
-  %section.sub-heading-alternate
-    .content-wrapper
       %h3 What's included
       %ul
-        %li Daily real world emails a donor would receive
+        %li Daily, real world emails a donor would receive
         %li Compressed into 6 days
         %li Explanation why the emails are constructed in this specific way
         %li Helpful Tips for your own Thank you campaign
+  %section.sub-heading-alternate
+    .content-wrapper
+      %a(name="course-signup")
+      %h3 Get the free course
+      = partial "partials/subscribe_form", locals: { drip_form_id: current_page.data.drip_form_id, name: current_page.data.name, show_name: true}
   %section.sub-heading
     .content-wrapper
       %h3 What will you learn?
