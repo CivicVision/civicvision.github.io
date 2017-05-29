@@ -8,6 +8,9 @@
   .content-wrapper
     %h3 Articles on Donor Retention
     %ul
+      - blog('donor-retention-articles').articles[0..5].each do |article|
+        %li
+          %a(href="#{article.url}")= article.title
       - data['donor-retention'].resources.retention_rate.each do |resource|
         %li
           %a(href="#{resource.url}" target="_blank")= resource.title

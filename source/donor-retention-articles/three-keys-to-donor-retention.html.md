@@ -1,0 +1,26 @@
+---
+title: Three keys to donor retention
+date: 2017-05-29
+image: thankyou.jpg
+---
+Not every donor will be retained. But you should try. Average non-profits retain about 50% of their donors. Successful ones retained about 80%. Research shows that the key to increase your donor retention rate is to build relationships with your donors. Keep in touch with them. Show them the results you accomplish with their money. And most important: thank them. and thank them often.
+
+## Keep in touch with them.
+
+Your donors need to hear from you. Consistently, and not only when you ask for another donation. Write them an email, a postcard, a letter, send them something nice. It does not have to be fancy. Just keep in touch. Remind them and yourself that they support your cause. If you show up consistently and build trust by sending them something just for them the next donation ask will be much easier.
+
+## Thank your donors 
+
+If you write them, don’t forget to thank them. Everyone appreciates a thank you, especially donors. They helped you with money, the least you can do, is to say thank you. 
+Thank them early, right after their donation, and thank them often, at least seven times, as studies show. 
+Personalize the thank you. Do not send generic thank you’s. Find out as much as you can and include it in your touch points. 
+
+
+## Show them results
+
+If you keep in touch with them and thank them, include some progress on your projects. Donors want to know where they money is being used. If you can, show them photos or a video, add testimonials from people you helped or volunteers that worked on that project. Tell them success and impact stories. Use the storytelling technique if you can, donors want to read stories. Take it from Seth Godin: 
+
+> "The story's about the donor. Every time someone donates to a good cause, they're buying a story, a story that’s worth more than the amount they donated. It might be the story of doing the right thing, or fitting in, or pleasing a friend or honoring a memory, but the story has value. For many, it's the story of what it means to be part of a community.”
+
+These three keys will help you increase the donations from your existing donors, because they know that you care about them. 
+"
