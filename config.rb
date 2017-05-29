@@ -40,6 +40,13 @@ activate :blog do |blog|
   # Matcher for blog source files
   blog.sources = "{year}-{month}-{day}-{title}.html"
 end
+activate :blog do |blog|
+  blog.prefix = "donor-retention-articles"
+  blog.name = "donor-retention-articles"
+  blog.layout = "dr-article"
+  blog.permalink = "{title}.html"
+  blog.sources = "{title}.html"
+end
 
 page "/feed.xml", layout: false
 
