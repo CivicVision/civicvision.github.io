@@ -9,7 +9,7 @@ include_ops_calendar: true
     <meta name="twitter:title" content="#{current_page.title}" />
     <meta name="twitter:description" content="#{current_page.data.card.description}" />
     - if current_page.data.card.image
-      <meta name="twitter:image" content="#{url_root+image_path(current_page.data.card.image)}" />
+      <meta name="twitter:image" content="#{url_root}/images/#{current_page.data.card.image}" />
     - elsif current_page.data.image
       <meta name="twitter:image" content="#{url_root+image_path(current_page.data.image)}" />
       <meta name="description" content="#{current_page.data.card.description}" />
@@ -18,7 +18,7 @@ include_ops_calendar: true
   %body
     %section#banner
       %h1 Donor Retention Resources
-    = partial "partials/analytics", locals: { drip_id: '4828671', gtm_id: 'GTM-MTT6KM'}
+    = partial "partials/analytics", locals: { drip_id: '4828671', gtm_id: 'GTM-N67RB5T'}
     .blog-content.article
       .header
         %h1= current_article.title
