@@ -23,7 +23,7 @@ include_ops_calendar: true
       .header
         %h1= current_article.title
         .article-image
-          = image_tag current_article.data.image
+          = image_tag current_article.data.image, alt: current_article.title
         .details
       .content
         = preserve do
