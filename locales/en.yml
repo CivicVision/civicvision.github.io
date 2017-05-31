@@ -57,6 +57,10 @@ en:
       title: Get in touch
     legal:
       title: Legal
+    resources:
+      title: Resources
+    offers:
+      title: Services
   sdmaps:
     title: San Diego Maps
     more: Read more
@@ -160,3 +164,17 @@ en:
         email: Your Email Address
         name: Your Name
       subscribe: Send me the Retention Report
+  donor_retention:
+    tyec:
+      cta:
+        text: "Free Download: Thank your donors Email Checklist"
+        button: Download Checklist
+      headline: Thank your donors Email Checklist
+      text: "Use this Checklist to create thank you emails for your donors."
+      placeholder:
+        email: Your Email address
+        name: Name
+      subscribe: Get my free bonus
+      bonus:
+        thankyou:
+          text: Thanks! Download your bonus checklist below.

@@ -1,0 +1,19 @@
+---
+title: Donor Retention Resource
+layout: lead_pages
+name: pdf_report
+gtm_id: GTM-N67RB5T
+question_form_id: 43404604
+---
+- content_for :assets do
+  = stylesheet_link_tag 'donor-retention'
+- I18n.locale = :en
+%div.retention-resources.thank-you(id="landingpage")
+  %section#banner.second-headline
+    .content-wrapper
+      %h1= category.title
+  %section.sub-heading
+    .content-wrapper
+      %h3= t("#{upgrade.name}.bonus.thankyou.text")
+      %a(href= "#{upgrade.bonus.link}" target="_blank")
+        = "#{upgrade.bonus.title} (#{upgrade.bonus.type})"
