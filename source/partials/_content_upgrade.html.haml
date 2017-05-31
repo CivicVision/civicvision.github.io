@@ -1,0 +1,17 @@
+.content-upgrade
+  .headline
+    %h4=t("#{upgrade.name}.cta.text")
+  .modal.email-signup
+    %label{for: upgrade.modal_id}
+      .btn
+        =t("#{upgrade.name}.cta.button")
+    %input.modal-state{id: upgrade.modal_id, type: "checkbox", name: upgrade.modal_name }/
+    .modal-fade-screen#free-report-m
+      .modal-inner
+        .modal-close{for: upgrade.modal_id}
+        - content_for(:content_upgrade_form_content) do
+          %h3= t("#{upgrade.name}.headline")
+          %p= t("#{upgrade.name}.text")
+        - content_for(:content_upgrade_form_footer) do
+          %p.email-safe We hate SPAM and promise to keep your email address safe.
+        = partial "partials/subscribe_form", locals: { drip_form_id: upgrade.drip_id, name: upgrade.name, show_name: false, form_content: :content_upgrade_form_content, form_footer: :content_upgrade_form_footer }

@@ -1,0 +1,73 @@
+$accent-color: #FF8271
+
+#banner
+  h1
+    +font-size(40)
+    color: #fff
+    +media($small-phone)
+      +font-size(30)
+
+.article
+  +media($small-phone)
+    margin-top: 1em
+
+  h1
+    +media($small-phone)
+      +font-size(30)
+  .content
+    h2
+      +font-size(28)
+      margin-top: 1.5em
+      +media($small-phone)
+        +font-size(20)
+        text-align: left
+    p
+      +font-size(20)
+      color: #5f6c82
+
+    blockquote
+      font-style: italic
+      color: #383838
+      margin: 0.25em 0
+      padding: 0.25em 40px
+      line-height: 1.45
+      position: relative
+      &:before
+        display: block
+        content: "\201C"
+        font-size: 80px
+        position: absolute
+        left: -10px
+        top: -20px
+        color: #7a7a7a
+
+.content-upgrade
+  .modal.email-signup
+    .modal-inner
+      width: 30%
+      +media($small-phone)
+        width: 100%
+    h3
+      +font-size(30)
+      text-transform: none
+      +media($small-phone)
+        +font-size(20)
+    p
+      text-transform: none
+      +font-size(18)
+      color: #444
+      font-weight: normal
+      +media($small-phone)
+        +font-size(14)
+    p.email-safe
+      +font-size(12)
+      color: #b4b4b4
+      +media($small-phone)
+        +font-size(10)
+    .subscribe.button
+      +media($small-phone)
+        +font-size(14)
+#footer
+  color: #fff
+  .company
+    margin-left: 1.6em

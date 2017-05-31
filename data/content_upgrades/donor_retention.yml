@@ -1,0 +1,10 @@
+tyec:
+  name: donor_retention.tyec
+  modal_id: tyec-modal
+  modal_name: "Thank your Donors Email Checklist"
+  optin: true
+  drip_id: 46023383
+  bonus:
+    title: Thank your Donors Email Checklist
+    type: PDF
+    link: http://civicvision.de/downloads/ThankYourDonorsEmailChecklist.pdf
