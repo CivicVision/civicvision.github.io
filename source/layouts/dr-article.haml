@@ -16,8 +16,9 @@ include_ops_calendar: true
   - if current_page.data.keywords
     <meta name="keywords" content="#{current_page.data.keywords}" />
   %body
+    = partial "partials/fixed_navigation"
     %section#banner
-      %h1 Donor Retention Resources
+      &nbsp;
     = partial "partials/analytics", locals: { drip_id: '4828671', gtm_id: 'GTM-N67RB5T'}
     .blog-content.article
       .header
