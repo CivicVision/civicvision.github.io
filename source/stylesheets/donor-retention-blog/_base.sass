@@ -4,21 +4,22 @@ $accent-color: #FF8271
   h1
     +font-size(40)
     color: #fff
-    +media($small-phone)
+    +media($large-phone)
       +font-size(30)
 
 .article
-  +media($small-phone)
+  +media($large-phone)
     margin-top: 1em
 
   h1
-    +media($small-phone)
+    +media($large-phone)
       +font-size(30)
+      padding: 1em 0.5em 0
   .content
     h2
       +font-size(28)
       margin-top: 1.5em
-      +media($small-phone)
+      +media($large-phone)
         +font-size(20)
         text-align: left
     p
@@ -45,27 +46,27 @@ $accent-color: #FF8271
   .modal.email-signup
     .modal-inner
       width: 30%
-      +media($small-phone)
+      +media($large-phone)
         width: 100%
     h3
       +font-size(30)
       text-transform: none
-      +media($small-phone)
+      +media($large-phone)
         +font-size(20)
     p
       text-transform: none
       +font-size(18)
       color: #444
       font-weight: normal
-      +media($small-phone)
+      +media($large-phone)
         +font-size(14)
     p.email-safe
       +font-size(12)
       color: #b4b4b4
-      +media($small-phone)
+      +media($large-phone)
         +font-size(10)
     .subscribe.button
-      +media($small-phone)
+      +media($large-phone)
         +font-size(14)
 #footer
   color: #fff
