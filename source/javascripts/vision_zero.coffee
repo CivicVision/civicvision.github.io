@@ -1,0 +1,36 @@
+if d3.selectAll("#vision-zero").size() > 0
+  d3.csv("/data/accidents_killed_2017.csv", (data) ->
+    killed2017 = d3.sum(data, (d) -> d.killed)
+    d3.select('.killed').text(killed2017)
+    if(killed2017 > 10)
+      d3.select('.beyond').text("way")
+    if(killed2017 > 20)
+      d3.select('.beyond').text("enourmously")
+    if(killed2017 > 40)
+      d3.select('.beyond').text("insanely")
+  )
+  #d3.csv("/data/accidents_killed_injured.csv", (data) ->
+  d3.csv("/data/accidents.csv", (data) ->
+    dayData = d3.nest()
+      .key( (d) -> d.date)
+      .rollup((leaves) -> leaves.length)
+      .entries(data)
+    d3.map(dayData, (d) -> d.date = new Date(d.key))
+    d3.map(data, (d) ->
+      date = new Date(d.date_time)
+      date.setMinutes(0)
+      date.setSeconds(0)
+      d.date = date
+    )
+    dayHourData = d3.nest()
+      .key( (d) -> d.date)
+      .rollup((leaves) -> leaves.length)
+      .entries(data)
+    d3.map(dayHourData, (d) -> d.date = new Date(d.key))
+    dowChart = dayofWeekChart().valueKey("value").startDate(new Date(2015,1,1)).colorDomain([0,6])
+    d3.select('#dow-chart').data([dayHourData]).call(dowChart)
+    yearData = d3.nest()
+      .key( (d) -> d.year)
+      .rollup((leaves) -> {"length": leaves.length, "injured": d3.sum(leaves, (d) -> parseInt(d.injured)), "killed": d3.sum(leaves, (d) -> parseInt(d.killed))} )
+      .entries(data)
+  )
