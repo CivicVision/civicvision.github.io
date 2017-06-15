@@ -3,9 +3,10 @@
     text-align: center
   .personas
     li
-      @include span-columns(6)
-      @include media($mobile)
-        @include span-columns(4)
+      .person
+        @include span-columns(2)
+        @include media($mobile)
+          @include span-columns(12)
       h4
         text-align: center
         font-size: 1.2em
@@ -19,3 +20,7 @@
         margin: 0 auto
         display: block
         border-radius: 5em
+
+      .explanation
+        p
+          +font-size(24)

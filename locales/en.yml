@@ -7,7 +7,8 @@ en:
     blog: "Blog"
     resources: Resources I love
   about:
-    title: "Civic Vision is a data consultancy who helps civic advocacy groups and small social sector NGOs increase their audience engagement and effectiveness in communication by creating beautiful and engaging data visualizations and telling stories with data."
+    title: |
+      Civic Vision is a data consultancy who helps __civic advocacy groups__ and small __social sector non-profits__ increase their audience engagement and effectiveness in communication by creating beautiful and engaging data visualizations and telling stories with data.
   what:
     consultancy:
       title: Consultancy
@@ -23,7 +24,9 @@ en:
       content: "Dou you want to effectively communicate your story?"
       sub_content: "Civic Vision helps you increase your audience engagement with telling stories with data."
   about_us:
-    title: About us
+    title: About Mila Frerichs
+    content: |
+      I help non-profits increase their audience engagement through engaging data visualizations and telling stories with data. 
   portfolio:
     title: Portfolio
     geosure:

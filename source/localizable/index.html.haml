@@ -5,12 +5,12 @@ what:
 
 #welcome
   .content
-    %h1 Civic Vision
-    %h2= I18n.t(:tagline)
+    :markdown
+      # #{t('about.title')}
 
-= partial "partials/about"
 = partial "partials/what"
+= partial "partials/consultation"
 = partial "partials/us"
 - if data.portfolio.signature
   = partial "partials/portfolio"
-= partial "partials/contact"
+= partial "partials/dataviz"

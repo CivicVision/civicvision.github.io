@@ -3,14 +3,23 @@
 @import 'base/grid-settings'
 @import 'neat/neat'
 @import 'base/base'
+@import 'base/color'
+@import "base/media-queries"
+
+@import "mixins/fonts"
+@import "mixins/cta-btn"
 
 @import "typographie"
 @import "cards"
 @import "bullets"
 @import "navigation"
+@import "fixed_nav"
+@import "fixed_nav_cv"
 @import "footer"
 @import "common"
 
+
+@import "welcome"
 @import "about"
 @import "what"
 @import "us"
@@ -26,18 +35,17 @@
 
 
 body
-  background: #2B4C7E
   color: #fff
+  background: $base-blue
 .content
   @include outer-container()
   padding: 1.5em 0
 
+.section-alternate
+  background: #fff
+  color: #000
 #welcome
   h1
-    font-size: 5em
-    text-align: center
-    padding: 1em 0 0
-    margin-bottom: 0.25em
 
   h2
     font-size: 2em

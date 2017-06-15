@@ -1,0 +1,9 @@
+- name: Visualization
+  id: visualization
+  link: /data-visualization
+- name: Data Storytelling
+  id: storytelling
+  link: /civicstorytelling
+- name: Donor Onboarding
+  id: onboarding
+  link: /donor-retention
