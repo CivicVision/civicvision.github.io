@@ -13,10 +13,23 @@ createDoWData = (data, rollup = killedInjured) ->
     .entries(data)
 createDowChart = (startDate,data, extent) ->
     dayofWeekChart().valueKey("value").startDate(new Date(2015,1,1)).colorDomain(extent)
+dayData = (data, rollup) ->
+  dateData = d3.nest()
+    .key( (d) -> d.day)
+    .rollup(rollup)
+    .object(data)
+
 dataForYear = (data, year, type = killedInjured) ->
   dataYear = _.filter(data, (d) -> d.year == year)
   dayHourData = createDoWData(dataYear, type)
   d3.map(dayHourData, (d) -> d.date = new Date(d.key))
+
+yearData = (data) ->
+    d3.nest()
+      .key( (d) -> d.year)
+      .rollup((leaves) -> {"length": leaves.length, "injured": d3.sum(leaves, (d) -> parseInt(d.injured)), "killed": d3.sum(leaves, (d) -> parseInt(d.killed))} )
+      .entries(data)
+
 if d3.selectAll("#vision-zero").size() > 0
   d3.csv("/data/accidents_killed_2017.csv", (data) ->
     killed2017 = d3.sum(data, (d) -> d.killed)
@@ -55,9 +68,32 @@ if d3.selectAll("#vision-zero").size() > 0
           d3.select('#dow-chart').data([data2017]).call(dowChart2016)
     )
 
+    dayFormat = d3.timeFormat('%Y-%m-%d')
+    d3.map(data, (d) ->
+      d.day = dayFormat(d.date)
+    )
     dataKilled = _.filter(data, (d) -> d.killed > 0)
     dataInjured = _.filter(data, (d) -> d.injured > 0)
     data2017Killed = dataForYear(dataKilled, '2017', killed)
     dowChart2017Killed = createDowChart(new Date(2017,1,1), data2017Killed, [0,3])
     d3.select('#dow-chart-2017-killed').data([data2017Killed]).call(dowChart2017Killed)
+    calendar = calendarChart()
+    dateDataInjuredKilled = d3.nest()
+      .key( (d) -> d.day)
+      .rollup((leaves) -> d3.sum(leaves, (d) -> parseInt(d.injured) + parseInt(d.killed)))
+      .object(data)
+    dayDataKilled = dayData(dataKilled, killed)
+    dayDataInjured = dayData(dataInjured, injured)
+    dayDataKilledInjured = dayData(dataInjured, killedInjured)
+    d3.select('#calendar').data([dayDataKilled]).call(calendar)
+    d3.selectAll('button.calendar').on('click', (e) ->
+      year = d3.select(this).attr('data-value')
+      switch year
+        when "injured"
+          d3.select('#calendar').data([dateData]).call(calendar)
+        when "killed"
+          d3.select('#calendar').data([dateData]).call(calendar)
+        else
+          d3.select('#calendar').data([dateData]).call(calendar)
+    )
   )
