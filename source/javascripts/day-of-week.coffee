@@ -14,13 +14,14 @@
   time = d3.timeFormat("%I %p")
   valueKey = "count"
   dateKey = "date"
+  emptyValue = 0
   xValue = (date) ->
     dowHFormat = d3.timeFormat("%w %H")
     entry = _.filter(this, (d) -> dowHFormat(d[dateKey]) == dowHFormat(date))
     d3.sum(entry, (d) -> d[valueKey]) if entry
 
   tooltipTemplate = (d) ->
-    "<h2>#{d.key}</h2><p>#{d.value}</p>"
+    "<h2>#{d.key}</h2><p>#{d.value || emptyValue}</p>"
 
   dayOfWeekScale = d3.scaleOrdinal().domain([0...6]).range(weekDays)
   startDate = new Date(2015,4,3)
@@ -85,7 +86,7 @@
         .style("top", (d3.event.pageY - 32) + "px")
       )
       .merge(rect).attr('class', (d) ->
-        "hour #{color(parseInt(d.value))}"
+        "hour #{color(parseInt(d.value || emptyValue))}"
       )
       .on("mouseover", (d) ->
         d3.select('#tooltip').html(tooltipTemplate.call(this, d)).style("opacity", 1)
