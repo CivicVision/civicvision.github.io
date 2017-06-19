@@ -43,4 +43,21 @@ if d3.selectAll("#vision-zero").size() > 0
 
     dowChart2016 = createDowChart(new Date(2016,1,1), data2016, [0,100])
     d3.select('#dow-chart').data([data2016]).call(dowChart2016)
+
+    d3.selectAll('button.year').on('click', (e) ->
+      year = d3.select(this).attr('data-value')
+      switch year
+        when "2015"
+          d3.select('#dow-chart').data([data2015]).call(dowChart2016)
+        when "2016"
+          d3.select('#dow-chart').data([data2016]).call(dowChart2016)
+        when "2017"
+          d3.select('#dow-chart').data([data2017]).call(dowChart2016)
+    )
+
+    dataKilled = _.filter(data, (d) -> d.killed > 0)
+    dataInjured = _.filter(data, (d) -> d.injured > 0)
+    data2017Killed = dataForYear(dataKilled, '2017', killed)
+    dowChart2017Killed = createDowChart(new Date(2017,1,1), data2017Killed, [0,3])
+    d3.select('#dow-chart-2017-killed').data([data2017Killed]).call(dowChart2017Killed)
   )
