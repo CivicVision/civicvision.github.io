@@ -16,8 +16,8 @@
   dateKey = "date"
   xValue = (date) ->
     dowHFormat = d3.timeFormat("%w %H")
-    entry = _.find(this, (d) -> dowHFormat(d[dateKey]) == dowHFormat(date))
-    entry[valueKey] if entry
+    entry = _.filter(this, (d) -> dowHFormat(d[dateKey]) == dowHFormat(date))
+    d3.sum(entry, (d) -> d[valueKey]) if entry
 
   tooltipTemplate = (d) ->
     "<h2>#{d.key}</h2><p>#{d.value}</p>"
