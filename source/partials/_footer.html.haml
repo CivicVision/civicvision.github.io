@@ -2,28 +2,37 @@
   .content
     %ul#items
       %li.item
-        %h4= t('footer.company.title')
-        %p 
-          Civic Vision UG
-          %br
-          = "#{t('footer.company.tax_number')} DE296100763"
-          %br
-          Joachim-Friedrich-Str. 53
-          %br
-          10711 Berlin
-      %li.item
-        %h4= t('footer.get_in_touch.title')
+        %h4= t('footer.offers.title')
         %ul
           %li
-            = link_to "Twitter", "http://twitter.com/civicvision"
+            = link_to "Data Visualization", "/data-visualization"
           %li
-            = link_to "GitHub", "http://github.com/civicvision"
+            = link_to "Civic Storytelling", "/civicstorytelling"
           %li
-            = link_to "Mail", "mailto:mila.frerichs@civicvision.de"
+            = link_to "Donor Onboarding", "/donor-retention"
+          %li
       %li.item
-        %h4= t('footer.legal.title')
+        %h4= t('footer.resources.title')
         %ul
           %li
-            = link_to "Legal", "/legal/index.html"
+            = link_to "Donor Retention Calculator", "http://civicvision.de/donor-retention-calculator"
           %li
-            = link_to "Data Policy", "/legal/privacy/index.html"
+            = link_to "Thank your donors Email Course", "http://civicvision.de/be-a-donor-yourself"
+          %li
+            = link_to "Donor Retention Resources", "http://civicvision.de/donor-retention-resources"
+      %li.item
+        %h4 Civic Vision
+        %ul
+          %li
+            = link_to "Terms of Service", "/legal/index.html"
+          %li
+            = link_to "Privacy Policy", "/legal/privacy/index.html"
+    %p.company
+      &copy; 2017 Civic Vision UG
+      %br
+      Joachim-Friedrich-Str. 53,
+      10711 Berlin
+      %br
+      = "#{t('footer.company.tax_number')} DE296100763"
+      %br
+      %br
