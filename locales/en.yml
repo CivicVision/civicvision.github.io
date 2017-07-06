@@ -6,9 +6,30 @@ en:
     us: "About Us"
     blog: "Blog"
     resources: Resources I love
+  services:
+    data_pipeline:
+      title: Data Pipeline
+      content: "Do you spend your time trying to get your data into a format that you can use for analyzing and visualizing your data? Is it frustrating that you have to do it every time all over again?"
+      sub_content: "Civic Vision helps you create a repeatable and consistent way of Collecting, Cleaning, Transforming and Updating your data. "
+    data_research:
+      title: Open Data Research
+      content: ""
+      sub_content: ""
+    visualization:
+      title: Data Visualization
+      content: "Do you want to show your data to a broader audience? Do you want to find insights in your data? "
+      sub_content: "Civic Vision helps you with interactive visualizations and map-based applications."
+    storytelling:
+      title: Data Storytelling
+      content: "Dou you want to effectively communicate your story?"
+      sub_content: "Civic Vision helps you increase your audience engagement with telling stories with data."
+    onboarding:
+      title: Donor Onboarding
+      content: "The average non-profit lose about 80% of their first-time donors."
+      sub_content: "By Onboarding your donors you increase their trust and the likelyhood of another donation"
   about:
     title: |
-      I help __civic advocacy groups__ and __governments__ improve the life of citizens.
+      I help __civic advocacy groups__ and __governments__ improve the life of citizens with the help of Open Data.
     title_vers: |
       Civic Vision is an Open Data Consultancy who helps __civic advocacy groups__ and __governments__ use the power of Open Data and Open Source to build Visualizations, Data Stories and Tools to increase transparency and accountability. 
     title_alt: |
@@ -36,18 +57,6 @@ en:
       content:  "You want to open up your Data? You want to make it more accessible? You are searching for an easy way to publish your Datasets?
         "
       sub_content: "Civic Vision helps you with custom solutions built on top of the strength of open source. "
-    visualization:
-      title: Data Visualization
-      content: "Do you want to show your data to a broader audience? Do you want to find insights in your data? "
-      sub_content: "Civic Vision helps you with interactive visualizations and map-based applications."
-    storytelling:
-      title: Data Storytelling
-      content: "Dou you want to effectively communicate your story?"
-      sub_content: "Civic Vision helps you increase your audience engagement with telling stories with data."
-    onboarding:
-      title: Donor Onboarding
-      content: "The average non-profit lose about 80% of their first-time donors."
-      sub_content: "By Onboarding your donors you increase their trust and the likelyhood of another donation"
   about_us:
     title: About Mila Frerichs
     content: |
@@ -206,3 +215,7 @@ en:
       bonus:
         thankyou:
           text: Thanks! Download your bonus checklist below.
+  free_consultation:
+    thankyou:
+      headline: Thank you for your interest.
+      text: We will get back to you immediately

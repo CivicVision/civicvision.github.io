@@ -1,9 +1,38 @@
-- name: Visualization
+dataresearch: &dataresearch
+  title: Open Data Research
+  id: data_research
+  link: /
+
+data_pipeline: &data_pipeline
+  title: Data Pipeline
+  id: data_pipeline
+  link: /
+
+visualization: &visualization
+  title: Visualization
   id: visualization
   link: /data-visualization
-- name: Data Storytelling
+
+storytelling: &storytelling
+  title: Data Storytelling
   id: storytelling
   link: /civicstorytelling
-- name: Donor Onboarding
-  id: onboarding
-  link: /donor-retention
+
+footer:
+  - *dataresearch
+  - *visualization
+  - *storytelling
+
+navigation:
+  - *storytelling
+  - *visualization
+
+offers:
+  - *data_pipeline
+  - *visualization
+  - *storytelling
+
+normal:
+  - *dataresearch
+  - *visualization
+  - *storytelling

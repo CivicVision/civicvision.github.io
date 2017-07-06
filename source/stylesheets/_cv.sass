@@ -4,6 +4,10 @@ body
 .content
   @include outer-container()
   padding: 1.5em 0
+  +media($large-phone)
+    padding: 1.5em
+  &.address
+    padding: 1em 1.5em
 
 .content-wrapper
   @include outer-container()
@@ -29,3 +33,15 @@ body
   .cta-btn
     margin-top: -3em
     text-align: center
+    +media($large-phone)
+      +span-columns(12)
+
+hr.alternate
+  border-bottom: 1px solid #17335d
+#how
+  color: #565656
+  h3
+    color: #565656
+    text-align: center
+    strong
+      color: $orange-accent

@@ -1,13 +1,12 @@
 .nav.fixed
   .nav-content
-    .logo
+    .logo-container
       = link_to '/index.html' do
         = image_tag 'logo_white.png', alt: 'Civic Vision', height: 30, class: 'logo'
         %h4 Open Data Consultancy for social good
     %ul.nav-small
-      %li
-        = link_to 'Civic Storytelling', '/civicstorytelling'
-      %li
-        = link_to 'Donor Onboarding', '/donor-retention'
+      - data.services.navigation.each do |service|
+        %li
+          = link_to t("services.#{service.id}.title"), service.link
       %li
         = link_to 'Resources', '/resources'

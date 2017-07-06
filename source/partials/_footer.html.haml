@@ -4,13 +4,9 @@
       %li.item
         %h4= t('footer.offers.title')
         %ul
-          %li
-            = link_to "Data Visualization", "/data-visualization"
-          %li
-            = link_to "Civic Storytelling", "/civicstorytelling"
-          %li
-            = link_to "Donor Onboarding", "/donor-retention"
-          %li
+          - data.services.footer.each do |service|
+            %li
+              = link_to t("services.#{service.id}.title"), service.link
       %li.item
         %h4= t('footer.resources.title')
         %ul
@@ -27,6 +23,8 @@
             = link_to "Terms of Service", "/legal/index.html"
           %li
             = link_to "Privacy Policy", "/legal/privacy/index.html"
+  %hr.alternate
+  .content.address
     %p.company
       &copy; 2017 Civic Vision UG
       %br
