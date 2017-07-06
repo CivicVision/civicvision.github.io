@@ -1,16 +1,19 @@
 ---
 title: Civic Vision
 what:
+consultation_form_id: 15856593
 ---
+.cv
+  #welcome
+    .content
+      :markdown
+        # #{t('about.title')}
 
-#welcome
-  .content
-    %h1 Civic Vision
-    %h2= I18n.t(:tagline)
-
-= partial "partials/about"
-= partial "partials/what"
-= partial "partials/us"
-- if data.portfolio.signature
-  = partial "partials/portfolio"
-= partial "partials/contact"
+  = partial "partials/how"
+  = partial "partials/proof"
+  = partial "partials/what"
+  = partial "partials/consultation"
+  = partial "partials/us"
+  - if data.portfolio.signature
+    = partial "partials/portfolio"
+  =# partial "partials/dataviz"

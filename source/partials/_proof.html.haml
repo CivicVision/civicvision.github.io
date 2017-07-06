@@ -1,0 +1,13 @@
+---
+---
+#proof
+  .content
+    %h2 Organisations and Governments I have helped
+    %ul.portfolio-orgs
+      - data.proof.each do |org|
+        %li
+          = link_to org.link do
+            = image_tag org.image, alt: org.name, height: 40
+  %hr.alternate
+  .content
+    = partial "partials/testimonial", locals: { testemonial_id: 'jeff_cip' }

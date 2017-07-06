@@ -1,0 +1,18 @@
+---
+---
+.alternate-section
+  .content
+    .modal.email-signup
+      %label{for: "free-consultation"}
+        .cta-btn
+          Request a Free Consultation
+      %input#free-consultation.modal-state{type: "checkbox"}/
+      .modal-fade-screen#free-consultation-modal
+        .modal-inner
+          .modal-close{for: "free-consultation"}
+          - content_for(:retention_questions_form_content) do
+            %h3 Please provide us with more information so we can get in touch.
+          - content_for(:retention_questions_form_footer) do
+            %p We hate SPAM and promise to keep your email address safe.
+          = partial "partials/subscribe_form", locals: { drip_form_id: current_page.data.consultation_form_id, name: 'retention.questions.form', show_name: true, classNames: 'questions', form_content: :retention_questions_form_content, form_footer: :retention_questions_form_footer}
+

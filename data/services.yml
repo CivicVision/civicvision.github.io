@@ -1,0 +1,38 @@
+dataresearch: &dataresearch
+  title: Open Data Research
+  id: data_research
+  link: /
+
+data_pipeline: &data_pipeline
+  title: Data Pipeline
+  id: data_pipeline
+  link: /
+
+visualization: &visualization
+  title: Visualization
+  id: visualization
+  link: /data-visualization
+
+storytelling: &storytelling
+  title: Data Storytelling
+  id: storytelling
+  link: /civicstorytelling
+
+footer:
+  - *dataresearch
+  - *visualization
+  - *storytelling
+
+navigation:
+  - *storytelling
+  - *visualization
+
+offers:
+  - *data_pipeline
+  - *visualization
+  - *storytelling
+
+normal:
+  - *dataresearch
+  - *visualization
+  - *storytelling
