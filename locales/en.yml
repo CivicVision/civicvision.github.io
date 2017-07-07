@@ -219,3 +219,19 @@ en:
     thankyou:
       headline: Thank you for your interest.
       text: We will get back to you immediately
+  resources:
+    data_pipeline_email_course:
+      title: "Data Pipeline Crashcourse"
+    mapping_civic_open_data:
+      title: "Mapping Civic Open Data"
+    geospatial_ruby:
+      title: "Geospatial Ruby"
+    mapping_with_d3:
+      title: "Mapping with D3"
+  projects:
+    energy_production_germany:
+      title: "Energy Production in Germany"
+    water_quality_san_diego:
+      title: "Drinking Water Quality in San Diego"
+    crime_san_diego:
+      title: "Crime in San Diego"

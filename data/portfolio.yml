@@ -1,2 +1,20 @@
+water_quality_san_diego: &water_quality_san_diego
+  title: "Water Quality San Diego"
+  id: water_quality_san_diego
+  link: /trinkwasser
+crime_san_diego: &crime_san_diego
+  title: "Crime Visualization in San Diego"
+  id: crime_san_diego
+  link: /crime-san-diego
+energy_production_germany: &energy_production_germany
+  title: ""
+  id: energy_production_germany
+  link: /energy-production-germany
+
 signature:
+
+side_projects:
+  - *water_quality_san_diego
+  - *crime_san_diego
+  - *energy_production_germany
 
