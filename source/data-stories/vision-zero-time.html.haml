@@ -1,0 +1,55 @@
+---
+title: When are San Diego streets unsafe?
+date: 2017-07-16
+---
+#vision-zero
+  .row
+    :markdown
+      A lot of advocacy groups and individuals would love to see the city moving forward with their Vision Zero strategy. But it has a long way to go. In this story I want to highlight the current status of traffic fatalities in the City of San Diego by using the most up to date datset from the Open Data Portal of the city of San Diego.
+
+    .current-state
+      .number.killed
+        &nbsp;
+      people killed in 2017
+    .text
+      :markdown
+        The sad truth is that __<span class="killed"></span>__ have been killed in 2017. That is <span class="beyond"></span> beyond the Vision Zero goal.  
+        With the current pace this will probably result in __<span class="killed-end"></span>__ deaths by the end of 2017.  
+        In total there were __<span class="accidents"></span>__ accidents this year which results in _<span class="death-per-accident"></span>_ deaths per accident.  
+        The number of deaths this year is _<span class="death-lower-higher"></span>_ than last year. Last year _<span class="killed-last-year-date"></span>_ people were killed by _<span class="last-date-this-year"></span>_, which is the date for the last data available this year. And __<span class="killed-last-year"></span>__ were killed by the end of last year.  
+
+        Here is a calendar with every traffic fatality marked. This is a very sad graph. If you click on show last years, you can see calendars for both 2015 and 2016.
+    #calendar-2017-killed
+    %a.last-years(data-hidden=1 href="javascript:;") Show last years
+    #killed-last-years.hide
+      #calendar-killed
+  .row
+    #dow-chart.d-o-w
+    %h2 Traffic Deaths and Injuries for the last three years
+    #killed-by-year.chart-two-columns
+    #injured-by-year.chart-two-columns
+  #accidents-by-neighborhood.row
+    %h2 Accidents by Neighborhood
+    .text
+      :markdown
+        Here is a breakdown for each neighborhood as defined by the Police Department. They call it the beat. The data can be found [here](https://data.sandiego.gov/datasets/police-beats/).  
+        Select a different neighborhood to get the latest data from this neighborhood.
+    Select your neighborhood
+    %form
+      %label(for="neighborhood")
+        %select#neighborhoods(name="neighborhood")
+          - data.police_beats.sort_by(&:Neighborhood).each do |pb|
+            %option(value="#{pb.Beat}")= pb.Neighborhood
+    .text
+      :markdown
+        In __<span class="neighborhood"></span>__ there were __<span class="neighborhood-accidents"></span>__ accidents in 2017.  
+        <span class="neighborhood-injured"></span> people were injured and __<span class="neighborhood-killed"></span>__ were killed.  
+        In 2016 there were _<span class="neighborhood-more-less-years"></span>_ accidents than 2015. And __<span class="neighborhood-more-less-years-killed"></span>__ were killed.
+    #killed-neighborhood-graph.chart-two-columns
+    #accidents-neighborhood-graph.chart-two-columns
+  .row
+    %h2 Data
+    .text
+      :markdown
+        The data is updated every day from the Open Data Portal of the City of San Diego. The original dataset can be found [here](https://data.sandiego.gov/datasets/police-collisions/). I used R to calculate all the numbers you can see here. The R Script can be found here. 
+
