@@ -7,23 +7,26 @@ mapping_civic_open_data: &mapping_civic_open_data
   id: mapping_civic_open_data
   link: /
 
-email_courses:
-  - *data_pipeline_email_course
-  - *mapping_civic_open_data
-
 mapping_with_d3: &mapping_with_d3
   title: "Mapping with D3"
   id: mapping_with_d3
-  link: "/mapping-with-d3"
+  link: "https://civicvision.de/mapping_in_d3"
 
 geospatial_ruby: &geospatial_ruby
   title: "Geospatial Ruby"
   id: geospatial_ruby
   link: "http://milafrerichs.de/geospatial-ruby/#1"
 
+email_courses:
+  - *data_pipeline_email_course
+  - *mapping_civic_open_data
+
 talks:
   - *mapping_with_d3
   - *geospatial_ruby
+
+resources:
+
 
 books:
   - name: Open Government

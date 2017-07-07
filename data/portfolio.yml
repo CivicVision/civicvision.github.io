@@ -1,15 +1,15 @@
 water_quality_san_diego: &water_quality_san_diego
   title: "Water Quality San Diego"
   id: water_quality_san_diego
-  link: /trinkwasser
+  link: https://civicvision.de/trinkwasser
 crime_san_diego: &crime_san_diego
   title: "Crime Visualization in San Diego"
   id: crime_san_diego
-  link: /crime-san-diego
+  link: https://civicvision.de/crime-san-diego
 energy_production_germany: &energy_production_germany
   title: ""
   id: energy_production_germany
-  link: /energy-production-germany
+  link: https://civicvision.de/energy-production-germany
 
 signature:
 
