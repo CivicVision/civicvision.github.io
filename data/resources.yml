@@ -1,3 +1,30 @@
+data_pipeline_email_course: &data_pipeline_email_course
+  title: "Data Pipeline Crahscourse"
+  id: data_pipeline_email_course
+  link: /datapipeline
+mapping_civic_open_data: &mapping_civic_open_data
+  title: "Mapping Civic Open Data"
+  id: mapping_civic_open_data
+  link: /
+
+email_courses:
+  - *data_pipeline_email_course
+  - *mapping_civic_open_data
+
+mapping_with_d3: &mapping_with_d3
+  title: "Mapping with D3"
+  id: mapping_with_d3
+  link: "/mapping-with-d3"
+
+geospatial_ruby: &geospatial_ruby
+  title: "Geospatial Ruby"
+  id: geospatial_ruby
+  link: "http://milafrerichs.de/geospatial-ruby/#1"
+
+talks:
+  - *mapping_with_d3
+  - *geospatial_ruby
+
 books:
   - name: Open Government
     link: https://github.com/oreillymedia/open_government

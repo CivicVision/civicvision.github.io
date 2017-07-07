@@ -1,0 +1,6 @@
+%li.item
+  %h4= title
+  %ul
+    - link_list.each do |el|
+      %li
+        = link_to t("#{list_id}.#{el.id}.title"), el.link

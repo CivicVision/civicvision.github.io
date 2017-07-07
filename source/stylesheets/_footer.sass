@@ -11,7 +11,8 @@
       @include span-columns(4)
     li.item
       @include span-columns(4 of 12)
+      @include omega(3n)
+      margin-bottom: 2em
       @include media($mobile)
         @include span-columns(4)
-        margin-bottom: 2em
 

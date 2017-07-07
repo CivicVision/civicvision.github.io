@@ -1,21 +1,10 @@
 #footer
   .content
     %ul#items
-      %li.item
-        %h4= t('footer.offers.title')
-        %ul
-          - data.services.footer.each do |service|
-            %li
-              = link_to t("services.#{service.id}.title"), service.link
-      %li.item
-        %h4= t('footer.resources.title')
-        %ul
-          %li
-            = link_to "Donor Retention Calculator", "http://civicvision.de/donor-retention-calculator"
-          %li
-            = link_to "Thank your donors Email Course", "http://civicvision.de/be-a-donor-yourself"
-          %li
-            = link_to "Donor Retention Resources", "http://civicvision.de/donor-retention-resources"
+      = partial "partials/footer_links", locals: { title: t('footer.offers.title'), link_list: data.services.footer, list_id: "services"}
+      = partial "partials/footer_links", locals: { title: "Free Email Courses", link_list: data.resources.email_courses, list_id: "resources"}
+      = partial "partials/footer_links", locals: { title: "Talks", link_list: data.resources.talks, list_id: "resources"}
+      = partial "partials/footer_links", locals: { title: "Side Projects", link_list: data.portfolio.side_projects, list_id: "projects"}
       %li.item
         %h4 Civic Vision
         %ul
