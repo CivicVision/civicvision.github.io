@@ -22,7 +22,7 @@ createDoWData = (data, rollup = sumKilledInjured) ->
     .rollup(rollup)
     .entries(data)
 createDowChart = (startDate,data, extent) ->
-    dayofWeekChart().valueKey("value").startDate(new Date(2015,0,1)).colorDomain(extent)
+    dayofWeekChart().valueKey("value").startDate(startDate).colorDomain(extent)
 dayData = (data, rollup) ->
   dateData = d3.nest()
     .key( (d) -> d.day)
@@ -151,6 +151,7 @@ if d3.selectAll("#vision-zero").size() > 0
     killedInjuredByYear = results[0]
     killedInjuredByYearAndPoliceBeat = results[1]
     fullHourAccidents = results[2]
+    accidents = results[3]
     killedData2017 = _.find(killedInjuredByYear, (d) -> d.year == "2017")
     killed2017 = parseInt(killedData2017.killed)
     d3.selectAll('.killed').text(killed2017)
@@ -192,10 +193,67 @@ if d3.selectAll("#vision-zero").size() > 0
     opt = { "mode": "vega-lite", actions: false }
     vega.embed("#killed-by-year", killedByYearSpec, opt)
     vega.embed("#injured-by-year", injuredByYearSpec, opt)
-    makeCalendar(fullHourAccidents)
+    #makeCalendar(fullHourAccidents)
+
+    dayFormat = d3.timeFormat('%Y-%m-%d')
+    yearFormat = d3.timeFormat('%Y')
+    d3.map(accidents, (d) ->
+      d.date = new Date(2016,0,1,d.hour)
+      d.day = dayFormat(d.date)
+      d.year = yearFormat(d.date)
+    )
+
+    maxInjured = d3.max(accidents, (d) -> parseInt(d.injured))
+    maxAccidents = d3.max(accidents, (d) -> parseInt(d.accidents))
+    maxKilled = d3.max(accidents, (d) -> parseInt(d.killed))
+
+    nestHour = (h, newDate, data, valueKey) ->
+      hourDate = d3.timeHour.offset(newDate, h)
+      entry = _.find(data, (d) -> parseInt(d.hour) == h)
+      {
+        "key": hourDate
+        "value": if entry then entry[valueKey] else 0
+        "name": valueKey
+      }
+    mapData = (data) ->
+      newDate = new Date(2016,0,1,0)
+      [
+        {
+          "key": newDate
+          "name": "Accidents"
+          "values": (nestHour(h, newDate, data, "accidents") for h in [0..23])
+        }
+        {
+          "key": newDate
+          "name": "Injured"
+          "values": (nestHour(h, newDate, data, "injured") for h in [0..23])
+        }
+        {
+          "key": newDate
+          "name": "Killed"
+          "values": (nestHour(h, newDate, data, "killed") for h in [0..23])
+        }
+      ]
+
+    yValue = (d) -> d.name
+    color = d3.scaleQuantize().domain([0,maxAccidents]).range(d3.range(9).map((d) -> 'q' + d + '-9'))
+    classValue = (d) ->
+      c = switch d.name
+        when "injured"
+          color.domain([0,maxInjured])
+        when "killed"
+          color.domain([0,maxKilled])
+        else
+          color.domain([0,maxAccidents])
+      "hour #{color(parseInt(d.value || emptyValue))}"
+
+
+    dowChart = dayofWeekChart().valueKey("injured").startDate(new Date(2016,0,1)).colorDomain([0,maxInjured]).mapData(mapData).yValue(yValue).classValue(classValue)
+    d3.select('#dow-chart').data([accidents]).call(dowChart)
 
   d3.queue(2)
     .defer(d3.csv, "https://s3.amazonaws.com/traffic-sd/accidents_killed_injured_b_year.csv")
     .defer(d3.csv, "https://s3.amazonaws.com/traffic-sd/accidents_killed_injured_b_year_police_beat.csv")
     .defer(d3.csv, "https://s3.amazonaws.com/traffic-sd/full_hour_accidents.csv")
+    .defer(d3.csv, "https://s3.amazonaws.com/traffic-sd/per_hour_accidents.csv")
     .awaitAll(ready)

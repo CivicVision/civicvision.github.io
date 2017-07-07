@@ -15,6 +15,9 @@
   valueKey = "count"
   dateKey = "date"
   emptyValue = 0
+  yValue = (d) ->
+    weekDays[weekday(d.key)]
+
   xValue = (date) ->
     dowHFormat = d3.timeFormat("%w %H")
     entry = _.filter(this, (d) -> dowHFormat(d[dateKey]) == dowHFormat(date))
@@ -34,6 +37,9 @@
   .nice(d3.timeDay)
   .domain(timeScaleDomain)
   .range([0, cellSize*24])
+
+  classValue = (d) ->
+    "hour #{color(parseInt(d.value || emptyValue))}"
 
   nestHour = (h, newDate, data) ->
     hourDate = d3.timeHour.offset(newDate, h)
@@ -71,7 +77,7 @@
       labelText = g.selectAll('text.day-of-week').data((d) -> [d])
       labelText.enter().append('text').attr('class', 'day-of-week')
         .attr('transform', "translate(-#{weekDayPadding}, #{paddingDays*2})")
-        .text( (d) -> weekDays[weekday(d.key)] )
+        .text(yValue)
       rect = g.selectAll('.hour').data((d) ->
         d.values
       )
@@ -85,9 +91,7 @@
         d3.select("#tooltip").style("left", (d3.event.pageX + 14) + "px")
         .style("top", (d3.event.pageY - 32) + "px")
       )
-      .merge(rect).attr('class', (d) ->
-        "hour #{color(parseInt(d.value || emptyValue))}"
-      )
+      .merge(rect).attr('class', classValue)
       .on("mouseover", (d) ->
         d3.select('#tooltip').html(tooltipTemplate.call(this, d)).style("opacity", 1)
         d3.select(this).classed("active", true)
@@ -160,6 +164,21 @@
     unless arguments.length
       return colorDomain
     cDomain = value
+    chart
+  chart.mapData = (value) ->
+    unless arguments.length
+      return mapData
+    mapData = value
+    chart
+  chart.classValue = (value) ->
+    unless arguments.length
+      return classValue
+    classValue = value
+    chart
+  chart.yValue  = (value) ->
+    unless arguments.length
+      return yValue
+    yValue = value
     chart
   chart.tooltipTemplate = (value) ->
     unless arguments.length
