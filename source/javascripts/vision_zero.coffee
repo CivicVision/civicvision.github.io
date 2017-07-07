@@ -195,7 +195,7 @@ if d3.selectAll("#vision-zero").size() > 0
     makeCalendar(fullHourAccidents)
 
   d3.queue(2)
-    .defer(d3.csv, "https://s3.amazonaws.com/traffic-sd/accicents_killed_injured_b_year.csv")
-    .defer(d3.csv, "https://s3.amazonaws.com/traffic-sd/accicents_killed_injured_b_year_police_beat.csv")
+    .defer(d3.csv, "https://s3.amazonaws.com/traffic-sd/accidents_killed_injured_b_year.csv")
+    .defer(d3.csv, "https://s3.amazonaws.com/traffic-sd/accidents_killed_injured_b_year_police_beat.csv")
     .defer(d3.csv, "https://s3.amazonaws.com/traffic-sd/full_hour_accidents.csv")
     .awaitAll(ready)
