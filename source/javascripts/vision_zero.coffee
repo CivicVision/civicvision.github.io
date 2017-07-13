@@ -183,11 +183,12 @@ if d3.selectAll("#vision-zero").size() > 0
     else
       d3.select('.death-lower-higher').text("higher")
 
-    beatId = d3.selectAll('#neighborhoods option').node().value
-    changeNeighborhoodData(killedInjuredByYearAndPoliceBeat, beatId)
-    d3.select('#neighborhoods').on('change', (event) ->
-      changeNeighborhoodData(killedInjuredByYearAndPoliceBeat, this.value)
-    )
+    if d3.selectAll('#neighborhoods option').size() > 0
+      beatId = d3.selectAll('#neighborhoods option').node().value
+      changeNeighborhoodData(killedInjuredByYearAndPoliceBeat, beatId)
+      d3.select('#neighborhoods').on('change', (event) ->
+        changeNeighborhoodData(killedInjuredByYearAndPoliceBeat, this.value)
+      )
     killedByYearSpec = { "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "description": "A simple bar chart with embedded data.", "data": { "values": killedInjuredByYear }, "mark": "bar", "encoding": { "y": {"field": "year", "type": "ordinal", "axis": { "title": ""}}, "x": {"field": "killed", "type": "quantitative", "axis": { "title": "# people killed"}} } }
     injuredByYearSpec = { "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "title": "Injured","description": "A simple bar chart with embedded data.", "data": { "values": killedInjuredByYear }, "mark": "bar", "encoding": { "y": {"field": "year", "type": "ordinal", "axis": { "title": ""}}, "x": {"field": "injured", "type": "quantitative", "axis": { "title": "# of people injured"}} } }
     opt = { "mode": "vega-lite", actions: false }

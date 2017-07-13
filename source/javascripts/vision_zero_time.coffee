@@ -1,3 +1,5 @@
+timeParser = d3.timeParse("%Y-%m-%d %H:%M:%S")
+
 killed = (d) ->
   parseInt(d.killed)
 
@@ -41,7 +43,7 @@ dayData = (data, rollup) ->
 
 dataForDateRange = (data, startDate, endDate, type = killedInjured) ->
     d3.sum(data, (d) ->
-      currentDate = new Date(d.date_hour)
+      currentDate = timeParser(d.date_hour)
       if(currentDate <= endDate && currentDate >= startDate)
         return type(d)
       0
@@ -88,7 +90,7 @@ if d3.selectAll("#vision-zero").size() > 0
 
     totalAccidents = parseInt(killedData2017.accidents)
     killsPerAccicents = d3.format(".2")(killed2017/totalAccidents)
-    lastDate = d3.max(fullHourAccidents, (d) -> new Date(d.date_hour))
+    lastDate = d3.max(fullHourAccidents, (d) -> timeParser(d.date_hour))
     lastDateLastYear = d3.timeYear.offset(lastDate,-1)
     killed2015CurrentDate = dataForDateRange(fullHourAccidents, new Date(2015,0,1),d3.timeYear.offset(lastDate,-2), killed)
     killed2016CurrentDate = dataForDateRange(fullHourAccidents, new Date(2016,0,1), lastDateLastYear, killed)
@@ -205,10 +207,13 @@ if d3.selectAll("#vision-zero").size() > 0
       "<h2>#{weekdayFormat(d.key)}</h2><p>#{parseInt(d.value) || 0}</p>"
 
     d3.map(fullHourAccidents, (d) ->
-      d.date = new Date(d.date_hour)
+      d.date = timeParser(d.date_hour)
     )
     dowTInjured = dayofWeekSingleChart().valueKey("injured").colorDomain([1600,2600]).tooltipTemplate(dowTooltipTemplate).yValue((d) -> 'Injured')
     d3.select('#dow-chart-single-injured').data([fullHourAccidents]).call(dowTInjured)
+
+    injuredMax = d3.max(fullHourAccidents, (d) -> d.injured)
+    accidentsMax = d3.max(fullHourAccidents, (d) -> d.accidents)
 
     dowT = dayofWeekSingleChart().valueKey("accidents").colorDomain([3500,4000]).tooltipTemplate(dowTooltipTemplate).yValue((d) -> 'Accidents')
     d3.select('#dow-chart-single').data([fullHourAccidents]).call(dowT)
