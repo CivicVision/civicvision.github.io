@@ -1,27 +1,24 @@
-@dayofWeekChart = ->
+@dayofWeekSingleChart = ->
   width = 700
   height = 20
   cellSize = 17
-  xTicks = 3
-  defaultEmpty = 0
-  paddingDays = 5
-  weekDayPadding = 70
   weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
   tooltipElement = 'body'
-  hour = d3.timeFormat('%H')
+  weekDayPadding = 70
+  paddingDays = 5
   weekday = d3.timeFormat('%w')
   weekdayText = d3.timeFormat('%A')
-  time = d3.timeFormat("%I %p")
   valueKey = "count"
   dateKey = "date"
   emptyValue = 0
-  yValue = (d) ->
-    weekDays[weekday(d.key)]
-
+  xTicks = 3
   xValue = (date) ->
-    dowHFormat = d3.timeFormat("%w %H")
+    dowHFormat = d3.timeFormat("%w")
     entry = _.filter(this, (d) -> dowHFormat(d[dateKey]) == dowHFormat(date))
     d3.sum(entry, (d) -> d[valueKey]) if entry
+
+  yValue = (d) ->
+    weekDays[weekday(d.key)]
 
   tooltipTemplate = (d) ->
     "<h2>#{d.key}</h2><p>#{d.value || emptyValue}</p>"
@@ -31,42 +28,27 @@
   cDomain = [-.05, .05]
   color = d3.scaleQuantize().domain(cDomain).range(d3.range(9).map((d) -> 'q' + d + '-9'))
 
-  timeScaleDomain = d3.timeHours(startDate, d3.timeDay.offset(startDate,1))
-
-  timescale = d3.scaleTime()
-  .nice(d3.timeDay)
-  .domain(timeScaleDomain)
-  .range([0, cellSize*24])
-
   classValue = (d) ->
-    "hour #{color(parseFloat(d.value || emptyValue))}"
+    "hour #{color(parseInt(d.value || emptyValue))}"
 
-  nestHour = (h, newDate, data) ->
-    hourDate = d3.timeHour.offset(newDate, h)
-    {
-      "key": hourDate
-      "value": xValue.call(data, hourDate)
-    }
   nestDate = (dow, data) ->
     newDate = d3.timeDay.offset(startDate,dow)
     {
       "key": newDate
-      "values": (nestHour(h, newDate, data) for h in [0..23])
+      "value": xValue.call(data, newDate)
     }
 
   mapData = (data) ->
-    nData = (nestDate(dow, data) for dow in [0..6])
-    nData
+    [ {
+      "key": startDate,
+      "values": (nestDate(dow, data) for dow in [0..6])
+    }]
 
   chart = (selection) ->
     selection.each (data,i) ->
       data = mapData(data)
 
       color.domain(cDomain)
-      timeScaleDomain = d3.timeHours(startDate, d3.timeDay.offset(startDate,1))
-      timescale
-        .domain([startDate, d3.timeDay.offset(startDate,1)])
-        .range([0, cellSize*24])
       svg = d3.select(this).selectAll('svg').data(data)
 
       gEnter = svg.enter().append('svg').merge(svg).attr('width', width).attr('height', height).append('g')
@@ -82,7 +64,7 @@
         d.values
       )
       rect.enter().append('rect').attr('width', cellSize).attr('height', cellSize).attr('x', (d) ->
-        hour(d.key)*cellSize
+        weekday(d.key)*cellSize
       ).attr('y', 0)
       .on("mouseout", (d) ->
         d3.select(this).classed("active", false)
@@ -96,15 +78,14 @@
         d3.select('#tooltip').html(tooltipTemplate.call(this, d)).style("opacity", 1)
         d3.select(this).classed("active", true)
       )
-      hoursAxis = d3.axisTop(timescale)
-      .ticks(d3.timeHour.every(xTicks))
-      .tickFormat(time)
+      hoursAxis = d3.axisTop(dayOfWeekScale)
+      .tickFormat(weekday)
       hoursg = g.append('g')
       .classed('axis', true)
       .classed('hours', true)
       .classed('labeled', true)
       .attr("transform", "translate(0,-10.5)")
-      .call(hoursAxis)
+      #.call(hoursAxis)
   chart.cellSize = (value) ->
     unless arguments.length
       return cellSize
