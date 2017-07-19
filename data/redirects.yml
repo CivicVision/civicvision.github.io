@@ -17,3 +17,7 @@ urls:
     url: http://drip.la/c/eyJhY2NvdW50X2lkIjoiNDgyODY3MSIsInRyaWdnZXJfaWQiOiI0NDAzNjc2MCIsInVybCI6Imh0dHA6Ly9jaXZpY3Zpc2lvbi5kZS9kb25vci1yZXRlbnRpb24tcmVzb3VyY2VzL2ktZG9udC1rbm93LyJ9
   - short: dr-dknt
     url: http://drip.la/c/eyJhY2NvdW50X2lkIjoiNDgyODY3MSIsInRyaWdnZXJfaWQiOiI3MjAyMTg1MCIsInVybCI6Imh0dHA6Ly9jaXZpY3Zpc2lvbi5kZS9kb25vci1yZXRlbnRpb24tcmVzb3VyY2VzL2ktZG9udC1rbm93LyNuby10aW1lIn0
+  - short: vst
+    url: https://civicvision.de/data-stories/vision-zero-time
+  - short: vsd
+    url: https://civicvision.de/vision-zero-dashboard
