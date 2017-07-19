@@ -109,7 +109,7 @@ data.content_upgrades.upgrades.each do |upgrade|
   end
 end
 data.redirects.urls.each do |url|
-  proxy "/rdr/#{url.short}/index.html", "/redirect.html", locals: { redirect_url: url.url}, ignore: true
+  proxy "/rdr/#{url.short}/index.html", "/redirect.html", locals: { redirect_url: url.url, keep_params: url.keep_params }, ignore: true
 end
 
 activate :deploy do |deploy|
