@@ -1,6 +1,6 @@
 urls:
   - short: dr
-    url: https://donorretention.com
+    url: https://civicvision.de/donor-retention
   - short: drrsrc
     url: https://civicvision.de/donor-retention-resources
   - short: tyd
@@ -21,3 +21,8 @@ urls:
     url: https://civicvision.de/data-stories/vision-zero-time
   - short: vsd
     url: https://civicvision.de/vision-zero-dashboard
+  - short: survey-foss4g-2017
+    url: https://civicvision.typeform.com/to/fCMwmG
+    keep_params: true
+    tags:
+      - "Workshop - Mapping with d3 - FOSS4G 2017 - Opened Survey"
