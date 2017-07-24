@@ -2,8 +2,14 @@
 layout: bare
 drip_id: 4828671
 ---
+- if keep_params
+  :javascript
+    redirectUrl = "#{redirect_url}"+location.search
+- else
+  :javascript
+    redirectUrl = "#{redirect_url}"
 :javascript
-  window.redirectToNewLocation = "#{redirect_url}"
+  window.redirectToNewLocation = redirectUrl;
   var _dcq = _dcq || [];
   var _dcs = _dcs || {};
   _dcs.account = "#{current_page.data.drip_id}";
