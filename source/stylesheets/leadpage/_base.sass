@@ -79,6 +79,15 @@ p, h3
   @include media($large-tablet)
     @include font-size($lead-pages-text-font-size*0.7)
 
+h4
+  +font-size($lead-pages-text-font-size*1.2)
+  @include media($smaller-screen)
+    +font-size($lead-pages-text-font-size*0.8)
+  @include media($small-screen)
+    +font-size($lead-pages-text-font-size*0.7)
+  @include media($large-tablet)
+    +font-size($lead-pages-text-font-size*0.6)
+
 p
   text-align: left
 
