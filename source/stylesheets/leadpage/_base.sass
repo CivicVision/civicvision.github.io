@@ -1,0 +1,171 @@
+@import 'base/base'
+@import 'base/color'
+@import "base/media-queries"
+@import 'neat/neat'
+
+@import "mixins/fonts"
+@import "mixins/cta-btn"
+@import "mixins/list-styles"
+
+@import "leadpage/sub-heading"
+@import "leadpage/banner"
+@import "testimonials"
+@import "civicstorytelling/modal"
+
+@mixin transition($transition-base)
+  -webkit-transition: $transition-base
+  -moz-transition: $transition-base
+  -ms-transition: $transition-base
+  -o-transition: $transition-base
+  transition: $transition-base
+
+/* Button
+ *---------------------------------------------
+button
+  @include transition(all 0.1s ease-in-out)
+
+/* Forms
+ *---------------------------------------------
+
+input
+  &:focus, &[type="button"], &[type="reset"], &[type="submit"]
+    @include transition(all 0.1s ease-in-out)
+
+textarea:focus, .button
+  @include transition(all 0.1s ease-in-out)
+
+/* Typography
+ *---------------------------------------------
+
+*, *::after, *::before
+  box-sizing: initial
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary
+  display: block
+
+*
+  margin: 0
+  padding: 0
+  outline: 0
+
+body, html
+  font-family: $lead-pages-base-font-family
+  height: auto
+  width: 100%
+  word-wrap: break-word
+
+h1, h2, h3, p
+  word-wrap: break-word
+  -webkit-line-break: after-white-space
+
+h1, p
+  margin: 0 auto
+  text-align: center
+  -webkit-margin-before: 0
+  -webkit-margin-after: 0
+
+h2
+  font-size: 44px
+  line-height: 60px
+  text-transform: uppercase
+
+p, h3
+  @include font-size($lead-pages-text-font-size)
+  line-height: 36px
+  @include media($smaller-screen)
+    @include font-size($lead-pages-text-font-size*0.8)
+  @include media($small-screen)
+    @include font-size($lead-pages-text-font-size*0.7)
+  @include media($large-tablet)
+    @include font-size($lead-pages-text-font-size*0.7)
+
+p
+  text-align: left
+
+a
+  color: $blue-link
+  &:link, &:visited
+    color: $blue-link-visited
+    text-decoration: none
+  &:hover
+    color: #e05b49
+  @include transition(all 0.1s ease-in-out)
+
+/* Container
+ *---------------------------------------------
+
+.content-wrapper
+  @include outer-container()
+  text-align: center
+  @include media($large-screen)
+    padding-left: 1em
+    padding-right: 1em
+
+/* Float Clearing
+ *---------------------------------------------
+
+.clearfix:before, .footer-widgets:before, .nav-primary:before, .nav-secondary:before, .site-container:before, .site-footer:before, .site-header:before, .site-inner:before, .wrap:before
+  content: " "
+  display: table
+
+.clearfix:after, .footer-widgets:after, .nav-primary:after, .nav-secondary:after, .site-container:after, .site-footer:after, .site-header:after, .site-inner:after, .wrap:after
+  clear: both
+  content: " "
+  display: table
+
+.clear
+  clear: both
+
+/* Site Containers
+ *---------------------------------------------
+
+.wrap
+  margin: 0 auto
+  max-width: 1160px
+
+/* Site Header
+ *----------------------------------------------------------------------------------------------------
+
+.site-header
+  .wrap
+    max-width: 1320px
+  .widget-area
+    float: right
+    text-align: right
+    width: 1080px
+  .widget_nav_menu
+    margin-top: 17px
+
+/* Widget Area
+ *---------------------------------------------
+
+.site-header
+  .widget-area
+    float: right
+    text-align: right
+    width: 1080px
+  .widget_nav_menu
+    margin-top: 17px
+
+.content-wrapper
+  ul
+    text-align: left
+    font-weight: 300
+    margin-left: 30px
+    margin-bottom: 1.5em
+    @include font-size($lead-pages-text-font-size)
+    padding: 0
+    @include media($smaller-screen)
+      @include font-size($lead-pages-text-font-size*0.7)
+    @include media($small-screen)
+      @include font-size($lead-pages-text-font-size*0.6)
+    @include media($large-tablet)
+      @include font-size($lead-pages-text-font-size*0.5)
+      margin-left: 0px
+
+  li
+    padding-left: 1.3em
+.checkmark-list
+  +checkmark($green-dark-bg)
+.checklist-list
+  +checklist($hue-light)

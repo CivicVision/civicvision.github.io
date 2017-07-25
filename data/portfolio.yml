@@ -11,7 +11,24 @@ energy_production_germany: &energy_production_germany
   id: energy_production_germany
   link: https://civicvision.de/energy-production-germany
 
+weapons_map: &weapons_map
+  id: weapons_map
+  github: CivicVision/armsexport-map
+  url: http://ruestungsexport.info/map/
+  copy: |
+    Overhauled the site to have a cleaner look and feel and use better technologies.
+geonode_client: &geonode_client
+  id: geonode_client
+  github: GeoNode/geonode-client
+  technologies:
+    - name: Open Layers 3
+      class: ol3
+    - name: React
+      class: react
+
 signature:
+  - *weapons_map
+  - *geonode_client
 
 side_projects:
   - *water_quality_san_diego

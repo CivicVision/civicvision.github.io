@@ -1,0 +1,50 @@
+---
+title: About me
+layout: lead_pages
+name: intro
+gtm_id: GTM-N67RB5T
+question_form_id: 43404604
+order: 'normal'
+---
+- content_for :assets do
+  = stylesheet_link_tag 'leadpage'
+- I18n.locale = :en
+%div.intro(id="landingpage")
+%section#banner.second-headline
+  .content-wrapper
+    :markdown
+      # #{t('about.title')}
+%section.sub-heading
+  .content-wrapper
+    :markdown
+      ### __Hi there__,
+      My name is Mila Frerichs and I’m a Data Consultant and Data Visualization expert.
+
+      I help civic advocacy groups and non-profits increase their engagement and influence by creating interactive data visualizations and data stories.  I have worked with governments as well, creating budget visualizations.
+
+      I worked with organizations such as Code for America and the Open Knowledge Foundation. In my free-time I work on civic issues for the City of San Diego and Berlin in the Code for American Brigade network.
+
+       I’d love the opportunity to help you take your organisation to the next level if things are a good fit for my expertise. Take a look at some of the examples below and then let’s chat.
+
+      Thanks.
+
+      #{ image_tag "signature.png", alt: "Mila Frerichs"}
+
+      Mila Frerichs
+%section.sub-heading-alternate
+  .content-wrapper
+    = partial "partials/portfolio"
+%section.sub-heading
+  .content-wrapper
+    = partial "partials/fit"
+%section.sub-heading-alternate
+  .content-wrapper
+    %h3= t('about_us.title')
+    .about-me
+      .img
+        = image_tag "mf.jpeg", class: "me", alt: "Mila Frerichs"
+      .position
+        :markdown
+          #{t('about_us.content')}
+
+= partial "partials/footer"
