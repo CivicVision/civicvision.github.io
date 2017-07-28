@@ -1,0 +1,36 @@
+%section.sub-heading
+  .content-wrapper
+    - unless order == 'normal'
+      = partial "localizable/donor-retention-resources/thank_you"
+    %h3 Resources
+    = partial "partials/services", locals: { order: order }
+%section.sub-heading-alternate
+  .content-wrapper
+    %h3 Articles on Data Visualization and Storytelling
+    %ul
+      - blog('donor-retention-articles').articles[0..5].each do |article|
+        %li
+          %a(href="#{article.url}")= article.title
+      - data['donor-retention'].resources.retention_rate.each do |resource|
+        %li
+          %a(href="#{resource.url}" target="_blank")= resource.title
+%section.sub-heading
+  .content-wrapper
+    %h3 Books on Data Visualization and Storytelling
+    %ul
+      - blog('donor-retention-articles').articles[0..5].each do |article|
+        %li
+          %a(href="#{article.url}")= article.title
+      - data['donor-retention'].resources.retention_rate.each do |resource|
+        %li
+          %a(href="#{resource.url}" target="_blank")= resource.title
+%section.sub-heading-alternate
+  .content-wrapper
+    %h3= t('about_us.title')
+    .about-me
+      .img
+        = image_tag "mf.jpeg", class: "me", alt: "Mila Frerichs"
+      .position
+        :markdown
+          #{t('about_us.content')}
+

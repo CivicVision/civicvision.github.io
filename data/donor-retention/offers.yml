@@ -1,22 +1,26 @@
 calculator: &calculator
+  id: calculator
   title: Donor Retention Calculator
   text: |
     Do you know your retention rate? Use the **calculator** to find out your rate and get more information.
   cta: Use the Retention Calculator
   link: /donor-retention-calculator
 emailcourse: &course
+  id: emailcourse
   title: Be a donor yourself
   text: |
     Experience a *Thank You* campaign as a donor. This **6-day email course** let's you experience how a donor would receive a *Thank you* campaign in a compressed way.
   cta: Get the email course
   link: /be-a-donor-yourself
 service: &service
+  id: service
   title: Done-fo-you Service
   text: |
     Done-for-you-service to implement an automated *follow up sequence* with your existing donors, thanking them and providing more information.
   cta: View the Done-for-you Service
   link: /donor-retention
 report: &report
+  id: report
   title: Donor Retention Assessment report
   text: |
       *Retention Assessment Report* is a detailed report about your donor base. We calculate your retention rate and analyse how much you can increase your donations with specific campaigns.

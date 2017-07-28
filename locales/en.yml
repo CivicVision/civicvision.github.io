@@ -9,24 +9,39 @@ en:
   services:
     data_pipeline:
       title: Data Pipeline
-      content: "Do you spend your time trying to get your data into a format that you can use for analyzing and visualizing your data? Is it frustrating that you have to do it every time all over again?"
-      sub_content: "Civic Vision helps you create a repeatable and consistent way of Collecting, Cleaning, Transforming and Updating your data. "
+      content: |
+        Do you spend your time trying to get your data into a format that you can use for analyzing and visualizing your data? Is it frustrating that you have to do it every time all over again?
+
+        Civic Vision helps you create a repeatable and consistent way of Collecting, Cleaning, Transforming and Updating your data.
     data_research:
       title: Open Data Research
       content: ""
       sub_content: ""
+      cta: Book your Free Open Data Research
+      text: |
+        Do you know where you would find data to reach the right people? I help you understand how data can help you __reach more influencers__ and have a list of _three or more places_ to find data.
     visualization:
       title: Data Visualization
-      content: "Do you want to show your data to a broader audience? Do you want to find insights in your data? "
-      sub_content: "Civic Vision helps you with interactive visualizations and map-based applications."
+      content: |
+        Do you want to show your data to a broader audience? Do you want to find insights in your data?  
+
+        Civic Vision helps you with interactive visualizations and map-based applications.
+      text: |
+        Do you want to show your data to a broader audience? Do you want to find insights in your data?
+      cta: View the Data Visualization Service
     storytelling:
       title: Data Storytelling
-      content: "Dou you want to effectively communicate your story?"
-      sub_content: "Civic Vision helps you increase your audience engagement with telling stories with data."
+      content: |
+        Do you want to effectively communicate your story?
+
+        Civic Vision helps you increase your audience engagement with telling stories with data.
+      cta: View the Data Storytelling Service
     onboarding:
       title: Donor Onboarding
-      content: "The average non-profit lose about 80% of their first-time donors."
-      sub_content: "By Onboarding your donors you increase their trust and the likelyhood of another donation"
+      content: |
+        The average non-profit lose about 80% of their first-time donors.
+
+        By Onboarding your donors you increase their trust and the likelyhood of another donation
   about:
     title: |
       I help __civic advocacy groups__ and __governments__ improve the life of citizens with the help of Open Data.
@@ -228,6 +243,32 @@ en:
       title: "Geospatial Ruby"
     mapping_with_d3:
       title: "Mapping with D3"
+  offers:
+    donor_retention:
+      calculator:
+        title: Donor Retention Calculator
+        text: |
+          Do you know your retention rate? Use the **calculator** to find out your rate and get more information.
+        cta: Use the Retention Calculator
+        link: /donor-retention-calculator
+      emailcourse:
+        title: Be a donor yourself
+        text: |
+          Experience a *Thank You* campaign as a donor. This **6-day email course** let's you experience how a donor would receive a *Thank you* campaign in a compressed way.
+        cta: Get the email course
+        link: /be-a-donor-yourself
+      service:
+        title: Done-fo-you Service
+        text: |
+          Done-for-you-service to implement an automated *follow up sequence* with your existing donors, thanking them and providing more information.
+        cta: View the Done-for-you Service
+        link: /donor-retention
+      report:
+        title: Donor Retention Assessment report
+        text: |
+            *Retention Assessment Report* is a detailed report about your donor base. We calculate your retention rate and analyse how much you can increase your donations with specific campaigns.
+        cta: Get the Assessment Report
+        link: /donor-retention/#packages
   projects:
     energy_production_germany:
       title: "Energy Production in Germany"

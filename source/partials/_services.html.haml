@@ -1,0 +1,3 @@
+.offerings.flex-boxes
+  - data.services[order].each do |offer|
+    = partial "partials/offer", locals: { offer: offer, translate_id: "services.#{offer.id}"}

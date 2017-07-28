@@ -1,0 +1,7 @@
+.offer.flex-box
+  %h4.flex-title=t("#{translate_id}.title")
+  .text
+    :markdown
+      #{t("#{translate_id}.text")}
+  %button
+    = link_to t("#{translate_id}.cta"), offer.link

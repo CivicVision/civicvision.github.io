@@ -1,0 +1,15 @@
+---
+title: Resource Center
+layout: lead_pages
+name: resource_center
+gtm_id: GTM-N67RB5T
+question_form_id: 43404604
+order: 'normal'
+---
+- content_for :assets do
+  = stylesheet_link_tag 'donor-retention'
+- I18n.locale = :en
+%div.retention-resources(id="landingpage")
+  = partial "localizable/resource-center/title"
+  = partial "localizable/resource-center/resources", locals: { order: current_page.data.order }
+  = partial "partials/footer"
