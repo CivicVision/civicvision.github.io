@@ -1,0 +1,38 @@
+/* Sub-heading section
+ *---------------------------------------------
+$sub-heading-font-size: 40
+.sub-heading, .sub-heading-alternate
+  padding: 99px 0 34px 0
+  background-color: #fffeff
+  color: $base-black
+  @include media($smaller-screen)
+    padding: 60px 0 34px 0
+  h3
+    @include font-size($sub-heading-font-size)
+    margin-bottom: 1em
+    color: rgb(90, 90, 90)
+
+    @include media($smaller-screen)
+      @include font-size($sub-heading-font-size*0.7)
+    @include media($small-screen)
+      @include font-size($sub-heading-font-size*0.6)
+    @include media($large-tablet)
+      @include font-size($sub-heading-font-size*0.5)
+    strong
+      color: $hue-blue-accent
+  p
+    color: $lead-pages-color-text
+    font-weight: $lead-pages-base-font-weight
+    &:not(:last-child)
+      margin-bottom: 1.5em
+.sub-heading-alternate
+  background: $hue-background
+  color: $color-white
+  h3
+    color: $color-white
+    letter-spacing: .05em
+    margin-bottom: 45px
+  p
+    color: $color-white
+  a.cta-btn
+    color: $color-white

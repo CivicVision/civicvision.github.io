@@ -229,6 +229,28 @@ en:
     mapping_with_d3:
       title: "Mapping with D3"
   projects:
+    weapons_map:
+      title: Armsexport Map, BICC
+      copy: |
+        Working with the Bonn International Center for Conversion I cleared up their existing mapping visualization. It help their users understand the data quicker and better.
+    resident_survey:
+      title: Resident Web Use Research
+      copy: |
+        With Code for America I helped increase the usability for their existing prototype for a resident survey tool. 
+    analytics_dashboard:
+      title: City Analytics Dashboard
+    recovery_dashboard:
+      title: "Recovery Dashboard: Nepal Earthquake"
+      copy: |
+        In cooperation with [Terranodo](http://terranodo.io) I helped the Worldbank in their relief efforts in Nepal. Creating a dashboard for their incoming data. 
+    budget_rlp:
+      title: Budget Visualization Finance Ministery Rheinland-Pfalz
+      copy: |
+        To increase transparency and accountability the Ministry of Finance of Rheinland Pfalz in Germany reached out to create a visualization for their annual budget. 
+    geonode_client:
+      title: GeoNode Client
+      copy: |
+        For the geospatial platform geonode I worked on updating their existing map editor to faster and more reliable technology to help maintain the platforms leading role.
     energy_production_germany:
       title: "Energy Production in Germany"
     water_quality_san_diego:

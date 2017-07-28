@@ -7,5 +7,5 @@
         %h2= title
     - else
       %h2= title
-    %p= content
-    %p= sub_content
+    :markdown
+      #{content}

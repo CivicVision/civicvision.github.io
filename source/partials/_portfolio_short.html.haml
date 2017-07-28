@@ -1,0 +1,13 @@
+---
+---
+#portfolio-short
+  .content
+    %h3= t('portfolio.title')
+    %ul
+      - data.portfolio.signature.each do |project|
+        %li
+          %h4
+            = link_to t("projects.#{project.id}.title"), project.url
+          .copy
+            :markdown
+              #{t("projects.#{project.id}.copy")}
