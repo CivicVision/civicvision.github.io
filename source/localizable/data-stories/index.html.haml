@@ -1,0 +1,13 @@
+---
+title: Data Stories
+layout: sdmaps
+---
+%h1= t("data_stories.title")
+.content
+  - blog('data-stories').articles[0..5].each do |article|
+    %article
+      %h2
+        %a(href="#{article.url}")= article.title
+        %time= article.date.strftime(locale_dateformat)
+      .summary= article.summary
+      %a.more(href="#{article.url}")= t('sdmaps.more')

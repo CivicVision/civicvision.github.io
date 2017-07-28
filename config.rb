@@ -51,8 +51,8 @@ activate :blog do |blog|
   blog.prefix = "data-stories"
   blog.name = "data-stories"
   blog.layout = "ds-article"
-  blog.permalink = "{title}.html"
-  blog.sources = "{title}.html"
+  blog.permalink = "{category}-{title}.html"
+  blog.sources = "{category}-{title}.html"
 end
 
 page "/feed.xml", layout: false
