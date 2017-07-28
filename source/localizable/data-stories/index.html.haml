@@ -9,5 +9,5 @@ layout: sdmaps
       %h2
         %a(href="#{article.url}")= article.title
         %time= article.date.strftime(locale_dateformat)
-      .summary= article.summary
+      .summary= #article.summary
       %a.more(href="#{article.url}")= t('sdmaps.more')
