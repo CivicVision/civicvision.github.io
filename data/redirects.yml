@@ -21,6 +21,8 @@ urls:
     url: https://civicvision.de/data-stories/vision-zero-time
   - short: vsd
     url: https://civicvision.de/vision-zero-dashboard
+  - short: itr
+    url: https://civicvision.de/intro
   - short: survey-foss4g-2017
     url: https://civicvision.typeform.com/to/fCMwmG
     keep_params: true
