@@ -1,10 +1,10 @@
----
----
+- unless locals[:portfolio]
+  - portfolio = "signature"
 #portfolio-short
   .content
     %h3= t('portfolio.title')
     %ul
-      - data.portfolio.signature.each do |project|
+      - data.portfolio[portfolio].each do |project|
         %li
           %h4
             = link_to t("projects.#{project.id}.title"), project.url

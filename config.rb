@@ -103,6 +103,11 @@ data['donor-retention'].answers.each do |answer|
   proxy "/donor-retention-resources/#{answer.url}/index.html", "/donor-retention-resources.html", locals: { order: answer.order, knows:  answer.knows}, ignore: true
 end
 
+data.intro.each do |intro_id|
+  intro = data.intros[intro_id.to_sym]
+  proxy "/intro/#{intro.url}/index.html", "/intro.html", locals: { portfolio: intro.portfolio_id, fit: intro.fit, text: intro.text}, ignore: true
+end
+
 data.content_upgrades.upgrades.each do |upgrade|
   upgrade.items.each do |item|
     proxy "#{upgrade.url}#{item}/thank-you/index.html", "/content-upgrade-thank-you.html", locals: { upgrade: data.content_upgrades[upgrade.name][item], category: upgrade}, ignore: true

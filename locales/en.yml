@@ -253,7 +253,20 @@ en:
         For the geospatial platform geonode I worked on updating their existing map editor to faster and more reliable technology to help maintain the platforms leading role.
     energy_production_germany:
       title: "Energy Production in Germany"
+      copy: |
+        A visualization of the energy production in Germany. This is a side project.
     water_quality_san_diego:
       title: "Drinking Water Quality in San Diego"
     crime_san_diego:
       title: "Crime in San Diego"
+      copy: |
+        A visualization of crime data in San Diego. This is a side project.
+    city_analytics_dashboard:
+      title: "City Analytics Dashboard"
+      copy: |
+        I helped Code for America improve their City Analytics Dashboard. The Dashboard displays google analytics data from a city's website to make it more accessible and transparent for citizens.
+    mapstory:
+      title: "MapStory"
+      copy: |
+        MapLoom is a web client that leverages GeoGit to allow people to edit geographic information, view history, and sync with other GeoGit repositories.
+        I worked with the MapStory team to improve the MapLoom editor, the layer search, adding tests and improving the CI.
