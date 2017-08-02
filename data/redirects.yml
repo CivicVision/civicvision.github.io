@@ -23,6 +23,8 @@ urls:
     url: https://civicvision.de/vision-zero-dashboard
   - short: itr
     url: https://civicvision.de/intro
+  - short: itrev
+    url: https://civicvision.de/intro/evictionlab
   - short: survey-foss4g-2017
     url: https://civicvision.typeform.com/to/fCMwmG
     keep_params: true
