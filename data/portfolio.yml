@@ -1,17 +1,75 @@
+infrastructure_san_diego: &infrastructure_san_diego
+  id: infrastructure_san_diego
+  link: https://github.com/opensandiego/infrastructure
 water_quality_san_diego: &water_quality_san_diego
   title: "Water Quality San Diego"
   id: water_quality_san_diego
   link: https://civicvision.de/trinkwasser
+  url: https://civicvision.de/trinkwasser
 crime_san_diego: &crime_san_diego
   title: "Crime Visualization in San Diego"
   id: crime_san_diego
   link: https://civicvision.de/crime-san-diego
+  url: https://civicvision.de/crime-san-diego
 energy_production_germany: &energy_production_germany
   title: ""
   id: energy_production_germany
   link: https://civicvision.de/energy-production-germany
+  url: https://civicvision.de/energy-production-germany
+
+weapons_map: &weapons_map
+  id: weapons_map
+  github: CivicVision/armsexport-map
+  url: http://ruestungsexport.info/map/
+  copy: |
+    Overhauled the site to have a cleaner look and feel and use better technologies.
+
+geonode_client: &geonode_client
+  id: geonode_client
+  url: https://github.com/GeoNode/geonode-client
+  technologies:
+    - name: Open Layers 3
+      class: ol3
+    - name: React
+      class: react
+
+resident_survey: &resident_survey
+  id: resident_survey
+  url: https://github.com/codeforamerica/resident-web-use-research
+
+city_analytics_dashboard: &city_analytics_dashboard
+  id: city_analytics_dashboard
+  url: https://github.com/codeforamerica/city-analytics-dashboard
+
+budget_rlp: &budget_rlp
+  id: budget_rlp
+  url: https://fm.rlp.de/de/themen/finanzen/landeshaushalt/haushalt-interaktiv/
+
+recovery_dashboard: &recovery_dashboard
+  id: recovery_dashboard
+  url: https://github.com/GFDRR/recovery_dashboard
+
+mapstory: &mapstory
+  id: mapstory
+  url: https://mapstory.org
 
 signature:
+  - *weapons_map
+  - *resident_survey
+  - *recovery_dashboard
+  - *budget_rlp
+  - *geonode_client
+
+evictionlab:
+  - *resident_survey
+  - *recovery_dashboard
+  - *city_analytics_dashboard
+  - *budget_rlp
+  - *geonode_client
+  - *mapstory
+  - *weapons_map
+  - *crime_san_diego
+  - *energy_production_germany
 
 side_projects:
   - *water_quality_san_diego
