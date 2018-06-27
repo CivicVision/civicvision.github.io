@@ -4,3 +4,4 @@
 //= require book
 //= require modal
 //= require cv
+//= require gdpr
