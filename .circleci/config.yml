@@ -1,20 +1,31 @@
+defaults: &defaults
+  docker:
+    - image: circleci/ruby:2.4-node
+  working_directory: ~/repo
+
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/ruby:2.4-node
+    <<: *defaults
     steps:
       - checkout
-      - run: bundle install
+      - restore_cache:
+        keys:
+        - v1-gem-cache-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+        - v1-gem-cache-{{ arch }}-{{ .Branch }}-
+        - v1-gem-cache-{{ arch }}-
+      - run: bundle install && bundle clean
+      - save_cache:
+          paths:
+            - ~/repo
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
       - run: bundle exec middleman build
   test:
-    docker:
-      - image: circleci/ruby:2.4-node
+    <<: *defaults
     steps:
       - run: bundle exec htmlproof ./build --only-4xx --check-favicon --check-html
   deploy:
-    docker:
-      - image: circleci/ruby:2.4-node
+    <<: *defaults
     steps:
       - run: ./deploy_prod.sh
 workflows:
