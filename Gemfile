@@ -6,8 +6,10 @@ gem "middleman", "~>3.3.10"
 gem "middleman-deploy"
 gem "middleman-blog"
 gem "middleman-syntax"
-gem "nokogiri", "~>1.6.8"
+gem "nokogiri", ">= 1.8.2"
 gem "redcarpet"
+gem "activesupport", ">= 4.1.11"
+gem "rack", ">= 1.6.2"
 
 # Live-reloading plugin
 group :development do
