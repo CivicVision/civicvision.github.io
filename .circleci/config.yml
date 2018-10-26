@@ -17,14 +17,17 @@ jobs:
       - run: bundle install
       - save_cache:
           paths:
+            - ~/repo/.bundle
             - ~/.bundle
           key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
       - run: bundle exec middleman build
   test:
     <<: *defaults
     steps:
+      - checkout
       - restore_cache:
           key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - run: bundle check || bundle install
       - run: bundle exec htmlproof ./build --only-4xx --check-favicon --check-html
   deploy:
     <<: *defaults
@@ -32,6 +35,7 @@ jobs:
       - checkout
       - restore_cache:
           key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - run: bundle check || bundle install
       - run: bundle exec middleman build
       - run: ./deploy_prod.sh
 workflows:
