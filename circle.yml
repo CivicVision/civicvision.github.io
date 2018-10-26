@@ -1,9 +1,0 @@
-test:
-  post:
-    - bundle exec middleman build
-    - bundle exec htmlproof ./build --only-4xx --check-favicon --check-html
-deployment:
-  production:
-    branch: source
-    commands:
-      - ./deploy_prod.sh
