@@ -1,7 +1,0 @@
----
----
-#what
-  .content
-    %ul.bullets
-      - data.services.offers.each do |service|
-        = partial "partials/bullets", locals: { title: t("services.#{service.id}.title"), content: t("services.#{service.id}.content"), sub_content: t("services.#{service.id}.sub_content"), link: service.link }

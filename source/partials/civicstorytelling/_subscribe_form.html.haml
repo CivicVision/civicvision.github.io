@@ -1,6 +1,0 @@
-.signup
-  %form(action="#{action}" method="post" data-drip-embedded-form="#{drip_id}" target="_blank")
-    - if show_name
-      %input(name="fields[name]" type="text" value="" placeholder="#{t("#{name}.placeholder.name")}")
-    %input.required.email(name="fields[email]" type="email" value="" placeholder="#{t("#{name}.placeholder.email")}")
-    %input.subscribe.button(name="subscribe" type="submit" value="#{t("#{name}.subscribe")}")/

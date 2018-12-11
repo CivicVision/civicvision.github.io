@@ -1,8 +1,0 @@
-%ul
-  - data.resources.books.each do |book|
-    %li
-      %a(href="#{book.link}" target="_blank")
-        = book.name
-        \-
-      %span.author= book.author
-      %span.date= "(#{book.published_date})"
