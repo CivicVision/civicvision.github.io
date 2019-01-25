@@ -6,3 +6,4 @@
       h2 class="font-bold mb-10 text-5xl text-center"
         In 2013 the City of San Diego  
         span class="text-blue-lighter" had an interesting opportunity.
+  {{.Content}}
