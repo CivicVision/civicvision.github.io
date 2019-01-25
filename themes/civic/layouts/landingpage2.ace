@@ -1,0 +1,8 @@
+= content header
+  {{ partial "header" . }}
+= content main
+  section class="pb-8 pt-100"
+    .container.max-w-2xl.mx-auto.px-4 class="lg:px-0.text-left"
+      h2 class="font-bold mb-10 text-5xl text-center"
+        In 2013 the City of San Diego  
+        span class="text-blue-lighter" had an interesting opportunity.
