@@ -2,8 +2,24 @@
 layout: landingpage2
 body_classes: "font-light font-sans leading-normal text-lg lg:text-2xl text-black"
 ---
-{{< section class="bg-white-darker">}}
-  <p class="mb-8">
-    In 2013 we worked with the Code for America Brigade in San Diego and the City Council Infrastructure Committee to improve the City’s Capital Improvement Site. The site was not very user-friendly and the map required a third-party plugin to be usable.
-  </p>
+{{ <section> }}
+	{{ <headline> }}
+		In 2013 the City of San Diego <span class="text-blue-lighter">had an interesting opportunity</span>.
+	{{ </headline> }}
+  {{ <landingpage-text> }}
+  	In 2013 we worked with the Code for America Brigade in San Diego and the City Council Infrastructure Committee to improve the City’s Capital Improvement Site. The site was not very user-friendly and the map required a third-party plugin to be usable.
+  {{ </landingpage-text> }}    
+  {{ <landingpage-text> }}
+  	We used <strong>agile development</strong> principles to develop fast and iterate as often as possible. The project and all of its project management is <strong>open source</strong> and <strong>transparent</strong>. We reorganised the data and added small visualizations for a quick overview and removed terminology that citizens don’t understand. The information provided is more detailed and comprehensive than before.
+  {{ </landingpage-text> }}
+  {{ <landingpage-text class="italic"> }}
+  	The result was a nice and easy to use map and small visualizations. The new site has a clear focus on usability and helps citizen answer basic questions about Capital Improvement Projects.
+  {{ </landingpage-text> }}
+{{ </section> }}
+{{ <section class="bg-white-darker">}}
+	{{ <testimonial name="Jeffrey Johnson" organization="Code for America Brigade San Diego" image="img/jeff.png" }}
+		Mila and I worked together on the CIP Civic Engagement App for the <strong>Council Infrastructure Committee</strong> with CM Mark Kersey. He proved himself to be an <strong>excellent and detail oriented</strong> developer with a strong grasp on both the fundamentals of iterative <strong>test driven development</strong> and automated deployment as well <strong>user centric design</strong>. He brings a broad range of skills in other areas to the table that would benefit any project or initiative. It was my pleasure to work with him and look forward to collaborating on other projects in the future.
+  {{ </testimonial>}}
+  {{ <landingpage-text>}}
+  {{ </landingpage-text>}}
 {{</section>}}

@@ -1,0 +1,2 @@
+h2.font-bold.mb-10.text-5xl.text-center class="{{ .Get "class" }}"
+  {{.Inner}}
