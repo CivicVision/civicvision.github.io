@@ -1,7 +1,6 @@
 .container.max-w-2xl.mx-auto.text-center.px-4 class="lg:px-0 {{ .Get "class" }}"
-	img.rounded-full.max-w-testimonial.mb-8" src="{{ .Get "image" }}" alt="{{ .Get "name" }}" 
-    p.max-w-lg.mb-8.mx-auto.text-left
-    	{{ .Inner }}              
-	h3.font-bold.text-blue-lighter.text-lg.mb-2 {{.Get "name" }}
-	span.block.mb-8.mx-auto.text-lg {{ .Get "organisation" }}
-                    
+  p.max-w-lg.mb-8.mx-auto.text-left
+    {{ .Inner }}
+  img.rounded-full.max-w-testimonial.mb-8 src="{{ .Get "image" }}" alt="{{ .Get "name" }}"
+  h3.font-bold.text-blue-lighter.text-lg.mb-2 {{.Get "name" }}
+  span.block.mb-8.mx-auto.text-lg {{ .Get "organisation" }}
