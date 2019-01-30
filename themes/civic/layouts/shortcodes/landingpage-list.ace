@@ -1,0 +1,2 @@
+ul.mb-8.ml-8.pl-0t class="{{ .Get "class" }}"
+  {{ .Inner }}

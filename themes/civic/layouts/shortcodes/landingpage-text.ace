@@ -1,0 +1,2 @@
+p.mb-8 class="{{ .Get "class" }}"
+  {{.Inner}}
