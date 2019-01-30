@@ -1,0 +1,8 @@
+= doctype html
+html lang=en
+  {{ partial "head.html" . }}
+  body class="{{.Params.body_classes}}"
+    = yield header
+    main#content role="main"
+      = yield main
+    {{ partial "footer.html" . }}

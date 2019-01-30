@@ -1,0 +1,1 @@
+`./node_modules/.bin/tailwind build src/styles.css -c ./tailwind.js -o ./static/css/styles.css --no-autoprefixer`

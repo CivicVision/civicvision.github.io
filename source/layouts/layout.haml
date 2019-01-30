@@ -1,8 +1,0 @@
-= wrap_layout :base do
-  %body
-    = partial "partials/analytics", locals: { drip_id: '4828671', gtm_id: 'GTM-MTT6KM'}
-    = partial "partials/fixed_nav"
-    = yield
-    = partial "partials/footer"
-    = partial "partials/gdpr_banner"
-  = javascript_include_tag  "https://code.jquery.com/jquery-2.1.4.min.js", "https://checkout.stripe.com/checkout.js"

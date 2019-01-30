@@ -1,0 +1,2 @@
+section.pb-8.pt-100 class="{{ .Get "class" }}"
+  {{.Inner}}

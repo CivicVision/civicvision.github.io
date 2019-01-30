@@ -1,6 +1,0 @@
-- url: 'i-know'
-  order: 'known'
-  retention-rate-known: true
-- url: 'i-dont-know'
-  order: 'unknown'
-  retention-rate-known: false

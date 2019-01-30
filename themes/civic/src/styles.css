@@ -1,0 +1,70 @@
+@tailwind preflight;
+
+@tailwind components;
+
+p strong {
+    font-weight: bold;
+}
+
+.check::before {
+    content: "";
+    color: #36bf4e;
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-left: -2rem;
+    width: 2rem;
+}
+
+.close {
+    top: .5rem;
+    right: .5rem;
+    width: 1.5rem;
+}
+
+.close::before, .close::after {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    bottom: 0;
+    left: 50%;
+    height: 1.5rem;
+    width: 0.15rem;
+    background: #ddd;
+    content: "";
+    display: block;
+    margin: -3px 0 0 -1px;
+}
+
+.close::before {
+    transform: rotate(-45deg);
+}
+
+.close::after {
+    transform: rotate(45deg);
+}
+
+.square::before {
+    content: "";
+    color: #25364c;
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-left: -2rem;
+    width: 2rem;
+}
+
+header::after {
+    border-top: solid 38px #2b4c7e;
+    border-left: solid 42px transparent;
+    border-right: solid 42px transparent;
+    content: "";
+    height: 0;
+    margin: 0 auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 0;
+    z-index: -1;
+}
+
+@tailwind utilities;

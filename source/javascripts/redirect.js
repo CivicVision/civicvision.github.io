@@ -1,2 +1,0 @@
-//= require urlParams
-//= require drip
