@@ -30,23 +30,35 @@ consultation_form_id: 15856593
         Furthermore, getting the best media coverage is harder nowadays. Journalists have less time and more to write about, there is generally more content to consume and media outlets compete with the general internet.
       %p.mb-4
         Does this sound familiar to you:
-      %ul.list-inside.list-disc
+      %ul.list-inside
         %li
-          Your audience spends
-          %b less time
-          on your website and reports
+          .flex.w-full.px-3.items-center
+            = partial "partials/close_icon"
+            %span
+              Your audience spends
+              %b less time
+              on your website and reports
         %li
-          the media 
-          %b does not report 
-          about your key findings
+          .flex.w-full.px-3.items-center
+            = partial "partials/close_icon"
+            %span
+              the media 
+              %b does not report 
+              about your key findings
         %li 
-          your well crafted-reports gets
-          %b dismissed 
-          by influencers and the media
+          .flex.w-full.px-3.items-center
+            = partial "partials/close_icon"
+            %span
+              your well crafted-reports gets
+              %b dismissed 
+              by influencers and the media
         %li 
-          your report 
-          %b does not get shared 
-          on social media and therefore decreases its reach
+          .flex.w-full.px-3.items-center
+            = partial "partials/close_icon"
+            %span
+              your report 
+              %b does not get shared 
+              on social media and therefore decreases its reach
     .text-xl.text-grey-darkest.leading-relaxed.my-8.bg-gray-200.p-2.italic
       %blockquote
         Make it easy for journalists. They are working under ever-increasing time pressures &mdash; so if you can provide them with thorough and useful analysis and interesting examples they are more likely to pick up your story. (WHO Manual, 5)
@@ -90,17 +102,15 @@ consultation_form_id: 15856593
     .text-lg.text-grey-darkest.leading-relaxed.spaced-y-6.my-8
       %p.mb-4
         Imaging having:
-      %ul.list-none.list-disc
-        %li 
-          .flex.w-full.px-3.mb-8.text-sm.items-center{:class => "md:w-1/2 lg:w-1/3"}
-            %svg.w-8.mr-4.icon-check{:viewbox => "0 0 24 24", :xmlns => "http://www.w3.org/2000/svg"}
-              %circle.primary{:cx => "12", :cy => "12", :r => "10"}
-              %path.secondary{:d => "M10 14.59l6.3-6.3a1 1 0 0 1 1.4 1.42l-7 7a1 1 0 0 1-1.4 0l-3-3a1 1 0 0 1 1.4-1.42l2.3 2.3z"}
-            %span engaging reports
-        %li memorable insights
-        %li easy to share visuals
+      %ul.list-none
+        %li
+          = partial "partials/checkmark_item", locals: { text: 'engaging reports' }
+        %li
+          = partial "partials/checkmark_item", locals: { text: 'memorable insights' }
+        %li
+          = partial "partials/checkmark_item", locals: { text: 'easy to share visuals' }
 
-    %h1.font-bold.text-5xl.leading-tight
+    %h1.font-bold.text-4xl.leading-tight
       I help your organization reach key influencers and get more media coverage with unique, memorable and engaging data visualizations.
     .text-lg.text-grey-darkest.leading-relaxed.spaced-y-6.my-8
       %p.mb-4
