@@ -90,8 +90,13 @@ consultation_form_id: 15856593
     .text-lg.text-grey-darkest.leading-relaxed.spaced-y-6.my-8
       %p.mb-4
         Imaging having:
-      %ul.list-inside.list-disc
-        %li engaging reports
+      %ul.list-none.list-disc
+        %li 
+          .flex.w-full.px-3.mb-8.text-sm.items-center{:class => "md:w-1/2 lg:w-1/3"}
+            %svg.w-8.mr-4.icon-check{:viewbox => "0 0 24 24", :xmlns => "http://www.w3.org/2000/svg"}
+              %circle.primary{:cx => "12", :cy => "12", :r => "10"}
+              %path.secondary{:d => "M10 14.59l6.3-6.3a1 1 0 0 1 1.4 1.42l-7 7a1 1 0 0 1-1.4 0l-3-3a1 1 0 0 1 1.4-1.42l2.3 2.3z"}
+            %span engaging reports
         %li memorable insights
         %li easy to share visuals
 
