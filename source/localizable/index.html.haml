@@ -5,7 +5,7 @@ what:
 consultation_form_id: 15856593
 ---
 .container.mx-auto
-  .mt-16.text-grey-darker.md:p-8
+  .mt-16.text-grey-darker.p-4.md:p-8
     %h1.font-bold.text-5xl.leading-tight Reach more people and influencers to increase transparency and accountability.
     .text-lg.text-grey-darkest.leading-normal.mt-8
       %p.mb-4
@@ -32,36 +32,37 @@ consultation_form_id: 15856593
         Does this sound familiar to you:
       %ul.list-inside
         %li
-          .flex.w-full.px-3.items-center
-            = partial "partials/close_icon"
+          .flex.w-full.px-3.items-start.my-2.sm:m-0
+            = partial "partials/close_icon", locals: { classNames: "self-start" }
             %span
               Your audience spends
               %b less time
               on your website and reports
         %li
-          .flex.w-full.px-3.items-center
-            = partial "partials/close_icon"
-            %span
+          .flex.w-full.px-3.items-start.my-2.sm:m-0
+            = partial "partials/close_icon", locals: { classNames: "self-start" }
+            %span.self-start
               the media 
               %b does not report 
               about your key findings
         %li 
-          .flex.w-full.px-3.items-center
-            = partial "partials/close_icon"
+          .flex.w-full.px-3.items-center.my-2.sm:m-0
+            = partial "partials/close_icon", locals: { classNames: "self-start" }
             %span
               your well crafted-reports gets
               %b dismissed 
               by influencers and the media
         %li 
-          .flex.w-full.px-3.items-center
-            = partial "partials/close_icon"
+          .flex.w-full.px-3.items-center.my-2.sm:m-0
+            = partial "partials/close_icon", locals: { classNames: "self-start" }
             %span
               your report 
               %b does not get shared 
               on social media and therefore decreases its reach
     .text-xl.text-grey-darkest.leading-relaxed.my-8.bg-gray-200.p-2.italic
       %blockquote
-        Make it easy for journalists. They are working under ever-increasing time pressures &mdash; so if you can provide them with thorough and useful analysis and interesting examples they are more likely to pick up your story. (WHO Manual, 5)
+        Make it easy for journalists. They are working under ever-increasing time pressures &mdash; so if you can provide them with thorough and useful analysis and interesting examples they are more likely to pick up your story. (
+        %a(href="#who" aria-describedby="footnote-label" id="footnotes-ref") WHO Manual)
 
     .text-lg.text-grey-darkest.leading-relaxed.spaced-y-6.my-4
       %p
@@ -92,11 +93,13 @@ consultation_form_id: 15856593
 
     .text-lg.text-grey-darkest.leading-relaxed.spaced-y-6.my-4
       %p.mb-4
-        According to studies between 50-80 percent of the human brain is dedicated to forms of visual processing [1][2] such as vision, visual memory, colors, shapes, movement, patterns, spatial awareness, and image recollection. [3]
+        %a(href="#study-brain" aria-describedby="footnote-label" id="footnotes-ref") According to studies between 50-80 percent of the human brain is dedicated to forms of visual processing
+        %a(href="#book-infographics" aria-describedby="footnote-label" id="footnotes-ref") such as vision, visual memory, colors, shapes, movement, patterns, spatial awareness, and image recollection.
       %p.mb-4
-        Visualizing data taps into the pattern recognition ability and significantly accelerates the understanding of the data.[4] You can look at a chart of data presented and understand it quickly by seeing the patterns and trends.
+        %a(href="#study-zoo" aria-describedby="footnote-label" id="footnotes-ref") Visualizing data taps into the pattern recognition ability and significantly accelerates the understanding of the data. You can look at a chart of data presented and understand it quickly by seeing the patterns and trends.
       %p.mb-4
-        According to studies by infogram and D.C. Thomson [] data visualizations can increase the engagement of your audience.
+        %a(href="#study-infogram" aria-describedby="footnote-label" id="footnotes-ref") According to studies by infogram and D.C. Thomson 
+        data visualizations can increase the engagement of your audience.
       %p.mb-4
         The study showed a 15-30% increase in comments and shares. As well as a 60-100% increase in time spent on the site.
     .text-lg.text-grey-darkest.leading-relaxed.spaced-y-6.my-8
@@ -118,4 +121,26 @@ consultation_form_id: 15856593
         %span.text-orange organizations like yours 
         to improve the life of citizens.
     .my-12.text-center
+      %img.h-64.mx-auto.mb-16(src="https://res.cloudinary.com/civicvision/image/upload/ar_1:1,bo_0px_solid_rgb:ffffff,c_fill,g_auto,r_max/v1543672578/milafrerichs.jpg")
       %a.bg-blue-700.p-4.rounded.font-bold.text-white.tracking-wide(href="https://pipedrivewebforms.com/form/0c231ceff133b0bd87544d7b3e034a351016652") Apply to work with me!
+
+  .my-16.text-grey-darker.p-4.md:p-8.text-xs
+    %hr.border.border-gray-300.mx-0(class="w-1/2")
+    %ol.list-decimal.list-inside
+      %li(id="who")
+        %i Stop the global epidemic of chronic disease : a practical guide to successful advocacy,
+        WHO chronic disease handbook, 2006, World Health Organization Press
+        %a(href="#footnotes-ref" aria-label="Back to content")↩
+      %li(id="study-brain")
+        Michael Weliky, “Under the Surface, the Brain Seethes With Undiscovered Activity”, University of Rochester Newsroom, October 6, 2004, http://www.rochester.edu/news/show.php?id=1898.
+        %a(href="#footnotes-ref" aria-label="Back to content")↩
+      %li(id="book-infographics")
+        Randy Krum, Cool Infographics: Effective Communication with Data Visualization and Design, John Wiley &amp; Sons, 2013
+        %a(href="#footnotes-ref" aria-label="Back to content")↩
+      %li(id="study-zoo")
+        J. Heer, M. Bostock, and V. Ogievetskey, “A Tour through the Visualization Zoo,” Communications of the ACM 53, no.6 (June 2010), 59–67. http://queue.acm.org/detail.cfm?id=1805128.
+        %a(href="#footnotes-ref" aria-label="Back to content")↩
+      %li(id="study-infogram")
+        %a(href="https://infogram.com/blog/how-data-visualization-impacts-engagement/")
+          %i How data visualization impacts engagement and drives growth, 2015
+        %a(href="#footnotes-ref" aria-label="Back to content")↩
