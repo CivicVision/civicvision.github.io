@@ -1,18 +1,157 @@
 ---
 title: Civic Vision
+layout: cv
 what:
 consultation_form_id: 15856593
 ---
-.cv
-  #welcome
-    .content
-      :markdown
-        # #{t('about.title')}
+.container.mx-auto
+  .mt-16.text-grey-darker.p-4.md:p-8
+    %h1.font-bold.text-5xl.leading-tight Reach more people and influencers to increase transparency and accountability.
+    .text-lg.text-grey-darkest.leading-normal.mt-8
+      %p.mb-4
+        As an 
+        %b advocacy group,
+        you want to reach as many (influential) people as possible with your message.
+      %p
+        Your best vehicles are
+        %i news articles
+        about your efforts,
+        %i reports
+        you send out to the media, the public and influencers and 
+        %i blog posts.
+    %p.text-2xl.mt-4.font-bold.text-grey-dark 
+      You want people to read your messages and spread your insights. 
+    .text-lg.text-grey-darkest.leading-relaxed.spaced-y-6.mt-4
+      %p.mb-4
+        Unfortunately, research shows that more and more people only scan articles instead of reading them thoroughly. Studies also show that people spent less time reading on the internet in general. On top of that, most of them will only read the text that is visible without scrolling.
+      %p.mb-4
+        It is frustrating for you because you rely on people to read your point of view and spread your message. 
+      %p.mb-8
+        Furthermore, getting the best media coverage is harder nowadays. Journalists have less time and more to write about, there is generally more content to consume and media outlets compete with the general internet.
+      %p.mb-4
+        Does this sound familiar to you:
+      %ul.list-inside
+        %li
+          .flex.w-full.px-3.items-start.my-2.sm:m-0
+            = partial "partials/close_icon", locals: { classNames: "self-start" }
+            %span
+              Your audience spends
+              %b less time
+              on your website and reports
+        %li
+          .flex.w-full.px-3.items-start.my-2.sm:m-0
+            = partial "partials/close_icon", locals: { classNames: "self-start" }
+            %span.self-start
+              the media 
+              %b does not report 
+              about your key findings
+        %li 
+          .flex.w-full.px-3.items-center.my-2.sm:m-0
+            = partial "partials/close_icon", locals: { classNames: "self-start" }
+            %span
+              your well crafted-reports gets
+              %b dismissed 
+              by influencers and the media
+        %li 
+          .flex.w-full.px-3.items-center.my-2.sm:m-0
+            = partial "partials/close_icon", locals: { classNames: "self-start" }
+            %span
+              your report 
+              %b does not get shared 
+              on social media and therefore decreases its reach
+    .text-xl.text-grey-darkest.leading-relaxed.my-8.bg-gray-200.p-2.italic
+      %blockquote
+        Make it easy for journalists. They are working under ever-increasing time pressures &mdash; so if you can provide them with thorough and useful analysis and interesting examples they are more likely to pick up your story. (
+        %a(href="#who" aria-describedby="footnote-label" id="footnotes-ref") WHO Manual)
 
-  = partial "partials/how"
-  = partial "partials/consultation"
-  = partial "partials/proof"
-  = partial "partials/what"
-  = partial "partials/consultation"
-  = partial "partials/us"
-  =# partial "partials/dataviz"
+    .text-lg.text-grey-darkest.leading-relaxed.spaced-y-6.my-4
+      %p
+        You want 
+        %b more media coverage
+        and for people to get your message and 
+        %b remember
+        it. You want people to 
+        %b spread your message
+        (on social media) and for the press to pick up the 
+        %b important
+        points from your reports. 
+
+    .my-12.text-center
+      %a.bg-blue-700.p-4.rounded.font-bold.text-white.tracking-wide(href="https://pipedrivewebforms.com/form/0c231ceff133b0bd87544d7b3e034a351016652")I can help you with that
+    .text-lg.text-grey-darkest.leading-relaxed.spaced-y-6.my-4
+      %p.mb-4
+        I help you create engaging and easy to remember visualizations for your reports and for the media to use.
+      %p.mb-4
+        As well as making it easy to share these visualizations on social media to engage a greater audience and get momentum.
+      %p.mb-4
+        People understand data better, and effective presentation of this data can help influencers understand your insights and your point faster.
+      %p.mb-4
+        Furthermore journalists want to see your data and want your press releases to be easily consumable. 
+    .text-xl.text-grey-darkest.leading-relaxed.my-8.bg-gray-200.p-2.italic
+      %blockquote
+        &ldquo; I think data is particularly important. Whenever I get any pitch, I want to know where the data is; I want to be able to ensure that the data is accurate.&rdquo; (Lori Udesky, health journalist)
+
+    .text-lg.text-grey-darkest.leading-relaxed.spaced-y-6.my-4
+      %p.mb-4
+        %a(href="#study-brain" aria-describedby="footnote-label" id="footnotes-ref") According to studies between 50-80 percent of the human brain is dedicated to forms of visual processing
+        %a(href="#book-infographics" aria-describedby="footnote-label" id="footnotes-ref") such as vision, visual memory, colors, shapes, movement, patterns, spatial awareness, and image recollection.
+      %p.mb-4
+        %a(href="#study-zoo" aria-describedby="footnote-label" id="footnotes-ref") Visualizing data taps into the pattern recognition ability and significantly accelerates the understanding of the data. You can look at a chart of data presented and understand it quickly by seeing the patterns and trends.
+      %p.mb-4
+        %a(href="#study-infogram" aria-describedby="footnote-label" id="footnotes-ref") According to studies by infogram and D.C. Thomson 
+        data visualizations can increase the engagement of your audience.
+      %p.mb-4
+        The study showed a 15-30% increase in comments and shares. As well as a 60-100% increase in time spent on the site.
+    .text-lg.text-grey-darkest.leading-relaxed.spaced-y-6.my-8
+      %p.mb-4
+        Imaging having:
+      %ul.list-none
+        %li
+          = partial "partials/checkmark_item", locals: { text: 'engaging reports' }
+        %li
+          = partial "partials/checkmark_item", locals: { text: 'memorable insights' }
+        %li
+          = partial "partials/checkmark_item", locals: { text: 'easy to share visuals' }
+
+    %h1.font-bold.text-4xl.leading-tight
+      I help your organization reach key influencers and get more media coverage with unique, memorable and engaging data visualizations.
+    .text-lg.text-grey-darkest.leading-relaxed.spaced-y-6.my-8
+      %p.mb-4
+        I use the power of public Open Data and Open Source to build tools and visualization to help 
+        %span.text-orange organizations like yours 
+        to improve the life of citizens.
+    .my-12.text-center
+      %img.h-64.mx-auto.mb-16(src="https://res.cloudinary.com/civicvision/image/upload/ar_1:1,bo_0px_solid_rgb:ffffff,c_fill,g_auto,r_max/v1543672578/milafrerichs.jpg")
+      %a.bg-blue-700.p-4.rounded.font-bold.text-white.tracking-wide(href="https://pipedrivewebforms.com/form/0c231ceff133b0bd87544d7b3e034a351016652") Apply to work with me!
+
+  .my-16.text-grey-darker.p-4.md:p-8.text-xs
+    %hr.border.border-gray-300.mx-0(class="w-1/2")
+    %ol.list-decimal.list-inside
+      %li(id="who")
+        %i Stop the global epidemic of chronic disease : a practical guide to successful advocacy,
+        WHO chronic disease handbook, 2006, World Health Organization Press
+        %a(href="#footnotes-ref" aria-label="Back to content")↩
+      %li(id="study-brain")
+        Michael Weliky, “Under the Surface, the Brain Seethes With Undiscovered Activity”, University of Rochester Newsroom, October 6, 2004, http://www.rochester.edu/news/show.php?id=1898.
+        %a(href="#footnotes-ref" aria-label="Back to content")↩
+      %li(id="book-infographics")
+        Randy Krum, Cool Infographics: Effective Communication with Data Visualization and Design, John Wiley &amp; Sons, 2013
+        %a(href="#footnotes-ref" aria-label="Back to content")↩
+      %li(id="study-zoo")
+        J. Heer, M. Bostock, and V. Ogievetskey, “A Tour through the Visualization Zoo,” Communications of the ACM 53, no.6 (June 2010), 59–67. http://queue.acm.org/detail.cfm?id=1805128.
+        %a(href="#footnotes-ref" aria-label="Back to content")↩
+      %li(id="study-infogram")
+        %a(href="https://infogram.com/blog/how-data-visualization-impacts-engagement/")
+          %i How data visualization impacts engagement and drives growth, 2015
+        %a(href="#footnotes-ref" aria-label="Back to content")↩
+
+  %footer
+    .my-4.text-grey.darker.p-4.text-xs.md:p-8
+      &copy; 2019 Civic Vision UG 
+      %br
+      Joachim-Friedrich-Str. 53, 10711 Berlin 
+      %br
+      Tax Id: DE296100763 
+      %br
+      = link_to 'Legal', '/legal/index.html'
+      = link_to 'Privacy Terms', '/legal/privacy/index.html'
