@@ -1,0 +1,1013 @@
+@charset "UTF-8";
+/* line 1, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+fieldset {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  margin: 0 0 0.75em;
+  padding: 1.5em; }
+
+/* line 8, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+input,
+label,
+select {
+  display: block;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em; }
+
+/* line 16, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+label {
+  font-weight: 600;
+  margin-bottom: 0.375em; }
+  /* line 20, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+  label.required::after {
+    content: "*"; }
+  /* line 24, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+  label abbr {
+    display: none; }
+
+/* line 29, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea,
+select[multiple=multiple],
+textarea {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  padding: 0.5em;
+  transition: border-color;
+  width: 100%; }
+  /* line 44, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+  input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, textarea:hover,
+  select[multiple=multiple]:hover,
+  textarea:hover {
+    border-color: #c4c4c4; }
+  /* line 48, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus,
+  select[multiple=multiple]:focus,
+  textarea:focus {
+    border-color: #477dca;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(55, 112, 192, 0.7);
+    outline: none; }
+
+/* line 55, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+textarea {
+  resize: vertical; }
+
+/* line 59, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none; }
+
+/* line 63, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: 0.375em; }
+
+/* line 69, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+input[type="file"] {
+  padding-bottom: 0.75em;
+  width: 100%; }
+
+/* line 74, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+select {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+  width: auto; }
+
+/* line 4, /home/circleci/repo/source/stylesheets/neat/grid/_box-sizing.scss */
+html {
+  box-sizing: border-box; }
+
+/* line 9, /home/circleci/repo/source/stylesheets/neat/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/* Media Queries & Mobile (Many of the media queries for nav are copied from the LP website code)
+ *---------------------------------------------------------------------------------------------------- */
+/* Utility Nav
+ *--------------------------------------------- */
+/* line 4, /home/circleci/repo/source/stylesheets/civicstorytelling/_nav.sass */
+.utility-nav {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-top: 3px; }
+  /* line 9, /home/circleci/repo/source/stylesheets/civicstorytelling/_nav.sass */
+  .utility-nav .sep {
+    color: #cad7de;
+    display: inline-block;
+    font-weight: 300;
+    line-height: 1.5;
+    padding: 0 5px; }
+  /* line 15, /home/circleci/repo/source/stylesheets/civicstorytelling/_nav.sass */
+  .utility-nav a {
+    color: #5a5a5a;
+    font-weight: 300;
+    line-height: 1.5; }
+    /* line 19, /home/circleci/repo/source/stylesheets/civicstorytelling/_nav.sass */
+    .utility-nav a:hover {
+      color: #df5b48;
+      text-decoration: underline; }
+  /* line 22, /home/circleci/repo/source/stylesheets/civicstorytelling/_nav.sass */
+  .utility-nav .hiring {
+    color: #1fa2ed; }
+
+/* line 25, /home/circleci/repo/source/stylesheets/civicstorytelling/_nav.sass */
+.helper a {
+  color: #1fa2ed; }
+
+/* line 28, /home/circleci/repo/source/stylesheets/civicstorytelling/_nav.sass */
+.utility-nav .help-wrap {
+  display: inline-block;
+  position: relative;
+  background: url("../img/arrow.png") center right no-repeat;
+  padding-right: 15px; }
+
+/* line 34, /home/circleci/repo/source/stylesheets/civicstorytelling/_nav.sass */
+.helper {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 270px;
+  background: #f9f9f9;
+  z-index: 99999999;
+  text-align: left;
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1); }
+  /* line 44, /home/circleci/repo/source/stylesheets/civicstorytelling/_nav.sass */
+  .helper .title {
+    color: #fff;
+    background: #1fa2ed;
+    padding: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0; }
+  /* line 52, /home/circleci/repo/source/stylesheets/civicstorytelling/_nav.sass */
+  .helper p {
+    color: #5a5a5a;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    margin: 0;
+    padding: 15px 15px 0 15px;
+    text-align: left; }
+    /* line 60, /home/circleci/repo/source/stylesheets/civicstorytelling/_nav.sass */
+    .helper p:last-of-type {
+      padding-bottom: 15px; }
+  /* line 62, /home/circleci/repo/source/stylesheets/civicstorytelling/_nav.sass */
+  .helper .title::after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #1fa2ed transparent;
+    position: absolute;
+    right: 15px;
+    top: -10px; }
+
+/* Banner Section
+ *--------------------------------------------- */
+/* line 4, /home/circleci/repo/source/stylesheets/civicstorytelling/_banner.sass */
+#banner {
+  height: auto;
+  margin: 0 auto;
+  padding: 40px 0;
+  position: relative;
+  text-align: center;
+  z-index: 0;
+  background: #2b4c7e; }
+  /* line 12, /home/circleci/repo/source/stylesheets/civicstorytelling/_banner.sass */
+  #banner:after {
+    border-top: solid 38px #2b4c7e;
+    border-left: solid 42px transparent;
+    border-right: solid 42px transparent;
+    content: "";
+    height: 0;
+    margin: 0 auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 0;
+    z-index: -1; }
+  /* line 25, /home/circleci/repo/source/stylesheets/civicstorytelling/_banner.sass */
+  #banner #img-caret {
+    bottom: -5px;
+    left: 49.3%;
+    right: 50%;
+    position: absolute;
+    display: none;
+    background: #2b4c7e; }
+  /* line 32, /home/circleci/repo/source/stylesheets/civicstorytelling/_banner.sass */
+  #banner h1 {
+    z-index: 2;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    margin-bottom: 1em;
+    font-size: 64px;
+    line-height: 80px;
+    font-size: 4rem;
+    line-height: 5rem; }
+    @media screen and (max-width: 900px) {
+      /* line 32, /home/circleci/repo/source/stylesheets/civicstorytelling/_banner.sass */
+      #banner h1 {
+        font-size: 44.8px;
+        line-height: 67.2px;
+        font-size: 2.8rem;
+        line-height: 4.2rem; } }
+    @media screen and (max-width: 767px) {
+      /* line 32, /home/circleci/repo/source/stylesheets/civicstorytelling/_banner.sass */
+      #banner h1 {
+        font-size: 38.4px;
+        line-height: 57.6px;
+        font-size: 2.4rem;
+        line-height: 3.6rem; } }
+    @media screen and (max-width: 670px) {
+      /* line 32, /home/circleci/repo/source/stylesheets/civicstorytelling/_banner.sass */
+      #banner h1 {
+        font-size: 32px;
+        line-height: 48px;
+        font-size: 2rem;
+        line-height: 3rem; } }
+    @media screen and (max-width: 450px) {
+      /* line 32, /home/circleci/repo/source/stylesheets/civicstorytelling/_banner.sass */
+      #banner h1 {
+        font-size: 19.2px;
+        line-height: 28.8px;
+        font-size: 1.2rem;
+        line-height: 1.8rem; } }
+    /* line 53, /home/circleci/repo/source/stylesheets/civicstorytelling/_banner.sass */
+    #banner h1 #accent {
+      color: #c7850c;
+      letter-spacing: 0; }
+
+/* line 57, /home/circleci/repo/source/stylesheets/civicstorytelling/_banner.sass */
+#my-banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1; }
+
+/* line 67, /home/circleci/repo/source/stylesheets/civicstorytelling/_banner.sass */
+#my-banner-p, #my-banner-img-caret {
+  z-index: 2;
+  position: relative;
+  z-index: 1; }
+
+/* line 73, /home/circleci/repo/source/stylesheets/civicstorytelling/_banner.sass */
+#my-banner p {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 56px;
+  text-transform: uppercase; }
+
+/* line 80, /home/circleci/repo/source/stylesheets/civicstorytelling/_banner.sass */
+#my-banner-img-caret {
+  bottom: 15px; }
+
+/* Footer
+ *--------------------------------------------- */
+/* line 4, /home/circleci/repo/source/stylesheets/civicstorytelling/_footer.sass */
+#footer {
+  background: #25364c;
+  overflow: hidden;
+  padding: 20px 0 10px; }
+  /* line 8, /home/circleci/repo/source/stylesheets/civicstorytelling/_footer.sass */
+  #footer .content-wrapper {
+    max-width: 1160px; }
+  /* line 10, /home/circleci/repo/source/stylesheets/civicstorytelling/_footer.sass */
+  #footer p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5em; }
+  /* line 14, /home/circleci/repo/source/stylesheets/civicstorytelling/_footer.sass */
+  #footer #copyright {
+    float: left;
+    max-width: 80%; }
+    /* line 17, /home/circleci/repo/source/stylesheets/civicstorytelling/_footer.sass */
+    #footer #copyright p {
+      text-align: left; }
+  /* line 19, /home/circleci/repo/source/stylesheets/civicstorytelling/_footer.sass */
+  #footer #socials {
+    display: inline-block;
+    float: right;
+    padding: 0 10px;
+    position: relative;
+    top: -10px; }
+    /* line 20, /home/circleci/repo/source/stylesheets/civicstorytelling/_footer.sass */
+    #footer #socials a {
+      display: inline-block;
+      font-size: 20px;
+      line-height: 40px;
+      margin-left: 5px;
+      height: 40px;
+      width: 40px; }
+      /* line 27, /home/circleci/repo/source/stylesheets/civicstorytelling/_footer.sass */
+      #footer #socials a:hover {
+        background: #666; }
+    /* line 34, /home/circleci/repo/source/stylesheets/civicstorytelling/_footer.sass */
+    #footer #socials .fa {
+      color: #fff;
+      font-size: 20px;
+      line-height: 40px; }
+  /* line 38, /home/circleci/repo/source/stylesheets/civicstorytelling/_footer.sass */
+  #footer #socials-facebook-link {
+    background: #3B5998; }
+  /* line 40, /home/circleci/repo/source/stylesheets/civicstorytelling/_footer.sass */
+  #footer #socials-twitter-link {
+    background: #00acee; }
+  /* line 42, /home/circleci/repo/source/stylesheets/civicstorytelling/_footer.sass */
+  #footer #socials-google-plus-link {
+    background: #dd4b39; }
+  /* line 44, /home/circleci/repo/source/stylesheets/civicstorytelling/_footer.sass */
+  #footer #bottom-text {
+    clear: both;
+    padding-top: 5px; }
+    /* line 47, /home/circleci/repo/source/stylesheets/civicstorytelling/_footer.sass */
+    #footer #bottom-text span {
+      font-size: 80%; }
+
+/* Sub-heading section
+ *--------------------------------------------- */
+/* line 4, /home/circleci/repo/source/stylesheets/civicstorytelling/_sub-heading.sass */
+.sub-heading, .sub-heading-alternate {
+  padding: 99px 0 34px 0;
+  background-color: #fffeff; }
+  @media screen and (max-width: 900px) {
+    /* line 4, /home/circleci/repo/source/stylesheets/civicstorytelling/_sub-heading.sass */
+    .sub-heading, .sub-heading-alternate {
+      padding: 60px 0 34px 0; } }
+  /* line 9, /home/circleci/repo/source/stylesheets/civicstorytelling/_sub-heading.sass */
+  .sub-heading h3, .sub-heading-alternate h3 {
+    font-size: 40px;
+    line-height: 60px;
+    font-size: 2.5rem;
+    line-height: 3.75rem;
+    margin-bottom: 1em;
+    color: #5a5a5a; }
+    @media screen and (max-width: 900px) {
+      /* line 9, /home/circleci/repo/source/stylesheets/civicstorytelling/_sub-heading.sass */
+      .sub-heading h3, .sub-heading-alternate h3 {
+        font-size: 28px;
+        line-height: 42px;
+        font-size: 1.75rem;
+        line-height: 2.625rem; } }
+    @media screen and (max-width: 767px) {
+      /* line 9, /home/circleci/repo/source/stylesheets/civicstorytelling/_sub-heading.sass */
+      .sub-heading h3, .sub-heading-alternate h3 {
+        font-size: 24px;
+        line-height: 36px;
+        font-size: 1.5rem;
+        line-height: 2.25rem; } }
+    @media screen and (max-width: 670px) {
+      /* line 9, /home/circleci/repo/source/stylesheets/civicstorytelling/_sub-heading.sass */
+      .sub-heading h3, .sub-heading-alternate h3 {
+        font-size: 20px;
+        line-height: 30px;
+        font-size: 1.25rem;
+        line-height: 1.875rem; } }
+    /* line 20, /home/circleci/repo/source/stylesheets/civicstorytelling/_sub-heading.sass */
+    .sub-heading h3 strong, .sub-heading-alternate h3 strong {
+      color: #1fa2ed; }
+  /* line 22, /home/circleci/repo/source/stylesheets/civicstorytelling/_sub-heading.sass */
+  .sub-heading p, .sub-heading-alternate p {
+    color: #5a5a5a;
+    font-weight: 300; }
+    /* line 25, /home/circleci/repo/source/stylesheets/civicstorytelling/_sub-heading.sass */
+    .sub-heading p:not(:last-child), .sub-heading-alternate p:not(:last-child) {
+      margin-bottom: 1.5em; }
+
+/* line 27, /home/circleci/repo/source/stylesheets/civicstorytelling/_sub-heading.sass */
+.sub-heading-alternate {
+  margin-top: 30px;
+  background: #25364c;
+  color: #fff; }
+  /* line 31, /home/circleci/repo/source/stylesheets/civicstorytelling/_sub-heading.sass */
+  .sub-heading-alternate h3 {
+    color: #fff;
+    letter-spacing: 0.05em;
+    margin-bottom: 45px; }
+  /* line 35, /home/circleci/repo/source/stylesheets/civicstorytelling/_sub-heading.sass */
+  .sub-heading-alternate p {
+    color: #fff; }
+  /* line 37, /home/circleci/repo/source/stylesheets/civicstorytelling/_sub-heading.sass */
+  .sub-heading-alternate a.cta-btn {
+    color: #fff; }
+  /* line 39, /home/circleci/repo/source/stylesheets/civicstorytelling/_sub-heading.sass */
+  .sub-heading-alternate ul {
+    list-style: none; }
+    /* line 41, /home/circleci/repo/source/stylesheets/civicstorytelling/_sub-heading.sass */
+    .sub-heading-alternate ul li {
+      padding-left: 1.3em; }
+      /* line 43, /home/circleci/repo/source/stylesheets/civicstorytelling/_sub-heading.sass */
+      .sub-heading-alternate ul li:before {
+        content: "";
+        color: #36bf4e;
+        font-family: FontAwesome;
+        display: inline-block;
+        margin-left: -1.3em;
+        width: 1.3em; }
+
+/* line 10, /home/circleci/repo/source/stylesheets/civicstorytelling/_cta-btn.sass */
+.cta-btn {
+  background: #1fa2ed;
+  color: #fff;
+  display: block;
+  font-size: 24px;
+  line-height: 36px;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 30px 45px;
+  text-transform: uppercase;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  margin: 0 auto;
+  margin-left: 17.05961%; }
+  /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+  .cta-btn:last-child {
+    margin-right: 0; }
+  /* line 20, /home/circleci/repo/source/stylesheets/bourbon/addons/_clearfix.scss */
+  .cta-btn::after {
+    clear: both;
+    content: "";
+    display: table; }
+  @media screen and (max-width: 900px) {
+    /* line 10, /home/circleci/repo/source/stylesheets/civicstorytelling/_cta-btn.sass */
+    .cta-btn {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 74.41059%;
+      margin-left: 8.5298%; }
+      /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+      .cta-btn:last-child {
+        margin-right: 0; } }
+  @media screen and (max-width: 550px) {
+    /* line 10, /home/circleci/repo/source/stylesheets/civicstorytelling/_cta-btn.sass */
+    .cta-btn {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 82.94039%;
+      margin-left: 0%; }
+      /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+      .cta-btn:last-child {
+        margin-right: 0; } }
+  @media screen and (max-width: 450px) {
+    /* line 10, /home/circleci/repo/source/stylesheets/civicstorytelling/_cta-btn.sass */
+    .cta-btn {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%;
+      margin-left: 0%; }
+      /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+      .cta-btn:last-child {
+        margin-right: 0; } }
+  /* line 25, /home/circleci/repo/source/stylesheets/civicstorytelling/_cta-btn.sass */
+  .cta-btn:hover {
+    background: #ffcc01; }
+  /* line 27, /home/circleci/repo/source/stylesheets/civicstorytelling/_cta-btn.sass */
+  .cta-btn span {
+    font-size: 42px;
+    font-weight: 600;
+    position: relative;
+    top: 3px; }
+
+/* Testimonials section
+ *--------------------------------------------- */
+/* line 4, /home/circleci/repo/source/stylesheets/civicstorytelling/_testimonials.sass */
+.testimonial {
+  background: #f0f5f7;
+  padding: 73px 0; }
+  /* line 7, /home/circleci/repo/source/stylesheets/civicstorytelling/_testimonials.sass */
+  .testimonial.multiple {
+    padding: 73px 0 0 0; }
+    /* line 9, /home/circleci/repo/source/stylesheets/civicstorytelling/_testimonials.sass */
+    .testimonial.multiple.last {
+      padding: 20px 0 73px 0; }
+  /* line 11, /home/circleci/repo/source/stylesheets/civicstorytelling/_testimonials.sass */
+  .testimonial p {
+    color: #5a5a5a;
+    font-weight: 300;
+    margin-top: 20px;
+    max-width: 757px; }
+  /* line 16, /home/circleci/repo/source/stylesheets/civicstorytelling/_testimonials.sass */
+  .testimonial span {
+    display: block;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0 auto;
+    margin-top: 0; }
+  /* line 22, /home/circleci/repo/source/stylesheets/civicstorytelling/_testimonials.sass */
+  .testimonial h4 {
+    color: #1fa2ed;
+    font-size: 18px;
+    line-height: 27px;
+    margin: 29px 0 5px; }
+  /* line 27, /home/circleci/repo/source/stylesheets/civicstorytelling/_testimonials.sass */
+  .testimonial img {
+    border-radius: 10000px;
+    max-width: 100px; }
+
+/* line 20, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal label {
+  cursor: pointer;
+  margin-bottom: 0; }
+/* line 24, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal label img {
+  border-radius: 150px;
+  display: block;
+  max-width: 300px; }
+/* line 29, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal .modal-state {
+  display: none; }
+/* line 32, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal .modal-trigger {
+  padding: 0.8em 1em; }
+/* line 35, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal .modal-fade-screen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  padding-top: 0.6em;
+  text-align: left;
+  transition: opacity 0.25s ease;
+  visibility: hidden;
+  z-index: 99999999999; }
+  @media screen and (max-width: 1159px) {
+    /* line 35, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+    .modal .modal-fade-screen {
+      padding-top: 3em; } }
+  /* line 51, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-fade-screen .modal-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer; }
+/* line 56, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal .modal-close {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  height: 1.5em;
+  width: 1.5em;
+  background: #fff;
+  cursor: pointer; }
+  /* line 64, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-close::after, .modal .modal-close::before {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    bottom: 0;
+    left: 50%;
+    height: 1.5em;
+    width: 0.15em;
+    background: #ddd;
+    content: "";
+    display: block;
+    margin: -3px 0 0 -1px;
+    transform: rotate(45deg); }
+  /* line 76, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-close:hover::after, .modal .modal-close:hover::before {
+    background: #c4c4c4; }
+  /* line 80, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-close::before {
+    transform: rotate(-45deg); }
+/* line 83, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal .modal-inner {
+  background: #fff;
+  border-radius: 3px;
+  margin: auto;
+  margin-top: 0;
+  max-height: 95%;
+  overflow: auto;
+  padding: 0.5em;
+  position: relative;
+  transition: opacity 0.25s ease;
+  width: 95%; }
+  @media screen and (min-width: 40em) {
+    /* line 83, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+    .modal .modal-inner {
+      max-height: 80%;
+      padding: 1em;
+      width: 80%; } }
+  @media screen and (max-width: 1159px) {
+    /* line 83, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+    .modal .modal-inner {
+      width: 80%; } }
+  /* line 105, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-inner h1 {
+    color: #333;
+    text-align: left;
+    text-transform: capitalize; }
+  /* line 110, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-inner p {
+    color: #333;
+    line-height: 1.5; }
+  /* line 114, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-inner .modal-intro {
+    margin-bottom: 1em; }
+  /* line 117, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-inner .modal-content {
+    color: #333; }
+    @media screen and (min-width: 40em) {
+      /* line 117, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+      .modal .modal-inner .modal-content {
+        columns: 2 8em; } }
+  /* line 123, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-inner a.cta {
+    color: #fff;
+    display: inline-block;
+    margin-right: 0.5em;
+    margin-top: 1em; }
+    /* line 129, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+    .modal .modal-inner a.cta:last-child {
+      padding: 0 2em; }
+/* line 132, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal .modal-state:checked + .modal-fade-screen {
+  opacity: 1;
+  visibility: visible; }
+/* line 136, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal .modal-state:checked + .modal-fade-screen .modal-inner {
+  top: 0.5em; }
+
+/* line 139, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal-open {
+  overflow: hidden; }
+
+/* line 144, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.calendly-inline-widget .header {
+  margin: 10px; }
+
+/* line 2, /home/circleci/repo/source/stylesheets/civicstorytelling/_ready_to_talk.sass */
+#ready-to-talk ul {
+  list-style: none; }
+  /* line 4, /home/circleci/repo/source/stylesheets/civicstorytelling/_ready_to_talk.sass */
+  #ready-to-talk ul li {
+    padding-left: 1.3em; }
+    /* line 6, /home/circleci/repo/source/stylesheets/civicstorytelling/_ready_to_talk.sass */
+    #ready-to-talk ul li:before {
+      content: "";
+      color: #25364c;
+      font-family: FontAwesome;
+      display: inline-block;
+      margin-left: -1.3em;
+      width: 1.3em; }
+/* line 13, /home/circleci/repo/source/stylesheets/civicstorytelling/_ready_to_talk.sass */
+#ready-to-talk input {
+  font-size: 24px;
+  line-height: 36px;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  padding: 0.5em; }
+  /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+  #ready-to-talk input:last-child {
+    margin-right: 0; }
+/* line 17, /home/circleci/repo/source/stylesheets/civicstorytelling/_ready_to_talk.sass */
+#ready-to-talk .subscribe.button {
+  background: #1fa2ed;
+  color: #fff;
+  display: block;
+  font-size: 24px;
+  line-height: 36px;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 30px 45px;
+  text-transform: uppercase;
+  padding: 0.5em;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  margin-right: 0; }
+  /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+  #ready-to-talk .subscribe.button:last-child {
+    margin-right: 0; }
+  /* line 22, /home/circleci/repo/source/stylesheets/civicstorytelling/_ready_to_talk.sass */
+  #ready-to-talk .subscribe.button:hover {
+    background: #ffcc01; }
+
+/* Button
+ *--------------------------------------------- */
+/* line 22, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+button {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+
+/* Forms
+ *--------------------------------------------- */
+/* line 29, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+input:focus, input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+
+/* line 32, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+textarea:focus, .button {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+
+/* Typography
+ *--------------------------------------------- */
+/* line 38, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+*, *::after, *::before {
+  box-sizing: initial; }
+
+/* line 41, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block; }
+
+/* line 44, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0; }
+
+/* line 49, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+body, html {
+  font-family: "Lato", sans-serif;
+  height: auto;
+  width: 100%;
+  word-wrap: break-word; }
+
+/* line 55, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+h1, h2, h3, p {
+  word-wrap: break-word;
+  -webkit-line-break: after-white-space; }
+
+/* line 59, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+h1, p {
+  margin: 0 auto;
+  text-align: center;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0; }
+
+/* line 65, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+h2 {
+  font-size: 44px;
+  line-height: 60px;
+  text-transform: uppercase; }
+
+/* line 70, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+p, h3 {
+  font-size: 24px;
+  line-height: 36px;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  line-height: 36px; }
+  @media screen and (max-width: 900px) {
+    /* line 70, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+    p, h3 {
+      font-size: 19.2px;
+      line-height: 28.8px;
+      font-size: 1.2rem;
+      line-height: 1.8rem; } }
+  @media screen and (max-width: 767px) {
+    /* line 70, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+    p, h3 {
+      font-size: 16.8px;
+      line-height: 25.2px;
+      font-size: 1.05rem;
+      line-height: 1.575rem; } }
+  @media screen and (max-width: 670px) {
+    /* line 70, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+    p, h3 {
+      font-size: 16.8px;
+      line-height: 25.2px;
+      font-size: 1.05rem;
+      line-height: 1.575rem; } }
+
+/* line 80, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+p {
+  text-align: left; }
+
+/* line 83, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+a {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+  /* line 84, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+  a:link, a:visited {
+    color: #1fa2ed;
+    text-decoration: none; }
+  /* line 87, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+  a:hover {
+    color: #e05b49; }
+
+/* Container
+ *--------------------------------------------- */
+/* line 94, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+.content-wrapper {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+  /* line 20, /home/circleci/repo/source/stylesheets/bourbon/addons/_clearfix.scss */
+  .content-wrapper::after {
+    clear: both;
+    content: "";
+    display: table; }
+  @media screen and (max-width: 1159px) {
+    /* line 94, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+    .content-wrapper {
+      padding-left: 1em;
+      padding-right: 1em; } }
+
+/* Float Clearing
+ *--------------------------------------------- */
+/* line 104, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+.clearfix:before, .footer-widgets:before, .nav-primary:before, .nav-secondary:before, .site-container:before, .site-footer:before, .site-header:before, .site-inner:before, .wrap:before {
+  content: " ";
+  display: table; }
+
+/* line 108, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+.clearfix:after, .footer-widgets:after, .nav-primary:after, .nav-secondary:after, .site-container:after, .site-footer:after, .site-header:after, .site-inner:after, .wrap:after {
+  clear: both;
+  content: " ";
+  display: table; }
+
+/* line 113, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+.clear {
+  clear: both; }
+
+/* Site Containers
+ *--------------------------------------------- */
+/* line 119, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+.wrap {
+  margin: 0 auto;
+  max-width: 1160px; }
+
+/* Site Header
+ *---------------------------------------------------------------------------------------------------- */
+/* line 127, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+.site-header .wrap {
+  max-width: 1320px; }
+/* line 129, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+.site-header .widget-area {
+  float: right;
+  text-align: right;
+  width: 1080px; }
+/* line 133, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+.site-header .widget_nav_menu {
+  margin-top: 17px; }
+
+/* Widget Area
+ *--------------------------------------------- */
+/* line 140, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+.site-header .widget-area {
+  float: right;
+  text-align: right;
+  width: 1080px; }
+/* line 144, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+.site-header .widget_nav_menu {
+  margin-top: 17px; }
+
+/* line 148, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+.content-wrapper ul {
+  text-align: left;
+  font-weight: 300;
+  margin-left: 30px;
+  margin-bottom: 1.5em;
+  font-size: 24px;
+  line-height: 36px;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  padding: 0; }
+  @media screen and (max-width: 900px) {
+    /* line 148, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+    .content-wrapper ul {
+      font-size: 16.8px;
+      line-height: 25.2px;
+      font-size: 1.05rem;
+      line-height: 1.575rem; } }
+  @media screen and (max-width: 767px) {
+    /* line 148, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+    .content-wrapper ul {
+      font-size: 14.4px;
+      line-height: 21.6px;
+      font-size: 0.9rem;
+      line-height: 1.35rem; } }
+  @media screen and (max-width: 670px) {
+    /* line 148, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+    .content-wrapper ul {
+      font-size: 12px;
+      line-height: 18px;
+      font-size: 0.75rem;
+      line-height: 1.125rem;
+      margin-left: 0px; } }
+/* line 163, /home/circleci/repo/source/stylesheets/civicstorytelling/_base.sass */
+.content-wrapper li {
+  padding-left: 1.3em; }
+
+/* line 11, /home/circleci/repo/source/stylesheets/be-a-donor/_main.sass */
+#banner h3 {
+  color: #fff; }
+
+/* line 13, /home/circleci/repo/source/stylesheets/be-a-donor/_main.sass */
+.signup {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  margin-left: 25.58941%; }
+  /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+  .signup:last-child {
+    margin-right: 0; }
+  /* line 16, /home/circleci/repo/source/stylesheets/be-a-donor/_main.sass */
+  .signup .subscribe.button {
+    margin: 0 auto;
+    background: #1fa2ed;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 30px 45px;
+    text-transform: uppercase;
+    padding: 1em;
+    border: none;
+    text-transform: none; }
+    /* line 6, /home/circleci/repo/source/stylesheets/be-a-donor/_main.sass */
+    .signup .subscribe.button:hover {
+      background: #FF8271;
+      cursor: pointer; }
+
+/* line 19, /home/circleci/repo/source/stylesheets/be-a-donor/_main.sass */
+.second-cta {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin-bottom: 2em; }
+  /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+  .second-cta:last-child {
+    margin-right: 0; }
+  /* line 22, /home/circleci/repo/source/stylesheets/be-a-donor/_main.sass */
+  .second-cta a {
+    background: #1fa2ed;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 30px 45px;
+    text-transform: uppercase;
+    padding: 1em;
+    border: none;
+    text-transform: none;
+    display: inline; }
+    /* line 6, /home/circleci/repo/source/stylesheets/be-a-donor/_main.sass */
+    .second-cta a:hover {
+      background: #FF8271;
+      cursor: pointer; }

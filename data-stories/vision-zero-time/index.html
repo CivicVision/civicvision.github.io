@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>When are San Diego streets unsafe?</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="../../stylesheets/normalize.css" rel="stylesheet" type="text/css" /><link href="../../stylesheets/all.css" rel="stylesheet" type="text/css" />
+<link href='/images/favicon.ico' rel='icon'>
+</head>
+<link href="../../stylesheets/code.css" rel="stylesheet" type="text/css" /><link href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" rel="stylesheet" type="text/css" /><link href="../../stylesheets/data-stories.css" rel="stylesheet" type="text/css" />
+<body>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MTT6KM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>
+  var _dcq = _dcq || [];
+  var _dcs = _dcs || {};
+  _dcs.account = "4828671";
+  (function() {
+  	var dc = document.createElement('script');
+  	dc.type = 'text/javascript'; dc.async = true;
+  	dc.src = "//tag.getdrip.com/4828671.js";
+  	var s = document.getElementsByTagName('script')[0];
+  	s.parentNode.insertBefore(dc, s);
+  })();
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer',"GTM-MTT6KM");
+</script>
+
+<div class='blog-content article'>
+<div class='header'>
+<h1>When are San Diego streets unsafe?</h1>
+<div class='details'></div>
+</div>
+<div class='content'>
+<div id='vision-zero'>&#x000A;<div class='row'>&#x000A;<p>A lot of advocacy groups and individuals would love to see the city moving forward with their Vision Zero strategy. But it has a long way to go. In this story I want to highlight the current status of traffic fatalities in the City of San Diego by using the most up to date datset from the Open Data Portal of the city of San Diego.</p>&#x000A;</div>&#x000A;<div class='row'>&#x000A;<h2>The most dangerous time is between <span class="most-accidents-start-hour">3pm</span> and <span class="most-accidents-end-hour">7pm</span>.</h2>&#x000A;&#x000A;<p>At <span class="most-per-accident">4pm</span> 54% of accidents results in at least one person injured.&#x000A;Although the most accidents occur on 12 am only 11% result in injuries.</p>&#x000A;<div class='d-o-w' id='dow-chart-killed-injured-per-accident'></div>&#x000A;</div>&#x000A;<div class='row'>&#x000A;<h2>The most accidents happen between <span class="most-accidents-start-hour">2pm</span> and <span class="most-accidents-end-hour">6pm</span></h2>&#x000A;&#x000A;<p>After analysing <span class="number-of-accidents">26,330</span> accidents from <span class="start-accidents-data">Jan 1st 2015</span> until today the unsafest time is between <span class="most-accidents-start-hour">2pm</span> and <span class="most-accidents-end-hour">6pm</span>. The most accidents occur at <span class="most-accidents-hour">12am</span>.</p>&#x000A;<div class='d-o-w' id='dow-chart-accidents'></div>&#x000A;</div>&#x000A;<div class='row'>&#x000A;<h2>The most injuries occur between  <span class="most-injuries-start-hour">3pm</span> and <span class="most-injuries-end-hour">6pm</span></h2>&#x000A;<div class='d-o-w' id='dow-chart-injuries'></div>&#x000A;</div>&#x000A;<div class='row'>&#x000A;<h2>The most fatalities occur between <span class="most-injuries-start-hour">6pm</span> and <span class="most-injuries-end-hour">8pm</span></h2>&#x000A;&#x000A;<p>This dataset is to be used with caution. There is a day were 80 people were killed according to the data from the city. Which I doubt and have reported. The data team is still investigating and have not fixed it.</p>&#x000A;<div class='d-o-w' id='dow-chart-killed'></div>&#x000A;</div>&#x000A;<div class='row'>&#x000A;<h2>Most accidents occur on a Friday</h2>&#x000A;&#x000A;<p>With 4091 accidents between 2015 and today Friday is the day with the most accidents. But Thursday and Saturday are not very far away. </p>&#x000A;<div class='d-o-w' id='dow-chart-single'></div>&#x000A;</div>&#x000A;<div class='row'>&#x000A;<h2>Most injuries occur on a Monday</h2>&#x000A;&#x000A;<p>With 2623 peolple injured between 2015 and today Monday is the day with the most injuries. </p>&#x000A;<div class='d-o-w' id='dow-chart-single-injured'></div>&#x000A;</div>&#x000A;<div class='row'>&#x000A;<h2>Weekends at Midnight have a high accident rate.</h2>&#x000A;<div class='d-o-w' id='dow-hod-chart'></div>&#x000A;</div>&#x000A;<div class='row'>&#x000A;<h2>Weekdays between 2pm and 6pm are the most dangerous in regards to injuries.</h2>&#x000A;<div class='d-o-w' id='dow-hod-chart-injured'></div>&#x000A;</div>&#x000A;</div>&#x000A;<div id='tooltip'></div>&#x000A;</div>
+</div>
+<div id='cv-banner'>
+<p>Proudly build by <a href="https://civicvision.de?utm_id=banner">Civic Vision</a>. Building Apps and Visualizations with Civic Open Data and Open Source.</p>
+</div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.0-beta.33/vega.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.0-beta.5/vega-lite.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-beta.17/vega-embed.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.9.1/d3.min.js" type="text/javascript"></script><script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script><script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js" type="text/javascript"></script><script src="../../javascripts/data-stories.js" type="text/javascript"></script>
+<script src="../../javascripts/vision_zero_time.js" type="text/javascript"></script>
+
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script><script src="../../javascripts/all.js" type="text/javascript"></script>
+</html>

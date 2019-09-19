@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Civic Vision</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Montserrat:400,700" rel="stylesheet" type="text/css" />
+<link href="../stylesheets/retention_calculator.css" rel="stylesheet" type="text/css" />
+
+<link href='/images/favicon.ico' rel='icon'>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script><script src="../javascripts/landingpage.js" type="text/javascript"></script>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N67RB5T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>
+  var _dcq = _dcq || [];
+  var _dcs = _dcs || {};
+  _dcs.account = "4828671";
+  (function() {
+  	var dc = document.createElement('script');
+  	dc.type = 'text/javascript'; dc.async = true;
+  	dc.src = "//tag.getdrip.com/4828671.js";
+  	var s = document.getElementsByTagName('script')[0];
+  	s.parentNode.insertBefore(dc, s);
+  })();
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer',"GTM-N67RB5T");
+</script>
+
+</head>
+<div id='retention-calculator'>
+<section class='second-headline' id='banner'>
+<div class='content-wrapper'>
+<h1>
+Donor Retention Calculator
+</h1>
+<h3>Do you know what percentage of your donors give again?</h3>
+</div>
+</section>
+<section class='sub-heading'>
+<div class='content-wrapper'>
+<form class='retention-calculator' id='retention-form'>
+<fieldset>
+<div class='row'>
+<label class='normal' for='last_year_dononor'>
+Number of Donors
+<span class='last-year'>2015</span>
+</label>
+<input class='normal' id='last-year-donors' name='last_year_donors' placeholder='Donors last year' type='text'>
+</div>
+<div class='row'>
+<label class='normal' for='last_year_dononor'>
+Do you know how many came back in
+<span class='this-year'>2016</span>
+?
+</label>
+<div class='button-group' id='retained'>
+<label>
+<input checked name='retained-switch' type='radio' value='1'>
+<span class='button-group-item'>Yes</span>
+</label>
+<label>
+<input name='retained-switch' type='radio' value='2'>
+<span class='button-group-item'>No</span>
+</label>
+</div>
+</div>
+<a id='retention-rate-explanation-scroll' name='retention-rate-explanation'></a>
+<div class='row'>
+<div class='retained'>
+<label class='normal' for='retained-donors'>Number of retained donors</label>
+<input class='normal' id='retained-donors' name='this_year_donors' placeholder='Retained donors' type='text'>
+</div>
+<div class='non-retained hidden'>
+<label class='normal' for='this_year_dononor'>
+Number of Donors
+<span class='this-year'>2016</span>
+</label>
+<input class='last normal' id='this-year-donors' name='this_year_donors' placeholder='Donors this year' type='text'>
+<div class='clear'></div>
+<label class='normal' for='this_year_new_donors'>
+New donors
+<span class='this-year'>2016</span>
+</label>
+<input class='normal' id='this-year-new-donors' name='this_year_new_donors' placeholder='New donors this year' type='text'>
+</div>
+</div>
+<div class='row'>
+<button class='cta-btn' id='calculate-form'>Calculate your Retention Rate</button>
+</div>
+</fieldset>
+</form>
+<div class='box'>
+<div class='stat-explanation'>
+Retention Rate
+</div>
+<div class='stat-number'>
+<span class='retention-rate'>46</span>
+&#37;
+</div>
+<div class='stat-footnote'>
+National avg.
+<b>46%</b>
+</div>
+</div>
+<div class='explanation' id='explanation'>
+<p>
+Your retention rate is
+<b id='avg-indicator'>above</b>
+the national average.
+</p>
+<p>
+If your Retention rate stays the same, only
+<b class='donors-five-years'>x</b>
+of your donors from
+<span class='last-year'>2015</span>
+will be there in
+<span class='five-years'>2020</span>
+&#46;
+</p>
+<h3>
+Did you know that a 1% increase in donor retention results in an average
+<span class='lost-dollars'>$14,000</span>
+added donation value?
+</h3>
+<p>
+Want to know your exact numbers?
+Fill out these fields to calculate how much you could generate in one year.
+</p>
+<div class='row'>
+<form class='retention-calculator' id='increase-form'>
+<fieldset>
+<div class='row donation-type'>
+<label class='normal' for='last_year_dononor'>
+Donation Type
+</label>
+<div class='center'>
+<div class='button-group' id='donation-type'>
+<label>
+<input checked name='donation-type-switch' type='radio' value='1'>
+<span class='button-group-item'>Average Donation</span>
+</label>
+<label>
+<input name='donation-type-switch' type='radio' value='2'>
+<span class='button-group-item'>Total Donations</span>
+</label>
+</div>
+</div>
+</div>
+<div class='row avg-donation'>
+<label class='normal' for='avg_last_year_donations'>Average donation</label>
+<input class='normal' id='avg-donations' name='avg_last_year_donations' placeholder='Average donation' type='text'>
+</div>
+<div class='row hidden total-amount'>
+<label class='normal' for='last_year_donations'>Last year total donation amount</label>
+<input class='normal' id='donations' name='last_year_donations' placeholder='Total donations' type='text'>
+</div>
+<div class='row'>
+<button class='cta-btn' id='calculate-increase-form'>Calculate your donation increase</button>
+</div>
+</fieldset>
+</form>
+</div>
+<a id='increase-rate-explanation-scroll' name='increase-rate-explanation'></a>
+<div class='row increase-explanation hidden'>
+<p>
+You had
+<b id='donor-count-last-year'></b>
+donors last year and a Retention Rate of
+<b class='retention-rate'></b>
+<b>&#37;</b>
+and your Average Donation is
+<b id='average-donation'></b>
+&#46;
+<br>
+A
+<b class='percent'>1</b>
+<b>&#37;</b>
+increase will generate additional
+<b class='lost-dollars'></b>
+in the first year and
+<b class='lost-dollars-five'></b>
+in five years.
+</p>
+</div>
+<div class='viz-container hide donor-retention-viz'>
+<ul class='viz-nav'>
+<li>
+<button class='button active' data-value='1'>1%</button>
+</li>
+<li>
+<button class='button' data-value='5'>5%</button>
+</li>
+<li>
+<button class='button' data-value='10'>10%</button>
+</li>
+<li>
+<button class='button' data-value='20'>20%</button>
+</li>
+</ul>
+<div class='graph'></div>
+<div class='viz-explanation'>
+<h5>Additional Donations</h5>
+<dl>
+<dt>
+<span class='amount-1'></span>
+</dt>
+<dd>after 1 Year</dd>
+</dl>
+<dl>
+<dt>
+<span class='amount-4'></span>
+</dt>
+<dd>after 5 Years</dd>
+</dl>
+</div>
+</div>
+<div class='row increase-explanation hidden'>
+<div class='modal email-signup'>
+<label for='retention-results-modal'>
+<div class='cta-btn'>
+Email me the results
+</div>
+</label>
+<input class='modal-state' id='retention-results-modal' type='checkbox'>
+<div class='modal-fade-screen' id='retention-results-m'>
+<div class='modal-inner'>
+<div class='modal-close' for='retention-results-modal'></div>
+<p>You're almost there.</p>
+<div class='signup'>
+<div class='form-content'>
+<h3>Get your numbers via email</h3>
+<form action='https://www.getdrip.com/forms/78144431/submissions' data-drip-embedded-form='78144431' method='post' target='_blank'>
+<input name='fields[name]' placeholder='Your Name' type='text' value=''>
+<input id='field-donors' name='fields[donors]' type='hidden'>
+<input id='field-avg-donation' name='fields[avgDonation]' type='hidden'>
+<input id='field-retained-donors' name='fields[retainedDonors]' type='hidden'>
+<input id='field-retention-rate' name='fields[retentionRate]' type='hidden'>
+<input id='field-donation-increase-1-1' name='fields[donationIncrease1value1]' type='hidden'>
+<input id='field-donation-increase-1-5' name='fields[donationIncrease1value5]' type='hidden'>
+<input id='field-donation-increase-20-1' name='fields[donationIncrease20value1]' type='hidden'>
+<input id='field-donation-increase-20-5' name='fields[donationIncrease20value5]' type='hidden'>
+<input class='required email' name='fields[email]' placeholder='Your Email Address' type='email' value=''>
+<input class='subscribe button' name='subscribe' type='submit' value='Send me the Retention Report'>
+</form>
+</div>
+<div class='form-footer'></div>
+<p>We hate SPAM and promise to keep your email address safe.</p>
+</div>
+</div>
+</div>
+<p>
+<i>You will get an email with the results you put into the calculator. Additional you will get the results for how much you could generate in one and five years with 1% and 20% increase in your donor retention rate.</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script src="https://d3js.org/d3.v4.min.js" type="text/javascript"></script><script src="../javascripts/retention_calculator.js" type="text/javascript"></script>
+
+</html>

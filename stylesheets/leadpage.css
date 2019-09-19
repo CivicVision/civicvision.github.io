@@ -1,0 +1,1881 @@
+@charset "UTF-8";
+/* line 1, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+fieldset {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  margin: 0 0 0.75em;
+  padding: 1.5em; }
+
+/* line 8, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+input,
+label,
+select {
+  display: block;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em; }
+
+/* line 16, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+label {
+  font-weight: 600;
+  margin-bottom: 0.375em; }
+  /* line 20, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+  label.required::after {
+    content: "*"; }
+  /* line 24, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+  label abbr {
+    display: none; }
+
+/* line 29, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea,
+select[multiple=multiple],
+textarea {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  padding: 0.5em;
+  transition: border-color;
+  width: 100%; }
+  /* line 44, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+  input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, textarea:hover,
+  select[multiple=multiple]:hover,
+  textarea:hover {
+    border-color: #c4c4c4; }
+  /* line 48, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus,
+  select[multiple=multiple]:focus,
+  textarea:focus {
+    border-color: #477dca;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(55, 112, 192, 0.7);
+    outline: none; }
+
+/* line 55, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+textarea {
+  resize: vertical; }
+
+/* line 59, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none; }
+
+/* line 63, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: 0.375em; }
+
+/* line 69, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+input[type="file"] {
+  padding-bottom: 0.75em;
+  width: 100%; }
+
+/* line 74, /home/circleci/repo/source/stylesheets/base/_forms.scss */
+select {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+  width: auto; }
+
+/* line 1, /home/circleci/repo/source/stylesheets/base/_buttons.scss */
+button, input[type="button"], input[type="reset"], input[type="submit"],
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  background-color: #477dca;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1em;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap; }
+  /* line 21, /home/circleci/repo/source/stylesheets/base/_buttons.scss */
+  button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus,
+  button:hover,
+  button:focus {
+    background-color: #2c5999;
+    color: #fff; }
+  /* line 27, /home/circleci/repo/source/stylesheets/base/_buttons.scss */
+  button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled,
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5; }
+
+/* line 1, /home/circleci/repo/source/stylesheets/base/_lists.scss */
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+/* line 20, /home/circleci/repo/source/stylesheets/base/_lists.scss */
+dl {
+  margin-bottom: 0.75em; }
+  /* line 23, /home/circleci/repo/source/stylesheets/base/_lists.scss */
+  dl dt {
+    font-weight: bold;
+    margin-top: 0.75em; }
+  /* line 28, /home/circleci/repo/source/stylesheets/base/_lists.scss */
+  dl dd {
+    margin: 0; }
+
+/* line 1, /home/circleci/repo/source/stylesheets/base/_tables.scss */
+table {
+  -webkit-font-feature-settings: "kern", "liga", "tnum";
+  -moz-font-feature-settings: "kern", "liga", "tnum";
+  -ms-font-feature-settings: "kern", "liga", "tnum";
+  font-feature-settings: "kern", "liga", "tnum";
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%; }
+
+/* line 9, /home/circleci/repo/source/stylesheets/base/_tables.scss */
+th {
+  border-bottom: 1px solid #b7b7b7;
+  font-weight: 600;
+  padding: 0.75em 0;
+  text-align: left; }
+
+/* line 16, /home/circleci/repo/source/stylesheets/base/_tables.scss */
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 0.75em 0; }
+
+/* line 21, /home/circleci/repo/source/stylesheets/base/_tables.scss */
+tr,
+td,
+th {
+  vertical-align: middle; }
+
+/* line 1, /home/circleci/repo/source/stylesheets/base/_typography.scss */
+body {
+  -webkit-font-feature-settings: "kern", "liga", "pnum";
+  -moz-font-feature-settings: "kern", "liga", "pnum";
+  -ms-font-feature-settings: "kern", "liga", "pnum";
+  font-feature-settings: "kern", "liga", "pnum";
+  -webkit-font-smoothing: antialiased;
+  color: #333;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  line-height: 1.5; }
+
+/* line 10, /home/circleci/repo/source/stylesheets/base/_typography.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+  margin: 0 0 0.75em; }
+
+/* line 22, /home/circleci/repo/source/stylesheets/base/_typography.scss */
+p {
+  margin: 0 0 0.75em; }
+
+/* line 26, /home/circleci/repo/source/stylesheets/base/_typography.scss */
+a {
+  color: #477dca;
+  text-decoration: none;
+  transition: color 0.1s linear; }
+  /* line 31, /home/circleci/repo/source/stylesheets/base/_typography.scss */
+  a:active, a:focus, a:hover {
+    color: #2c5999; }
+  /* line 37, /home/circleci/repo/source/stylesheets/base/_typography.scss */
+  a:active, a:focus {
+    outline: none; }
+
+/* line 43, /home/circleci/repo/source/stylesheets/base/_typography.scss */
+hr {
+  border-bottom: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: 1.5em 0; }
+
+/* line 51, /home/circleci/repo/source/stylesheets/base/_typography.scss */
+img,
+picture {
+  margin: 0;
+  max-width: 100%; }
+
+/* Media Queries & Mobile (Many of the media queries for nav are copied from the LP website code)
+ *---------------------------------------------------------------------------------------------------- */
+/* line 4, /home/circleci/repo/source/stylesheets/neat/grid/_box-sizing.scss */
+html {
+  box-sizing: border-box; }
+
+/* line 9, /home/circleci/repo/source/stylesheets/neat/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/* line 10, /home/circleci/repo/source/stylesheets/mixins/_cta-btn.sass */
+.cta-btn {
+  background: #1fa2ed;
+  color: #fff;
+  display: block;
+  font-size: 24px;
+  line-height: 36px;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 30px 45px;
+  text-transform: uppercase;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  margin: 0 auto;
+  margin-left: 17.05961%; }
+  /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+  .cta-btn:last-child {
+    margin-right: 0; }
+  /* line 20, /home/circleci/repo/source/stylesheets/bourbon/addons/_clearfix.scss */
+  .cta-btn::after {
+    clear: both;
+    content: "";
+    display: table; }
+  @media screen and (max-width: 900px) {
+    /* line 10, /home/circleci/repo/source/stylesheets/mixins/_cta-btn.sass */
+    .cta-btn {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 74.41059%;
+      margin-left: 8.5298%; }
+      /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+      .cta-btn:last-child {
+        margin-right: 0; } }
+  @media screen and (max-width: 550px) {
+    /* line 10, /home/circleci/repo/source/stylesheets/mixins/_cta-btn.sass */
+    .cta-btn {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 82.94039%;
+      margin-left: 0%; }
+      /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+      .cta-btn:last-child {
+        margin-right: 0; } }
+  @media screen and (max-width: 450px) {
+    /* line 10, /home/circleci/repo/source/stylesheets/mixins/_cta-btn.sass */
+    .cta-btn {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%;
+      margin-left: 0%; }
+      /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+      .cta-btn:last-child {
+        margin-right: 0; } }
+  /* line 25, /home/circleci/repo/source/stylesheets/mixins/_cta-btn.sass */
+  .cta-btn:hover {
+    background: #ffcc01; }
+  /* line 27, /home/circleci/repo/source/stylesheets/mixins/_cta-btn.sass */
+  .cta-btn span {
+    font-size: 42px;
+    font-weight: 600;
+    position: relative;
+    top: 3px; }
+
+/* Sub-heading section
+ *--------------------------------------------- */
+/* line 4, /home/circleci/repo/source/stylesheets/leadpage/_sub-heading.sass */
+.sub-heading, .sub-heading-alternate {
+  padding: 99px 0 34px 0;
+  background-color: #fffeff;
+  color: #5a5a5a; }
+  @media screen and (max-width: 900px) {
+    /* line 4, /home/circleci/repo/source/stylesheets/leadpage/_sub-heading.sass */
+    .sub-heading, .sub-heading-alternate {
+      padding: 60px 0 34px 0; } }
+  /* line 10, /home/circleci/repo/source/stylesheets/leadpage/_sub-heading.sass */
+  .sub-heading h3, .sub-heading-alternate h3 {
+    font-size: 40px;
+    line-height: 60px;
+    font-size: 2.5rem;
+    line-height: 3.75rem;
+    margin-bottom: 1em;
+    color: #5a5a5a; }
+    @media screen and (max-width: 900px) {
+      /* line 10, /home/circleci/repo/source/stylesheets/leadpage/_sub-heading.sass */
+      .sub-heading h3, .sub-heading-alternate h3 {
+        font-size: 28px;
+        line-height: 42px;
+        font-size: 1.75rem;
+        line-height: 2.625rem; } }
+    @media screen and (max-width: 767px) {
+      /* line 10, /home/circleci/repo/source/stylesheets/leadpage/_sub-heading.sass */
+      .sub-heading h3, .sub-heading-alternate h3 {
+        font-size: 24px;
+        line-height: 36px;
+        font-size: 1.5rem;
+        line-height: 2.25rem; } }
+    @media screen and (max-width: 670px) {
+      /* line 10, /home/circleci/repo/source/stylesheets/leadpage/_sub-heading.sass */
+      .sub-heading h3, .sub-heading-alternate h3 {
+        font-size: 20px;
+        line-height: 30px;
+        font-size: 1.25rem;
+        line-height: 1.875rem; } }
+    /* line 21, /home/circleci/repo/source/stylesheets/leadpage/_sub-heading.sass */
+    .sub-heading h3 strong, .sub-heading-alternate h3 strong {
+      color: #749CD8; }
+  /* line 23, /home/circleci/repo/source/stylesheets/leadpage/_sub-heading.sass */
+  .sub-heading p, .sub-heading-alternate p {
+    color: #5a5a5a;
+    font-weight: 300; }
+    /* line 26, /home/circleci/repo/source/stylesheets/leadpage/_sub-heading.sass */
+    .sub-heading p:not(:last-child), .sub-heading-alternate p:not(:last-child) {
+      margin-bottom: 1.5em; }
+
+/* line 28, /home/circleci/repo/source/stylesheets/leadpage/_sub-heading.sass */
+.sub-heading-alternate {
+  background: #283D5C;
+  color: #fff; }
+  /* line 31, /home/circleci/repo/source/stylesheets/leadpage/_sub-heading.sass */
+  .sub-heading-alternate h3 {
+    color: #fff;
+    letter-spacing: 0.05em;
+    margin-bottom: 45px; }
+  /* line 35, /home/circleci/repo/source/stylesheets/leadpage/_sub-heading.sass */
+  .sub-heading-alternate p {
+    color: #fff; }
+  /* line 37, /home/circleci/repo/source/stylesheets/leadpage/_sub-heading.sass */
+  .sub-heading-alternate a.cta-btn {
+    color: #fff; }
+
+/* Banner Section
+ *--------------------------------------------- */
+/* line 4, /home/circleci/repo/source/stylesheets/leadpage/_banner.sass */
+#banner {
+  height: auto;
+  margin: 0 auto;
+  padding: 40px 0;
+  position: relative;
+  text-align: center;
+  z-index: 0;
+  background: #2b4c7e; }
+  /* line 12, /home/circleci/repo/source/stylesheets/leadpage/_banner.sass */
+  #banner:after {
+    border-top: solid 38px #2b4c7e;
+    border-left: solid 42px transparent;
+    border-right: solid 42px transparent;
+    content: "";
+    height: 0;
+    margin: 0 auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 0;
+    z-index: -1; }
+  /* line 25, /home/circleci/repo/source/stylesheets/leadpage/_banner.sass */
+  #banner #img-caret {
+    bottom: -5px;
+    left: 49.3%;
+    right: 50%;
+    position: absolute;
+    display: none;
+    background: #2b4c7e; }
+  /* line 32, /home/circleci/repo/source/stylesheets/leadpage/_banner.sass */
+  #banner h1 {
+    z-index: 2;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    margin-bottom: 1em;
+    font-size: 64px;
+    line-height: 80px;
+    font-size: 4rem;
+    line-height: 5rem; }
+    @media screen and (max-width: 900px) {
+      /* line 32, /home/circleci/repo/source/stylesheets/leadpage/_banner.sass */
+      #banner h1 {
+        font-size: 44.8px;
+        line-height: 67.2px;
+        font-size: 2.8rem;
+        line-height: 4.2rem; } }
+    @media screen and (max-width: 767px) {
+      /* line 32, /home/circleci/repo/source/stylesheets/leadpage/_banner.sass */
+      #banner h1 {
+        font-size: 38.4px;
+        line-height: 57.6px;
+        font-size: 2.4rem;
+        line-height: 3.6rem; } }
+    @media screen and (max-width: 670px) {
+      /* line 32, /home/circleci/repo/source/stylesheets/leadpage/_banner.sass */
+      #banner h1 {
+        font-size: 32px;
+        line-height: 48px;
+        font-size: 2rem;
+        line-height: 3rem; } }
+    @media screen and (max-width: 450px) {
+      /* line 32, /home/circleci/repo/source/stylesheets/leadpage/_banner.sass */
+      #banner h1 {
+        font-size: 19.2px;
+        line-height: 28.8px;
+        font-size: 1.2rem;
+        line-height: 1.8rem; } }
+    /* line 53, /home/circleci/repo/source/stylesheets/leadpage/_banner.sass */
+    #banner h1 strong {
+      color: #c7850c;
+      letter-spacing: 0; }
+
+/* line 57, /home/circleci/repo/source/stylesheets/leadpage/_banner.sass */
+#my-banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1; }
+
+/* line 67, /home/circleci/repo/source/stylesheets/leadpage/_banner.sass */
+#my-banner-p, #my-banner-img-caret {
+  z-index: 2;
+  position: relative;
+  z-index: 1; }
+
+/* line 73, /home/circleci/repo/source/stylesheets/leadpage/_banner.sass */
+#my-banner p {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 56px;
+  text-transform: uppercase; }
+
+/* line 80, /home/circleci/repo/source/stylesheets/leadpage/_banner.sass */
+#my-banner-img-caret {
+  bottom: 15px; }
+
+/* Testimonials section
+ *--------------------------------------------- */
+/* line 4, /home/circleci/repo/source/stylesheets/_testimonials.sass */
+.testimonial {
+  background: #f0f5f7;
+  padding: 73px 0; }
+  /* line 7, /home/circleci/repo/source/stylesheets/_testimonials.sass */
+  .testimonial.multiple {
+    padding: 73px 0 0 0; }
+    /* line 9, /home/circleci/repo/source/stylesheets/_testimonials.sass */
+    .testimonial.multiple.last {
+      padding: 20px 0 73px 0; }
+  /* line 11, /home/circleci/repo/source/stylesheets/_testimonials.sass */
+  .testimonial p {
+    color: #5a5a5a;
+    font-weight: 300;
+    margin-top: 20px;
+    max-width: 757px; }
+  /* line 16, /home/circleci/repo/source/stylesheets/_testimonials.sass */
+  .testimonial span {
+    display: block;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0 auto;
+    margin-top: 0; }
+  /* line 22, /home/circleci/repo/source/stylesheets/_testimonials.sass */
+  .testimonial h4 {
+    color: #1fa2ed;
+    font-size: 18px;
+    line-height: 27px;
+    margin: 29px 0 5px; }
+  /* line 27, /home/circleci/repo/source/stylesheets/_testimonials.sass */
+  .testimonial img {
+    border-radius: 10000px;
+    max-width: 100px; }
+
+/* line 20, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal label {
+  cursor: pointer;
+  margin-bottom: 0; }
+/* line 24, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal label img {
+  border-radius: 150px;
+  display: block;
+  max-width: 300px; }
+/* line 29, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal .modal-state {
+  display: none; }
+/* line 32, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal .modal-trigger {
+  padding: 0.8em 1em; }
+/* line 35, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal .modal-fade-screen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  padding-top: 0.6em;
+  text-align: left;
+  transition: opacity 0.25s ease;
+  visibility: hidden;
+  z-index: 99999999999; }
+  @media screen and (max-width: 1159px) {
+    /* line 35, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+    .modal .modal-fade-screen {
+      padding-top: 3em; } }
+  /* line 51, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-fade-screen .modal-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer; }
+/* line 56, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal .modal-close {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  height: 1.5em;
+  width: 1.5em;
+  background: #fff;
+  cursor: pointer; }
+  /* line 64, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-close::after, .modal .modal-close::before {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    bottom: 0;
+    left: 50%;
+    height: 1.5em;
+    width: 0.15em;
+    background: #ddd;
+    content: "";
+    display: block;
+    margin: -3px 0 0 -1px;
+    transform: rotate(45deg); }
+  /* line 76, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-close:hover::after, .modal .modal-close:hover::before {
+    background: #c4c4c4; }
+  /* line 80, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-close::before {
+    transform: rotate(-45deg); }
+/* line 83, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal .modal-inner {
+  background: #fff;
+  border-radius: 3px;
+  margin: auto;
+  margin-top: 0;
+  max-height: 95%;
+  overflow: auto;
+  padding: 0.5em;
+  position: relative;
+  transition: opacity 0.25s ease;
+  width: 95%; }
+  @media screen and (min-width: 40em) {
+    /* line 83, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+    .modal .modal-inner {
+      max-height: 80%;
+      padding: 1em;
+      width: 80%; } }
+  @media screen and (max-width: 1159px) {
+    /* line 83, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+    .modal .modal-inner {
+      width: 80%; } }
+  /* line 105, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-inner h1 {
+    color: #333;
+    text-align: left;
+    text-transform: capitalize; }
+  /* line 110, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-inner p {
+    color: #333;
+    line-height: 1.5; }
+  /* line 114, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-inner .modal-intro {
+    margin-bottom: 1em; }
+  /* line 117, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-inner .modal-content {
+    color: #333; }
+    @media screen and (min-width: 40em) {
+      /* line 117, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+      .modal .modal-inner .modal-content {
+        columns: 2 8em; } }
+  /* line 123, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+  .modal .modal-inner a.cta {
+    color: #fff;
+    display: inline-block;
+    margin-right: 0.5em;
+    margin-top: 1em; }
+    /* line 129, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+    .modal .modal-inner a.cta:last-child {
+      padding: 0 2em; }
+/* line 132, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal .modal-state:checked + .modal-fade-screen {
+  opacity: 1;
+  visibility: visible; }
+/* line 136, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal .modal-state:checked + .modal-fade-screen .modal-inner {
+  top: 0.5em; }
+
+/* line 139, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.modal-open {
+  overflow: hidden; }
+
+/* line 144, /home/circleci/repo/source/stylesheets/civicstorytelling/_modal.sass */
+.calendly-inline-widget .header {
+  margin: 10px; }
+
+/* Button
+ *--------------------------------------------- */
+/* line 24, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+button {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+
+/* Forms
+ *--------------------------------------------- */
+/* line 31, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+input:focus, input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+
+/* line 34, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+textarea:focus, .button {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+
+/* Typography
+ *--------------------------------------------- */
+/* line 40, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+*, *::after, *::before {
+  box-sizing: initial; }
+
+/* line 43, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block; }
+
+/* line 46, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0; }
+
+/* line 51, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+body, html {
+  font-family: "Lato", sans-serif;
+  height: auto;
+  width: 100%;
+  word-wrap: break-word; }
+
+/* line 57, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+h1, h2, h3, p {
+  word-wrap: break-word;
+  -webkit-line-break: after-white-space; }
+
+/* line 61, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+h1, p {
+  margin: 0 auto;
+  text-align: center;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0; }
+
+/* line 67, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+h2 {
+  font-size: 44px;
+  line-height: 60px;
+  text-transform: uppercase; }
+
+/* line 72, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+p, h3 {
+  font-size: 24px;
+  line-height: 36px;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  line-height: 36px; }
+  @media screen and (max-width: 900px) {
+    /* line 72, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+    p, h3 {
+      font-size: 19.2px;
+      line-height: 28.8px;
+      font-size: 1.2rem;
+      line-height: 1.8rem; } }
+  @media screen and (max-width: 767px) {
+    /* line 72, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+    p, h3 {
+      font-size: 16.8px;
+      line-height: 25.2px;
+      font-size: 1.05rem;
+      line-height: 1.575rem; } }
+  @media screen and (max-width: 670px) {
+    /* line 72, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+    p, h3 {
+      font-size: 16.8px;
+      line-height: 25.2px;
+      font-size: 1.05rem;
+      line-height: 1.575rem; } }
+
+/* line 82, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+h4 {
+  font-size: 28.8px;
+  line-height: 43.2px;
+  font-size: 1.8rem;
+  line-height: 2.7rem; }
+  @media screen and (max-width: 900px) {
+    /* line 82, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+    h4 {
+      font-size: 19.2px;
+      line-height: 28.8px;
+      font-size: 1.2rem;
+      line-height: 1.8rem; } }
+  @media screen and (max-width: 767px) {
+    /* line 82, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+    h4 {
+      font-size: 16.8px;
+      line-height: 25.2px;
+      font-size: 1.05rem;
+      line-height: 1.575rem; } }
+  @media screen and (max-width: 670px) {
+    /* line 82, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+    h4 {
+      font-size: 14.4px;
+      line-height: 21.6px;
+      font-size: 0.9rem;
+      line-height: 1.35rem; } }
+
+/* line 91, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+p {
+  text-align: left; }
+
+/* line 94, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+a {
+  color: #94BFFF;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+  /* line 96, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+  a:link, a:visited {
+    color: #AFCEFD;
+    text-decoration: none; }
+  /* line 99, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+  a:hover {
+    color: #e05b49; }
+
+/* Container
+ *--------------------------------------------- */
+/* line 106, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+.content-wrapper {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+  /* line 20, /home/circleci/repo/source/stylesheets/bourbon/addons/_clearfix.scss */
+  .content-wrapper::after {
+    clear: both;
+    content: "";
+    display: table; }
+  @media screen and (max-width: 1159px) {
+    /* line 106, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+    .content-wrapper {
+      padding-left: 1em;
+      padding-right: 1em; } }
+
+/* Float Clearing
+ *--------------------------------------------- */
+/* line 116, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+.clearfix:before, .footer-widgets:before, .nav-primary:before, .nav-secondary:before, .site-container:before, .site-footer:before, .site-header:before, .site-inner:before, .wrap:before {
+  content: " ";
+  display: table; }
+
+/* line 120, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+.clearfix:after, .footer-widgets:after, .nav-primary:after, .nav-secondary:after, .site-container:after, .site-footer:after, .site-header:after, .site-inner:after, .wrap:after {
+  clear: both;
+  content: " ";
+  display: table; }
+
+/* line 125, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+.clear {
+  clear: both; }
+
+/* Site Containers
+ *--------------------------------------------- */
+/* line 131, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+.wrap {
+  margin: 0 auto;
+  max-width: 1160px; }
+
+/* Site Header
+ *---------------------------------------------------------------------------------------------------- */
+/* line 139, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+.site-header .wrap {
+  max-width: 1320px; }
+/* line 141, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+.site-header .widget-area {
+  float: right;
+  text-align: right;
+  width: 1080px; }
+/* line 145, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+.site-header .widget_nav_menu {
+  margin-top: 17px; }
+
+/* Widget Area
+ *--------------------------------------------- */
+/* line 152, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+.site-header .widget-area {
+  float: right;
+  text-align: right;
+  width: 1080px; }
+/* line 156, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+.site-header .widget_nav_menu {
+  margin-top: 17px; }
+
+/* line 160, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+.content-wrapper ul {
+  text-align: left;
+  font-weight: 300;
+  margin-left: 30px;
+  margin-bottom: 1.5em;
+  font-size: 24px;
+  line-height: 36px;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  padding: 0; }
+  @media screen and (max-width: 900px) {
+    /* line 160, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+    .content-wrapper ul {
+      font-size: 16.8px;
+      line-height: 25.2px;
+      font-size: 1.05rem;
+      line-height: 1.575rem; } }
+  @media screen and (max-width: 767px) {
+    /* line 160, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+    .content-wrapper ul {
+      font-size: 14.4px;
+      line-height: 21.6px;
+      font-size: 0.9rem;
+      line-height: 1.35rem; } }
+  @media screen and (max-width: 670px) {
+    /* line 160, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+    .content-wrapper ul {
+      font-size: 12px;
+      line-height: 18px;
+      font-size: 0.75rem;
+      line-height: 1.125rem;
+      margin-left: 0px; } }
+/* line 175, /home/circleci/repo/source/stylesheets/leadpage/_base.sass */
+.content-wrapper li {
+  padding-left: 1.3em; }
+
+/* line 2, /home/circleci/repo/source/stylesheets/mixins/_list-styles.sass */
+.checkmark-list ul {
+  list-style: none; }
+  /* line 4, /home/circleci/repo/source/stylesheets/mixins/_list-styles.sass */
+  .checkmark-list ul li {
+    padding-left: 1.3em; }
+    /* line 6, /home/circleci/repo/source/stylesheets/mixins/_list-styles.sass */
+    .checkmark-list ul li:before {
+      content: "";
+      color: #36bf4e;
+      font-family: FontAwesome;
+      display: inline-block;
+      margin-left: -1.3em;
+      width: 1.3em; }
+
+/* line 15, /home/circleci/repo/source/stylesheets/mixins/_list-styles.sass */
+.checklist-list ul {
+  list-style: none; }
+  /* line 17, /home/circleci/repo/source/stylesheets/mixins/_list-styles.sass */
+  .checklist-list ul li {
+    padding-left: 1.3em; }
+    /* line 19, /home/circleci/repo/source/stylesheets/mixins/_list-styles.sass */
+    .checklist-list ul li:before {
+      content: "";
+      color: #94BFFF;
+      font-family: FontAwesome;
+      display: inline-block;
+      margin-left: -1.3em;
+      width: 1.3em; }
+
+/* line 1, /home/circleci/repo/source/stylesheets/_banner.sass */
+body {
+  margin-bottom: 70px; }
+
+/* line 3, /home/circleci/repo/source/stylesheets/_banner.sass */
+#cv-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #94B234;
+  background: #FF8271;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  border-top: 1px solid #ccc; }
+  /* line 15, /home/circleci/repo/source/stylesheets/_banner.sass */
+  #cv-banner a {
+    color: #fff;
+    font-weight: 800; }
+
+/* line 1, /home/circleci/repo/source/stylesheets/_typographie.sass */
+h1, h2, h3 {
+  text-align: center; }
+
+/* line 4, /home/circleci/repo/source/stylesheets/_typographie.sass */
+h1 {
+  font-size: 5em;
+  padding: 1em 0 0; }
+  /* line 8, /home/circleci/repo/source/stylesheets/_typographie.sass */
+  .blog-content h1 {
+    font-size: 4em; }
+
+/* line 11, /home/circleci/repo/source/stylesheets/_typographie.sass */
+h2 {
+  font-size: 2em; }
+
+/* line 14, /home/circleci/repo/source/stylesheets/_typographie.sass */
+h3 {
+  font-size: 1.5em; }
+
+/* line 17, /home/circleci/repo/source/stylesheets/_typographie.sass */
+hr {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  border-bottom: 1px solid #eee; }
+
+/* line 1, /home/circleci/repo/source/stylesheets/_cards.sass */
+.cards {
+  margin: 50px 0 0;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 20, /home/circleci/repo/source/stylesheets/bourbon/addons/_clearfix.scss */
+  .cards::after {
+    clear: both;
+    content: "";
+    display: table; }
+  /* line 20, /home/circleci/repo/source/stylesheets/bourbon/addons/_clearfix.scss */
+  .cards::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+/* line 6, /home/circleci/repo/source/stylesheets/_cards.sass */
+.card {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  margin-bottom: 1.5;
+  cursor: pointer;
+  box-shadow: 0 2px 4px #e6e6e6;
+  position: relative; }
+  @media screen and (max-width: 1159px) {
+    /* line 6, /home/circleci/repo/source/stylesheets/_cards.sass */
+    .card {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%; }
+      /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+      .card:last-child {
+        margin-right: 0; }
+      /* line 78, /home/circleci/repo/source/stylesheets/neat/grid/_omega.scss */
+      .card:nth-child(3n) {
+        margin-right: 0; }
+      /* line 83, /home/circleci/repo/source/stylesheets/neat/grid/_omega.scss */
+      .card:nth-child(3n+1) {
+        clear: left; } }
+  /* line 27, /home/circleci/repo/source/stylesheets/_cards.sass */
+  .card .card-image {
+    overflow: hidden;
+    max-height: 150px; }
+    /* line 30, /home/circleci/repo/source/stylesheets/_cards.sass */
+    .card .card-image img {
+      width: 100%;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      background: #dbd199;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px; }
+  /* line 36, /home/circleci/repo/source/stylesheets/_cards.sass */
+  .card .ribbon-wrapper {
+    height: 85px;
+    width: 85px;
+    overflow: hidden;
+    position: absolute;
+    top: -1px;
+    right: -1px; }
+    /* line 44, /home/circleci/repo/source/stylesheets/_cards.sass */
+    .card .ribbon-wrapper .ribbon {
+      font-size: 0.8em;
+      font-weight: 800;
+      text-align: center;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      position: relative;
+      padding: 2px 7px;
+      left: -5px;
+      top: 15px;
+      width: 120px;
+      background-color: #477dca;
+      color: white;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3); }
+  /* line 57, /home/circleci/repo/source/stylesheets/_cards.sass */
+  .card .card-header {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+    border-radius: 3px 3px 0 0;
+    font-weight: bold;
+    padding: 0.5 0.809em; }
+  /* line 64, /home/circleci/repo/source/stylesheets/_cards.sass */
+  .card .card-copy {
+    padding: 0.75 0.809em;
+    font-size: 0.9em;
+    line-height: 1.5em; }
+    /* line 68, /home/circleci/repo/source/stylesheets/_cards.sass */
+    .card .card-copy p {
+      margin-bottom: 0; }
+  /* line 70, /home/circleci/repo/source/stylesheets/_cards.sass */
+  .card .card-stats {
+    padding: 0.75 0.809em;
+    overflow: auto; }
+    /* line 73, /home/circleci/repo/source/stylesheets/_cards.sass */
+    .card .card-stats ul li {
+      display: inline;
+      color: #6f99d5;
+      font-weight: 800;
+      font-size: 1.2em;
+      float: left;
+      border-right: 1px solid rgba(51, 51, 51, 0.2);
+      line-height: 1.1em;
+      padding: 0 0.7em 0 0.7em; }
+      /* line 82, /home/circleci/repo/source/stylesheets/_cards.sass */
+      .card .card-stats ul li:first-child {
+        padding-left: 0; }
+      /* line 84, /home/circleci/repo/source/stylesheets/_cards.sass */
+      .card .card-stats ul li:last-child {
+        border-right: 0; }
+      /* line 86, /home/circleci/repo/source/stylesheets/_cards.sass */
+      .card .card-stats ul li span {
+        color: #333;
+        font-size: 0.7em;
+        display: block;
+        font-weight: normal; }
+  /* line 91, /home/circleci/repo/source/stylesheets/_cards.sass */
+  .card:hover {
+    background-color: white; }
+    /* line 93, /home/circleci/repo/source/stylesheets/_cards.sass */
+    .card:hover .card-image img {
+      background: #e2daac; }
+    /* line 95, /home/circleci/repo/source/stylesheets/_cards.sass */
+    .card:hover .card-header {
+      background-color: white; }
+  /* line 97, /home/circleci/repo/source/stylesheets/_cards.sass */
+  .card:active {
+    background-color: #f7f7f7; }
+    /* line 99, /home/circleci/repo/source/stylesheets/_cards.sass */
+    .card:active .card-header {
+      background-color: #f7f7f7; }
+  /* line 101, /home/circleci/repo/source/stylesheets/_cards.sass */
+  .card h3 {
+    font-size: 1.1em;
+    text-align: left;
+    padding: 0 0 0.5em 0; }
+  /* line 106, /home/circleci/repo/source/stylesheets/_cards.sass */
+  .card .card-link {
+    padding: 0.75 0.809em;
+    overflow: auto; }
+    /* line 109, /home/circleci/repo/source/stylesheets/_cards.sass */
+    .card .card-link a {
+      float: left;
+      width: 50%; }
+  /* line 112, /home/circleci/repo/source/stylesheets/_cards.sass */
+  .card .card-year {
+    padding: 0.75 0.809em;
+    overflow: auto; }
+    /* line 113, /home/circleci/repo/source/stylesheets/_cards.sass */
+    .card .card-year .badges {
+      margin: 0; }
+
+/* line 1, /home/circleci/repo/source/stylesheets/_bullets.sass */
+.bullets {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 1.5;
+  margin: 1em;
+  overflow: auto;
+  padding: 0; }
+  /* line 14, /home/circleci/repo/source/stylesheets/_bullets.sass */
+  .bullets .bullet {
+    -webkit-flex-basis: 20em;
+    -moz-flex-basis: 20em;
+    flex-basis: 20em;
+    -ms-flex-preferred-size: 20em;
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    flex-grow: 1;
+    -ms-flex-positive: 1; }
+  /* line 17, /home/circleci/repo/source/stylesheets/_bullets.sass */
+  .bullets .bullet-icon {
+    background: #477dca;
+    border-radius: 50%;
+    float: left;
+    height: 3.5em;
+    padding: 0.875em;
+    width: 3.5em; }
+  /* line 24, /home/circleci/repo/source/stylesheets/_bullets.sass */
+  .bullets .bullet-icon-1 {
+    background: #477dca; }
+  /* line 26, /home/circleci/repo/source/stylesheets/_bullets.sass */
+  .bullets .bullet-icon-2 {
+    background: #47caaa; }
+  /* line 28, /home/circleci/repo/source/stylesheets/_bullets.sass */
+  .bullets .bullet-icon-3 {
+    background: #a9ca47; }
+  /* line 30, /home/circleci/repo/source/stylesheets/_bullets.sass */
+  .bullets .bullet-content {
+    margin-left: 4.9em;
+    margin-bottom: 2em; }
+  /* line 33, /home/circleci/repo/source/stylesheets/_bullets.sass */
+  .bullets h2 {
+    color: #333;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+    display: inline-block;
+    font-size: 1.4em;
+    margin: 0 0 0.58333em 0;
+    padding-top: 0.5em; }
+  /* line 40, /home/circleci/repo/source/stylesheets/_bullets.sass */
+  .bullets li {
+    list-style: none; }
+  /* line 42, /home/circleci/repo/source/stylesheets/_bullets.sass */
+  .bullets p {
+    color: #333;
+    line-height: 1.5; }
+  /* line 45, /home/circleci/repo/source/stylesheets/_bullets.sass */
+  .bullets img {
+    max-width: 100%; }
+
+/* line 1, /home/circleci/repo/source/stylesheets/_navigation.sass */
+.nav {
+  position: absolute;
+  top: 10px;
+  right: 20px; }
+  /* line 20, /home/circleci/repo/source/stylesheets/bourbon/addons/_clearfix.scss */
+  .nav::after {
+    clear: both;
+    content: "";
+    display: table; }
+  /* line 6, /home/circleci/repo/source/stylesheets/_navigation.sass */
+  .nav li {
+    padding: 0 10px;
+    float: left; }
+    /* line 10, /home/circleci/repo/source/stylesheets/_navigation.sass */
+    .nav li.active a {
+      color: #DC8E5B; }
+    /* line 12, /home/circleci/repo/source/stylesheets/_navigation.sass */
+    .nav li a {
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: bold; }
+
+/* line 1, /home/circleci/repo/source/stylesheets/_fixed_nav.sass */
+.nav.fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  border-bottom: 1px solid #e0e6ec;
+  background: #f8fbff;
+  z-index: 2; }
+  /* line 11, /home/circleci/repo/source/stylesheets/_fixed_nav.sass */
+  .nav.fixed .nav-content {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto; }
+    /* line 20, /home/circleci/repo/source/stylesheets/bourbon/addons/_clearfix.scss */
+    .nav.fixed .nav-content::after {
+      clear: both;
+      content: "";
+      display: table; }
+    /* line 13, /home/circleci/repo/source/stylesheets/_fixed_nav.sass */
+    .nav.fixed .nav-content .nav-small {
+      margin-top: 13px;
+      float: right; }
+      @media screen and (max-width: 500px) {
+        /* line 13, /home/circleci/repo/source/stylesheets/_fixed_nav.sass */
+        .nav.fixed .nav-content .nav-small {
+          display: none; } }
+      /* line 18, /home/circleci/repo/source/stylesheets/_fixed_nav.sass */
+      .nav.fixed .nav-content .nav-small a {
+        color: #25364c; }
+    /* line 20, /home/circleci/repo/source/stylesheets/_fixed_nav.sass */
+    .nav.fixed .nav-content .logo {
+      margin-top: 10px; }
+      @media screen and (max-width: 500px) {
+        /* line 20, /home/circleci/repo/source/stylesheets/_fixed_nav.sass */
+        .nav.fixed .nav-content .logo {
+          margin-left: 10px; } }
+
+/* line 1, /home/circleci/repo/source/stylesheets/_fixed_nav_cv.sass */
+.nav.fixed {
+  border-bottom: 1px solid #0c3e8a;
+  background: #254575; }
+  /* line 5, /home/circleci/repo/source/stylesheets/_fixed_nav_cv.sass */
+  .nav.fixed .nav-content .logo-container {
+    margin-top: 5px;
+    float: left; }
+    /* line 8, /home/circleci/repo/source/stylesheets/_fixed_nav_cv.sass */
+    .nav.fixed .nav-content .logo-container .logo {
+      float: left; }
+      @media screen and (max-width: 500px) {
+        /* line 8, /home/circleci/repo/source/stylesheets/_fixed_nav_cv.sass */
+        .nav.fixed .nav-content .logo-container .logo {
+          float: left;
+          display: block;
+          margin-right: 2.84259%;
+          width: 48.57871%;
+          margin: 0;
+          margin-top: 5px; }
+          /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+          .nav.fixed .nav-content .logo-container .logo:last-child {
+            margin-right: 0; } }
+    /* line 14, /home/circleci/repo/source/stylesheets/_fixed_nav_cv.sass */
+    .nav.fixed .nav-content .logo-container h4 {
+      float: left;
+      color: #fff;
+      margin: 0.2em 1em;
+      font-size: 12px;
+      line-height: 18px;
+      font-size: 0.75rem;
+      line-height: 1.125rem;
+      line-height: 40px; }
+      @media screen and (max-width: 500px) {
+        /* line 14, /home/circleci/repo/source/stylesheets/_fixed_nav_cv.sass */
+        .nav.fixed .nav-content .logo-container h4 {
+          float: left;
+          display: block;
+          margin-right: 2.84259%;
+          width: 38.29445%;
+          margin-left: 10.28426%;
+          font-size: 12px;
+          line-height: 18px;
+          font-size: 0.75rem;
+          line-height: 1.125rem; }
+          /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+          .nav.fixed .nav-content .logo-container h4:last-child {
+            margin-right: 0; } }
+  @media screen and (max-width: 68.75em) {
+    /* line 24, /home/circleci/repo/source/stylesheets/_fixed_nav_cv.sass */
+    .nav.fixed .nav-content ul.nav-small {
+      display: none; } }
+  /* line 28, /home/circleci/repo/source/stylesheets/_fixed_nav_cv.sass */
+  .nav.fixed .nav-content ul.nav-small li a {
+    color: #fff; }
+
+/* line 3, /home/circleci/repo/source/stylesheets/_footer.sass */
+#footer a {
+  color: #9DC9CF; }
+  /* line 5, /home/circleci/repo/source/stylesheets/_footer.sass */
+  #footer a:hover {
+    text-decoration: underline; }
+/* line 7, /home/circleci/repo/source/stylesheets/_footer.sass */
+#footer #items {
+  padding: 3em 1.618em;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+  #footer #items:last-child {
+    margin-right: 0; }
+  @media screen and (max-width: 40em) {
+    /* line 7, /home/circleci/repo/source/stylesheets/_footer.sass */
+    #footer #items {
+      float: left;
+      display: block;
+      margin-right: 7.42297%;
+      width: 100%; }
+      /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+      #footer #items:last-child {
+        margin-right: 0; } }
+  /* line 12, /home/circleci/repo/source/stylesheets/_footer.sass */
+  #footer #items li.item {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+    margin-bottom: 2em; }
+    /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+    #footer #items li.item:last-child {
+      margin-right: 0; }
+    /* line 78, /home/circleci/repo/source/stylesheets/neat/grid/_omega.scss */
+    #footer #items li.item:nth-child(3n) {
+      margin-right: 0; }
+    /* line 83, /home/circleci/repo/source/stylesheets/neat/grid/_omega.scss */
+    #footer #items li.item:nth-child(3n+1) {
+      clear: left; }
+    @media screen and (max-width: 40em) {
+      /* line 12, /home/circleci/repo/source/stylesheets/_footer.sass */
+      #footer #items li.item {
+        float: left;
+        display: block;
+        margin-right: 7.42297%;
+        width: 100%; }
+        /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+        #footer #items li.item:last-child {
+          margin-right: 0; } }
+/* line 19, /home/circleci/repo/source/stylesheets/_footer.sass */
+#footer .company {
+  font-size: 16px;
+  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem; }
+
+/* line 2, /home/circleci/repo/source/stylesheets/_common.sass */
+.signup-thank-you h1 {
+  padding: 0.5em; }
+/* line 4, /home/circleci/repo/source/stylesheets/_common.sass */
+.signup-thank-you .content {
+  background: #fff;
+  color: #000;
+  padding: 1em; }
+
+/* line 2, /home/circleci/repo/source/stylesheets/_portfolio.sass */
+#portfolio .card {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%; }
+  /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+  #portfolio .card:last-child {
+    margin-right: 0; }
+
+/* line 6, /home/circleci/repo/source/stylesheets/_portfolio.sass */
+#portfolio-short h4 {
+  margin-bottom: 0.6em; }
+/* line 8, /home/circleci/repo/source/stylesheets/_portfolio.sass */
+#portfolio-short .copy {
+  margin-bottom: 1.6em; }
+/* line 10, /home/circleci/repo/source/stylesheets/_portfolio.sass */
+#portfolio-short ul {
+  list-style: none; }
+
+/* line 20, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+.modal label {
+  cursor: pointer;
+  margin-bottom: 0; }
+/* line 24, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+.modal label img {
+  border-radius: 150px;
+  display: block;
+  max-width: 300px; }
+/* line 29, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+.modal .modal-state {
+  display: none; }
+/* line 32, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+.modal .modal-trigger {
+  padding: 0.8em 1em; }
+/* line 35, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+.modal .modal-fade-screen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  padding-top: 0.6em;
+  text-align: left;
+  transition: opacity 0.25s ease;
+  visibility: hidden;
+  z-index: 99999999999; }
+  @media screen and (max-width: 1159px) {
+    /* line 35, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+    .modal .modal-fade-screen {
+      padding-top: 3em; } }
+  /* line 51, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+  .modal .modal-fade-screen .modal-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer; }
+/* line 56, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+.modal .modal-close {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  height: 1.5em;
+  width: 1.5em;
+  background: #fff;
+  cursor: pointer; }
+  /* line 64, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+  .modal .modal-close::after, .modal .modal-close::before {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    bottom: 0;
+    left: 50%;
+    height: 1.5em;
+    width: 0.15em;
+    background: #ddd;
+    content: "";
+    display: block;
+    margin: -3px 0 0 -1px;
+    transform: rotate(45deg); }
+  /* line 76, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+  .modal .modal-close:hover::after, .modal .modal-close:hover::before {
+    background: #c4c4c4; }
+  /* line 80, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+  .modal .modal-close::before {
+    transform: rotate(-45deg); }
+/* line 83, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+.modal .modal-inner {
+  background: #fff;
+  border-radius: 3px;
+  margin: auto;
+  margin-top: 0;
+  max-height: 95%;
+  overflow: auto;
+  padding: 0.5em;
+  position: relative;
+  transition: opacity 0.25s ease;
+  width: 95%; }
+  @media screen and (min-width: 40em) {
+    /* line 83, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+    .modal .modal-inner {
+      max-height: 80%;
+      padding: 1em;
+      width: 80%; } }
+  @media screen and (max-width: 1159px) {
+    /* line 83, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+    .modal .modal-inner {
+      width: 80%; } }
+  /* line 105, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+  .modal .modal-inner h1 {
+    color: #333;
+    text-align: left;
+    text-transform: capitalize; }
+  /* line 110, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+  .modal .modal-inner p {
+    color: #333;
+    line-height: 1.5; }
+  /* line 114, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+  .modal .modal-inner .modal-intro {
+    margin-bottom: 1em; }
+  /* line 117, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+  .modal .modal-inner .modal-content {
+    color: #333; }
+    @media screen and (min-width: 40em) {
+      /* line 117, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+      .modal .modal-inner .modal-content {
+        columns: 2 8em; } }
+  /* line 123, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+  .modal .modal-inner a.cta {
+    color: #fff;
+    display: inline-block;
+    margin-right: 0.5em;
+    margin-top: 1em; }
+    /* line 129, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+    .modal .modal-inner a.cta:last-child {
+      padding: 0 2em; }
+/* line 132, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+.modal .modal-state:checked + .modal-fade-screen {
+  opacity: 1;
+  visibility: visible; }
+/* line 136, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+.modal .modal-state:checked + .modal-fade-screen .modal-inner {
+  top: 0.5em; }
+
+/* line 139, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+.modal-open {
+  overflow: hidden; }
+
+/* line 144, /home/circleci/repo/source/stylesheets/base/_modal.sass */
+.calendly-inline-widget .header {
+  margin: 10px; }
+
+/* line 6, /home/circleci/repo/source/stylesheets/_signup.sass */
+.modal.email-signup .modal-inner {
+  width: 50%; }
+@media screen and (min-width: 53.75em) {
+  /* line 8, /home/circleci/repo/source/stylesheets/_signup.sass */
+  .modal.email-signup .modal-fade-screen {
+    padding-top: 10em; } }
+/* line 11, /home/circleci/repo/source/stylesheets/_signup.sass */
+.modal .signup {
+  color: #000; }
+  /* line 13, /home/circleci/repo/source/stylesheets/_signup.sass */
+  .modal .signup .form-content {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+    margin-left: 8.5298%; }
+    /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+    .modal .signup .form-content:last-child {
+      margin-right: 0; }
+  /* line 16, /home/circleci/repo/source/stylesheets/_signup.sass */
+  .modal .signup h3, .modal .signup h4, .modal .signup h5 {
+    color: #000;
+    margin: 0 0 1em;
+    padding: 0; }
+  /* line 20, /home/circleci/repo/source/stylesheets/_signup.sass */
+  .modal .signup h3 {
+    font-size: 25px;
+    line-height: 37.5px;
+    font-size: 1.5625rem;
+    line-height: 2.34375rem;
+    letter-spacing: normal; }
+  /* line 23, /home/circleci/repo/source/stylesheets/_signup.sass */
+  .modal .signup input {
+    float: left;
+    display: block;
+    margin-right: 2.84259%;
+    width: 100%;
+    padding: 0.3em;
+    margin: 0.5em 0;
+    font-size: 18px;
+    line-height: 27px;
+    font-size: 1.125rem;
+    line-height: 1.6875rem; }
+    /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+    .modal .signup input:last-child {
+      margin-right: 0; }
+  /* line 28, /home/circleci/repo/source/stylesheets/_signup.sass */
+  .modal .signup .subscribe.button {
+    background: #1fa2ed;
+    color: #fff;
+    display: block;
+    font-size: 24px;
+    line-height: 36px;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 30px 45px;
+    text-transform: uppercase;
+    padding: 0.5em; }
+  /* line 31, /home/circleci/repo/source/stylesheets/_signup.sass */
+  .modal .signup .form-footer {
+    clear: both;
+    display: block; }
+    /* line 20, /home/circleci/repo/source/stylesheets/bourbon/addons/_clearfix.scss */
+    .modal .signup .form-footer::after {
+      clear: both;
+      content: "";
+      display: table; }
+  /* line 35, /home/circleci/repo/source/stylesheets/_signup.sass */
+  .modal .signup.free-report .explanation-content {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%; }
+    /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+    .modal .signup.free-report .explanation-content:last-child {
+      margin-right: 0; }
+    /* line 37, /home/circleci/repo/source/stylesheets/_signup.sass */
+    .modal .signup.free-report .explanation-content img {
+      float: left;
+      margin-right: 1em; }
+    /* line 40, /home/circleci/repo/source/stylesheets/_signup.sass */
+    .modal .signup.free-report .explanation-content h5 {
+      text-align: justify; }
+    @media screen and (max-width: 1159px) {
+      /* line 35, /home/circleci/repo/source/stylesheets/_signup.sass */
+      .modal .signup.free-report .explanation-content {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 82.94039%; }
+        /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+        .modal .signup.free-report .explanation-content:last-child {
+          margin-right: 0; } }
+  /* line 44, /home/circleci/repo/source/stylesheets/_signup.sass */
+  .modal .signup.free-report .form-content {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%; }
+    /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+    .modal .signup.free-report .form-content:last-child {
+      margin-right: 0; }
+    /* line 46, /home/circleci/repo/source/stylesheets/_signup.sass */
+    .modal .signup.free-report .form-content h3 {
+      text-align: center; }
+    /* line 48, /home/circleci/repo/source/stylesheets/_signup.sass */
+    .modal .signup.free-report .form-content input {
+      float: left;
+      display: block;
+      margin-right: 4.82916%;
+      width: 100%; }
+      /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+      .modal .signup.free-report .form-content input:last-child {
+        margin-right: 0; }
+    @media screen and (max-width: 1159px) {
+      /* line 44, /home/circleci/repo/source/stylesheets/_signup.sass */
+      .modal .signup.free-report .form-content {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 82.94039%; }
+        /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+        .modal .signup.free-report .form-content:last-child {
+          margin-right: 0; } }
+
+/* line 1, /home/circleci/repo/source/stylesheets/_cv.sass */
+body {
+  color: #fff;
+  background: #2B4C7E; }
+
+/* line 4, /home/circleci/repo/source/stylesheets/_cv.sass */
+.content {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5em 0; }
+  /* line 20, /home/circleci/repo/source/stylesheets/bourbon/addons/_clearfix.scss */
+  .content::after {
+    clear: both;
+    content: "";
+    display: table; }
+  @media screen and (max-width: 500px) {
+    /* line 4, /home/circleci/repo/source/stylesheets/_cv.sass */
+    .content {
+      padding: 1.5em; } }
+  /* line 9, /home/circleci/repo/source/stylesheets/_cv.sass */
+  .content.address {
+    padding: 1em 1.5em; }
+
+/* line 11, /home/circleci/repo/source/stylesheets/_cv.sass */
+.main {
+  margin-top: 60px; }
+  /* line 13, /home/circleci/repo/source/stylesheets/_cv.sass */
+  .main .content {
+    background: #fff;
+    color: #000;
+    padding: 1em; }
+
+/* line 18, /home/circleci/repo/source/stylesheets/_cv.sass */
+.content-wrapper {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+  /* line 20, /home/circleci/repo/source/stylesheets/bourbon/addons/_clearfix.scss */
+  .content-wrapper::after {
+    clear: both;
+    content: "";
+    display: table; }
+  @media screen and (max-width: 1159px) {
+    /* line 18, /home/circleci/repo/source/stylesheets/_cv.sass */
+    .content-wrapper {
+      padding-left: 1em;
+      padding-right: 1em; } }
+
+/* line 25, /home/circleci/repo/source/stylesheets/_cv.sass */
+.section-alternate {
+  background: #fff;
+  color: #000; }
+
+/* line 31, /home/circleci/repo/source/stylesheets/_cv.sass */
+#welcome h2 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 2em; }
+
+/* line 36, /home/circleci/repo/source/stylesheets/_cv.sass */
+.cv .testimonial {
+  padding-top: 1em;
+  padding-bottom: 1em; }
+/* line 39, /home/circleci/repo/source/stylesheets/_cv.sass */
+.cv .cta-btn {
+  margin-top: -3em;
+  text-align: center; }
+  @media screen and (max-width: 500px) {
+    /* line 39, /home/circleci/repo/source/stylesheets/_cv.sass */
+    .cv .cta-btn {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+      .cv .cta-btn:last-child {
+        margin-right: 0; } }
+
+/* line 45, /home/circleci/repo/source/stylesheets/_cv.sass */
+hr.alternate {
+  border-bottom: 1px solid #17335d; }
+
+/* line 47, /home/circleci/repo/source/stylesheets/_cv.sass */
+#how {
+  color: #565656;
+  padding-bottom: 2em; }
+  /* line 50, /home/circleci/repo/source/stylesheets/_cv.sass */
+  #how h3 {
+    color: #565656;
+    text-align: center; }
+    /* line 53, /home/circleci/repo/source/stylesheets/_cv.sass */
+    #how h3 strong {
+      color: #c7850c; }
+
+/* line 56, /home/circleci/repo/source/stylesheets/_cv.sass */
+#foss4gaws .content {
+  padding: 5em; }
+  /* line 58, /home/circleci/repo/source/stylesheets/_cv.sass */
+  #foss4gaws .content h3 {
+    text-align: left; }
+  /* line 60, /home/circleci/repo/source/stylesheets/_cv.sass */
+  #foss4gaws .content hr {
+    width: 90%; }
+/* line 62, /home/circleci/repo/source/stylesheets/_cv.sass */
+#foss4gaws .btn {
+  border-radius: 0.25rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  font-size: 1.2em;
+  background: #2B4C7E;
+  margin: 0.6em 0; }
+  /* line 69, /home/circleci/repo/source/stylesheets/_cv.sass */
+  #foss4gaws .btn:hover {
+    background: #496898; }
+/* line 71, /home/circleci/repo/source/stylesheets/_cv.sass */
+#foss4gaws a.btn {
+  color: #fff; }
+
+/* line 74, /home/circleci/repo/source/stylesheets/_cv.sass */
+.two-columns-two-third {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 20, /home/circleci/repo/source/stylesheets/bourbon/addons/_clearfix.scss */
+  .two-columns-two-third::after {
+    clear: both;
+    content: "";
+    display: table; }
+  /* line 76, /home/circleci/repo/source/stylesheets/_cv.sass */
+  .two-columns-two-third .col1 {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+    /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+    .two-columns-two-third .col1:last-child {
+      margin-right: 0; }
+    @media screen and (max-width: 500px) {
+      /* line 76, /home/circleci/repo/source/stylesheets/_cv.sass */
+      .two-columns-two-third .col1 {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 100%; }
+        /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+        .two-columns-two-third .col1:last-child {
+          margin-right: 0; } }
+  /* line 80, /home/circleci/repo/source/stylesheets/_cv.sass */
+  .two-columns-two-third .col2 {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%; }
+    /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+    .two-columns-two-third .col2:last-child {
+      margin-right: 0; }
+    @media screen and (max-width: 500px) {
+      /* line 80, /home/circleci/repo/source/stylesheets/_cv.sass */
+      .two-columns-two-third .col2 {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 100%; }
+        /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+        .two-columns-two-third .col2:last-child {
+          margin-right: 0; } }
+
+/* line 86, /home/circleci/repo/source/stylesheets/_cv.sass */
+ul.takeaways li:before {
+  content: "✓";
+  color: green; }
+
+/* line 3, /home/circleci/repo/source/stylesheets/donor-retention/_about-me.sass */
+.about-me .img img {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%; }
+  /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+  .about-me .img img:last-child {
+    margin-right: 0; }
+/* line 6, /home/circleci/repo/source/stylesheets/donor-retention/_about-me.sass */
+.about-me .position {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+  margin-left: 8.5298%; }
+  /* line 89, /home/circleci/repo/source/stylesheets/neat/grid/_span-columns.scss */
+  .about-me .position:last-child {
+    margin-right: 0; }

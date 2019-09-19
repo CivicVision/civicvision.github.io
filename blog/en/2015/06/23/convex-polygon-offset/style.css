@@ -1,0 +1,56 @@
+/* line 1, ../blog/en/2015-06-23-convex-polygon-offset/style.scss */
+svg {
+  display: block;
+  margin: auto; }
+
+/* line 6, ../blog/en/2015-06-23-convex-polygon-offset/style.scss */
+.node {
+  fill: #ccc;
+  stroke: #fff;
+  stroke-width: 2px; }
+
+/* line 12, ../blog/en/2015-06-23-convex-polygon-offset/style.scss */
+.link {
+  stroke: #777;
+  stroke-width: 2px; }
+
+/* line 17, ../blog/en/2015-06-23-convex-polygon-offset/style.scss */
+.normal {
+  stroke: #F00;
+  stroke-linecap: arrow;
+  stroke-width: 2px; }
+
+/* line 24, ../blog/en/2015-06-23-convex-polygon-offset/style.scss */
+.group:nth-of-type(2n+1), .offset-group:nth-of-type(2n+1) {
+  fill: #eef;
+  stroke: #eef; }
+/* line 28, ../blog/en/2015-06-23-convex-polygon-offset/style.scss */
+.group:nth-of-type(2n), .offset-group:nth-of-type(2n) {
+  fill: #efe;
+  stroke: #efe; }
+
+/* line 35, ../blog/en/2015-06-23-convex-polygon-offset/style.scss */
+#one .group, #two .group {
+  stroke-width: 20px;
+  stroke-linejoin: round; }
+
+/* line 42, ../blog/en/2015-06-23-convex-polygon-offset/style.scss */
+#three .group {
+  fill: none;
+  stroke-width: 2px;
+  stroke: #eee; }
+
+/* line 49, ../blog/en/2015-06-23-convex-polygon-offset/style.scss */
+.offset-group {
+  fill: #eee;
+  stroke-width: 2px;
+  stroke-linejoin: round; }
+
+/* line 55, ../blog/en/2015-06-23-convex-polygon-offset/style.scss */
+.label-group {
+  fill: none;
+  stroke: none; }
+
+/* line 60, ../blog/en/2015-06-23-convex-polygon-offset/style.scss */
+text {
+  pointer-events: none; }

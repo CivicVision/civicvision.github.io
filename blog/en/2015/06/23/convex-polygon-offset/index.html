@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Offsetting convex polygons for fancy cluster labels</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="../../../../../../stylesheets/normalize.css" rel="stylesheet" type="text/css" /><link href="../../../../../../stylesheets/all.css" rel="stylesheet" type="text/css" />
+<link href='/images/favicon.ico' rel='icon'>
+</head>
+<link href="../../../../../../stylesheets/code.css" rel="stylesheet" type="text/css" />
+<body>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MTT6KM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>
+  var _dcq = _dcq || [];
+  var _dcs = _dcs || {};
+  _dcs.account = "4828671";
+  (function() {
+  	var dc = document.createElement('script');
+  	dc.type = 'text/javascript'; dc.async = true;
+  	dc.src = "//tag.getdrip.com/4828671.js";
+  	var s = document.getElementsByTagName('script')[0];
+  	s.parentNode.insertBefore(dc, s);
+  })();
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer',"GTM-MTT6KM");
+</script>
+
+<ul class='nav'>
+<li>
+<a href="/">About Us</a>
+</li>
+<li>
+<a href="/resources/">Resources I love</a>
+</li>
+<li class='active'>
+<a href="/">En</a>
+</li>
+<li>
+<a href="/de/">De</a>
+</li>
+</ul>
+
+<div class='blog-content article'>
+<div class='header'>
+<h1>Offsetting convex polygons for fancy cluster labels</h1>
+<div class='details'>
+<span class='date'>Jun 23 2015</span>
+—
+<span class='author'>written by Daniel</span>
+</div>
+</div>
+<div class='content'>
+<p><link rel='stylesheet' href="/blog/en/2015/06/23/convex-polygon-offset/style.css"/></p>&#x000A;&#x000A;<p>I was playing with force graphs and clusterings and I wanted to give my clusters a nice convex hull background with rounded corners.&#x000A;That is commonly achived with some CSS-Tricks using a thick <code>stroke-width</code> and <code>stroke-linejoin: round</code>. Here I will introduce&#x000A;an alternative technique.&#x000A;</p>&#x000A;&#x000A;<p>Let me give you an (interactive) example:</p>&#x000A;&#x000A;<p><svg id='one' width=400 height=400></svg></p>&#x000A;&#x000A;<p>This is using the following CSS (SCSS to be exact):</p>&#x000A;<div class="highlight"><pre class="highlight scss"><code><span class="nt">path</span><span class="nc">.group</span> <span class="p">{</span>&#x000A;  <span class="na">stroke-width</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>     <span class="c1">// &lt;~ note this&#x000A;</span>  <span class="na">stroke-linejoin</span><span class="p">:</span> <span class="n">round</span><span class="p">;</span> <span class="c1">// &lt;~ and this&#x000A;</span>  <span class="k">&amp;</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span> <span class="p">{</span>&#x000A;    <span class="na">fill</span><span class="p">:</span> <span class="mh">#eef</span><span class="p">;</span>&#x000A;    <span class="na">stroke</span><span class="p">:</span> <span class="mh">#eef</span><span class="p">;</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="k">&amp;</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>&#x000A;    <span class="na">fill</span><span class="p">:</span> <span class="mh">#efe</span><span class="p">;</span>&#x000A;    <span class="na">stroke</span><span class="p">:</span> <span class="mh">#efe</span><span class="p">;</span>&#x000A;  <span class="p">}</span>&#x000A;<span class="p">}</span>&#x000A;</code></pre></div>&#x000A;<hr/>&#x000A;&#x000A;<p>Ok, that looks pretty neat but now I had this great idea of using a <code>textPath</code> to attach the group label in a fancy way. I wanted it to wrap around the path of the backround polygon. Let&rsquo;s try that:</p>&#x000A;&#x000A;<p><svg id='two' width=400 height=400></svg></p>&#x000A;&#x000A;<p>Ewww&hellip; That didn&rsquo;t work out. And there seems to be no way to control the baseline of a <code>text</code> attached to a <code>path</code> via <code>textPath</code>. We need to do something about this! The idea is simple – expand the group background polygon so that we get a path that has a constant distance from the original polygon. This is called polygon offsetting. In our case – with a convex polygon – this is not too hard to achieve.</p>&#x000A;&#x000A;<p>But first we need some tools. We need some simple linear algebra based on JavaScript arrays. I&rsquo;m using <a href="https://lodash.com/">lodash</a> as a helper library here. Also this is <a href="http://coffeescript.org/">CoffeeScript</a> which we prefer to JavaScript at Civic Vision – yes, even to ES6. What you can see here is just standard vector arithmetic. Adding, subtracting and scaling vectors.</p>&#x000A;<div class="highlight"><pre class="highlight coffeescript"><code><span class="nx">vAdd</span> <span class="o">=</span> <span class="p">(</span><span class="nx">vs</span><span class="p">...)</span> <span class="o">-&gt;</span> <span class="nx">_</span><span class="p">.</span><span class="na">reduce</span><span class="p">(</span> <span class="nx">vs</span><span class="p">,</span> <span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="nx">w</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">_</span><span class="p">.</span><span class="na">zipWith</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">_</span><span class="p">.</span><span class="na">add</span><span class="p">))</span>&#x000A;<span class="nx">vSub</span> <span class="o">=</span> <span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="nx">w</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">vAdd</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="nx">vScale</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="nx">w</span><span class="p">))</span>&#x000A;<span class="nx">vScale</span> <span class="o">=</span> <span class="p">(</span><span class="nx">scalar</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">_</span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">e</span><span class="o">*</span><span class="nx">scalar</span><span class="p">)</span>&#x000A;<span class="nx">vNorm</span> <span class="o">=</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="na">reduce</span><span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">e</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="nx">_</span><span class="p">.</span><span class="na">add</span><span class="p">))</span>&#x000A;<span class="nx">vNormalized</span> <span class="o">=</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">vScale</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="nx">vNorm</span><span class="p">(</span><span class="nx">v</span><span class="p">),</span> <span class="nx">v</span><span class="p">)</span>&#x000A;</code></pre></div>&#x000A;<p>Now the basic idea for offsetting convex polygons is to duplicate every vertex and move it into the direction of the edge&rsquo;s normal vector. If the vertices are sorted clock-wise we obtain the normals by simply rotating the edge counter-clockwise by 90 degrees and then scaling the resulting vector to length 1. We obtain the rounded corners by drawing an arc with a radius equal to the offset using standard <a href="http://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands">SVG path features</a>. The desired behavior can be implemented by creating a custom interpolation function for d3&rsquo;s standard path generator <code>d3.svg.line</code>. This is what it will look like (again this is interactive - grab a node and wiggle it):</p>&#x000A;&#x000A;<p><svg id='three' width=400 height=400>&#x000A;  <defs>&#x000A;    <marker viewBox="-5 -5 10 10" markerHeight="3" markerWidth="3" refX="0" refY="0" orient="auto" id="marker">&#x000A;      <path d="M 0,0 m -5,-5 L 5,0 L -5,5 Z" fill='#F00'/>&#x000A;    </marker>&#x000A;  </defs>&#x000A;</svg></p>&#x000A;&#x000A;<p>That looks much better. The group background looks exactly like before and the text is nicely attached to the groups. We are generating two paths here with the discussed technique: One for the background offset by 10 pixels and another one offset by 15 pixels for the text to attach to. When you are dragging the nodes the text will jump now and then but generally it wraps nicely around the corners. I&rsquo;ve also visualized the normals. Finally I present to you the custom interpolation function that makes all of this possible:</p>&#x000A;<div class="highlight"><pre class="highlight coffeescript"><code><span class="nx">offsetInterpolate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">offset</span><span class="p">)</span> <span class="o">-&gt;</span>&#x000A;  <span class="p">(</span><span class="nx">polygon</span><span class="p">)</span> <span class="o">-&gt;</span>&#x000A;    <span class="k">return</span> <span class="no">null</span> <span class="k">if</span> <span class="nx">polygon</span><span class="p">.</span><span class="na">length</span> <span class="o">&lt;</span> <span class="mi">2</span>&#x000A;    <span class="c1"># transform array of points into an array of point pairs:</span>&#x000A;    <span class="c1"># [p1, p2, p3] -&gt; [[p1, p2], [p2, p3], [p3, p1]]</span>&#x000A;    <span class="nx">copy</span> <span class="o">=</span> <span class="nx">polygon</span><span class="p">.</span><span class="na">slice</span><span class="p">()</span>&#x000A;    <span class="nx">first</span> <span class="o">=</span> <span class="nx">copy</span><span class="p">.</span><span class="na">shift</span><span class="p">()</span>&#x000A;    <span class="nx">copy</span><span class="p">.</span><span class="na">push</span> <span class="nx">first</span>&#x000A;    <span class="nx">pairs</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="na">zip</span><span class="p">(</span><span class="nx">polygon</span><span class="p">,</span> <span class="nx">copy</span><span class="p">)</span>&#x000A;&#x000A;    <span class="nx">offsetPairs</span> <span class="o">=</span> <span class="k">for</span> <span class="p">[</span><span class="nx">v</span><span class="p">,</span> <span class="nx">w</span><span class="p">]</span> <span class="k">in</span> <span class="nx">pairs</span>&#x000A;      <span class="nx">edge</span> <span class="o">=</span> <span class="nx">vSub</span> <span class="nx">v</span><span class="p">,</span> <span class="nx">w</span>&#x000A;      <span class="nx">rotated</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="nx">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1"># rotate 90deg</span>&#x000A;      <span class="nx">scaledNormal</span> <span class="o">=</span> <span class="nx">vScale</span> <span class="nx">offset</span><span class="p">,</span> <span class="nx">vNormalized</span> <span class="nx">rotated</span>&#x000A;      <span class="p">[</span><span class="nx">vAdd</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="nx">scaledNormal</span><span class="p">),</span> <span class="nx">vAdd</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">scaledNormal</span><span class="p">)]</span>&#x000A;&#x000A;    <span class="nx">points</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="na">flatten</span> <span class="nx">offsetPairs</span>&#x000A;    <span class="c1"># add the first point at the end so that we can interpolate</span>&#x000A;    <span class="c1"># the line that closes the path</span>&#x000A;    <span class="nx">points</span><span class="p">.</span><span class="na">push</span> <span class="nx">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>&#x000A;&#x000A;    <span class="c1"># setting the offset as the radius ensures we have a smooth rounded corner</span>&#x000A;    <span class="nx">arc</span> <span class="o">=</span> <span class="s">"A </span><span class="si">#{</span><span class="nx">offset</span><span class="si">}</span><span class="s">,</span><span class="si">#{</span><span class="nx">offset</span><span class="si">}</span><span class="s"> 0 0,1 "</span>&#x000A;    <span class="nx">l</span> <span class="o">=</span> <span class="s">"L"</span>&#x000A;    <span class="nx">d</span> <span class="o">=</span> <span class="s">""</span><span class="o">+</span><span class="nx">points</span><span class="p">.</span><span class="na">shift</span><span class="p">()</span>&#x000A;    <span class="nx">points</span><span class="p">.</span><span class="na">forEach</span> <span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">-&gt;</span>&#x000A;      <span class="k">if</span> <span class="nx">i</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span> <span class="c1"># we are alternating between connecting points via line and via circle arc</span>&#x000A;        <span class="nx">d</span> <span class="o">+=</span> <span class="nx">l</span>&#x000A;      <span class="k">else</span>&#x000A;        <span class="nx">d</span> <span class="o">+=</span> <span class="nx">arc</span>&#x000A;      <span class="nx">d</span> <span class="o">+=</span> <span class="nx">p</span>&#x000A;    <span class="nx">d</span> <span class="o">+=</span> <span class="s">'Z'</span> <span class="c1"># we close the line in the end</span>&#x000A;    <span class="nx">d</span>&#x000A;</code></pre></div>&#x000A;<p>This interpolation function is then used in the usual way:</p>&#x000A;<div class="highlight"><pre class="highlight coffeescript"><code><span class="nx">line</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="na">svg</span><span class="p">.</span><span class="na">line</span><span class="p">()</span>&#x000A;         <span class="p">.</span><span class="na">x</span><span class="p">((</span><span class="nx">d</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">d</span><span class="p">.</span><span class="na">x</span><span class="p">)</span>&#x000A;         <span class="p">.</span><span class="na">y</span><span class="p">((</span><span class="nx">d</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">d</span><span class="p">.</span><span class="na">y</span><span class="p">)</span>&#x000A;         <span class="p">.</span><span class="na">interpolate</span><span class="p">(</span><span class="nx">offsetInterpolate</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>&#x000A;&#x000A;<span class="c1"># ...</span>&#x000A;&#x000A;<span class="nx">labelGroup</span><span class="p">.</span><span class="na">attr</span><span class="p">(</span><span class="s">'d'</span><span class="p">,</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">labelLine</span><span class="p">(</span><span class="nx">hull</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="na">members</span><span class="p">).</span><span class="na">reverse</span><span class="p">()))</span>&#x000A;<span class="c1"># We reverse the elements because otherwise the text would be on the</span>&#x000A;<span class="c1"># inside of the path instead of on the outside</span>&#x000A;</code></pre></div>&#x000A;<hr/>&#x000A;&#x000A;<p>I&rsquo;ve shown how to offset convex polygons with the help of a custom interpolation function for d3&rsquo;s path generator.&#x000A;I hope you enjoyed following along and could learn a thing or two. I also hope you can use this technique in you own projects.&#x000A;D3 has once again proved it&rsquo;s flexibility to enable custom visualization features. As you can see, we at Civic Vision enjoy this flexibility&#x000A;thoroughly.</p>&#x000A;&#x000A;<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js"></script>&#x000A;&#x000A;<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.9.3/lodash.js"></script>&#x000A;&#x000A;<script src="script.js"></script>&#x000A;</div>
+</div>
+<div class='newsletter big'>
+<div class='newsletter-wrapper'>
+<div class='content'>
+<h3>Enjoyed this?</h3>
+<p>Join and get our newsletter with content about data and visualizations.</p>
+</div>
+<div class='signup'>
+<div class='form-content'>
+<form action='https://www.getdrip.com/forms//submissions' data-drip-embedded-form='' method='post' target='_blank'>
+<input name='fields[name]' placeholder='Name' type='text' value=''>
+<input class='required email' name='fields[email]' placeholder='Email Address' type='email' value=''>
+<input class='subscribe button' name='subscribe' type='submit' value='Get more content'>
+</form>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id='footer'>
+<div class='content'>
+<ul id='items'>
+<li class='item'>
+<h4>Services</h4>
+<ul>
+<li>
+<a href="/">Open Data Research</a>
+</li>
+<li>
+<a href="/data-visualization">Data Visualization</a>
+</li>
+<li>
+<a href="/civicstorytelling">Data Storytelling</a>
+</li>
+</ul>
+</li>
+
+<li class='item'>
+<h4>Free Email Courses</h4>
+<ul>
+<li>
+<a href="/datapipeline">Data Pipeline Crashcourse</a>
+</li>
+<li>
+<a href="/">Mapping Civic Open Data</a>
+</li>
+</ul>
+</li>
+
+<li class='item'>
+<h4>Talks</h4>
+<ul>
+<li>
+<a href="https://civicvision.de/mapping_in_d3">Mapping with D3</a>
+</li>
+<li>
+<a href="http://milafrerichs.de/geospatial-ruby/#1">Geospatial Ruby</a>
+</li>
+</ul>
+</li>
+
+<li class='item'>
+<h4>Side Projects</h4>
+<ul>
+<li>
+<a href="https://civicvision.de/trinkwasser">Drinking Water Quality in San Diego</a>
+</li>
+<li>
+<a href="https://civicvision.de/crime-san-diego">Crime in San Diego</a>
+</li>
+<li>
+<a href="https://civicvision.de/energy-production-germany">Energy Production in Germany</a>
+</li>
+</ul>
+</li>
+
+<li class='item'>
+<h4>Civic Vision</h4>
+<ul>
+<li>
+<a href="/legal/">Terms of Service</a>
+</li>
+<li>
+<a href="/legal/privacy/">Privacy Policy</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class='alternate'>
+<div class='content address'>
+<p class='company'>
+&copy; 2017 Civic Vision UG
+<br>
+Joachim-Friedrich-Str. 53,
+10711 Berlin
+<br>
+Tax Id: DE296100763
+<br>
+<br>
+</p>
+</div>
+</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script><script src="../../../../../../javascripts/all.js" type="text/javascript"></script>
+</html>

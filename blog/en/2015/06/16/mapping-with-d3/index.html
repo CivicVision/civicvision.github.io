@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Creating maps with d3</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="../../../../../../stylesheets/normalize.css" rel="stylesheet" type="text/css" /><link href="../../../../../../stylesheets/all.css" rel="stylesheet" type="text/css" />
+<link href='/images/favicon.ico' rel='icon'>
+</head>
+<link href="../../../../../../stylesheets/code.css" rel="stylesheet" type="text/css" />
+<body>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MTT6KM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>
+  var _dcq = _dcq || [];
+  var _dcs = _dcs || {};
+  _dcs.account = "4828671";
+  (function() {
+  	var dc = document.createElement('script');
+  	dc.type = 'text/javascript'; dc.async = true;
+  	dc.src = "//tag.getdrip.com/4828671.js";
+  	var s = document.getElementsByTagName('script')[0];
+  	s.parentNode.insertBefore(dc, s);
+  })();
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer',"GTM-MTT6KM");
+</script>
+
+<ul class='nav'>
+<li>
+<a href="/">About Us</a>
+</li>
+<li>
+<a href="/resources/">Resources I love</a>
+</li>
+<li class='active'>
+<a href="/">En</a>
+</li>
+<li>
+<a href="/de/">De</a>
+</li>
+</ul>
+
+<div class='blog-content article'>
+<div class='header'>
+<h1>Creating maps with d3</h1>
+<div class='details'>
+<span class='date'>Jun 16 2015</span>
+—
+<span class='author'>written by Mila</span>
+</div>
+</div>
+<div class='content'>
+<p>Creating maps with d3 is really simple and it only takes a few lines of code.<br>&#x000A;<a href="http://d3js.org/">d3.js</a>, created by <a href="http://bost.ocks.org/mike/">Mike Bostock</a>, is awesome for visualizations and it makes creating beautiful and customized maps as easy as it gets.<br>&#x000A;This post teases some of the introductory steps I taught in a workshop at FOSSGIS 2015.&#x000A;</p>&#x000A;&#x000A;<p>This is the most basic example of a map based on geojson data:</p>&#x000A;<div class="highlight"><pre class="highlight javascript"><code>  <span class="nx">width</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>&#x000A;  <span class="nx">height</span> <span class="o">=</span> <span class="mi">400</span><span class="p">;</span>&#x000A;  <span class="nx">projection</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geo</span><span class="p">.</span><span class="nx">mercator</span><span class="p">().</span><span class="nx">scale</span><span class="p">(</span><span class="mi">600</span><span class="p">).</span><span class="nx">translate</span><span class="p">([</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]).</span><span class="nx">center</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">70</span><span class="p">]);</span>&#x000A;  <span class="nx">path</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geo</span><span class="p">.</span><span class="nx">path</span><span class="p">().</span><span class="nx">projection</span><span class="p">(</span><span class="nx">projection</span><span class="p">);</span>&#x000A;  <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">"#map"</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">"svg"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"height"</span><span class="p">,</span> <span class="nx">height</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"width"</span><span class="p">,</span> <span class="nx">width</span><span class="p">);</span>&#x000A;  <span class="nx">countries</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"g"</span><span class="p">);</span>&#x000A;  <span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="s2">"data/eu.geojson"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="nx">countries</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'.country'</span><span class="p">)</span>&#x000A;    <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">features</span><span class="p">)</span>&#x000A;    <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>&#x000A;    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'path'</span><span class="p">)</span>&#x000A;    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'class'</span><span class="p">,</span> <span class="s1">'country'</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'d'</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>&#x000A;  <span class="p">});</span>&#x000A;</code></pre></div>&#x000A;<p>D3 takes care of all the calculations for you. It has predefined projections (mercator in this example) and calculates the svg path for you.</p>&#x000A;<div class="highlight"><pre class="highlight javascript"><code>  <span class="nx">projection</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geo</span><span class="p">.</span><span class="nx">mercator</span><span class="p">().</span><span class="nx">scale</span><span class="p">(</span><span class="mi">600</span><span class="p">).</span><span class="nx">translate</span><span class="p">([</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]).</span><span class="nx">center</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">70</span><span class="p">]);</span>&#x000A;</code></pre></div>&#x000A;<p>This line creates a new mercator projection for us. To center the map inside the bounds of the element we set the <a href="https://github.com/mbostock/d3/wiki/Geo-Projections#translate">translate</a> to half the width and half the height, otherwise the center will be in the bottom right corner.&#x000A; The <a href="https://github.com/mbostock/d3/wiki/Geo-Projections#scale">scale</a> factor corresponds linearly to the distance between projected points. The default scale value is 1,000 anything smaller will shrink the map, anything larger will expand it.</p>&#x000A;<div class="highlight"><pre class="highlight javascript"><code>  <span class="nx">path</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geo</span><span class="p">.</span><span class="nx">path</span><span class="p">().</span><span class="nx">projection</span><span class="p">(</span><span class="nx">projection</span><span class="p">);</span>&#x000A;</code></pre></div>&#x000A;<p>The <a href="https://github.com/mbostock/d3/wiki/Geo-Paths">path generator</a> takes the projected 2D geometry and formats it appropriately for SVG or Canvas.</p>&#x000A;<div class="highlight"><pre class="highlight javascript"><code>  <span class="nx">countries</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'.country'</span><span class="p">)</span>&#x000A;  <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">features</span><span class="p">)</span>&#x000A;</code></pre></div>&#x000A;<p>We now select all elements inside the created svg which have the class <code>country</code> and bind them to the GeoJSON features.</p>&#x000A;<div class="highlight"><pre class="highlight javascript"><code>  <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>&#x000A;  <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'path'</span><span class="p">)</span>&#x000A;  <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'class'</span><span class="p">,</span> <span class="s1">'country'</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'d'</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>&#x000A;</code></pre></div>&#x000A;<p>We select all the <a href="https://github.com/mbostock/d3/wiki/Selections#enter">elements</a> for the data and add new elements of type <code>path</code> to the <code>group</code>, add the class <code>country</code> and set the <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d">d</a> attr to the path generator output for that feature.<br>&#x000A;You can learn more about how selections work in D3 <a href="http://bost.ocks.org/mike/selection/">here</a> and in the <a href="http://civicvision.de/mapping_in_d3">presentation</a> of this workshop.</p>&#x000A;&#x000A;<h4>Result</h4>&#x000A;&#x000A;<p>The result would look something like this:</p>&#x000A;&#x000A;<p><img alt="Result" src="result.png" /></p>&#x000A;&#x000A;<h4>Workshop</h4>&#x000A;&#x000A;<p>At <a href="http://www.fossgis.de/konferenz/2015/">FOSSGIS 2015</a> in Münster I gave a workshop going a little deeper into what&rsquo;s possible.</p>&#x000A;&#x000A;<p>These were the topics I covered in the workshop:</p>&#x000A;&#x000A;<ul>&#x000A;<li>Creating a simple map from both geojson and topojson<br></li>&#x000A;<li>Changing the projection of the map<br></li>&#x000A;<li>Adding interaction to the map<br>&#x000A;&#x000A;<ul>&#x000A;<li>Creating a tooltip<br></li>&#x000A;<li>Adding mouseover effect<br></li>&#x000A;</ul></li>&#x000A;<li>Creating a choropleth map<br></li>&#x000A;<li>adding labels<br></li>&#x000A;</ul>&#x000A;&#x000A;<p>Self starters can just go and dive into the material to try it out on their own. You can find all the challenges and solutions <a href="https://github.com/CivicVision/mapping_in_d3/tree/master/challenges">here</a> and the presentation is available <a href="http://civicvision.de/mapping_in_d3">here</a>.</p>&#x000A;&#x000A;<p>If you are interested in having this or more advanced workhops given at your organization don&rsquo;t hesitate to <a href="mailto:sales@civicvicion.de">get in touch</a>.</p>&#x000A;&#x000A;<p>Also feel free to contact me with questions and corrections.</p>&#x000A;</div>
+</div>
+<div class='newsletter big'>
+<div class='newsletter-wrapper'>
+<div class='content'>
+<h3>Enjoyed this?</h3>
+<p>Join and get our newsletter with content about data and visualizations.</p>
+</div>
+<div class='signup'>
+<div class='form-content'>
+<form action='https://www.getdrip.com/forms//submissions' data-drip-embedded-form='' method='post' target='_blank'>
+<input name='fields[name]' placeholder='Name' type='text' value=''>
+<input class='required email' name='fields[email]' placeholder='Email Address' type='email' value=''>
+<input class='subscribe button' name='subscribe' type='submit' value='Get more content'>
+</form>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id='footer'>
+<div class='content'>
+<ul id='items'>
+<li class='item'>
+<h4>Services</h4>
+<ul>
+<li>
+<a href="/">Open Data Research</a>
+</li>
+<li>
+<a href="/data-visualization">Data Visualization</a>
+</li>
+<li>
+<a href="/civicstorytelling">Data Storytelling</a>
+</li>
+</ul>
+</li>
+
+<li class='item'>
+<h4>Free Email Courses</h4>
+<ul>
+<li>
+<a href="/datapipeline">Data Pipeline Crashcourse</a>
+</li>
+<li>
+<a href="/">Mapping Civic Open Data</a>
+</li>
+</ul>
+</li>
+
+<li class='item'>
+<h4>Talks</h4>
+<ul>
+<li>
+<a href="https://civicvision.de/mapping_in_d3">Mapping with D3</a>
+</li>
+<li>
+<a href="http://milafrerichs.de/geospatial-ruby/#1">Geospatial Ruby</a>
+</li>
+</ul>
+</li>
+
+<li class='item'>
+<h4>Side Projects</h4>
+<ul>
+<li>
+<a href="https://civicvision.de/trinkwasser">Drinking Water Quality in San Diego</a>
+</li>
+<li>
+<a href="https://civicvision.de/crime-san-diego">Crime in San Diego</a>
+</li>
+<li>
+<a href="https://civicvision.de/energy-production-germany">Energy Production in Germany</a>
+</li>
+</ul>
+</li>
+
+<li class='item'>
+<h4>Civic Vision</h4>
+<ul>
+<li>
+<a href="/legal/">Terms of Service</a>
+</li>
+<li>
+<a href="/legal/privacy/">Privacy Policy</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class='alternate'>
+<div class='content address'>
+<p class='company'>
+&copy; 2017 Civic Vision UG
+<br>
+Joachim-Friedrich-Str. 53,
+10711 Berlin
+<br>
+Tax Id: DE296100763
+<br>
+<br>
+</p>
+</div>
+</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script><script src="../../../../../../javascripts/all.js" type="text/javascript"></script>
+</html>
